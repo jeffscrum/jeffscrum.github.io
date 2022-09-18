@@ -1,0 +1,17 @@
+.. _faq:
+
+Frequently Asked Questions
+##########################
+
+
+Can I create primary keys on distributed tables?
+------------------------------------------------
+
+Currently Citus imposes primary key constraint only if the distribution column is a part of the primary key. This assures that the constraint needs to be checked only on one shard to ensure uniqueness.
+
+How do I add nodes to an existing Citus cluster?
+------------------------------------------------
+
+On Azure Database for PostgreSQL - Hyperscale (Citus) it's as easy as dragging a slider in the user interface. In Citus Community edition you can add nodes manually by calling the `citus_add_node` UDF with the hostname (or IP address) and port number of the new node.
+
+Either way, after adding a node to an existing cluster it will not contain any data (shards). Citus will start assigning any newly created shards to this node. To rebalance existing shards from the older nodes to the new node, Citus provides a shard rebalancer utility. You can find more information in the `shard_rebalancing` section.
