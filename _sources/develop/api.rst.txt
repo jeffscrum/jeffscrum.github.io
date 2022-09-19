@@ -1,7 +1,0 @@
-Citus API
-#########
-
-.. toctree::
-  :maxdepth: 2
-
-  api_udf.rst
