@@ -33,7 +33,8 @@ extensions = [
 	'sphinx_copybutton',
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs', # https://sphinx-tabs.readthedocs.io/en/latest/
-	'sphinx.ext.githubpages'
+	'sphinx.ext.githubpages',
+	'notfound.extension'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
