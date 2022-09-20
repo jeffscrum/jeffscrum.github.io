@@ -1,4 +1,4 @@
-
+.. _build-vyos:
 
 Build the image
 ===============

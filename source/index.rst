@@ -15,16 +15,13 @@ Welcome to IT Drafts's documentation!
 
 
 
-.. toctree::
-   :maxdepth: 1
-   :caption: Contents:
 
 .. toctree::
-   :maxdepth: 1
-   :caption: VyOS:
+   :caption: What is BusKill?
    :hidden:
 
-   vyos/build-vyos
+   vyos/index
+
 
 
 
