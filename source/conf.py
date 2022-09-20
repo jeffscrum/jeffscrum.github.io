@@ -29,19 +29,16 @@ source_encoding = 'utf-8'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
+	'sphinx.ext.githubpages', # Create .nojekyll file for gh-pages
 	'sphinx_rtd_theme',
+	'notfound.extension', #
 	'sphinx_copybutton',
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
-	#'sphinx_tabs.tabs', # https://sphinx-tabs.readthedocs.io/en/latest/
-	'sphinx.ext.githubpages',
-	'notfound.extension'
+	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
 ]
 
 # -- sphinx-notfound-page --------------------------------------------------
-#html_theme_options = {
-#    'notfound_urls_prefix': 'None',
-#    'permalink': '/404.html'
-#}
+# https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
 notfound_urls_prefix = None
 
 
@@ -60,6 +57,12 @@ exclude_patterns = []
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
+
+html_theme_options = {
+    'analytics_id': 'G-NP47XWF3FQ',
+    'analytics_anonymize_ip': False
+}
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
