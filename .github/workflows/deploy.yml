@@ -53,13 +53,9 @@ jobs:
           git remote -v
 
       # Build
-      - name: Build Sphinx docs
-        uses: ammaraskar/sphinx-problem-matcher@master
-
-
-      # - name: Sphinx Build HTML
-      #   run: |
-      #     make html
+      - name: Sphinx Build HTML
+        run: |
+          make html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
