@@ -20,7 +20,7 @@ import sphinx_rtd_theme
 project = 'IT Drafts'
 copyright = '2022, Jeff Scrum'
 author = 'Jeff Scrum'
-language = None
+language = 'en'
 source_encoding = 'utf-8'
 
 # -- General configuration ---------------------------------------------------
