@@ -55,8 +55,7 @@ jobs:
       # Build
       - name: Build Sphinx docs
         uses: ammaraskar/sphinx-problem-matcher@master
-        run: |
-          make dirhtml
+
 
       # - name: Sphinx Build HTML
       #   run: |
