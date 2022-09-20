@@ -17,10 +17,10 @@ jobs:
 
       - name: Install Python
         uses: actions/setup-python@v2
-        with:
-          python-version: 3.8
+        # with:
+        #   python-version: 3.8
 
-      - name: Install dependencies
+      - name: Install Python Dependencies
         run: |
           pip install -r requirements.txt
         # run: |
@@ -37,7 +37,7 @@ jobs:
       #     git branch -a
       #     git remote -v
 
-      - name: Sphinx build
+      - name: Sphinx Build HTML
         run: |
           make html
 
@@ -54,4 +54,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: build/html
           force_orphan: true
+          exclude_assets: '_sources/*'
+          cname: pages.ksomov.ru
      
