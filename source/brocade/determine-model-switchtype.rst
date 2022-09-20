@@ -208,7 +208,7 @@ Brocade switch models can be identified by running the switchshow command, or th
 
 ------------
 
-Last Updated: 27-05-2021 Links: `NetApp Knowledge Base`__
+Last Updated: 27-05-2021 Links: `NetApp Knowledge Base`_
 
 
 .. _NetApp Knowledge Base: https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric%2C_Interconnect_and_Management_Switches/What_is_the_basis_on_which_Brocade_switch_models_are_determined
