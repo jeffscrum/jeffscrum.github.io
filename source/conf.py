@@ -32,7 +32,8 @@ extensions = [
 	'sphinx_rtd_theme',
 	'sphinx_copybutton',
 	'sphinx_togglebutton',
-	'sphinx_tabs.tabs'
+	'sphinx_tabs.tabs',
+	'sphinx.ext.githubpages'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
