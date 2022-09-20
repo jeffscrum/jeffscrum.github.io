@@ -35,4 +35,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: _build/html # The folder the action should deploy.
+          folder: /home/runner/work/jeffscrum.github.io/_build/html
