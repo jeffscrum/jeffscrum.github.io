@@ -1,5 +1,5 @@
-sphinx
-sphinx_rtd_theme
-sphinx_copybutton
+sphinx==5.0.2
+sphinx_rtd_theme==1.0.0
+sphinx_copybutton==0.5.0
 #sphinx_tabs
 #sphinx_togglebutton
