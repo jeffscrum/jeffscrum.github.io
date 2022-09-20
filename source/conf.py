@@ -42,6 +42,7 @@ extensions = [
 #    'notfound_urls_prefix': 'None',
 #    'permalink': '/404.html'
 #}
+notfound_urls_prefix = None
 
 
 # Add any paths that contain templates here, relative to this directory.
