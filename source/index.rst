@@ -17,7 +17,7 @@ Welcome to IT Drafts's documentation!
 
 
 .. toctree::
-   :caption: What is BusKill?
+   :caption: Сontents:
    :hidden:
 
    brocade/index
