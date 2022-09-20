@@ -44,12 +44,6 @@ html_theme_options = {
 }
 
 
-notfound_urls_prefix: none
-permalink: /404.html
-
-
-
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
