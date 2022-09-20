@@ -38,6 +38,12 @@ extensions = [
 ]
 
 # -- sphinx-notfound-page --------------------------------------------------
+html_theme_options = {
+    'notfound_urls_prefix': None
+    'permalink': /404.html
+}
+
+
 notfound_urls_prefix: none
 permalink: /404.html
 
