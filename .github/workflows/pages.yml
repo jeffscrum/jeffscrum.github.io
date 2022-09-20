@@ -21,10 +21,21 @@ jobs:
         run: |
           pip install sphinx sphinx_rtd_theme
 
+      # - name: Debugging information
+      #   run: |
+      #     echo "github.ref:" ${{github.ref}}
+      #     echo "github.event_name:" ${{github.event_name}}
+      #     echo "github.head_ref:" ${{github.head_ref}}
+      #     echo "github.base_ref:" ${{github.base_ref}}
+      #     git rev-parse --abbrev-ref HEAD
+      #     git branch
+      #     git branch -a
+      #     git remote -v
+
       - name: Sphinx build
         run: |
           make html
 
-      - name: Sphinx build
+      - name: Debug
         run: |
-          ls -l
+          ls -l build/
