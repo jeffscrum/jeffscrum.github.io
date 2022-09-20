@@ -15,11 +15,14 @@ jobs:
           fetch-depth: 0
           lfs: true
 
-      - uses: actions/setup-python@v2
+      - name: Setup python
+        uses: actions/setup-python@v2
 
       - name: Install dependencies
         run: |
-          pip install sphinx sphinx_rtd_theme
+          pip install -r requirements.txt
+        # run: |
+        #   pip install sphinx sphinx_rtd_theme
 
       # - name: Debugging information
       #   run: |
@@ -50,8 +53,3 @@ jobs:
           publish_dir: build/html
           force_orphan: true
      
-
-      # - name: Deploy
-      #   uses: JamesIves/github-pages-deploy-action@v4
-      #   with:
-      #     folder: build/html
