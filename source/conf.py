@@ -63,7 +63,7 @@ html_theme_options = {
     'analytics_anonymize_ip': False
 }
 
-html_favicon = '_static/images/favicon-32x32.png'
+html_favicon = '_static/images/favicon.png'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
