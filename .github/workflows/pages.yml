@@ -39,6 +39,7 @@ jobs:
       - name: Debug
         run: |
           ls -l build/html
+          pwd
 
 
 
@@ -52,4 +53,4 @@ jobs:
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: /home/runner/work/jeffscrum.github.io/build/html
+          folder: build/html
