@@ -53,22 +53,20 @@ jobs:
           git remote -v
 
       # Build
-      - uses: ammaraskar/sphinx-problem-matcher@master
-      - name: Build Sphinx docs
+      # 
+      - name: Sphinx Build HTML
         run: |
-          make html
-      
-      # - name: Sphinx Build HTML
-      #   run: |
-      #     make html
+          make dirhtml
 
+      # Deploy on GitHub Pages
+      # https://github.com/peaceiris/actions-gh-pages
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' }}
         with:
           publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/html
+          github_token: ${{ secrets.GITHUB_TOKEN }} # A GitHub Actions runner automatically creates a GITHUB_TOKEN secret to use in your workflow.
+          publish_dir: build/dirhtml
           force_orphan: true
           exclude_assets: '_sources/*'
           cname: pages.ksomov.ru
