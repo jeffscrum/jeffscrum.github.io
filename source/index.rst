@@ -17,7 +17,6 @@ Welcome to IT Drafts's documentation!
 
 
 .. toctree::
-   :caption: Сontents:
    :maxdepth: 2
    :hidden:
 
