@@ -31,8 +31,8 @@ source_encoding = 'utf-8'
 extensions = [
 	'sphinx_rtd_theme',
 	'sphinx_copybutton',
-	'sphinx_togglebutton',
-	'sphinx_tabs.tabs',
+	'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
+	'sphinx_tabs.tabs', # https://sphinx-tabs.readthedocs.io/en/latest/
 	'sphinx.ext.githubpages'
 ]
 
