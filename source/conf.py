@@ -57,7 +57,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_favicon = '_static/images/favicon-32x32.png'
+html_favicon = '_static/images/favicon.png'
 html_theme_options = {
     'analytics_id': 'G-NP47XWF3FQ',
     'analytics_anonymize_ip': False
