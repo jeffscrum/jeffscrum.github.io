@@ -57,9 +57,9 @@ html_static_path = ['_static']
 #  * https://github.com/readthedocs/sphinx_rtd_theme/issues/529
 html_context = {
   'display_github': True,
-  'github_user': 'buskill',
-  'github_repo': 'buskill-app',
-  'github_version': 'master/docs/',
+  'github_user': 'jeffscrum',
+  'github_repo': 'jeffscrum.github.io',
+  'github_version': 'master/source/',
 }
 
 
