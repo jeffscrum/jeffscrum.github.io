@@ -38,4 +38,18 @@ jobs:
 
       - name: Debug
         run: |
-          ls -l build/
+          ls -l build/html
+
+
+
+      # - name: Deploy
+      #   uses: peaceiris/actions-gh-pages@v3
+      #   with:
+      #     publish_branch: gh-pages
+      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      #     publish_dir: _build/
+      #     force_orphan: true
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: /home/runner/work/jeffscrum.github.io/build/html
