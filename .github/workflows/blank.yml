@@ -1,0 +1,23 @@
+name: sphinx
+
+on: push
+
+jobs:
+  deploy:
+    name: Build and gh-pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+          lfs: true
+
+      - uses: actions/setup-python@v2
+
+      - name: Install dependencies
+        run: |
+          pip install sphinx sphinx_rtd_theme
+
+      - name: Sphinx build
+        run: |
+          make html
