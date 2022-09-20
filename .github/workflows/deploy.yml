@@ -56,7 +56,7 @@ jobs:
       # 
       - name: Sphinx Build HTML
         run: |
-          make dirhtml
+          make html
 
       # Deploy on GitHub Pages
       # https://github.com/peaceiris/actions-gh-pages
@@ -66,7 +66,7 @@ jobs:
         with:
           publish_branch: gh-pages
           github_token: ${{ secrets.GITHUB_TOKEN }} # A GitHub Actions runner automatically creates a GITHUB_TOKEN secret to use in your workflow.
-          publish_dir: build/dirhtml
+          publish_dir: build/html
           force_orphan: true
           exclude_assets: '_sources/*'
           cname: pages.ksomov.ru
