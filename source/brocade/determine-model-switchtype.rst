@@ -3,7 +3,7 @@
 How to determine the model by SwitchType
 ========================================
 
-Determining the Brocade switch type based on the output of the `switchshow` command
+Determining the Brocade switch type based on the output of the ``switchshow`` command
 -----------------------------------------------------------------------------------
 
 .. code-block:: none
