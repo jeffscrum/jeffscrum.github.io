@@ -40,7 +40,7 @@ extensions = [
 # -- sphinx-notfound-page --------------------------------------------------
 html_theme_options = {
     'notfound_urls_prefix': None
-    'permalink': /404.html
+    'permalink': '/404.html'
 }
 
 
