@@ -62,8 +62,8 @@ html_static_path = ['_static']
 html_context = {
   'display_github': True,
   'github_user': 'jeffscrum',
-  'github_repo': 'jeffscrum.github.io',
-  'github_version': 'master/source',
+  'github_repo': 'itdrafts',
+  'github_version': 'master/source/',
 }
 
 
