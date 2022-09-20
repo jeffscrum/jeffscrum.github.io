@@ -40,8 +40,6 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
-        # run: |
-        #   pip install sphinx sphinx_rtd_theme
 
       - name: Debugging information
         run: |
@@ -54,14 +52,15 @@ jobs:
           git branch -a
           git remote -v
 
-      - name: Sphinx Build HTML
+      # Build
+      - name: Build Sphinx docs
+        uses: ammaraskar/sphinx-problem-matcher@master
         run: |
-          make html
+          make dirhtml
 
-      # - name: Debug
+      # - name: Sphinx Build HTML
       #   run: |
-      #     ls -l build/html
-      #     pwd
+      #     make html
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
