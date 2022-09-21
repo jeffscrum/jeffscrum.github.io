@@ -1,7 +1,7 @@
 .. _emc-midrange:
 
 Midrange
-===
+========
 
 .. toctree::
    :maxdepth: 1
