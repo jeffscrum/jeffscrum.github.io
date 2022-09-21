@@ -33,7 +33,8 @@ extensions = [
 	'sphinx_rtd_theme',
 	'notfound.extension', #
 	'sphinx_copybutton',
-	'sphinx_sitemap'
+	'sphinx_sitemap',
+	'sphinx-favicon'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
@@ -47,6 +48,29 @@ notfound_urls_prefix = None
 # -- sphinx-sitemap --------------------------------------------------------
 # https://pypi.org/project/sphinx-sitemap/
 sitemap_filename = "sitemap.xml"
+
+
+# -- sphinx-favicon --------------------------------------------------------
+favicons = [
+    {
+        "rel": "icon",
+        "sizes": "16x16",
+        "href": "_static/favicon/favicon-16x16.png",
+        "type": "image/png",
+    },
+    {
+        "rel": "icon",
+        "sizes": "32x32",
+        "href": "_static/favicon/favicon-32x32.png",
+        "type": "image/png",
+    },
+    {
+        "rel": "apple-touch-icon",
+        "sizes": "180x180",
+        "href": "_static/favicon/apple-touch-icon.png",
+        "type": "image/png",
+    },
+]
 
 
 
@@ -65,7 +89,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_favicon = '_static/images/favicon.ico'
+#html_favicon = '_static/images/favicon.ico'
 html_baseurl = 'https://pages.ksomov.ru'
 html_title = 'IT Drafts'
 html_theme_options = {
