@@ -14,4 +14,3 @@ Mikrotik
    mikrotik-old-ssh-hostkeyalgorithm
    mikrotik-traffic-over-vpn
    mikrotik-antifilter-configure
-   mikrotik-remove-huge-addresslist

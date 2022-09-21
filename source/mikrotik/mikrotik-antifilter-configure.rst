@@ -10,7 +10,7 @@ Mikrotik и Antifilter.download
 BGP
 ---
 
-..code-block:: bash
+.. code-block:: bash
 
   /ip route add dst-address=45.154.73.71/32 gateway=<GATEWAY_FOR_CONNECT>
   /routing bgp instance set default as=64522 ignore-as-path-len=yes router-id=<YOUR_IP_ADDRESS>
@@ -24,7 +24,7 @@ BGP
 Скрипт
 ------
 
-Для скачивания и применения листа можно воспользоваться скриптом. Новый листу будет сохранен с именем "list-antifilter"
+Для скачивания и применения листа можно воспользоваться скриптом. Новый лист будет сохранен с именем "list-antifilter"
 
 .. code-block:: bash
 
@@ -129,4 +129,8 @@ BGP
 Удаление листа
 --------------
 
-Если по каким-то причина лист нужно удалить вручную, то сделать это можно при помощи команды ``/ip firewall address-list remove [/ip firewall address-list find list=list-antifilter]``
+Если по каким-то причинам лист нужно удалить вручную, то сделать это можно при помощи команды 
+
+.. code-block:: bash
+  
+  /ip firewall address-list remove [/ip firewall address-list find list=list-antifilter]
