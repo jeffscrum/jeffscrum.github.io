@@ -31,12 +31,12 @@ source_encoding = 'utf-8'
 extensions = [
 	'sphinx.ext.githubpages', # Create .nojekyll file for gh-pages
 	'sphinx_rtd_theme',
-	'notfound.extension', #
+	'notfound.extension',
 	'sphinx_copybutton',
 	'sphinx_sitemap',
 	'sphinx-favicon',
-    'sphinx_comments'
-    #'sphinx_disqus.disqus'
+  'sphinx_comments'
+  #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
@@ -49,7 +49,8 @@ extensions = [
 comments_config = {
    "utterances": {
       "repo": "jeffscrum/ITDrafts",
-      "optional": "config",
+      "theme": "github-light",
+      "issue-term": "title"
    }
 }
 
