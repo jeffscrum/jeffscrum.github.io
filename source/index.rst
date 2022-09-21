@@ -25,7 +25,7 @@ Welcome to IT Drafts's documentation!
    emc/index
    mikrotik/index
    vyos/index
-   :ref:`genindex`
+   genindex
 
 
 
