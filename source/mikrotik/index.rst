@@ -10,3 +10,6 @@ Mikrotik
    mikrotik-default-fw-rules
    mikrotik-install-cloud-router
    mikrotik-port-forward-cli
+   mikrotik-backup-and-restore-configuration
+   mikrotik-old-ssh-hostkeyalgorithm
+   mikrotik-trafic-over-vpn
