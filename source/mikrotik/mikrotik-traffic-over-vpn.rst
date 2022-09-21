@@ -1,3 +1,5 @@
+.. index:: mikrotik, vpn
+
 .. _mikrotik-traffic-over-vpn:
 
 Направляем траффик через VPN
