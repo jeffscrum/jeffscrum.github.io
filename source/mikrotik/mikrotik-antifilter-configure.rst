@@ -1,6 +1,6 @@
 .. _mikrotik-antifilter-configure:
 
-Mikrotik и Antifilter.download
+Mikrotik и antifilter.download
 ==============================
 
 Более подробную информацию о сервисе вы можете посмотреть на `страничке проекта <https://antifilter.download/>`_
