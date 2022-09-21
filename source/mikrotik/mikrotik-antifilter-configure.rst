@@ -129,8 +129,6 @@ BGP
 Удаление листа
 --------------
 
-Удалить адресный лист при в CLI можно командой: 
-
-.. code-block:: bash
+Удалить адресный лист при в CLI можно командой::
   
   /ip firewall address-list remove [/ip firewall address-list find list=list-antifilter]
