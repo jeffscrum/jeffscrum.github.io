@@ -33,6 +33,7 @@ extensions = [
 	'sphinx_rtd_theme',
 	'notfound.extension', #
 	'sphinx_copybutton',
+	'sphinx_sitemap'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
 ]
@@ -40,6 +41,12 @@ extensions = [
 # -- sphinx-notfound-page --------------------------------------------------
 # https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
 notfound_urls_prefix = None
+
+
+# -- sphinx-sitemap --------------------------------------------------------
+# https://pypi.org/project/sphinx-sitemap/
+sitemap_filename = "sitemap.xml"
+
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -58,16 +65,26 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 #
 html_theme = 'sphinx_rtd_theme'
 html_favicon = '_static/images/favicon.png'
+html_baseurl = 'https://pages.ksomov.ru'
 html_theme_options = {
     'analytics_id': 'G-NP47XWF3FQ',
     'analytics_anonymize_ip': False
 }
+
+# A list of paths that contain extra files not directly related to the documentation, such as robots.txt or .htaccess.
+# Relative paths are taken as relative to the configuration directory. They are copied to the output directory.
+# They will overwrite any existing file of the same name.
+html_extra_path = ['robots.txt']
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
 html_css_files = [
     'css/theme.css',
 ]
+
+#
+html_copy_source = False
+
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
