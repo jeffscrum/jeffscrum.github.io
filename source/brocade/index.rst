@@ -3,8 +3,6 @@
 Brocade
 =======
 
-.. isso::
-
 
 
 .. toctree::

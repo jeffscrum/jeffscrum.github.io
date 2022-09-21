@@ -46,7 +46,7 @@ extensions = [
 #disqus_shortname = 'pagesksomov'
 
 # --
-isso_url = 'http://romeo.ksomov.ru:8083'
+isso_url = 'http://isso.ksomov.ru'
 
 
 
