@@ -35,14 +35,23 @@ extensions = [
 	'sphinx_copybutton',
 	'sphinx_sitemap',
 	'sphinx-favicon',
-    'sphinx_disqus.disqus'
+    'sphinx_comments'
+    #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
 ]
 
 # -- sphinx_disqus.disqus --------------------------------------------------
-disqus_shortname = 'pagesksomov'
+#disqus_shortname = 'pagesksomov'
+
+# -- sphinx_comments -------------------------------------------------------
+comments_config = {
+   "utterances": {
+      "repo": "jeffscrum/ITDrafts",
+      "optional": "config",
+   }
+}
 
 
 # -- sphinx-notfound-page --------------------------------------------------
