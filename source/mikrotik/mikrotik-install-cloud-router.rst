@@ -22,4 +22,4 @@ Install Mikrotik Cloud Router
    /ip route add check-gateway=ping distance=1 gateway=123.45.67.1
    /ip dns set servers=8.8.8.8,1.1.1.1
 
-После чего не забываем добавить _mikrotik-default-fw-rules
+После чего не забываем добавить :ref:`mikrotik-default-fw-rules`

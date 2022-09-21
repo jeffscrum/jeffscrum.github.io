@@ -9,3 +9,4 @@ Mikrotik
    mikrotik-static-dns-name-add
    mikrotik-default-fw-rules
    mikrotik-install-cloud-router
+   mikrotik-port-forward-cli
