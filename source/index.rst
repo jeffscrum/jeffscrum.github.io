@@ -21,6 +21,7 @@ Welcome to IT Drafts's documentation!
    :hidden:
 
    brocade/index
+   mikrotik/index
    vyos/index
 
 
