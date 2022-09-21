@@ -22,6 +22,11 @@ Welcome to IT Drafts's documentation!
 
    asterisk/index
    brocade/index
+   
+.. toctree::
+   :maxdepth: 3
+   :hidden:
+
    emc/index
    mikrotik/index
    vyos/index
