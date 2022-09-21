@@ -1,3 +1,5 @@
+.. index:: mikrotik, firewall
+
 .. _mikrotik-default-fw-rules:
 
 Mikrotik Default Firewall Rules

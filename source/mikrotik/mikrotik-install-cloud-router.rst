@@ -1,3 +1,5 @@
+.. index:: mikrotik, cloud, install
+
 .. _mikrotik-install-cloud-router:
 
 Install Mikrotik Cloud Router

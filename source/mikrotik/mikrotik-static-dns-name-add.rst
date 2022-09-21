@@ -1,3 +1,5 @@
+.. index:: mikrotik, dns
+
 .. _mikrotik-static-dns-name-add:
 
 Добавление статической DNS записи

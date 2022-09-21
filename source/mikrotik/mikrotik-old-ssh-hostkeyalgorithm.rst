@@ -1,3 +1,5 @@
+.. index:: mikrotik, ssh
+
 .. _mikrotik-old-ssh-hostkeyalgorithm:
 
 Mikrotik HostKeyAlgorithm

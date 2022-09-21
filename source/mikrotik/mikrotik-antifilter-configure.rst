@@ -1,3 +1,5 @@
+.. index:: mikrotik, bgp
+
 .. _mikrotik-antifilter-configure:
 
 Mikrotik и antifilter.download

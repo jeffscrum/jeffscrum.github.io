@@ -1,3 +1,5 @@
+.. index:: mikrotik
+
 .. _mikrotik-port-forward-cli:
 
 Mikrotik Port Forward
