@@ -1,4 +1,4 @@
-.. index:: emc; vnx
+.. index:: emc, vnx
 
 .. _emc-vnx-tag-psnt-number:
 
