@@ -65,7 +65,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 # a list of builtin themes.
 #
 html_theme = 'sphinx_rtd_theme'
-html_favicon = '_static/images/favicon.png'
+html_favicon = '_static/images/favicon.ico'
 html_baseurl = 'https://pages.ksomov.ru'
 html_title = 'IT Drafts'
 html_theme_options = {
