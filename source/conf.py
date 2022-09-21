@@ -34,11 +34,16 @@ extensions = [
 	'notfound.extension', #
 	'sphinx_copybutton',
 	'sphinx_sitemap',
-	'sphinx-favicon'
+	'sphinx-favicon',
+    'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
 ]
+
+# -- sphinx_disqus.disqus --------------------------------------------------
+disqus_shortname = 'pagesksomov'
+
 
 # -- sphinx-notfound-page --------------------------------------------------
 # https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
@@ -47,7 +52,7 @@ notfound_urls_prefix = None
 
 # -- sphinx-sitemap --------------------------------------------------------
 # https://pypi.org/project/sphinx-sitemap/
-sitemap_filename = "sitemap.xml"
+sitemap_filename = 'sitemap.xml'
 
 
 # -- sphinx-favicon --------------------------------------------------------
