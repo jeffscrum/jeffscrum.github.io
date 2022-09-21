@@ -49,8 +49,7 @@ extensions = [
 comments_config = {
    "utterances": {
       "repo": "jeffscrum/itdrafts",
-      "theme": "github-light",
-      "issue-term": "title",
+      "optional": "config",
    }
 }
 
