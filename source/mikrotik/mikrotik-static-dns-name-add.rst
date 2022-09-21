@@ -1,4 +1,4 @@
-.. _mikrotik_static_dns_name_add:
+.. _mikrotik-static-dns-name-add:
 
 Добавление статической DNS записи
 =================================
