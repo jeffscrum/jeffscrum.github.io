@@ -22,6 +22,7 @@ Welcome to IT Drafts's documentation!
 
    asterisk/index
    brocade/index
+   emc/index
    mikrotik/index
    vyos/index
 
