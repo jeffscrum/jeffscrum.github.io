@@ -10,13 +10,13 @@ Restore -- ``system backup load name=backup_20121030``
 
 Или делаем экспорт-импорт конфигурации:
 
-**Export configuration** ``export file=config_backup_20121030.rsc``
+Export  -- ``export file=config_backup_20121030.rsc``
 
-**Import configuration** ``import file=config_backup_20121030.rsc``
+Import -- ``import file=config_backup_20121030.rsc``
 
 Можно делать экспорт только лишь одной из веток конфигурации
 
-.. code-block:: none
+.. code-block:: bash
 
   ip address export file=ip.rsc
   ip firewall mangle export file=mangle.rsc
