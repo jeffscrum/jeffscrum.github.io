@@ -17,7 +17,7 @@ Welcome to IT Drafts's documentation!
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :hidden:
 
    asterisk/index
