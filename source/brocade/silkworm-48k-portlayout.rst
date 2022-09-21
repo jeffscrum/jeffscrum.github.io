@@ -3,6 +3,8 @@
 Brocade 48k Port Layout
 =======================
 
-.. image:: ../_static/images/br-48k-portlayout.jpeg
+.. image:: /images/br-48k-portlayout.jpeg
+  :width: 600
+  :alt: Alternative text
 
-.. image:: ../_static/images/DespicableMe2.jpg
+.. image:: /images/DespicableMe2.jpg
