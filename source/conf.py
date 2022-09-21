@@ -33,8 +33,8 @@ extensions = [
 	'sphinx_rtd_theme',
 	'notfound.extension', #
 	'sphinx_copybutton',
-	'sphinx_sitemap',
-	'sphinx_last_updated_by_git'
+	'sphinx_sitemap'
+	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
 ]
