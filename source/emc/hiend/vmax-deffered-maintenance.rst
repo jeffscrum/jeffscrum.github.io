@@ -9,7 +9,7 @@ VMAX. Отключение Deferred Maintenance
 
 В том случае, если вам это не подходит, то отключить можно так:
 
-1. В SymmWin выберете: Configuration > Site information > General
+1. В SymmWin выберете: *Configuration > Site information > General*
 2. Измените "Spare Replace" на "None".
 3. Нажмите зеленую галочку наверху, для того что бы изменения применились.
 
