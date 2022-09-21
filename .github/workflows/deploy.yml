@@ -41,16 +41,16 @@ jobs:
           pip install --upgrade pip
           pip install -r requirements.txt
 
-      - name: Debugging information
-        run: |
-          echo "github.ref:" ${{github.ref}}
-          echo "github.event_name:" ${{github.event_name}}
-          echo "github.head_ref:" ${{github.head_ref}}
-          echo "github.base_ref:" ${{github.base_ref}}
-          git rev-parse --abbrev-ref HEAD
-          git branch
-          git branch -a
-          git remote -v
+#       - name: Debugging information
+#         run: |
+#           echo "github.ref:" ${{github.ref}}
+#           echo "github.event_name:" ${{github.event_name}}
+#           echo "github.head_ref:" ${{github.head_ref}}
+#           echo "github.base_ref:" ${{github.base_ref}}
+#           git rev-parse --abbrev-ref HEAD
+#           git branch
+#           git branch -a
+#           git remote -v
 
       # Build
       # 
@@ -68,6 +68,6 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }} # A GitHub Actions runner automatically creates a GITHUB_TOKEN secret to use in your workflow.
           publish_dir: build/html
           force_orphan: true
-          exclude_assets: '_sources/*'
+   #       exclude_assets: '_sources/*'
           cname: pages.ksomov.ru
      
