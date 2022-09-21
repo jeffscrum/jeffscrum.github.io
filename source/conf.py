@@ -48,9 +48,9 @@ extensions = [
 # -- sphinx_comments -------------------------------------------------------
 comments_config = {
    "utterances": {
-      "repo": "jeffscrum/ITDrafts",
+      "repo": "jeffscrum/itdrafts",
       "theme": "github-light",
-      "issue-term": "title"
+      "issue-term": "title",
    }
 }
 
