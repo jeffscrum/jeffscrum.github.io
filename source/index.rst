@@ -20,6 +20,7 @@ Welcome to IT Drafts's documentation!
    :maxdepth: 2
    :hidden:
 
+   asterisk/index
    brocade/index
    mikrotik/index
    vyos/index
