@@ -54,25 +54,25 @@ sitemap_filename = "sitemap.xml"
 favicons = [
     {
         "rel": "icon",
-        "href": "http://pages.ksomov.ru/_static/favicon/favicon.ico",
+        "static-file": "favicon/favicon.ico",
         "type": "image/x-icon",
     },
     {
         "rel": "icon",
         "sizes": "16x16",
-        "href": "http://pages.ksomov.ru/_static/favicon/favicon-16x16.png",
+        "static-file": "favicon/favicon-16x16.png",
         "type": "image/png",
     },
     {
         "rel": "icon",
         "sizes": "32x32",
-        "href": "http://pages.ksomov.ru/_static/favicon/favicon-32x32.png",
+        "static-file": "favicon/favicon-32x32.png",
         "type": "image/png",
     },
     {
         "rel": "apple-touch-icon",
         "sizes": "180x180",
-        "href": "http://pages.ksomov.ru/_static/favicon/apple-touch-icon.png",
+        "static-file": "favicon/apple-touch-icon.png",
         "type": "image/png",
     },
 ]
