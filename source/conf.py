@@ -54,20 +54,25 @@ sitemap_filename = "sitemap.xml"
 favicons = [
     {
         "rel": "icon",
+        "href": "favicon/favicon.ico",
+        "type": "image/x-icon",
+    },
+    {
+        "rel": "icon",
         "sizes": "16x16",
-        "href": "_static/favicon/favicon-16x16.png",
+        "href": "favicon/favicon-16x16.png",
         "type": "image/png",
     },
     {
         "rel": "icon",
         "sizes": "32x32",
-        "href": "_static/favicon/favicon-32x32.png",
+        "href": "favicon/favicon-32x32.png",
         "type": "image/png",
     },
     {
         "rel": "apple-touch-icon",
         "sizes": "180x180",
-        "href": "_static/favicon/apple-touch-icon.png",
+        "href": "favicon/apple-touch-icon.png",
         "type": "image/png",
     },
 ]
