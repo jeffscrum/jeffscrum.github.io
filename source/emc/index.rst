@@ -4,7 +4,7 @@ EMC
 ===
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    hiend/index
    midrange/index

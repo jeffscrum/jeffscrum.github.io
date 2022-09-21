@@ -11,6 +11,5 @@ VMAX. Добавление алаиса для WWN
 
 
 ..
-
 	[GUI]: Graphical User Interface
 	[CLI]: Command Line Interface
