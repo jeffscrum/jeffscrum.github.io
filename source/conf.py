@@ -34,8 +34,7 @@ extensions = [
 	'notfound.extension',
 	'sphinx_copybutton',
 	'sphinx_sitemap',
-	'sphinx-favicon',
-    'sphinxnotes.isso'
+	'sphinx-favicon'
   #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
@@ -44,10 +43,6 @@ extensions = [
 
 # -- sphinx_disqus.disqus --------------------------------------------------
 #disqus_shortname = 'pagesksomov'
-
-# --
-isso_url = 'http://isso.ksomov.ru'
-
 
 
 # -- sphinx-notfound-page --------------------------------------------------
