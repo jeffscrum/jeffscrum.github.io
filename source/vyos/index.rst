@@ -6,5 +6,5 @@ VyOS
 .. toctree::
    :maxdepth: 1
 
-   build-vyos
+   vyos-build-image
    vyos-cloud-influx
