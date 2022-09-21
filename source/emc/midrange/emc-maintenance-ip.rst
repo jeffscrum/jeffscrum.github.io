@@ -1,4 +1,4 @@
-.. index:: emc; maintenance
+.. index:: emc, maintenance
 
 .. _emc-maintenance-ip:
 
