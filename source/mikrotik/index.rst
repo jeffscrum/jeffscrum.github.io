@@ -12,4 +12,4 @@ Mikrotik
    mikrotik-port-forward-cli
    mikrotik-backup-and-restore-configuration
    mikrotik-old-ssh-hostkeyalgorithm
-   mikrotik-trafic-over-vpn
+   mikrotik-traffic-over-vpn
