@@ -1,4 +1,4 @@
-.. index:: emc; vmax; alias; wwn
+.. index:: emc, vmax, alias, wwn
 
 .. _vmax-wwn-add-alias:
 

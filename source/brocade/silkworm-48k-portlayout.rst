@@ -1,3 +1,5 @@
+.. index:: brocade
+
 .. _silkworm-48k-portlayout:
 
 Brocade 48k Port Layout

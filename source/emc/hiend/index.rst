@@ -8,3 +8,6 @@ Hi-End
 
    vmax-show-all-wwn
    vmax-wwn-add-alias
+   vmax-flexfilter-install
+   vmax-callhome
+   vmax-deffered-maintenance
