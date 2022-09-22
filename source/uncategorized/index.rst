@@ -13,4 +13,6 @@ Uncategorized
    sublime-session-file
    twiki-installation
    putty-socks5-tunnel
+   latex-installation
    mediawiki/index
+
