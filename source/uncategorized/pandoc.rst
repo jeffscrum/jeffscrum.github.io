@@ -34,7 +34,7 @@ Markdown to PDF
 
 .. tip::
   
-  Скачать :download:`t.tex <_static/t.tex>`
+  Скачать :download:`t.tex </_static/t.tex>`
 
 HTML to Markdown
 ----------------
