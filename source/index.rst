@@ -22,6 +22,7 @@ Welcome to IT Drafts documentation!
 
    asterisk/index
    brocade/index
+   bsd/index
    emc/index
    hds/index
    homeassistant/index

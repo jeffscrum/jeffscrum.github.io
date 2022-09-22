@@ -12,6 +12,6 @@ HDS Microcode Availability Status
 3. Справа вписываем интересующий нас продукт (например VSP Gx00 and VSP Fx00)
 4. Убираем все галочки кроме *Tech Tips*
 5. Ищем документ *Microcode Availability Status (MAS)* с наибольшим индексом.
-6. Внутри документа в табличке смотрим текущий RGA микрокод
+6. Внутри документа, в табличке смотрим текущий RGA микрокод
 
 .. [#] RGA - Recommended Generally Available
