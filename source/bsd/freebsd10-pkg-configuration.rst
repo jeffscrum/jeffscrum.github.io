@@ -16,8 +16,8 @@
        assume_always_yes: false
    
        repos_dir: [
-                       "/etc/pkg",
-                       "/usr/local/etc/pkg/repos",
+         "/etc/pkg",
+         "/usr/local/etc/pkg/repos",
        ]
    
        syslog: true
