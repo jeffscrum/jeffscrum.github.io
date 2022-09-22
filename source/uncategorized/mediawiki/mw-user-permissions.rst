@@ -6,8 +6,8 @@
 User permissions
 ================
 
-.. code-block:: php
-    :caption: `LocalSettings.php`
+.. code-block:: none
+   :caption: `LocalSettings.php`
 
   ################
   # Restrictions #
