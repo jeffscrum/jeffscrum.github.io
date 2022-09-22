@@ -27,6 +27,7 @@ Welcome to IT Drafts documentation!
    hds/index
    homeassistant/index
    mikrotik/index
+   sun-oracle/index
    vyos/index
 
 
