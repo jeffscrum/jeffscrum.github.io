@@ -23,6 +23,7 @@ Welcome to IT Drafts documentation!
    asterisk/index
    brocade/index
    emc/index
+   hds/index
    homeassistant/index
    mikrotik/index
    vyos/index
