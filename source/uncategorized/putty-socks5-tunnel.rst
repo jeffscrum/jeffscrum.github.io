@@ -28,6 +28,6 @@ Putty SOCKS5-proxy туннель в Windows
 SOCKS5–прокси, например Firefox, и указываем ему использовать наш прокси:
 
 .. image:: /images/putty-ssh-tunnels-firefox.png
-   :width: 579 px
+   :scale: 80 %
 
 Теперь все запросы от браузера будут проходить через SSH, а далее перенаправляться нашим SOCKS-proxy в сторону нужного адресата.
