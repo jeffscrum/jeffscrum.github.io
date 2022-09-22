@@ -6,7 +6,7 @@ Putty SOCKS5-proxy туннель в Windows
 ====================================
 
 .. image:: /images/putty-ssh-tunnels-tunneling.png
-   :width: 545 px
+   :scale: 80 %
 
 Настройка SOCKS5-proxy может понадобиться, если, например, нужно попасть по Web на какой-то хост за сервером к которому есть только доступ по SSH.
 
