@@ -6,7 +6,8 @@
 User permissions
 ================
 
-.. code-block:: bash
+.. code-block:: php
+   :caption: LocalSettings.php
 
   ################
   # Restrictions #
