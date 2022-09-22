@@ -30,10 +30,10 @@ Curabitur molestie at ligula ac aliquam. Aenean maximus tempus arcu et dictum. S
 
 
 
-Indices and tables
-==================
-
-* :ref:`genindex`
-
+ 
+.. Indices and tables
+.. ==================
+..  
+.. * :ref:`genindex`
 .. * :ref:`modindex`
 .. * :ref:`search`
