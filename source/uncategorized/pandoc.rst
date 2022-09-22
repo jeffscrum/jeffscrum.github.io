@@ -10,7 +10,7 @@ Pandoc на практике
 
 .. note::
   
-  В составе пакетов есть пакеты LaTex, поэтому объем занимаемый на диске будет несколько Гб
+  В составе пакетов есть пакеты *LaTex*, поэтому объем занимаемый на диске будет несколько Гб
 
 .. code-block:: bash
 
@@ -34,7 +34,7 @@ Markdown to PDF
 
 .. tip::
   
-  :download: `t.tex <_static/t.tex>`
+  Скачать :download:`t.tex <_static/t.tex>`
 
 HTML to Markdown
 ----------------

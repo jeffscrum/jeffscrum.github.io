@@ -8,10 +8,11 @@ How to download a book from Scribd
 При помощи скрипт можно автоматизировать просмотр страниц документа и их сохранение в файл JPG.
 
 Для получения доступа к документу:
-1. Get Trial or paid account
-2. Open your book in Google Chrome (Continue Reading)
-3. Open Developer Tools and go to Console
-4. Paste next code and press enter
+
+#. Get Trial or paid account
+#. Open your book in Google Chrome (Continue Reading)
+#. Open Developer Tools and go to Console
+#. Paste next code and press enter
 
   .. code-block:: javascript
 
@@ -21,7 +22,7 @@ How to download a book from Scribd
         document.getElementsByTagName('head')[0].appendChild(injectDomToImage);
     }
 
-5. And then, you could define functions such as these:
+#. And then, you could define functions such as these:
 
   .. code-block:: javascript
 
@@ -59,7 +60,7 @@ How to download a book from Scribd
         downloadPage(1, prefix);
     }
 
-6. Finally, you could download each book page as a JPG image using:
+#. Finally, you could download each book page as a JPG image using:
 
   .. code-block:: javascript
 
