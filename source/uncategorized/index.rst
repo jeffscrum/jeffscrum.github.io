@@ -12,3 +12,4 @@ Uncategorized
    pandoc
    sublime-session-file
    twiki-installation
+   putty-socks5-tunnel
