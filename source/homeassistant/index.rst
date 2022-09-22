@@ -1,7 +1,7 @@
 .. _homeassistant:
 
-HomeAssistant
-=============
+Home Assistant
+==============
 
 
 
