@@ -53,6 +53,7 @@ notfound_urls_prefix = None
 # -- sphinx-sitemap --------------------------------------------------------
 # https://pypi.org/project/sphinx-sitemap/
 sitemap_filename = 'sitemap.xml'
+sitemap_url_scheme = "{link}"
 
 
 # -- sphinx-favicon --------------------------------------------------------
