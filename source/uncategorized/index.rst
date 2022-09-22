@@ -11,3 +11,4 @@ Uncategorized
    download-scribd-book
    pandoc
    sublime-session-file
+   twiki-installation
