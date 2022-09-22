@@ -1,7 +1,7 @@
 .. _uncategorized:
 
 Uncategorized
-========
+=============
 
 .. toctree::
    :maxdepth: 2

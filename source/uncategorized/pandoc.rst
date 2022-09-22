@@ -57,4 +57,5 @@ Markdown to RST
 Для перевода Markdown в reStructuredText используем тот же конвейер, но изменим формат трансляции.
 
 .. code-block:: bash
+
   for d in *.md; do (pandoc -s -o rst-$d $d -t rst && rm $d && mv rst-$d $d && rename 's/.md/.rst/' $d); done
