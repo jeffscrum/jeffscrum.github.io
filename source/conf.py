@@ -53,7 +53,7 @@ notfound_urls_prefix = None
 # -- sphinx-sitemap --------------------------------------------------------
 # https://pypi.org/project/sphinx-sitemap/
 sitemap_filename = 'sitemap.xml'
-sitemap_url_scheme = "{link}"
+sitemap_url_scheme = "{link}" # the default URL format is {version}{lang}{link}
 
 
 # -- sphinx-favicon --------------------------------------------------------
@@ -115,9 +115,10 @@ html_extra_path = ['robots.txt']
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
-html_css_files = [
-    'css/theme.css',
-]
+# html_css_files = [
+#     'css/theme.css',
+# ]
+html_style = 'css/theme.css'
 
 #
 html_copy_source = False
