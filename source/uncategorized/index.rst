@@ -4,7 +4,7 @@ Uncategorized
 =============
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    batch-log-archive
    davinci-studio-trick
@@ -13,3 +13,4 @@ Uncategorized
    sublime-session-file
    twiki-installation
    putty-socks5-tunnel
+   mediawiki/index
