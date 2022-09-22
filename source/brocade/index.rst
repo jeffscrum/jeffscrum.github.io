@@ -10,3 +10,4 @@ Brocade
 
    silkworm-48k-portlayout
    determine-model-switchtype
+   bna-trial-reset
