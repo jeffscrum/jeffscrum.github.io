@@ -8,6 +8,7 @@ Hi-End
 
    vmax-build-and-type
    vmax-callhome
+   vmax-customer-service-quick-reference-guide.rst
    vmax-deffered-maintenance
    vmax-env-check
    vmax-flexfilter-install
