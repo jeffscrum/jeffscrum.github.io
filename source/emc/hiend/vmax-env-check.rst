@@ -5,7 +5,7 @@
 VMAX. Просмотр состояния массива
 ================================
 
-.. code-block:: bash
+.. code-block:: terminal
 
   root@Server:~# symcfg discover
   root@Server:~# symcfg -sid 789 list -env_data
