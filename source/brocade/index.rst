@@ -8,6 +8,6 @@ Brocade
 .. toctree::
    :maxdepth: 1
 
-   silkworm-48k-portlayout
-   determine-model-switchtype
    bna-trial-reset
+   determine-model-switchtype
+   silkworm-48k-portlayout
