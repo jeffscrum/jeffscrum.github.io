@@ -20,18 +20,18 @@ Validate Failed Tokens in Credential Management
 Validate Tokens on the Service Processor
 ----------------------------------------
 
-#. Log in to the Service Processor using the default user name and password.
+1. Log in to the Service Processor using the default user name and password.
   
   - User: Admin
   - Password: EMC2Admin
   - Domain: Local Host
 
-#. Select the SSC Key Client icon on the Service Processor desktop.
-#. Select List Installed Tokens. Confirm the tokens listed on the Service Processor match those displayed in Credential Manager.
-#. Select OK.
-#. On the Service Processor in the SSC Key Client in the  Secure Service Credentials Tasks screen select Back  then Provision Tokens >  Next.
-#. Select Disconnected.
-#. Select Export Token Request File. Save the file on your portable USB media device for uploading to Credential Manager. This is an example for the file format: ``<sn>_KS_<datetime>.enc (e.g., 192604321_KS_20140204131709UTC.enc)``.
+2. Select the SSC Key Client icon on the Service Processor desktop.
+3. Select List Installed Tokens. Confirm the tokens listed on the Service Processor match those displayed in Credential Manager.
+4. Select OK.
+5. On the Service Processor in the SSC Key Client in the  Secure Service Credentials Tasks screen select Back  then Provision Tokens >  Next.
+6. Select Disconnected.
+7. Select Export Token Request File. Save the file on your portable USB media device for uploading to Credential Manager. This is an example for the file format: ``<sn>_KS_<datetime>.enc (e.g., 192604321_KS_20140204131709UTC.enc)``.
 
 Deleting Tokens on the Service Processor
 ----------------------------------------
