@@ -21,9 +21,11 @@ Validate Tokens on the Service Processor
 ----------------------------------------
 
 #. Log in to the Service Processor using the default user name and password.
+  
   - User: Admin
   - Password: EMC2Admin
   - Domain: Local Host
+
 #. Select the SSC Key Client icon on the Service Processor desktop.
 #. Select List Installed Tokens. Confirm the tokens listed on the Service Processor match those displayed in Credential Manager.
 #. Select OK.
