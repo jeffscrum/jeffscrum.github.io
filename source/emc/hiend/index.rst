@@ -11,6 +11,7 @@ Hi-End
    vmax-customer-service-quick-reference-guide.rst
    vmax-deffered-maintenance
    vmax-env-check
+   vmax-gs-patch-installation
    vmax-flexfilter-install
    vmax-list-failed-drives
    vmax-list-hotspares
