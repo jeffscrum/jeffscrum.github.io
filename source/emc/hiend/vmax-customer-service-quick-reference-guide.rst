@@ -9,4 +9,4 @@ VMAX. Customer Service Quick Reference Guide
 
 В раздаче книга с P/N: 300-008-367 (REV A05)
 
-:download: `Customer_Service_Quick_Reference_Guide.pdf <https://app.box.com/s/aon31euvxlr8jd6y32ia>`
+:download:`Customer_Service_Quick_Reference_Guide.pdf <https://app.box.com/s/aon31euvxlr8jd6y32ia>`
