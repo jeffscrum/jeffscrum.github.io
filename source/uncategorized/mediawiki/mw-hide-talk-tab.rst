@@ -2,8 +2,8 @@
 
 .. _mw-hide-talk-tab:
 
-Скрыть закладку обсуждений
-==========================
+Скрыть обсуждения
+=================
 
 Согласно документации на `официальном сайте MediaWiki <https://www.mediawiki.org/wiki/User:Subfader/Hide_page_tabs>`_, нужно внести изменения в файл *MediaWiki:Common.css*
 
