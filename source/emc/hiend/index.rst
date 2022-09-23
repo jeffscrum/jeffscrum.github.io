@@ -11,3 +11,5 @@ Hi-End
    vmax-flexfilter-install
    vmax-callhome
    vmax-deffered-maintenance
+   vmax-build-and-type
+   vmax-recreate-emergency-token
