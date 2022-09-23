@@ -5,7 +5,7 @@
 VMAX. How to recreate emergency token
 =====================================
 
-.. tip::
+.. note::
 
   To access Central Manager off of EMC’s network use url: https://slc.emc.com/psscm
 
