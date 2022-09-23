@@ -18,3 +18,4 @@ Hi-End
    vmax-recreate-emergency-token
    vmax-show-all-wwn
    vmax-wwn-add-alias
+   vmax-heads-tracks-cylinder-gb
