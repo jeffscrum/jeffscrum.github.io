@@ -10,7 +10,7 @@ GSPatch нужен для включения поддержки новых ди�
 Проверить текущую версию
 ------------------------
 
-- Открываем O:\EMC\<System Serial Number>\SYMMWIN
+- Открываем ``O:\EMC\<System Serial Number>\SYMMWIN``
 - Блокнотом открываем файл *GSINFO.ini* (если файлика нет, то патч не установлен)
 
   .. note::
@@ -20,18 +20,21 @@ GSPatch нужен для включения поддержки новых ди�
 Скачивание патча
 ----------------
 
-- Идем на сайт `EMC <http://support.emc.com>`_
+- Идем на сайт `support.emc.com <http://support.emc.com>`_
 - Выбираем support by product
-- Скачиваем пак под нужную версию прошивки (например GSPatch_Toolkit_5875.zip)
+- Скачиваем патч под нужную версию прошивки (например GSPatch_Toolkit_5875.zip)
 
 
 Установка патча
 ---------------
 
 - Заливаете патч на USB флешку (GS5875-12.EXE)
-- Копируете его на диск C:\
+- Копируете его на диск C:\\
 - Запускаете инсталлятор
-- Актвируете:
-   - 5876 (5876.163.105 and below): SymmWin -> Procedures -> Procedure Wizard -> Code Load and Firmware Upgrades -> Update Drive DB
-   - 5875: SymmWin -> Procedures -> Procedure Wizard -> Code Load and Firmware Upgrades -> Update Drive DB
-   - 5773: SymmWin -> Procedure Wizard -> D Disk Maintenance Utilities -> M Load Drive DB
+
+Активация патча
+---------------
+
+- 5876 (5876.163.105 and below): SymmWin -> Procedures -> Procedure Wizard -> Code Load and Firmware Upgrades -> Update Drive DB
+- 5875: SymmWin -> Procedures -> Procedure Wizard -> Code Load and Firmware Upgrades -> Update Drive DB
+- 5773: SymmWin -> Procedure Wizard -> D Disk Maintenance Utilities -> M Load Drive DB
