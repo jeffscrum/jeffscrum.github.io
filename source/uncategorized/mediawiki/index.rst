@@ -6,4 +6,5 @@ MediaWiki
 .. toctree::
    :maxdepth: 1
 
-   mw-user-permissions.rst
+   mw-user-permissions
+   mw-tiny-url
