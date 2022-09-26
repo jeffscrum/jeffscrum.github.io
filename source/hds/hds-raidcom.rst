@@ -41,7 +41,7 @@ HDS Конфигурирование через RAIDcom
 
 Пример можно посмотреть в "Command Control Interface User and Reference Guide" на странице 5-26.
 
-..code-block:: bash
+.. code-block:: bash
 
     *// Логинимся на массив
     raidcom -login USER01 PASSWORD01 -IH601
