@@ -6,7 +6,7 @@ HDS
 .. toctree::
    :maxdepth: 2
 
-   hiend/index
+..   hiend/index
    midrange/index
    hds-midrange-rga-firmware
    hds-license-recovery.rst
