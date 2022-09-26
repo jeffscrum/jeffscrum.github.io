@@ -8,3 +8,5 @@ HDS
 
    hiend/index
    midrange/index
+   hds-midrange-rga-firmware
+   hds-license-recovery.rst
