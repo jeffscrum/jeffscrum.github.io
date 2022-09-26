@@ -7,3 +7,5 @@ Midrange
    :maxdepth: 1
 
    hds-midrange-maintenance-ip
+   hds-midrange-autodump
+   hds-midrange-replace-svp
