@@ -10,6 +10,7 @@ WEB GUI - http://127.0.0.1:23015/StorageNavigatorModular/Login
 - Login: system
 - Password: manager
 
+и
 
 - Login: root
 - Password: storage
