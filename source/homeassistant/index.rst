@@ -10,3 +10,6 @@ Home Assistant
 
    homeassistant-downgrade
    homeassistant-installation-on-raspberrypi4
+   homeassistant-flashing-esphome
+   homeassistant-reset-gui-password
+   homeassistant-unsupported-installation

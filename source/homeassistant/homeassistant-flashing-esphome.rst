@@ -1,0 +1,29 @@
+.. index:: homeassistant, esphome
+
+.. _homeassistant-flashing-esphome:
+
+Flashing Esphome
+================
+
+.. code-block:: bash
+
+  root@hasrv:/tmp# esptool.py --before default_reset --after hard_reset --baud 460800 --chip esp8266 --port /dev/ttyUSB0 write_flash 0x0 /tmp/sonoffbasic01.bin
+  esptool.py v2.7
+  Serial port /dev/ttyUSB0
+  Connecting....
+  Chip is ESP8285
+  Features: WiFi, Embedded Flash
+  Crystal is 26MHz
+  MAC: dc:4f:22:9e:b5:94
+  Uploading stub...
+  Running stub...
+  Stub running...
+  Changing baud rate to 460800
+  Changed.
+  Configuring flash size...
+  Auto-detected Flash size: 1MB
+  Compressed 424784 bytes to 290001...
+  Wrote 424784 bytes (290001 compressed) at 0x00000000 in 7.4 seconds (effective 458.6 kbit/s)...
+  Hash of data verified.
+  Leaving...
+  Hard resetting via RTS pin...
