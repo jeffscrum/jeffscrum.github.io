@@ -9,7 +9,7 @@ HDS Midrange SVP to MPC
 
 Есть обходной вариант сбора необходимой информации - запустить Maintenance Utility на SVP PC, тем самым превратив её в MPC::
 
-``C:\Mapp\wk\<arrayserialnumber>\DKC200\mp\pc\zSv_Svp_main.exe``. 
+  C:\Mapp\wk\<arrayserialnumber>\DKC200\mp\pc\zSv_Svp_main.exe
 
 Откроется окно, из которого и можно посмотреть SIM и собрать AutoDump.
 
