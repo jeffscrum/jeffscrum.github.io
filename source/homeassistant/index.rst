@@ -4,7 +4,6 @@ Home Assistant
 ==============
 
 
-
 .. toctree::
    :maxdepth: 1
 
@@ -13,3 +12,4 @@ Home Assistant
    homeassistant-flashing-esphome
    homeassistant-reset-gui-password
    homeassistant-unsupported-installation
+   homeassistant-small-meteo-sensors
