@@ -3,7 +3,7 @@
 .. _vmax-heads-tracks-cylinder-gb:
 
 VAMX. Calculations for Heads, Tracks, Cylinders, GB
-=============================================
+===================================================
 
 Symmetrix 8000/DMX/DMX-2 Series
 -------------------------------
