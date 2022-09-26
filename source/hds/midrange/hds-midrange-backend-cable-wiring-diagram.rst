@@ -5,7 +5,7 @@
 HDS Storage System Cable Diagram
 ================================
 
-Схему коммутации полок массива можно найти в файле документации, *e06LOC0.pdf*, секция 5 - *"Storage System Cable Diagram"*. Или воспользоваться утилитой Backend Configuration Kit (BECK).
+Схему коммутации полок массива можно найти в файле документации, **e06LOC0.pdf**, секция 5 - **"Storage System Cable Diagram"**. Или воспользоваться утилитой Backend Configuration Kit (BECK).
 
 .. seealso::
 
