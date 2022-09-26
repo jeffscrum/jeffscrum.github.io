@@ -19,3 +19,4 @@ Hi-End
    vmax-show-all-wwn
    vmax-wwn-add-alias
    vmax-heads-tracks-cylinder-gb
+   vmax-healthcheck-script
