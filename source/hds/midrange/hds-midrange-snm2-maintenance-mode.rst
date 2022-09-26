@@ -8,4 +8,7 @@ HDS SNM2 Maintenance Mode
 #. Создать файл ``D:\Program Files\HiCommand\StorageNavigatorModular\conf\mode``
 #. Внутри файла вписать ``StorageNavigatorModular``
 #. Ставим галочку напротив массива
-#. Нажимаем одновременно ``Ctrl + Shift + е``
+#. Нажимаем одновременно :kbd:`Control + Shift + e`
+
+
+.. ``Ctrl + Shift + е``
