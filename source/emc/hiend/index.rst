@@ -20,3 +20,4 @@ Hi-End
    vmax-wwn-add-alias
    vmax-heads-tracks-cylinder-gb
    vmax-healthcheck-script
+   vmax-software-rsa-token
