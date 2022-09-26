@@ -10,3 +10,4 @@ HDS
    midrange/index
    hds-midrange-rga-firmware
    hds-license-recovery.rst
+   hds-raidcom
