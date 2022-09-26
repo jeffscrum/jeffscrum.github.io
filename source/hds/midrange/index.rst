@@ -10,3 +10,4 @@ Midrange
    hds-midrange-autodump
    hds-midrange-replace-svp
    hds-midrange-backend-cable-wiring-diagram
+   hds-midrange-svp-to-mpc
