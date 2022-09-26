@@ -7,6 +7,6 @@ HDS Midrange AutoDump
 
 Для сбора Auto Dump через командную строку Win на SVP. Файл будет сохранен в ``c:\tmp\``
 
-.. code-block:: bash
+.. code-block:: none
 
   C:\Mapp\wk\<sn массива>\DKC200\mp\pc\Dump_Detail.bat c:\tmp\
