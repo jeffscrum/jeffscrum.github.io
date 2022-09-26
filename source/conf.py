@@ -18,9 +18,9 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = 'IT Drafts'
-copyright = '2022, Jeff Scrum'
+copyright = '2018-2022, Jeff Scrum'
 author = 'Jeff Scrum'
-language = 'ru'
+language = 'en'
 source_encoding = 'utf-8'
 
 # -- General configuration ---------------------------------------------------
