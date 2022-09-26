@@ -13,4 +13,3 @@ VMAX. Тестовый CallHome
 4. Смотрим результат.
 
 .. image:: /images/vmax-callhome.jpeg
-    :class: with-shadow
