@@ -7,7 +7,7 @@
 
 Для того что бы иметь возможность генерить ключи на ноутбуке, при помощи Software RSA Token нам нужно добавить в него массив:
 
-1. Нам нужно добыть с SP массива следующий файлик: ``C:\emc\slc\Software Token Files\*.sdtid`` (see also: :ref:vmax-recreate-emergency-token)
+1. Нам нужно добыть с SP массива следующий файлик: ``C:\emc\slc\Software Token Files\*.sdtid`` (see also: :ref:`vmax-recreate-emergency-token`)
 2. Далее нам нужно импортировать этот файлик в программе Software RSA Token.
 
   .. note::
