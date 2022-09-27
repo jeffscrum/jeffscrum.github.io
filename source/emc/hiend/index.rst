@@ -22,3 +22,4 @@ Hi-End
    vmax-healthcheck-script
    vmax-software-rsa-token
    vmax-emc-remote
+   vmax-mibe-ps-replace
