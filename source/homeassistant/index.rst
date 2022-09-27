@@ -13,3 +13,4 @@ Home Assistant
    homeassistant-reset-gui-password
    homeassistant-unsupported-installation
    homeassistant-small-meteo-sensors
+   homeassistant-rollback
