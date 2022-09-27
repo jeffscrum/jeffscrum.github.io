@@ -21,3 +21,4 @@ Hi-End
    vmax-heads-tracks-cylinder-gb
    vmax-healthcheck-script
    vmax-software-rsa-token
+   vmax-emc-remote
