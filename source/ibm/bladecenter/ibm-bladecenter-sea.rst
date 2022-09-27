@@ -12,7 +12,7 @@ SEA for IBM Bladecenter
 
 До тех пор, пока я не начал создавать SEA все шло великолепно. Когда же я пытался создать SEA, то получал вот такую ошибку:
 
-..code-block:: bash
+.. code-block:: bash
 
   padmin@vios1> mkvdev -sea ent2 -vadapter ent3 -default ent3 -defaultid 1
   Method error (/usr/lib/methods/cfgsea):
@@ -30,7 +30,7 @@ SEA for IBM Bladecenter
 
 Далее переключаем порты наших адаптеров в promiscuous mode:
 
-..code-block:: bash
+.. code-block:: bash
 
   padmin@vios1>chhwres -r hea -o s -l 23000001 -g 1 -a promisc_lpar_id=1 --physport 0 
   padmin@vios1>chhwres -r hea -o s -l 23000001 -g 1 -a promisc_lpar_id=1 --physport 1
