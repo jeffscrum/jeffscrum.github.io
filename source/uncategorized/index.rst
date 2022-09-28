@@ -14,4 +14,5 @@ Uncategorized
    putty-socks5-tunnel
    sublime-session-file
    twiki-installation
+   synapse-matrix-room-retention
    mediawiki/index
