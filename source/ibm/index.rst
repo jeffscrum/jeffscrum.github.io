@@ -5,7 +5,7 @@ IBM
 
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    bladecenter/index
    storages/index
