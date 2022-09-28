@@ -66,7 +66,7 @@ As previously mentioned in this documentation, while a purge job that runs e.g.Â
 
 
 Lifetime limits
-~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~
 
 Server admins can set limits on the values of max_lifetime to use when purging old events in a room. These limits can be defined under the retention option in the configuration file:
 
