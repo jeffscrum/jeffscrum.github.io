@@ -11,7 +11,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :hidden:
 
    asterisk/index

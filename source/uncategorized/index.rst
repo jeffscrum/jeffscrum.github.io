@@ -4,7 +4,7 @@ Uncategorized
 =============
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    batch-log-archive
    davinci-studio-trick
