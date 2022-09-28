@@ -2,8 +2,8 @@
 
 .. _synapse-matrix-room-retention:
 
-Synapse Set Room Retention Policy
-=================================
+Synapse Room Retention Policy
+=============================
 
 .. attention::
 
