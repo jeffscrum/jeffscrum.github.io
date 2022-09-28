@@ -2,8 +2,8 @@
 
 .. _synapse-matrix-room-retention:
 
-Set Room Retention Policy
-=========================
+Synapse Set Room Retention Policy
+=================================
 
 .. attention::
 
@@ -70,9 +70,10 @@ Lifetime limits
 
 Server admins can set limits on the values of max_lifetime to use when purging old events in a room. These limits can be defined under the retention option in the configuration file:
 
-::
-  allowed_lifetime_min: 1d
-  allowed_lifetime_max: 1y
+.. code:: yaml
+
+   allowed_lifetime_min: 1d
+   allowed_lifetime_max: 1y
 
 The limits are considered when running purge jobs. If necessary, the effective value of max_lifetime will be brought between ``allowed_lifetime_min`` and ``allowed_lifetime_max`` (inclusive). This means that, if the value of ``max_lifetime`` defined in the room's state is lower than `` allowed_lifetime_min``, the value of ``allowed_lifetime_min`` will be used instead. Likewise, if the value of max_lifetime is higher than ``allowed_lifetime_max``, the value of ``allowed_lifetime_max`` will be used instead.
 
@@ -90,10 +91,11 @@ To configure a room's message retention policy, a room's admin or moderator need
 2. Select "Explore room state" -> "Send custom state event"
 3. Set event type to ``m.room.retention`` ("State Key" can be left blank)
 
-::
-  {
-      "max_lifetime": ...
-  }
+.. code:: yaml
+
+   {
+       "max_lifetime": ...
+   }
 
 4. Press "Send"
 
