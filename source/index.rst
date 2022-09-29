@@ -21,6 +21,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
    hds/index
    ibm/index
    homeassistant/index
+   matrix/index
    mikrotik/index
    sun-oracle/index
    vyos/index
