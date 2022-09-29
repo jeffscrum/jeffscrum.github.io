@@ -5,6 +5,6 @@ Matrix
 
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
    synapse-matrix-room-retention
