@@ -19,7 +19,6 @@ Virtualization
    ibm-virtualization-boot-cdrom-wosms
    ibm-virtualization-check-and-clear-attention-led
    ibm-virtualization-define-boot-disk
-   ibm-virtualization-dlpar-cloned-lpar
    ibm-virtualization-hmc-network-upgrade
    ibm-virtualization-p750-fw-update
    ibm-virtualization-remove-failed-paths-mpio
