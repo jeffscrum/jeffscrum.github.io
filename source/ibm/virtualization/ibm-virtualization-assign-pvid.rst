@@ -7,7 +7,7 @@ Assign PVID to a new disk
 
 Команда используется для того чтобы AIX считал PVID с диска
 
-.. code:block:: bash
+.. code-block:: bash
 
    # lspv
    hdisk0          00c0e90dce6c290a                    rootvg          active              
