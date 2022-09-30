@@ -15,10 +15,10 @@ HMC Update over network
 
 .. attention::
 
-   Server managed by dual (redundant) HMCs require that both HMCs be upgraded to the same release
-   When a server is managed by dual (or redundant) HMCs, both HMCs must be upgraded to the same release.
-   When upgrading multiple HMCs that are part of a Power Enterprise Pool (PEP) from 8.8.5 to 8.8.6, its recommended to upgrade a backup HMC first, set the upgraded HMC as the master, then upgrade the previous master. This ensures a master is always available.
-   After one HMC is upgraded the servers on the redundant HMC may go to a "Version Mismatch" state, with reference code "Save area version mismatch". This state will clear when the redundant HMC is upgraded.
+   * Server managed by dual (redundant) HMCs require that both HMCs be upgraded to the same release
+   * When a server is managed by dual (or redundant) HMCs, both HMCs must be upgraded to the same release.
+   * When upgrading multiple HMCs that are part of a Power Enterprise Pool (PEP) from 8.8.5 to 8.8.6, its recommended to upgrade a backup HMC first, set the upgraded HMC as the master, then upgrade the previous master. This ensures a master is always available.
+   * After one HMC is upgraded the servers on the redundant HMC may go to a "Version Mismatch" state, with reference code "Save area version mismatch". This state will clear when the redundant HMC is upgraded.
 
 Копирование обновлений
 ~~~~~~~~~~~~~~~~~~~~~~
