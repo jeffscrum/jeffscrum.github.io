@@ -1,4 +1,4 @@
-.. index:: imb, hmc, update
+.. index:: ibm, hmc, update
 
 .. _ibm-virtualization-hmc-upgrade-network:
 

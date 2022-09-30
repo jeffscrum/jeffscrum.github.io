@@ -1,4 +1,4 @@
-.. index:: imb, dlpar, rmc
+.. index:: ibm, dlpar, rmc
 
 .. _ibm-virtualization-rmc-connection-issue:
 
