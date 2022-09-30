@@ -19,7 +19,7 @@ Virtualization
    ibm-virtualization-boot-cdrom-wosms
    ibm-virtualization-check-and-clear-attention-led
    ibm-virtualization-define-boot-disk
-   ibm-virtualization-hmc-network-upgrade
+   ibm-virtualization-hmc-upgrade-network
    ibm-virtualization-p750-fw-update
    ibm-virtualization-remove-failed-paths-mpio
    ibm-virtualization-rmc-connection-issue
