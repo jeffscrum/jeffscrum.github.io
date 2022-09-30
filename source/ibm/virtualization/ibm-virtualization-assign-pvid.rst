@@ -1,4 +1,4 @@
-.. index:: ibm, pvid
+.. index:: ibm, aix, pvid
 
 .. _ibm-virtualization-assign-pvid:
 
