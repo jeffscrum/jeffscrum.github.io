@@ -46,3 +46,9 @@ Fixing the No RMC Connection Error
   .. code-block:: none
   
     11,Running,active,192.168.1.3,AIX 7.1 7100-03-04-1441,0,0,0
+
+.. seealso::
+
+  - https://www.ibm.com/support/knowledgecenter/en/SGVKBA_3.2.2/com.ibm.rsct.trouble/RMC_connection_diagnosis.htm
+  - http://www-01.ibm.com/support/docview.wss?uid=isg3T1020611
+
