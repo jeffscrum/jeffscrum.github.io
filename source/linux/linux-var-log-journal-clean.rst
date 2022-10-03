@@ -7,8 +7,12 @@
 
 Директория `/var/log/journal` - стала заниматься слишком много места и ее нужно очистить:
 
-До очистки: ``# journalctl --disk-usage``
-Archived and active journals take up 900.2M on disk.
+До очистки:
+
+.. code-block:: bash
+
+   # journalctl --disk-usage``
+   Archived and active journals take up 900.2M on disk.
 
 Делаем чистку: ``journalctl --vacuum-size=50M && journalctl --verify``
 
