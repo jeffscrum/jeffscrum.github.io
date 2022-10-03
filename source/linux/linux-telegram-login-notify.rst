@@ -11,8 +11,8 @@
 
 .. code-block:: bash
 
-   USERID="-1071597155692"                                   # Channel ID
-   KEY="514235123:AAGeYjt481234cRrZQ1234rhc4FBVfAaINU"       # Bot API key
+   USERID="-107159715...2"                                   # Channel ID
+   KEY="514235123:AAG...some text...234rhfc4FBVfAaINU"       # Bot API key
    TIMEOUT="10"
    URL="https://api.telegram.org/bot$KEY/sendMessage"
    DATE_EXEC="$(date "+%d %b %Y %H:%M")"
