@@ -1,4 +1,4 @@
-.. index:: linux, tar, ultithread
+.. index:: linux, tar, multithread
 
 .. _linux-tar-multithread:
 
