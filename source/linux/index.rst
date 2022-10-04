@@ -13,7 +13,6 @@ Linux
    debug-email-server
    linux-3proxy
    linux-awk
-   linux-delete-old-files
    linux-docker-logs-clean
    linux-lc-all-unset
    linux-mysql-operations
