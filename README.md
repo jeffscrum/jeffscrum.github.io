@@ -8,3 +8,6 @@
 2. Dockerfile-ru-latexpdf - для сборки имиджа генератора pdf
 
 ``docker build -f <Dockerfile-...> -t <image-name>:<version> .``
+
+---
+За основу взяты официальные образы с https://github.com/sphinx-doc/docker
