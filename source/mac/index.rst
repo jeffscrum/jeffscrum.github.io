@@ -4,7 +4,7 @@ Mac OS
 ======
 
 
-..  toctree
-..   :maxdepth: 1
+.. toctree::
+   :maxdepth: 1
 
-..   synapse-matrix-room-retention
+..  synapse-matrix-room-retention
