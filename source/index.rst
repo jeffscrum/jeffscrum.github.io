@@ -22,6 +22,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
    ibm/index
    homeassistant/index
    linux/index
+   mac/index
    matrix/index
    mikrotik/index
    sun-oracle/index
