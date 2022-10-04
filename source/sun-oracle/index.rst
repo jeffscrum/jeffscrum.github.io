@@ -1,7 +1,7 @@
 .. _sun-oracle:
 
-Sun - Oracle
-============
+Sun Microsystems
+================
 
 .. toctree::
    :maxdepth: 2
