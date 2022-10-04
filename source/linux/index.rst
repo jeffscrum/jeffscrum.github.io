@@ -9,7 +9,6 @@ Linux
    debian-auto-install-preseed
    debian-bonding
    debian-install-jre
-   debian-install-wireguard
    debug-email-server
    linux-3proxy
    linux-awk
@@ -21,5 +20,6 @@ Linux
    linux-tar-multithread
    linux-telegram-login-notify
    linux-var-log-journal-clean
+   linux-wireguard-installation
    ubuntu-postfix-gmail-relay
    ubuntu18-russian-apt-sources
