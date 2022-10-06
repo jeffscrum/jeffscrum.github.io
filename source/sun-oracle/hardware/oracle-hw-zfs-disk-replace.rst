@@ -5,8 +5,8 @@
 
 .. _oracle-hw-zfs-disk-replace:
 
-ZFS disk replacement on Solaris 11
-==================================
+ZFS disk replacement on Solaris
+===============================
 
 .. code-block:: bash
 
