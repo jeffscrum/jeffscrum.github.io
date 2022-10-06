@@ -135,6 +135,55 @@ Exadata NFS ReImage
 Этап V. Инсталляция
 ~~~~~~~~~~~~~~~~~~~
 
+В ILOM нужно примонтировать iso-образ в зависимости от типа сервера и указать серверу загрузиться с cdrom.
 
+.. code-block:: none
 
+   set /SP/services/kvms/host_storage_device/remote/ server_URI=nfs://192.168.1.254:/export/compute.iso
+   set /SP/services/kvms/host_storage_device/remote/ server_URI=nfs://192.168.1.254:/export/cell.iso
+   set /SP/services/kvms/host_storage_device/ mode=remote
+   set /HOST boot_device=cdrom
+   start /SYS
+   start /SP/console
+   start /HOST/console
 
+Сервер загрузится c виртуального cdrom'a, получит ip-адрес от dhcp-сервера, сам найдет профиль и начнет инсталляцию.
+Если потребуется, сервер сам обновит нужные микрокоды, перезагрузится и т.д. - следите за логами на экране.
+
+В конечном итоге запустится тест и после его прохождения сервер напишет о том что установка закончена.
+
+.. code-block:: none
+
+   2020-03-10 15:50:44 +0300 2020-03-10 15:50:44 +0300 [FACTORY_TEST_END] Post installation tests ended with success
+   2020-03-10 15:50:44 +0300 2020-03-10 15:50:44 +0300 [FACTORY_COMPLETE] Imaging ended with success
+
+Со STORAGE-серверами у меня было так что последняя проверка проходила неудачно и тогда сервер писал вот так:
+
+.. code-block:: none
+
+   2020-03-10 15:34:50 +0300 The first boot completed with FAILURE
+   2020-03-10 15:34:50 +0300 2020-03-10 15:34:50 +0300 [FACTORY_ERROR] Overall status failure
+   2020-03-10 15:34:50 +0300 2020-03-10 15:34:50 +0300 [FACTORY_TEST_END] Post installation tests ended with failure
+   2020-03-10 15:34:50 +0300 2020-03-10 15:34:50 +0300 [FACTORY_COMPLETE] Imaging ended with failure
+
+Перезагружаем сервер используя ``shutdown -r now``. После перезагрузки сервер еще раз запустит все необходимые проверки и напишет что все ОК.
+
+Далее можно переходить к установке БД, настройке GRID и ASM. Возможно я опишу этот процесс в дальнейшем, но пока остановимся на этом.
+
+.. note::
+
+   Скрипты, которые запускает сервер для своих проверок:
+     * Command line is ``/opt/oracle.cellos/validations/bin/vldrun.pl -quiet -all``
+     * Command line is ``/opt/oracle.cellos/validations/bin/vldrun.pl -mode first_boot -force -quiet -all``
+
+----------
+
+Для автоматизации получения mac-адресов с большого количества серверов можно внести адреса их ilom в файл `servers.lst`, после чего выполнить скрипт
+
+.. code-block:: bash
+
+   for h in `cat servers.lst`; do
+     echo $h >> mac_adr.txt
+     ssh -oStrictHostKeyChecking=no $h 'ipmitool sunoem cli "show /SYS/SMOD0/MB/NET0"' | grep "fru_macaddress" >> mac_adr.txt
+     ssh -oStrictHostKeyChecking=no $h 'ipmitool sunoem cli "show /SYS/MB/NET0"' | grep "fru_macaddress" >> mac_adr.txt
+   done
