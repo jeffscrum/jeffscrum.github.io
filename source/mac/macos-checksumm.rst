@@ -38,6 +38,16 @@ To find the SHA1 checksum value use the following command in the terminal.
    $ shasum -a 1 </path/to/file>
 
 
+Using OpenSSL to check SHA1
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Use the following command to get the SHA256 checksum using openssl command in the terminal.
+
+.. code-block:: none
+
+   $ openssl sha1 </path/to/file>
+
+
 SHA256 checksum
 ~~~~~~~~~~~~~~~
 
