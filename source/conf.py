@@ -153,5 +153,15 @@ latex_elements = {
   'pointsize': '10pt',
   'fontenc': '\\usepackage[T1,T2A]{fontenc}',
   'geometry': '\\usepackage[left=2.8cm,right=1.2cm,top=2cm,bottom=2cm,]{geometry}',
+  'releasename': '',
+  'preamble': '\\setcounter{tocdepth}{2}'
 }
+
+# Grouping the document tree into LaTeX files. List of tuples
+# (source start file, target name, title, author, documentclass [howto/manual]).
+# latex_documents = [
+#     ('index', 'itdrafts.tex', u'My Extension Documentation',
+#      u'Xavier Perseguers', 'manual'),
+# ]
+
 
