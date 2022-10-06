@@ -4,7 +4,7 @@ HDS
 ===
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:
 
    midrange/index
    hds-midrange-rga-firmware
