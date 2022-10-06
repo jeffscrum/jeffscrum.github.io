@@ -3,7 +3,7 @@
 .. meta::
    :keywords: oracle, solaris11
 
-.. _oracle-solaris-eis-download:
+.. _oracle-solaris11_2-solaris11_3:
 
 Solaris 11.2 to Solaris 11.3
 ============================
