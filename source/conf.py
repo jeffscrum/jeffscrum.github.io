@@ -151,6 +151,5 @@ html_context = {
 latex_elements = {
   'papersize': 'a4paper',
   'pointsize': '10pt',
-  'fontenc': '\usepackage[T1,T2A]{fontenc}',
 }
 
