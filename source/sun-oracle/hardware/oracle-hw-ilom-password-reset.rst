@@ -9,7 +9,11 @@
 Сброс пароля ILOM
 =================
 
-Если получилось так что вы забыли пароль на ILOM, то сбросить его можно используя ipmitool из ОС: ``/usr/sbin/ipmitool user set password 0x02 changeme``.
+Если получилось так что вы забыли пароль на ILOM, то сбросить его можно используя ipmitool из ОС
+
+.. code-block:: none
+
+   /usr/sbin/ipmitool user set password 0x02 changeme
 
 После чего пароль будет сменен на changeme.
 
