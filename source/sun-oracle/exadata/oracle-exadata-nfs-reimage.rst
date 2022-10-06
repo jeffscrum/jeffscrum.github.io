@@ -40,8 +40,9 @@ Exadata NFS ReImage
 
 После того как оба файла скачали - распаковываем.
 Вам понадобятся 2 файла с образами ОС:
-  * compute...x86_64.iso
-  * cell...x86_64.iso
+  
+  * `compute...x86_64.iso`
+  * `cell...x86_64.iso`
 
 
 Этап III. Настройка сервера инсталляции
@@ -104,7 +105,6 @@ Exadata NFS ReImage
    :language: bash
 
 Перезапускаем DHCP Server
-^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 

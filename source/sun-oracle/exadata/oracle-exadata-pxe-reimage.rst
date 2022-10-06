@@ -2,7 +2,7 @@
 
 .. meta::
    :description: Exadata PXE ReImage HowTo
-   :keywords: exadata, reimage, pxe
+   :keywords: exadata, reimage, pxe, tftp
 
 .. _oracle-exadata-pxe-reimage:
 
