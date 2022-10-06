@@ -22,7 +22,7 @@ SEA for IBM Bladecenter
 Вся хитрость заключается в том, что нам требуется вручную переключить адптеры в promiscuous mode.
 Для начала мы должны узнать ID наших адаптеров (в моем случае их два):
 
-..code-block:: bash
+.. code-block:: bash
 
   padmin@vios1>lshwres -r hea --rsubtype logical --level sys
   adapter_id=23000001,lpar_id=1,lpar_name=srv3vios1,drc_index=23C00101,drc_name=HEA 2,capabilities=0,ieq=0,nieq=0,qp=0,cq=0,mr=0
