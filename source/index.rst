@@ -11,6 +11,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
 
 
 .. toctree::
+   :caption: IT
    :maxdepth: 2
    :hidden:
 
