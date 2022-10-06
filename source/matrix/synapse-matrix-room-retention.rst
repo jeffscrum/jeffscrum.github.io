@@ -1,5 +1,8 @@
 .. index:: synapse, matrix, retention
 
+.. meta::
+   :keywords: matrix, synapse, room, retention, lifetime
+
 .. _synapse-matrix-room-retention:
 
 Synapse Room Retention Policy
