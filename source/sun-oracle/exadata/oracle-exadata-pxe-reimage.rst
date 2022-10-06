@@ -272,6 +272,34 @@ Exadata PXE ReImage
 
 Теперь проверяем что все настройки конфига применились верно и отдаем сервер специалистам Oracle для настройки кластера.
 
+
+Возможные проблемы
+~~~~~~~~~~~~~~~~~~
+
+В случае ошибки на NFS-client
+
+.. code-block:: none
+
+   [root@exadata ~]# showmount -e 10.2.12.5
+   clnt_create: RPC: Port mapper failure - Authentication error
+
+Необходимо установить разрешение на стороне NFS-server, добавив в файл `/etc/hosts.allow` строки:
+
+.. code-block:: none
+
+   rpcbind : ALL
+   mountd : ALL
+   lockd : ALL
+   rquotad : ALL
+   statd : ALL
+   in.tftpd : ALL
+
+Проверить разрешения можно при помощи команды:
+
+.. code-block:: none
+
+   [root@exadata ~]# tcpdmatch rpcbind 10.2.12.5
+
 ----------
 
 Related Links:
