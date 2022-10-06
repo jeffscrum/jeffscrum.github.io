@@ -29,13 +29,13 @@ How To Remove The Failed Paths In MPIO
 
 3. Удаляем все мертвые пути используя скрипт
 
-.. code-block:: bash
-
-   for disk in `lspv |awk '{ print $1 }'` 
-   do
-   for path in `lspath -l $disk -F "status connection" |grep Failed |awk '{ print $2 }'` 
-   do
-   echo $disk 
-   rmpath -l $disk -w $path -d 
-   done
-   done
+  .. code-block:: bash
+  
+     for disk in `lspv |awk '{ print $1 }'` 
+     do
+     for path in `lspath -l $disk -F "status connection" |grep Failed |awk '{ print $2 }'` 
+     do
+     echo $disk 
+     rmpath -l $disk -w $path -d 
+     done
+     done
