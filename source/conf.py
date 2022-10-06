@@ -17,11 +17,12 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = 'IT Drafts'
-copyright = '2022, Jeff Scrum'
+project = u'IT Drafts'
+copyright = u'2022, Jeff Scrum'
 author = 'Jeff Scrum'
 language = 'en'
 source_encoding = 'utf-8'
+source_suffix = '.rst'
 
 # -- General configuration ---------------------------------------------------
 
@@ -40,6 +41,7 @@ extensions = [
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
 ]
+
 
 # -- sphinx_disqus.disqus --------------------------------------------------
 #disqus_shortname = 'pagesksomov'
@@ -137,5 +139,9 @@ html_context = {
   'github_repo': 'itdrafts',
   'github_version': 'master/source/',
 }
+
+# If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
+# using the given strftime format.
+html_last_updated_fmt = '%d.%m.%Y'
 
 
