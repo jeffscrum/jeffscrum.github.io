@@ -16,7 +16,7 @@ Exadata NFS ReImage
     * DHCP Server
 
 Этап I. Подготовка профиля
---------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Нужно подготовить профиль инсталляции в OEDA (Oracle Exadata Deployment Assistant). Для подготовки **нужно использовать только Linux версию. Это важный момент!** Без этого работать будет, но все же, для 100% совместимости лучше брать Linux версию. Скачать OEDA можно на сайте `support.oracle.com <https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&sourceId=888828.1&patchId=30640393>`_.
 
