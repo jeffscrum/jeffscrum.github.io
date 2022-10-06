@@ -6,7 +6,7 @@ Brocade
 
 
 .. toctree::
-    :titlesonly:
+   :titlesonly:
 
    bna-trial-reset
    determine-model-switchtype
