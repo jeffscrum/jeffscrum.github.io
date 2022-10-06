@@ -16,17 +16,19 @@ Exadata NFS ReImage
     * DHCP Server
 
 Этап I. Подготовка профиля
---------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Нужно подготовить профиль инсталляции в OEDA (Oracle Exadata Deployment Assistant). Для подготовки **нужно использовать только Linux версию. Это важный момент!** Без этого работать будет, но все же, для 100% совместимости лучше брать Linux версию. Скачать OEDA можно на сайте `support.oracle.com <https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&sourceId=888828.1&patchId=30640393>`_.
+Нужно подготовить профиль инсталляции в OEDA (Oracle Exadata Deployment Assistant).
+Для подготовки **нужно использовать только Linux версию. Это важный момент!** Без этого работать будет, но все же, для 100% совместимости лучше брать Linux версию.
+Скачать OEDA можно на сайте `support.oracle.com <https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&sourceId=888828.1&patchId=30640393>`_.
 
 После завершения описания конфигурации в OEDA вы получите zip-архив. Внутри вы найдете файл **...-preconf.csv**. Этот файл нужно будет переименовать в **preconf.csv**
 
 
 Этап II. Скачивание дистрибутивов
----------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Смотрим требования к версии image в ТЗ, после чего смотрим документ `Doc ID 888828.1 <https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=221272342314719&id=888828.1&_afrWindowMode=0&_adf.ctrl-state=vuh4usj6f_109>`_ на сайте support.oracle.com. В этом документе находим нужную нам версию image и в правом столбце жмем ссылку напротив нужного нам релиза (*Supplemental README ...*). В открывшемся README нужно найти секцию Software and Image files в которой описаны все необходимые файлы которые понадобятся для скачивания.
+Смотрим требования к версии image в ТЗ, после чего смотрим документ `Doc ID 888828.1 <https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=221272342314719&id=888828.1&_afrWindowMode=0&_adf.ctrl-state=vuh4usj6f_109>`_ на сайте support.oracle.com. В этом документе находим нужную нам версию image и в правом столбце жмем ссылку напротив нужного нам релиза (*Supplemental README ...*). В открывшемся README нужно найти секцию 'Software and Image files' в которой описаны все необходимые файлы которые понадобятся для скачивания.
 
 .. image:: /images/exadata-nfs-reimage-1.png
   :width: 600
@@ -38,22 +40,64 @@ Exadata NFS ReImage
 
 После того как оба файла скачали - распаковываем.
 Вам понадобятся 2 файла с образами ОС:
-  * compute_...x86_64.iso
-  * cell_...x86_64.iso
-
+  * compute...x86_64.iso
+  * cell...x86_64.iso
 
 
 Этап III. Настройка сервера инсталляции
----------------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+В этом шаге нужно настроить DHCP Server и NFS Server. Я делаю это на примере RHEL, но дистрибутив может быть любым.
+
+Установка необходимых пакетов
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   yum install dhcp nfs-utils rpcbind vim
+
+Отключение firewall
+^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   systemctl stop firewalld
+   systemctl disable firewalld
+   systemctl mask --now firewalld
+
+Отключаем SELinux
+^^^^^^^^^^^^^^^^^
+
+Для этого в файле `/etc/selinux/config` изменяем директиву ``SELINUX=enforcing`` на ``SELINUX=disabled``, после чего перезагружаемся
+
+Настройка NFS сервера
+^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   systemctl enable nfs-server
+   systemctl enable rpcbind
+   mkdir -p /export
+   echo "/export    *(ro,sync,no_root_squash)" >> /etc/exports
+   systemctl restart rpcbind
+   systemctl restart nfs-server
+   systemctl status nfs
+   showmount -e
+   rpcinfo -p
+
+.. tip::
+
+   * NFS debug enable: rpcdebug -m nfsd all
+   * NFS debug disable: rpcdebug -m nfsd -c all
 
 
 Этап IV. Заполнение профиля
----------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 
 Этап V. Инсталляция
--------------------
+~~~~~~~~~~~~~~~~~~~
 
 
 
