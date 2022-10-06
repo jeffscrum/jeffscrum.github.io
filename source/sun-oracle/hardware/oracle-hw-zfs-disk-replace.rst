@@ -8,7 +8,7 @@
 ZFS disk replacement on Solaris
 ===============================
 
-.. code-block:: bash
+.. code-block:: none
 
    =====
    BAD DISK
