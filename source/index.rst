@@ -17,18 +17,18 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
 
    asterisk/index
    brocade/index
-   bsd/index
    emc/index
+   bsd/index
    hds/index
-   ibm/index
    homeassistant/index
+   ibm/index
    linux/index
    mac/index
    matrix/index
    mikrotik/index
    sun-oracle/index
-   vyos/index
    uncategorized/index
+   vyos/index
 
 
 
