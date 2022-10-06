@@ -1,5 +1,9 @@
 .. index:: exadata, reimage, pxe
 
+.. meta::
+   :description: Exadata PXE ReImage HowTo
+   :keywords: exadata, reimage, pxe
+
 .. _oracle-exadata-pxe-reimage:
 
 Exadata PXE ReImage
