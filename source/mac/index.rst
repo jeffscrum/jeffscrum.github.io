@@ -11,7 +11,7 @@ Mac OS
    macos-burn-iso
    macos-change-macaddr
    macos-change-passw-sparse
-   macos-checksumm
+   macos-checksum
    macos-cli-install-pkg
    macos-cli-install-updates
    macos-install-nvidia-drv

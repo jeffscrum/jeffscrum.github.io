@@ -3,10 +3,10 @@
 .. meta::
    :keywords: macos, mac, sha, md5, apple
 
-.. _macos-checksumm:
+.. _macos-checksum:
 
-Checksumm
-=========
+Get Checksum
+============
 
 MD5 checksum
 ~~~~~~~~~~~~
