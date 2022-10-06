@@ -34,7 +34,7 @@ Solaris 11 SRU Update
    # mkdir /repo11.3.13.4.0
    # ./install-repo.ksh -d /repo11.3.13.4.0/ -c -v
 
-4. Добавляем репозиторий в систему (В моем случае понадобилось параллельно оставить репозиторий 11.3 LocalRepo из `предыдущей главы <https://pages.ksomov.ru/sun-oracle/solaris/oracle-solaris11_2-solaris11_3.html>`_):
+4. Добавляем репозиторий в систему (В моем случае понадобилось параллельно оставить репозиторий 11.3 LocalRepo из предыдущей главы [:ref:`oracle-solaris11_2-solaris11_3.rst`]):
 
 .. code-block:: none
 
