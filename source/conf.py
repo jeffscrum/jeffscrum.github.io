@@ -151,5 +151,7 @@ html_context = {
 latex_elements = {
   'papersize': 'a4paper',
   'pointsize': '10pt',
+  'fontenc': '\\usepackage[T1,T2A]{fontenc}',
+  'geometry': '\\usepackage[left=2.8cm,right=1.2cm,top=2cm,bottom=2cm,]{geometry}',
 }
 
