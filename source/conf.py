@@ -144,3 +144,13 @@ html_context = {
 # If not '', a 'Last updated on:' timestamp is inserted at every page bottom,
 # using the given strftime format.
 #html_last_updated_fmt = '%d.%m.%Y'
+
+
+# -- Options for LaTeX output -------------------------------------------------
+
+latex_elements = {
+  'papersize': 'a4paper',
+  'pointsize': '10pt',
+  'fontenc': '\usepackage[T1,T2A]{fontenc}',
+}
+
