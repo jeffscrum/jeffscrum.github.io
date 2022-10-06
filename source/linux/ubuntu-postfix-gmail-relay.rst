@@ -5,9 +5,7 @@
 Postfix Relay для Gmail в Ubuntu
 ================================
 
-.. attention::
-
-   SMTP Сервер от Gmail имеет ограничение — `500 писем в день <https://support.google.com/a/answer/166852?hl=en&topic=28609&ctx=topic>`_. Используйте его с умом!
+.. attention:: SMTP Сервер от Gmail имеет ограничение — `500 писем в день <https://support.google.com/a/answer/166852?hl=en&topic=28609&ctx=topic>`_. Используйте его с умом!
 
 
 .. note::

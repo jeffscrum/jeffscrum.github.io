@@ -5,9 +5,7 @@
 Installing a Interim Fix (APAR)
 ===============================
 
-.. attention::
-
-  This procedure will require a system reboot.
+.. attention:: This procedure will require a system reboot.
 
 1. Download the right ifix for your oslevel according to the APAR description (see APAR read me)
 2. Check if an ifix is not already installed on the system

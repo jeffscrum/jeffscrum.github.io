@@ -5,10 +5,7 @@
 HDS Конфигурирование через RAIDcom 
 ==================================
 
-.. note::
-
-  SSH Port on MidRange controllers = 20522
-
+.. note:: SSH Port on MidRange controllers = 20522
 
 
 Настройка HORCM

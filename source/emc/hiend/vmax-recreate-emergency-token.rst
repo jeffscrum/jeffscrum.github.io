@@ -5,9 +5,7 @@
 VMAX. How to recreate emergency token
 =====================================
 
-.. note::
-
-  To access Central Manager off of EMC’s network use url: https://slc.emc.com/psscm
+.. note:: To access Central Manager off of EMC’s network use url: https://slc.emc.com/psscm
 
 Validate Failed Tokens in Credential Management
 -----------------------------------------------
