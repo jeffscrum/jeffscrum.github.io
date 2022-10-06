@@ -1,6 +1,6 @@
 .. _bsd:
 
-FreeBSD и OpenBSD
+FreeBSD & OpenBSD
 =================
 
 
