@@ -13,7 +13,7 @@ List Available Memory on LDM
 Вариант 1
 ---------
 
-.. code-block:none
+.. code-block:: none
 
    root@T5-8-Primary # ldm list-devices mem
    MEMORY
