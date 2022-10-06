@@ -1,4 +1,7 @@
-.. index:: emc, vnx, update
+.. index:: emc, vnx, update, midrange
+
+.. meta::
+   :keywords: emc, vnx, update, midrange
 
 .. _emc-update-oe:
 

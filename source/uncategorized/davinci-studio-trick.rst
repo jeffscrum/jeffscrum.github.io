@@ -1,5 +1,8 @@
 .. index:: davinci
 
+.. meta::
+   :keywords: davinci, studio
+
 .. _davinci-studio-trick:
 
 Davinci Resolve Studio

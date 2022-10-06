@@ -1,4 +1,9 @@
+.. index:: brocade, switch, type, san
+
 .. _determine-model-switchtype:
+
+.. meta::
+   :keywords: brocade, switch, type, san
 
 How to determine the model by SwitchType
 ========================================

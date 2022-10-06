@@ -1,4 +1,7 @@
-.. index:: asterisk, linux, debian
+.. index:: asterisk, dongle, linux
+
+.. meta::
+   :keywords: asterisk, dongle, linux
 
 .. _asterisk-debian10-installation:
 

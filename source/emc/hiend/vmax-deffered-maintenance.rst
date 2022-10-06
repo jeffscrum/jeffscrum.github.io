@@ -1,4 +1,7 @@
-.. index:: emc, vmax
+.. index:: emc, vmax, service
+
+.. meta::
+   :keywords: emc, vmax, service
 
 .. _vmax-deffered-maintenance:
 

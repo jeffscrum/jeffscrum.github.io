@@ -1,5 +1,8 @@
 .. index:: brocade, bna
 
+.. meta::
+   :keywords: brocade, bna
+
 .. _bna-trial-reset:
 
 Сброс trial-периода для Brocade Network Advisor (BNA)

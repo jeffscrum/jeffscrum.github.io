@@ -1,4 +1,7 @@
-.. index:: emc, maintenance
+.. index:: emc, maintenance, ip, midrange
+
+.. meta::
+   :keywords: emc, maintenance, ip, midrange
 
 .. _emc-maintenance-ip:
 

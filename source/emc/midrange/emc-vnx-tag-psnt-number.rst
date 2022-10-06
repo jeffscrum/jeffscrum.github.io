@@ -1,4 +1,7 @@
-.. index:: emc, vnx
+.. index:: emc, vnx, psnt, midrange
+
+.. meta::
+   :keywords: emc, vnx, psnt, midrange
 
 .. _emc-vnx-tag-psnt-number:
 

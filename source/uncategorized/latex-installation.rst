@@ -1,5 +1,8 @@
 .. index:: linux, latex
 
+.. meta::
+   :keywords: linux, latex, texlive
+
 .. _latex:
 
 Установка LaTeX

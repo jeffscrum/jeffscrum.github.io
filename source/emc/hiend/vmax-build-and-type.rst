@@ -1,4 +1,7 @@
-.. index:: emc, vmax
+.. index:: emc, vmax, location
+
+.. meta::
+   :keywords: emc, vmax, location
 
 .. _vmax-build-and-type:
 

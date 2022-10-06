@@ -1,5 +1,8 @@
 .. index:: emc, vmax, callhome
 
+.. meta::
+   :keywords: emc, vmax, callhome
+
 .. _vmax-callhome:
 
 VMAX. Тестовый CallHome

@@ -1,4 +1,7 @@
-.. index:: freebsd
+.. index:: freebsd, pkg
+
+.. meta::
+   :keywords: freebsd, pkg
 
 .. _freebsd10-pkg-configuration:
 

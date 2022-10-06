@@ -1,4 +1,7 @@
-.. index:: scribd
+.. index:: scribd, book, download, script
+
+.. meta::
+   :keywords: scribd, book, download, script
 
 .. _download-scribd-book:
 

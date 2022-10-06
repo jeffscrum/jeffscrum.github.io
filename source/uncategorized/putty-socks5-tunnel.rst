@@ -1,5 +1,8 @@
 .. index:: putty, ssh, tunnel
 
+.. meta::
+   :keywords: putty, ssh, tunnel
+
 .. _putty-socks5-tunnel:
 
 Putty SOCKS5-proxy туннель в Windows

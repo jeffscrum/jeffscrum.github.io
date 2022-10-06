@@ -1,4 +1,9 @@
+.. index:: vyos, build, docker, iso
+
 .. _build-vyos:
+
+.. meta::
+   :keywords: vyos, docker, build, iso
 
 Build the image
 ===============

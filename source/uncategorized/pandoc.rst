@@ -1,4 +1,7 @@
-.. index:: linux, pandoc
+.. index:: linux, pandoc, latex, markdown
+
+.. meta::
+   :keywords: linux, pandoc, latex, markdown
 
 .. _pandoc:
 
