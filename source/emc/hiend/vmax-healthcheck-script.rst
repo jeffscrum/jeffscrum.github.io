@@ -8,3 +8,4 @@
 Автор скрипта Богдан Ясенецкий.
 
 .. literalinclude:: healthcheck_1-9.bat
+   :language: bat
