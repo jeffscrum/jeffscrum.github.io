@@ -49,12 +49,14 @@ Exadata NFS ReImage
 
 В этом шаге нужно настроить DHCP Server и NFS Server. Я делаю это на примере RHEL, но дистрибутив может быть любым.
 
+
 Установка необходимых пакетов
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: bash
 
    yum install dhcp nfs-utils rpcbind vim
+
 
 Отключение firewall
 ^^^^^^^^^^^^^^^^^^^
@@ -65,10 +67,12 @@ Exadata NFS ReImage
    systemctl disable firewalld
    systemctl mask --now firewalld
 
+
 Отключаем SELinux
 ^^^^^^^^^^^^^^^^^
 
 Для этого в файле `/etc/selinux/config` изменяем директиву ``SELINUX=enforcing`` на ``SELINUX=disabled``, после чего перезагружаемся
+
 
 Настройка NFS сервера
 ^^^^^^^^^^^^^^^^^^^^^
@@ -90,10 +94,42 @@ Exadata NFS ReImage
    * NFS debug enable: rpcdebug -m nfsd all
    * NFS debug disable: rpcdebug -m nfsd -c all
 
+Настройка DHCP сервера
+^^^^^^^^^^^^^^^^^^^^^^
+
+Создаем файл конфигурации `/etc/dhcp/dhcpd.conf`.
+В прошлой версии статьи я добавлял каждый сервер вручную, но сейчас отказался от этого, так как это долго. Я разрешил dhcpd раздавать адреса всем подряд. Это удобно в том случае если у вас изолированный сегмент сети (например стойка не подключена к сети заказчика). Если же вы делаете перезаливку только одного сервера, то лучше в явном виде перечислять хосты которые получат адрес и какой именно. (параметр 'allow unknown-clients' нужно изменить на 'deny unknown-clients')
+
+.. literalinclude:: dhcpd-2.conf
+   :language: bash
+
+Перезапускаем DHCP Server
+^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: bash
+
+   systemctl enable dhcpd.service
+   systemctl restart dhcpd.service
+   systemctl status dhcpd.service
+
 
 Этап IV. Заполнение профиля
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+Чтобы инсталлятор мог использовать профиль его нужно дозаполнить.
+Для этого нужно поочережно зайти на ILOM каждого сервера и выполнить команду ``show /SYS/MB/NET0`` или ``/SYS/SMOD0/MB/NET0`` или ``show /SYS/SMOD/MB/NET0`` и ищем *mac* в строке `fru_macaddress` или командой ``ibhosts``, если вдруг будете ставить через Infiniband.
+После того как вы получили mac-адрес интерфейса, его необходимо вписать в файл `preconf.csv`. Сделать это нужно между запятыми, после слова "Management" и перед указанием IP-адреса для нужного сервера.
+
+.. code-block:: none
+
+   ... bondeth0,eth0::::,Management,<mac:address:paste:here>,10.152.240.159,255.255.252.0 ...
+
+После того как mac-адреса для всех серверов будут заполнны, файл необходимо положить рядом с iso-файлом. (например '/export/preconf.csv')
+
+.. attention::
+
+   Будьте внимательны со строками которые заполняете.
+   Файл нельзя редактировать через EXCEL -- используйте текстовый редактор.
 
 
 Этап V. Инсталляция
