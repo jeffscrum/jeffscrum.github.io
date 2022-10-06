@@ -10,19 +10,17 @@ Exadata NFS ReImage
 .. note:: 
 
    Для проведения re-image нам потребуется:
-   
-   * Профиль OEDA, приготовленный в Linux
-   * Сервер с Linux
-   * NFS Server
-   * DHCP Server
+    * Профиль OEDA, приготовленный в Linux
+    * Сервер с Linux
+    * NFS Server
+    * DHCP Server
 
 Этап I. Подготовка профиля
 ~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| Нужно подготовить профиль инсталляции в OEDA (Oracle Exadata Deployment Assistant).
-| Для подготовки **нужно использовать только Linux версию. Это важный момент!** Без этого работать будет, но все же, для 100% совместимости лучше брать Linux версию.
-| Скачать OEDA можно на сайте `support.oracle.com <https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&sourceId=888828.1&patchId=30640393>`_.
-| После завершения описания конфигурации в OEDA вы получите zip-архив. Внутри вы найдете файл **...-preconf.csv**. Этот файл нужно будет переименовать в **preconf.csv**
+Нужно подготовить профиль инсталляции в OEDA (Oracle Exadata Deployment Assistant). Для подготовки **нужно использовать только Linux версию. Это важный момент!** Без этого работать будет, но все же, для 100% совместимости лучше брать Linux версию. Скачать OEDA можно на сайте `support.oracle.com <https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&sourceId=888828.1&patchId=30640393>`_.
+
+После завершения описания конфигурации в OEDA вы получите zip-архив. Внутри вы найдете файл **...-preconf.csv**. Этот файл нужно будет переименовать в **preconf.csv**
 
 
 Этап II. Скачивание дистрибутивов
