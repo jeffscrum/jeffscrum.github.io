@@ -37,7 +37,7 @@ extensions = [
 	'sphinx_copybutton',
 	'sphinx_sitemap',
 	'sphinx-favicon'
-  #'sphinx_disqus.disqus'
+    #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
