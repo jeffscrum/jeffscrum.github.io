@@ -17,7 +17,6 @@ Matrix Bot
 Скрипт бота
 
 .. code-block:: bash
-   :caption: post_to_matrix.sh
 
    #!/bin/bash
    # Usage:
