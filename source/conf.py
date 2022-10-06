@@ -23,6 +23,7 @@ author = 'Jeff Scrum'
 language = 'en'
 source_encoding = 'utf-8'
 source_suffix = '.rst'
+today_fmt = '%d.%m.%Y'
 
 # -- General configuration ---------------------------------------------------
 
