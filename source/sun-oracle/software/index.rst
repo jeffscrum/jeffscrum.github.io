@@ -10,6 +10,7 @@ Oracle Software
    oracle-sw-ld-show-mem
    oracle-sw-ld-sol10
    oracle-sw-long-login-t3
+   oracle-sw-ipmp
    oracle-sw-solaris10-ipmp
    oracle-sw-sshd-start
    oracle-sw-sunfreeware
