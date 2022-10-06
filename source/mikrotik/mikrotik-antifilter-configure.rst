@@ -19,9 +19,7 @@ BGP
   /routing bgp peer add hold-time=4m in-filter=bgp_in keepalive-time=1m multihop=yes name=antifilter remote-address=45.154.73.71 remote-as=65432 ttl=default
   /routing filter add action=accept chain=bgp_in comment="Set nexthop to VPN" set-in-nexthop-direct=<GATEWAY_INTERFACE>
 
-.. note::
-
-  Команды выше подходят для настройки роутеров с ROS 6. Для настройки ROS 7 они чуть изменятся
+.. note:: Команды выше подходят для настройки роутеров с ROS 6. Для настройки ROS 7 они чуть изменятся.
 
 Скрипт
 ------
