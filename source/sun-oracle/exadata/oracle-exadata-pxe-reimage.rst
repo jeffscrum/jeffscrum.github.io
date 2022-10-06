@@ -7,7 +7,7 @@ Exadata PXE ReImage
 
 .. attention::
 
-   Это устаревший способ ReImage. Удобнее и быстрее использовать NFS Server. Смотрите статью :ref:`oracle-exadata-nfs-reimage`
+   Это устаревший способ. Удобнее и быстрее использовать NFS Server. Смотрите статью :ref:`oracle-exadata-nfs-reimage`
 
 .. note::
 	
@@ -54,7 +54,7 @@ Exadata PXE ReImage
 
 .. tip::
 
-   :download: `В аттаче лежат все необходимые файлы конфигурации <https://app.box.com/s/i6kwjvetzjd2v7joa18aqwftujjg6rho>`
+   :download:`В аттаче лежат все необходимые файлы конфигурации <https://app.box.com/s/i6kwjvetzjd2v7joa18aqwftujjg6rho>`
 
 Установка необходимых пакетов
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
