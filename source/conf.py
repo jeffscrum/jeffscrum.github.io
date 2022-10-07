@@ -17,7 +17,7 @@ import sphinx_rtd_theme
 
 # -- Project information -----------------------------------------------------
 
-project = u'IT Drafts'
+project = u'IT Ёжъ'
 copyright = u'2022, Jeff Scrum'
 author = u'Jeff Scrum'
 language = 'en'
