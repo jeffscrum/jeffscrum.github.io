@@ -6,8 +6,8 @@
 .. _tourism:
 
 
-Tourism
-========
+Обо всем на свете
+=================
 
 .. toctree::
    :maxdepth: 1
