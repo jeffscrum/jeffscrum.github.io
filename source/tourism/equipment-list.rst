@@ -8,9 +8,10 @@
 Список снаряжения
 =================
 
-.. csv-table:: Table Title
+.. csv-table:: Equipment List
    :file: equipment.csv
+   :header-rows: 1
    :delim: U+003B
    :quote: U+0027
    :widths: auto
-   :header-rows: 1
+
