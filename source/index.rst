@@ -31,6 +31,12 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
    vyos/index
 
 
+.. toctree::
+   :caption: Tourism
+   :maxdepth: 2
+   :hidden:
+
+   tourism/index
 
  
 .. Indices and tables
