@@ -37,7 +37,7 @@ extensions = [
 	'sphinx_copybutton',
 	'sphinx_sitemap',
 	'sphinx-favicon'
-    #'sphinx_disqus.disqus'
+  #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
@@ -152,9 +152,9 @@ latex_elements = {
   'papersize': 'a4paper',
   'pointsize': '10pt',
   'fontenc': '\\usepackage[T1,T2A]{fontenc}',
-  'geometry': '\\usepackage[left=2.8cm,right=1.2cm,top=2cm,bottom=2cm,]{geometry}',
-  'releasename': '',
-  'preamble': '\\setcounter{tocdepth}{2}'
+  'geometry': '\\usepackage[left=1.8cm,right=1.8cm,top=2cm,bottom=2cm,]{geometry}',
+  'preamble': '\\setcounter{tocdepth}{2}',
+  'extraclassoptions': 'oneside',
 }
 
 # Grouping the document tree into LaTeX files. List of tuples
