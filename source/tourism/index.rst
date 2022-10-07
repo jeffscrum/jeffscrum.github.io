@@ -12,4 +12,16 @@ Tourism
 .. toctree::
    :maxdepth: 1
 
-..   mikrotik-antifilter-configure
+   equipment-list
+   equipment-rent
+   garmin-gpnbonus-poi
+   garmin-osm-topo-map
+   get-objects-osm
+   isotonic
+   mgu-bu-exam
+   mgu-knots-exam
+   mountain-sickness
+   ofrc
+   paper-standarts
+   pereprava
+   tourism-print-maps
