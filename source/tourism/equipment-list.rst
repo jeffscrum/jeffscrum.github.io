@@ -10,6 +10,6 @@
 
 .. csv-table:: Table Title
    :file: eq.csv
-   :delim: ;
+   :delim: U+003B
    :widths: auto
    :header-rows: 1
