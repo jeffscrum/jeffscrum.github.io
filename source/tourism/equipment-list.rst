@@ -10,6 +10,6 @@
 
 .. csv-table:: Table Title
    :file: eq.csv
-   :delim: "semicolon"
+   :delim: ";"
    :widths: auto
    :header-rows: 1
