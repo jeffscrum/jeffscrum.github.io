@@ -1,7 +1,7 @@
-.. index:: tourism, osm, turbo
+.. index:: tourism, osm, turbo, poi
 
 .. meta::
-   :keywords: tourism, osm, turbo
+   :keywords: tourism, osm, turbo, poi
 
 .. _get-objects-osm:
 
