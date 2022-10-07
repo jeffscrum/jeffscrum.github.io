@@ -105,7 +105,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store']
 html_theme = 'sphinx_rtd_theme'
 #html_favicon = '_static/images/favicon.ico'
 html_baseurl = 'https://pages.ksomov.ru'
-html_title = 'IT Drafts'
+html_title = 'IT Ёжъ'
 html_theme_options = {
     'analytics_id': 'G-NP47XWF3FQ',
     'analytics_anonymize_ip': False
