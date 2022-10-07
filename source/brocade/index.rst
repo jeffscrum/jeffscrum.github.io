@@ -1,8 +1,12 @@
 .. _brocade:
 
+.. index:: brocade, san
+
+.. meta::
+   :keywords: brocade, san
+
 Brocade
 =======
-
 
 
 .. toctree::
