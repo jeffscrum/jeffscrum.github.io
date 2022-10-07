@@ -3,8 +3,7 @@
 .. meta::
    :keywords: tourism, osm, turbo
 
-.. _tourism:
-
+.. _get-objects-osm:
 
 Извлечение объектов из OSM
 ==========================
