@@ -19,7 +19,6 @@
    get-objects-osm
    isotonic
    mgu-bu-exam
-   mgu-knots-exam
    mountain-sickness
    ofrc
    paper-standarts
