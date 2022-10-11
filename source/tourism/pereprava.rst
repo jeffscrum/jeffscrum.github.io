@@ -29,13 +29,11 @@
 
 .. figure:: /images/pereprava-1.jpeg
    :width: 200
-   :align: left
 
    Блок
 
 .. figure:: /images/pereprava-2.jpeg
    :width: 200
-   :align: center
 
    Петля
 
@@ -82,8 +80,9 @@
 Узел для закрепления грузовой воровки за опору на противоположном берегу
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. figure:: /images/pereprava-3.jpeg
+.. figure:: /images/pereprava-3.png
    :width: 340
+   :align: center
 
    Узел простой штык
 
@@ -123,6 +122,7 @@
 
 .. figure:: /images/pereprava-4.jpeg
    :width: 450
+   :align: center
 
    Схема полиспаста
 
@@ -159,6 +159,7 @@
 
 .. figure:: /images/pereprava-5.jpeg
    :width: 660
+   :align: center
 
    Общий вид переправы
 
