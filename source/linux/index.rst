@@ -12,6 +12,7 @@ Linux
    debug-email-server
    linux-3proxy
    linux-awk
+   linux-centos-install-kernel
    linux-docker-logs-clean
    linux-lc-all-unset
    linux-mysql-operations
