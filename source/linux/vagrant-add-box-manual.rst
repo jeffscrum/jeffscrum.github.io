@@ -16,7 +16,13 @@ Add a downloaded .box file to Vagrant
    ==> box: Adding box 'centos/8' (v2011.0) for provider: virtualbox
    box: Downloading: https://vagrantcloud.com/centos/boxes/8/versions/2011.0/providers/virtualbox.box
 
-Дальше самостоятельно скачиваем ``wget https://vagrantcloud.com/centos/boxes/8/versions/2011.0/providers/virtualbox.box``. Создаем `metadata.json`
+Дальше самостоятельно скачиваем
+
+.. code-block:: none
+
+   $ wget https://vagrantcloud.com/centos/boxes/8/versions/2011.0/providers/virtualbox.box
+
+Создаем `metadata.json`:
 
 .. code-block:: json
 
