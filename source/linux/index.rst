@@ -24,3 +24,4 @@ Linux
    linux-wireguard-installation
    ubuntu-postfix-gmail-relay
    ubuntu18-russian-apt-sources
+   vagrant-add-box-manual
