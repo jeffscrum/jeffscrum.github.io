@@ -23,3 +23,4 @@ Virtualization
    ibm-virtualization-p750-fw-update
    ibm-virtualization-remove-failed-paths-mpio
    ibm-virtualization-rmc-connection-issue
+   hmc-change-vlan-dynamically
