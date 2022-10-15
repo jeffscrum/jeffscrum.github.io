@@ -23,7 +23,7 @@ Before you perform this task, ensure that you meet the following requirements:
 You can use the HMC graphical interface or the chhwres command from the HMC command-line interface to add, remove, or modify VLANs for a virtual Ethernet adapter that is assigned to an active partition. You can also edit the IEEE standard of the virtual Ethernet adapter dynamically. To specify additional VLANs, you must set the virtual Ethernet adapter to the IEEE 802.1Q standard.
 
 
-.. tip:: Смотрим список систем ``lssyscfg -r sys -F name``
+.. tip:: Смотрим список систем -- ``lssyscfg -r sys -F name``
 
 To add, remove, or modify VLANs on the Virtual I/O Server, complete the following steps:
 
