@@ -13,6 +13,7 @@
 With the Virtual I/O Server Version 2.2, or later, you can add, change, or remove the existing set of VLANs for a virtual Ethernet adapter that is assigned to an active partition on a POWER7® processor-based server by using the Hardware Management Console (HMC).
 
 Before you perform this task, ensure that you meet the following requirements:
+
 - The server must be a POWER7 processor-based server, or later.
 - The server firmware level must be at least AH720_064+ for high end servers, AM720_064+ for midrange servers, and AL720_064+ for low end servers.
   .. note:: The AL720_064+ server firmware level is only supported on POWER7 processor-based servers, or later.
@@ -21,13 +22,13 @@ Before you perform this task, ensure that you meet the following requirements:
 
 You can use the HMC graphical interface or the chhwres command from the HMC command-line interface to add, remove, or modify VLANs for a virtual Ethernet adapter that is assigned to an active partition. You can also edit the IEEE standard of the virtual Ethernet adapter dynamically. To specify additional VLANs, you must set the virtual Ethernet adapter to the IEEE 802.1Q standard.
 
-To add, remove, or modify VLANs on the Virtual I/O Server, complete the following steps:
 
 .. tip:: Смотрим список систем ``lssyscfg -r sys -F name``
 
+To add, remove, or modify VLANs on the Virtual I/O Server, complete the following steps:
+
 1. Run the lssyscfg command to verify if the managed system supports adding, removing, or modifying VLANs on the Virtual I/O Server. 
-  | For example, ``lssyscfg -r sys -m <managed system> -F capabilities``. 
-  | If the managed server supports adding, removing, or modifying VLANs, this command returns the virtual_eth_dlpar_capable value.
+  | For example, ``lssyscfg -r sys -m <managed system> -F capabilities``. If the managed server supports adding, removing, or modifying VLANs, this command returns the virtual_eth_dlpar_capable value.
 
 2. Use the chhwres command to add, remove, or modify additional VLANs to the virtual Ethernet adapter that is assigned to an active partition. You can also edit the IEEE standard of the virtual Ethernet adapter dynamically by using the chhwres command. For example,
    
@@ -43,7 +44,7 @@ To add, remove, or modify VLANs on the Virtual I/O Server, complete the followin
 
     ``chhwres -r virtualio --rsubtype eth -m <managed system> -o s {-p <partition name> | --id <partition ID>} -s <virtual slot number> -a "addl_vlan_ids=2,3,5"``
 
-    You can provide a comma-separated list of VLANs to the attributes, addl_vlan_ids=, addl_vlan_ids+=, and addl_vlan_ids-=.
+    You can provide a comma-separated list of VLANs to the attributes, ``addl_vlan_ids=``, ``addl_vlan_ids+=``, and ``addl_vlan_ids-=``.
 
 3. Use the lshwres command to query the virtual Ethernet adapter.
    
