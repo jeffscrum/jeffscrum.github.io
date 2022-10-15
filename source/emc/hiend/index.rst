@@ -6,7 +6,7 @@ Hi-End
 .. toctree::
    :maxdepth: 1
 
-   vmax-build-and-type
+   vmax-buildlocation-and-modeltype.rst
    vmax-callhome
    vmax-customer-service-quick-reference-guide.rst
    vmax-deffered-maintenance
