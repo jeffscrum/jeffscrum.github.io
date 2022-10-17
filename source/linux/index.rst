@@ -6,6 +6,7 @@ Linux
 .. toctree::
    :maxdepth: 1
 
+   ansible-get-facts
    debian-auto-install-preseed
    debian-bonding
    debian-install-jre
