@@ -18,6 +18,13 @@
     ansible.builtin.debug:
       var: ansible_facts
 
+Еще один из вариантов, это добавить задачу в плейбук, чтобы отследить какие переменные передаются
+
+.. code-block:: yaml
+
+  - debug:
+      msg: "{{ ansible_facts.distribution_version }}"
+
 Либо собрать факты с одного хоста при помощи команды ``ansible <hostname> -m ansible.builtin.setup``
 
 Если сбор фактов для конкретного плейбука (задачи) не требуется, то его можно отключить, указав
