@@ -16,4 +16,7 @@
 
 ------
 
-Related Links: `How Do You Perform a Kickstart Installation? <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-howto>`_
+Related Links: 
+
+- `How Do You Perform a Kickstart Installation? <https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/installation_guide/sect-kickstart-howto>`_
+- `Automating the installation using preseeding <https://www.debian.org/releases/stable/amd64/apbs04.en.html>`_
