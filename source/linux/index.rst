@@ -26,3 +26,4 @@ Linux
    ubuntu-postfix-gmail-relay
    ubuntu18-russian-apt-sources
    vagrant-add-box-manual
+   linux-centos8-yum-error
