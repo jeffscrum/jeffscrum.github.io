@@ -70,4 +70,4 @@ Create a Proxmox LVM Thinpool
   Переходим в раздел Datacentre --> Disks --> LVM-Thin и жмем "Create Thinpool".
   
   .. image:: /images/proxmox-lvm-thin.png
-    :width: 350
+    :width: 600
