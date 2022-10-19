@@ -28,7 +28,8 @@ You can use the HMC graphical interface or the chhwres command from the HMC comm
 To add, remove, or modify VLANs on the Virtual I/O Server, complete the following steps:
 
 1. Run the lssyscfg command to verify if the managed system supports adding, removing, or modifying VLANs on the Virtual I/O Server. 
-  | For example, ``lssyscfg -r sys -m <managed system> -F capabilities``. If the managed server supports adding, removing, or modifying VLANs, this command returns the virtual_eth_dlpar_capable value.
+  
+  For example, ``lssyscfg -r sys -m <managed system> -F capabilities``. If the managed server supports adding, removing, or modifying VLANs, this command returns the virtual_eth_dlpar_capable value.
 
 2. Use the chhwres command to add, remove, or modify additional VLANs to the virtual Ethernet adapter that is assigned to an active partition. You can also edit the IEEE standard of the virtual Ethernet adapter dynamically by using the chhwres command. For example,
    
