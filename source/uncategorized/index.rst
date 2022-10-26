@@ -24,8 +24,8 @@ Mediawiki
 .. toctree::
    :maxdepth: 1
 
-   mw-user-permissions
-   mw-tiny-url
-   mw-hide-talk-tab
-   mw-configure-smtp-server
-   mw-configure-disqus-comments
+   mediawiki/mw-user-permissions
+   mediawiki/mw-tiny-url
+   mediawiki/mw-hide-talk-tab
+   mediawiki/mw-configure-smtp-server
+   mediawiki/mw-configure-disqus-comments
