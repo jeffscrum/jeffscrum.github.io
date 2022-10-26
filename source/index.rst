@@ -29,6 +29,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
    sun-oracle/index
    uncategorized/index
    vyos/index
+   tasks/index
 
 
 .. toctree::

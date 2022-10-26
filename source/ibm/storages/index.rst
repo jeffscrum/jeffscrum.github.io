@@ -13,3 +13,4 @@ Storages
    ibm-storages-v7000-bat-replace
    ibm-storages-v7000-cabling
    ibm-storages-v7000-cleardumps
+   ibm-storages-v7000-fw-upgrade
