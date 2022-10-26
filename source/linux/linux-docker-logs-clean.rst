@@ -1,5 +1,8 @@
 .. index:: linux, docker, logs
 
+.. meta::
+   :keywords: linux, docker, logs
+
 .. _linux-docker-logs-clean:
 
 Чистим логи Docker

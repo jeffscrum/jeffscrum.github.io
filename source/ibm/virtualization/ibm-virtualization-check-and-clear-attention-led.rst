@@ -1,5 +1,8 @@
 .. index:: ibm, hmc, alarm
 
+.. meta::
+   :keywords: ibm, hmc, alarm
+
 .. _ibm-virtualization-check-and-clear-attention-led:
 
 Check And Clear Attention LED

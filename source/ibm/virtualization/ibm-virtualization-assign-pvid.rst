@@ -1,5 +1,8 @@
 .. index:: ibm, aix, pvid
 
+.. meta::
+   :keywords: ibm, aix, pvid
+
 .. _ibm-virtualization-assign-pvid:
 
 Assign PVID to a new disk

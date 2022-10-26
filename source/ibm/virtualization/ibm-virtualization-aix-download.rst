@@ -1,4 +1,7 @@
-.. index:: ibm, aix
+.. index:: ibm, aix, download
+
+.. meta::
+   :keywords: ibm, aix, download
 
 .. _ibm-virtualization-aix-download:
 

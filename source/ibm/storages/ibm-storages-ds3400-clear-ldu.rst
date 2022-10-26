@@ -1,5 +1,8 @@
 .. index:: ibm, storage, ds3400
 
+.. meta::
+   :keywords: ibm, storage, ds3400, drive, failed
+
 .. _ibm-storages-ds3400-clear-ldu:
 
 DS3400. Clear Logical Drive Unreadable Sectors

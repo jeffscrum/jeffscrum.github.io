@@ -1,4 +1,7 @@
-.. index:: mikrotik, firewall
+.. index:: mikrotik, firewall, default, fw
+
+.. meta::
+   :keywords: mikrotik, firewall, default, fw
 
 .. _mikrotik-default-fw-rules:
 

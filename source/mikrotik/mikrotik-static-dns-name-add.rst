@@ -1,4 +1,7 @@
-.. index:: mikrotik, dns
+.. index:: mikrotik, dns, cli
+
+.. meta::
+   :keywords: mikrotik, dns, cli
 
 .. _mikrotik-static-dns-name-add:
 

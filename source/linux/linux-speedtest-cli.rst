@@ -1,4 +1,7 @@
-.. index:: linux, speedtest
+.. index:: linux, speedtest, cli
+
+.. meta::
+   :keywords: linux, speedtest, cli
 
 .. _linux-speedtest-cli:
 

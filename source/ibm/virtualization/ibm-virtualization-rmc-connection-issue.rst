@@ -1,4 +1,7 @@
-.. index:: ibm, dlpar, rmc
+.. index:: ibm, dlpar, rmc, aix, hmc
+
+.. meta::
+   :keywords: ibm, dlpar, rmc, aix, hmc
 
 .. _ibm-virtualization-rmc-connection-issue:
 

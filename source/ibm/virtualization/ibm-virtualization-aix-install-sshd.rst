@@ -1,5 +1,8 @@
 .. index:: ibm, aix, ssh
 
+.. meta::
+   :keywords: ibm, aix, ssh
+
 .. _ibm-virtualization-aix-install-sshd:
 
 Installing OpenSSH on an AIX

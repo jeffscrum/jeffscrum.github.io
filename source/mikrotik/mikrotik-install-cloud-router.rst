@@ -1,5 +1,8 @@
 .. index:: mikrotik, cloud, install
 
+.. meta::
+   :keywords: mikrotik, cloud, install
+
 .. _mikrotik-install-cloud-router:
 
 Install Mikrotik Cloud Router

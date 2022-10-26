@@ -1,4 +1,7 @@
-.. index:: mikrotik
+.. index:: mikrotik, port, forward, cli
+
+.. meta::
+   :keywords: mikrotik, port, forward, cli
 
 .. _mikrotik-port-forward-cli:
 

@@ -1,5 +1,8 @@
 .. index:: linux, awk
 
+.. meta::
+   :keywords: linux, awk
+
 .. _linux-awk:
 
 Обработка строк при помощи awk

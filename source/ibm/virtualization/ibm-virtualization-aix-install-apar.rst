@@ -1,5 +1,8 @@
 .. index:: ibm, aix, apar
 
+.. meta::
+   :keywords: ibm, aix, apar
+
 .. _ibm-virtualization-aix-install-apar:
 
 Installing a Interim Fix (APAR)

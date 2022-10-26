@@ -1,5 +1,8 @@
 .. index:: linux, mysql
 
+.. meta::
+   :keywords: linux, mysql
+
 .. _linux-mysql-operations:
 
 Шпаргалка по MySQL

@@ -1,5 +1,8 @@
 .. index:: ibm, aix, login
 
+.. meta::
+   :keywords: ibm, aix, login
+
 .. _ibm-virtualization-aix-no-login-prompt:
 
 No Login Prompt After AIX Install (Serial)

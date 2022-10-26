@@ -1,4 +1,7 @@
-.. index:: linux, telegram, notyfy, ssh
+.. index:: linux, telegram, notyfy, ssh, terminal
+
+.. meta::
+   :keywords: linux, telegram, notyfy, ssh, terminal
 
 .. _linux-telegram-login-notify:
 

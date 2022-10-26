@@ -1,5 +1,8 @@
 .. index:: mikrotik, bgp
 
+.. meta::
+   :keywords: mikrotik, bgp
+
 .. _mikrotik-antifilter-configure:
 
 Mikrotik и antifilter.download

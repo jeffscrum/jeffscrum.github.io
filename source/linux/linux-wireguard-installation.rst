@@ -1,5 +1,8 @@
 .. index:: linux, vpn, wireguard
 
+.. meta::
+   :keywords: linux, vpn, wireguard
+
 .. _linux-wireguard-installation:
 
 Установка Wireguard на Debian

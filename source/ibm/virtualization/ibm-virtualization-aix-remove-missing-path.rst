@@ -1,5 +1,8 @@
 .. index:: ibm, aix, missing, path
 
+.. meta::
+   :keywords: ibm, aix, missing, path
+
 .. _ibm-virtualization-aix-remove-missing-path:
 
 How To Remove Missing Paths In AIX

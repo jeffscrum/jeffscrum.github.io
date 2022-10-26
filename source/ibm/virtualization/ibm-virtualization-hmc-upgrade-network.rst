@@ -1,4 +1,7 @@
-.. index:: ibm, hmc, update
+.. index:: ibm, hmc, update, network
+
+.. meta::
+   :keywords: ibm, hmc, update, network
 
 .. _ibm-virtualization-hmc-upgrade-network:
 

@@ -1,4 +1,7 @@
-.. index:: linux, debian, 3proxy, proxy, socks
+.. index:: linux, debian, 3proxy, proxy, socks5
+
+.. meta::
+   :keywords: linux, debian, 3proxy, proxy, socks5
 
 .. _linux-3proxy:
 

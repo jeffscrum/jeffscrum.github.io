@@ -1,4 +1,7 @@
-.. index:: linux, ubuntu, apt
+.. index:: linux, ubuntu, apt, deb
+
+.. meta::
+   :keywords: linux, ubuntu, apt, deb
 
 .. _ubuntu18-russian-apt-sources:
 

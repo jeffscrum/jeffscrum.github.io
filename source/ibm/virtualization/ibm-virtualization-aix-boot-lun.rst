@@ -1,5 +1,8 @@
 .. index:: ibm, aix, boot, emc, vmax
 
+.. meta::
+   :keywords: ibm, aix, boot, emc, vmax
+
 .. _ibm-virtualization-aix-boot-lun:
 
 Как узнать с какого из VMAX отдан лун

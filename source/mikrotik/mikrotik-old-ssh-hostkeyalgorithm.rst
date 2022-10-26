@@ -1,4 +1,7 @@
-.. index:: mikrotik, ssh
+.. index:: mikrotik, ssh, ciphers
+
+.. meta::
+   :keywords: mikrotik, ssh, ciphers
 
 .. _mikrotik-old-ssh-hostkeyalgorithm:
 

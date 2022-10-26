@@ -1,5 +1,8 @@
 .. index:: imb, bladecenter, sea
 
+.. meta::
+   :keywords: ibm, bladecenter, sea
+
 .. _ibm-bladecenter-sea:
 
 SEA for IBM Bladecenter

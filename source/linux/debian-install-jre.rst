@@ -1,4 +1,7 @@
-.. index:: linux, jre
+.. index:: linux, debian, java, jre
+
+.. meta::
+   :keywords: linux, debian, java, jre
 
 .. _debian-install-jre:
 

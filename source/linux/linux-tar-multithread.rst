@@ -1,5 +1,8 @@
 .. index:: linux, tar, multithread
 
+.. meta::
+   :keywords: linux, tar, multithread
+
 .. _linux-tar-multithread:
 
 TAR Multithread

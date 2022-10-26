@@ -1,4 +1,7 @@
-.. index:: ibm, aix
+.. index:: ibm, aix, boot, disk
+
+.. meta::
+   :keywords: ibm, aix, boot, disk
 
 .. _ibm-virtualization-define-boot-disk:
 

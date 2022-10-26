@@ -1,4 +1,7 @@
-.. index:: linux, mail
+.. index:: linux, mail, debug
+
+.. meta::
+   :keywords: linux, mail, debug
 
 .. _debug-email-server:
 

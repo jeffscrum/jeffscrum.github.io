@@ -1,5 +1,8 @@
 .. index:: linux, debian, bonding
 
+.. meta::
+   :keywords: linux, debian, bonding
+
 .. _debian-bonding:
 
 Debian Bonding (active-backup)

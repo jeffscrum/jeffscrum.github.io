@@ -1,5 +1,8 @@
 .. index:: mikrotik, backup, restore
 
+.. meta::
+   :keywords: mikrotik, backup, restore
+
 .. _mikrotik-backup-and-restore-configuration:
 
 Backup and Restore Mikrotik Configuration

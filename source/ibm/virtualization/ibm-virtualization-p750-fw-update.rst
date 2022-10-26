@@ -1,4 +1,7 @@
-.. index:: ibm, firmware, update
+.. index:: ibm, firmware, update, fw
+
+.. meta::
+   :keywords: ibm, firmware, update, fw
 
 .. _ibm-virtualization-p750-fw-update:
 

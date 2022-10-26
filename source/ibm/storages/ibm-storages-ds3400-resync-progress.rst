@@ -1,4 +1,7 @@
-.. index:: ibm, storage, ds3400
+.. index:: ibm, storage, ds3400, drive, sync, progress
+
+.. meta::
+   :keywords: ibm, storage, ds3400, drive, sync, progress
 
 .. _ibm-storages-ds3400-resync-progress:
 

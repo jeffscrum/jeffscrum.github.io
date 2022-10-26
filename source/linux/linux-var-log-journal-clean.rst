@@ -1,5 +1,8 @@
 .. index:: linux, journal, logs
 
+.. meta::
+   :keywords: linux, journal, logs
+
 .. _linux-var-log-journal-clean:
 
 Чистим логи /var/log/journal/

@@ -1,5 +1,8 @@
 .. index:: linux, error
 
+.. meta::
+   :keywords: linux, error
+
 .. _linux-lc-all-unset:
 
 LC_ALL = (unset)

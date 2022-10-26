@@ -1,4 +1,7 @@
-.. index:: ibm, aix, missing, path
+.. index:: ibm, aix, lvm, sync
+
+.. meta::
+   :keywords: ibm, aix, lvm, sync
 
 .. _ibm-virtualization-aix-sync-lvm:
 

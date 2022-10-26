@@ -1,5 +1,8 @@
 .. index:: ibm, aix, boot, cdrom
 
+.. meta::
+   :keywords: ibm, aix, boot, cdrom
+
 .. _ibm-virtualization-boot-cdrom-wosms:
 
 Загрузка с CD-ROM без SMS

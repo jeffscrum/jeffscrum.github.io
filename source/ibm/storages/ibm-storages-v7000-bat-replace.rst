@@ -1,5 +1,8 @@
 .. index:: ibm, storage, v7000
 
+.. meta::
+   :keywords: ibm, storage, v7000, battery, replacement
+
 .. _ibm-storages-v7000-bat-replace:
 
 Storwize V7000. Battery Replacement
