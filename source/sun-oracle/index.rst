@@ -3,8 +3,8 @@
 Sun & Oracle
 ============
 
-Oracle Exadata
---------------
+Exadata
+-------
 
 .. toctree::
    :maxdepth: 1
@@ -16,8 +16,8 @@ Oracle Exadata
    exadata/oracle-exadata-pxe-reimage
    exadata/oracle-exadata-root-unlock
 
-Oracle Hardware
----------------
+Hardware
+--------
 
 .. toctree::
    :maxdepth: 1
@@ -31,8 +31,8 @@ Oracle Hardware
    hardware/oracle-hw-xscf-snapshot
    hardware/oracle-hw-zfs-disk-replace
 
-Oracle Software
----------------
+Software
+--------
 
 .. toctree::
    :maxdepth: 1
