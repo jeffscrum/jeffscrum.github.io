@@ -7,10 +7,10 @@
 
 .. TASK03334903
 
-VMAX. Разобрать пулы и создать новые луны
-=========================================
+VMAX. Переразбить пул с другим RIAD
+===================================
 
-Прошу подготовить план переразбивки пула Task1DBClone из R5(7+1) в R10( 2-WayMir ). Для нового пула использовать все диски группы DISK_GROUP_002. Новый пул назвать DB_TM_DCI. В новом пуле создать 1 лун 11Тб и показать на bc15tk2.
+Прошу подготовить план переразбивки пула Task1DBClone из R5 (7+1) в R10 (2-WayMir). Для нового пула использовать все диски группы DISK_GROUP_002. Новый пул назвать DB_TM_DCI. В новом пуле создать 1 лун 11Тб и показать на bc12tv2.
 
 План случайно закрыл. Финальный план отличался созданием 1 TDEV (0D5D) из 64 кусочков. А также, при удалении DATADEV их необходимо было перевести в состояние Not_Ready.
 
@@ -65,69 +65,69 @@ VMAX. Разобрать пулы и создать новые луны
    symconfigure -sid 174 -cmd "create dev count=1, emulation=FBA, config=TDEV, size=2057586, meta_member_size=1028793, meta_config=striped, binding to pool=DB_TM_DCI, preallocate size=2057586 ;" prepare -v
    symconfigure -sid 174 -cmd "create dev count=1, emulation=FBA, config=TDEV, size=2057586, meta_member_size=1028793, meta_config=striped, binding to pool=DB_TM_DCI, preallocate size=2057586 ;" commit -v
    9. Отмапливаем лун серверу
-   symaccess -sid 174 -name SG_bc15tk2_dbtmdci -type storage create
-   symaccess -sid 174 -name SG_bc15tk2_dbtmdci -type storage add devs <TDEV1>(см. п. 8)
-   symaccess -sid 174 -name PG_bc15tk2_dbtmdci -type port create
-   symaccess -sid 174 -name PG_bc15tk2_dbtmdci -type port add -dirport 10e:0,5h:1,6h:1,8h:0
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator create
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b4
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b5
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff415192
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff415193
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416402
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416403
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41679e
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41679f
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165f0
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165f1
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416460
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416461
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416ac8
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416ac9
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a10
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a11
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416696
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416697
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b0
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b1
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416b0e
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416b0f
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416528
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416529
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41668e
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41668f
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a92
-   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a93
-   symaccess -sid 174 create view -name MV_bc15tk2_dbtmdci -pg PG_bc15tk2_dbtmdci -ig IG_bc15tk2_dbtmdci -sg SG_bc15tk2_dbtmdci
+   symaccess -sid 174 -name SG_bc15tv2_dbtmdci -type storage create
+   symaccess -sid 174 -name SG_bc15tv2_dbtmdci -type storage add devs <TDEV1>(см. п. 8)
+   symaccess -sid 174 -name PG_bc15tv2_dbtmdci -type port create
+   symaccess -sid 174 -name PG_bc15tv2_dbtmdci -type port add -dirport 10e:0,5h:1,6h:1,8h:0
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator create
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b4
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b5
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff415192
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff415193
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416402
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416403
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41679e
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41679f
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165f0
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165f1
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416460
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416461
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416ac8
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416ac9
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a10
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a11
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416696
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416697
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b0
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b1
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416b0e
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416b0f
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416528
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416529
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41668e
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41668f
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a92
+   symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a93
+   symaccess -sid 174 create view -name MV_bc15tv2_dbtmdci -pg PG_bc15tv2_dbtmdci -ig IG_bc15tv2_dbtmdci -sg SG_bc15tv2_dbtmdci
    10. Переименовываем хосты для удобства в будущем
-   symaccess -sid 174 -wwn 24000024ff4165b4 rename -alias bc15tk2_01/hba0
-   symaccess -sid 174 -wwn 24000024ff4165b5 rename -alias bc15tk2_01/hba1
-   symaccess -sid 174 -wwn 24000024ff415192 rename -alias bc15tk2_02/hba0
-   symaccess -sid 174 -wwn 24000024ff415193 rename -alias bc15tk2_02/hba1
-   symaccess -sid 174 -wwn 24000024ff416402 rename -alias bc15tk2_03/hba0
-   symaccess -sid 174 -wwn 24000024ff416403 rename -alias bc15tk2_03/hba1
-   symaccess -sid 174 -wwn 24000024ff41679e rename -alias bc15tk2_04/hba0
-   symaccess -sid 174 -wwn 24000024ff41679f rename -alias bc15tk2_04/hba1
-   symaccess -sid 174 -wwn 24000024ff4165f0 rename -alias bc15tk2_05/hba0
-   symaccess -sid 174 -wwn 24000024ff4165f1 rename -alias bc15tk2_05/hba1
-   symaccess -sid 174 -wwn 24000024ff416460 rename -alias bc15tk2_06/hba0
-   symaccess -sid 174 -wwn 24000024ff416461 rename -alias bc15tk2_06/hba1
-   symaccess -sid 174 -wwn 24000024ff416ac8 rename -alias bc15tk2_07/hba0
-   symaccess -sid 174 -wwn 24000024ff416ac9 rename -alias bc15tk2_07/hba1
-   symaccess -sid 174 -wwn 24000024ff416a10 rename -alias bc15tk2_08/hba0
-   symaccess -sid 174 -wwn 24000024ff416a11 rename -alias bc15tk2_08/hba1
-   symaccess -sid 174 -wwn 24000024ff416696 rename -alias bc15tk2_09/hba0
-   symaccess -sid 174 -wwn 24000024ff416697 rename -alias bc15tk2_09/hba1
-   symaccess -sid 174 -wwn 24000024ff4165b0 rename -alias bc15tk2_10/hba0
-   symaccess -sid 174 -wwn 24000024ff4165b1 rename -alias bc15tk2_10/hba1
-   symaccess -sid 174 -wwn 24000024ff416b0e rename -alias bc15tk2_11/hba0
-   symaccess -sid 174 -wwn 24000024ff416b0f rename -alias bc15tk2_11/hba1
-   symaccess -sid 174 -wwn 24000024ff416528 rename -alias bc15tk2_12/hba0
-   symaccess -sid 174 -wwn 24000024ff416529 rename -alias bc15tk2_12/hba1
-   symaccess -sid 174 -wwn 24000024ff41668e rename -alias bc15tk2_13/hba0
-   symaccess -sid 174 -wwn 24000024ff41668f rename -alias bc15tk2_13/hba1
-   symaccess -sid 174 -wwn 24000024ff416a92 rename -alias bc15tk2_14/hba0
-   symaccess -sid 174 -wwn 24000024ff416a93 rename -alias bc15tk2_14/hba1
-   symaccess -sid 174 list devinfo -ig IG_bc15tk2_dbtmdci
+   symaccess -sid 174 -wwn 26000024ff4165b4 rename -alias bc15tv2_01/hba0
+   symaccess -sid 174 -wwn 26000024ff4165b5 rename -alias bc15tv2_01/hba1
+   symaccess -sid 174 -wwn 26000024ff415192 rename -alias bc15tv2_02/hba0
+   symaccess -sid 174 -wwn 26000024ff415193 rename -alias bc15tv2_02/hba1
+   symaccess -sid 174 -wwn 26000024ff416402 rename -alias bc15tv2_03/hba0
+   symaccess -sid 174 -wwn 26000024ff416403 rename -alias bc15tv2_03/hba1
+   symaccess -sid 174 -wwn 26000024ff41679e rename -alias bc15tv2_04/hba0
+   symaccess -sid 174 -wwn 26000024ff41679f rename -alias bc15tv2_04/hba1
+   symaccess -sid 174 -wwn 26000024ff4165f0 rename -alias bc15tv2_05/hba0
+   symaccess -sid 174 -wwn 26000024ff4165f1 rename -alias bc15tv2_05/hba1
+   symaccess -sid 174 -wwn 26000024ff416460 rename -alias bc15tv2_06/hba0
+   symaccess -sid 174 -wwn 26000024ff416461 rename -alias bc15tv2_06/hba1
+   symaccess -sid 174 -wwn 26000024ff416ac8 rename -alias bc15tv2_07/hba0
+   symaccess -sid 174 -wwn 26000024ff416ac9 rename -alias bc15tv2_07/hba1
+   symaccess -sid 174 -wwn 26000024ff416a10 rename -alias bc15tv2_08/hba0
+   symaccess -sid 174 -wwn 26000024ff416a11 rename -alias bc15tv2_08/hba1
+   symaccess -sid 174 -wwn 26000024ff416696 rename -alias bc15tv2_09/hba0
+   symaccess -sid 174 -wwn 26000024ff416697 rename -alias bc15tv2_09/hba1
+   symaccess -sid 174 -wwn 26000024ff4165b0 rename -alias bc15tv2_10/hba0
+   symaccess -sid 174 -wwn 26000024ff4165b1 rename -alias bc15tv2_10/hba1
+   symaccess -sid 174 -wwn 26000024ff416b0e rename -alias bc15tv2_11/hba0
+   symaccess -sid 174 -wwn 26000024ff416b0f rename -alias bc15tv2_11/hba1
+   symaccess -sid 174 -wwn 26000024ff416528 rename -alias bc15tv2_12/hba0
+   symaccess -sid 174 -wwn 26000024ff416529 rename -alias bc15tv2_12/hba1
+   symaccess -sid 174 -wwn 26000024ff41668e rename -alias bc15tv2_13/hba0
+   symaccess -sid 174 -wwn 26000024ff41668f rename -alias bc15tv2_13/hba1
+   symaccess -sid 174 -wwn 26000024ff416a92 rename -alias bc15tv2_14/hba0
+   symaccess -sid 174 -wwn 26000024ff416a93 rename -alias bc15tv2_14/hba1
+   symaccess -sid 174 list devinfo -ig IG_bc15tv2_dbtmdci
  
    Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE, человеческий фактор, потеря данных.
