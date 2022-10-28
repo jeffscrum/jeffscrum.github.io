@@ -1,0 +1,74 @@
+.. index:: vmax, tasks
+
+.. meta::
+   :keywords: vmax, tasks
+
+.. _TASK03562213
+
+.. TASK03562213
+
+VMAX. Удалить диски с нод кластера (AIX)
+========================================
+
+Прошу подготовить план удаления дисков VMAX-2 c нод кластера SECDB (p780-6-lp05/p780-8-lp15) и удалению мапинга на VMAX.
+
+Файлы :download:`TASK03562213.tar.gz </_static/TASK03562213.tar.gz>`
+
+.. code:: none
+
+   === Notes ===
+   symaccess -sid 174 list view
+   symcfg -sid 174 show -pool SECDB -thin -detail
+   ============
+   План работ:
+   1. Удаляем hdisk'и с 815:
+   rmdev -dl hdisk17
+   rmdev -dl hdisk18 
+   rmdev -dl hdisk19 
+   rmdev -dl hdisk20 
+   rmdev -dl hdisk21
+   rmdev -dl hdisk22
+   rmdev -dl hdisk23
+   rmdev -dl hdisk24
+   rmdev -dl hdisk25
+   rmdev -dl hdisk26
+   rmdev -dl hdisk27
+   rmdev -dl hdisk28
+   2. Удаление symdev с VMAX-2:
+   2.1 Просматриваем информацию по текущему пулу:
+   symcfg -sid 174 show -pool SECDB -thin -detail
+  
+   2.2 Переводим symdev в not_ready status:
+   symdev -sid 174 not_ready -dev 0C8D,0C9D,0CAD,0CBD,0CCD,0CDD,0CED,0CFD,0D0D,0ED5,0ED9,0EE9
+    
+   2.3 Удаляем TDEV из SG_SECDB:
+   symaccess -sid 174 -name SG_SECDB -type storage remove devs C8D,C9D,CAD,CBD,CCD,CDD,CED,CFD,D0D,ED5,ED9,EE9 -unmap
+   symaccess -sid 174 delete -name SG_SECDB -type storage -force
+    
+   2.4 Выводим TDEV из пула SECDB:
+   symconfigure -sid 174 -file unbindTDEV.txt -v -nop prepare
+   symconfigure -sid 174 -file unbindTDEV.txt -v commit
+   2.4.1 Проверяем прогресс unbind. Ждем пока исчезнут все TDEV из пула:
+   symcfg -sid 174 show -pool SECDB -thin -detail
+    
+   2.5 Выводим DATAdev:
+   symconfigure -sid 174 -file disableDATADEV.txt -v -nop prepare
+   symconfigure -sid 174 -file disableDATADEV.txt -v commit
+    
+   2.6 Удаляем DATADEV из пула:
+   symconfigure -sid 174 -file removeDATADEV.txt -v -nop prepare
+   symconfigure -sid 174 -file removeDATADEV.txt -v commit
+    
+   2.7 Разбираем metaDEV:
+   symconfigure -sid 174 -cmd "dissolve meta dev 0C8D,0C9D,0CAD,0CBD,0CCD,0CDD,0CED,0CFD,0D0D,0ED5,0ED9,0EE9 ;" -v -nop prepare
+   symconfigure -sid 174 -cmd "dissolve meta dev 0C8D,0C9D,0CAD,0CBD,0CCD,0CDD,0CED,0CFD,0D0D,0ED5,0ED9,0EE9 ;" -v commit
+    
+   2.8 Удалям TDEV и DATADEV:
+   symconfigure -sid 174 -file delTDEV_DATADEV.txt -v -nop prepare
+   symconfigure -sid 174 -file delTDEV_DATADEV.txt -v commit
+    
+   2.9 Удаляем пул SECDB:
+   symconfigure -sid 174 -cmd "delete pool SECDB, type=thin;" -v -nop prepare
+   symconfigure -sid 174 -cmd "delete pool SECDB, type=thin;" -v commit
+    
+   Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE, человеческий фактор, потеря данных.

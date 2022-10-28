@@ -1,0 +1,140 @@
+.. index:: vmax, tasks
+
+.. meta::
+   :keywords: vmax, tasks
+
+.. _TASK03049093:
+
+.. TASK03049093
+
+VMAX. Разобрать пулы и создать новые луны
+=========================================
+
+По согласованию с заказчиком требуется разобрать пулы
+
+- Task1 (диски отданы на T5-8-3-ld5)
+- Scilla_M7 (диски тданы на T5-8-3-ld6)
+- Task1_Clone (диски никуда не отданы)
+
+Далее общий объем делим на 20 лунов (объем общего пространства нового пула будет ~63 Тб)
+
+Файлы :download:`TASK03049093.tar.gz </_static/TASK03049093.tar.gz>`
+
+.. code:: none
+
+   Разбираем текущй маппинг:
+   symaccess -sid 966 delete view -name MV_Rback2 -unmap
+   symaccess -sid 966 delete view -name MV_Scilla_M7 -unmap
+    
+   0. Запрашиваем ПИСЬМЕННОЕ подтверждение наличия бэкапов у заказчика
+   1. Проверяем пулы
+   symcfg -sid 966 list -pool -thin -gb -detail
+   2. Смотрим каждый пул отдельно:
+   symcfg -sid 966 show -pool Task1 -thin -detail          // диски из DG Task1_FC
+   symcfg -sid 966 show -pool Scilla_M7 -thin -detail      // диски из DG Task7StandBy_FC
+   symcfg -sid 966 show -pool Task1_Clone -thin -detail    // диски из DG Task1_CloneFC
+   2.5 Разбраем FAST и Tier
+   symfast -sid 966 list -fp
+   symfast -sid 966 show -fp_name Rback2
+   symfast -sid 966 -fp -fp_name Rback2 remove -tier_name Task1_Rback2_SSD
+   symfast -sid 966 -fp_name Rback2 disassociate -sg SG_Task1_tier
+   symfast -sid 966 -fp -fp_name Rback2 delete -force
+   symtier -sid 966 delete -tier_name Task1_Rback2_SSD -force
+   symtier -sid 966 delete -tier_name Task1_Rback2 -force
+   3. Разбираем текущий пул Task1
+   3.1 создаем файл unbindTDEVtask1.txt
+   symconfigure -sid 966 -file task1_unbindTDEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1_unbindTDEV.txt -v commit
+   3.2 Выводим DATAdev:
+   3.2.1 создаем файл disableDATADEVtask1.txt
+   symconfigure -sid 966 -file task1_disableDATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1_disableDATADEV.txt -v commit
+   3.2.2 создаем файл removeDATADEVtask1.txt
+   symconfigure -sid 966 -file task1_removeDATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1_removeDATADEV.txt -v commit
+   3.3 Удалям TDEV пула
+   symconfigure -sid 966 -file task1_delTDEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1_delTDEV.txt -v commit
+   3.4 Удаляем пул
+   symconfigure -sid 966 -cmd "delete pool Task1, type=thin;" -v -nop prepare
+   symconfigure -sid 966 -cmd "delete pool Task1, type=thin;" -v commit
+    
+   4. Разбираем пул Scilla_M7
+   4.1 создаем файл unbindTDEVtask1.txt
+   symconfigure -sid 966 -file scilla_unbindTDEV.txt -v -nop prepare
+   symconfigure -sid 966 -file scilla_unbindTDEV.txt -v commit
+   4.2 Выводим DATAdev:
+   4.2.1 создаем файл disableDATADEVtask1.txt
+   symconfigure -sid 966 -file scilla_disableDATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file scilla_disableDATADEV.txt -v commit
+   4.2.2 создаем файл removeDATADEVtask1.txt
+   symconfigure -sid 966 -file scilla_removeDATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file scilla_removeDATADEV.txt -v commit
+   **
+   ** Тут нужно разбирать metaTDEV, так как массив не дает их удалить собранными
+   ** Сделано
+   **
+   4.3 Удаляем DATAdev и TDEV 
+   symconfigure -sid 966 -file scilla_delTDEV_DATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file scilla_delTDEV_DATADEV.txt -v commit
+   4.4 Удаляем пул
+   symconfigure -sid 966 -cmd "delete pool Scilla_M7, type=thin;" -v -nop prepare
+   symconfigure -sid 966 -cmd "delete pool Scilla_M7, type=thin;" -v commit
+    
+   5. Разбираем пул Task1_Clone
+   ** 5.1 создаем файл unbindTDEVtask1.txt             // сделано
+   symconfigure -sid 966 -file task1clone_unbindTDEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1clone_unbindTDEV.txt -v commit
+   5.2 Выводим DATAdev:
+   5.2.1 создаем файл disableDATADEVtask1.txt
+   symconfigure -sid 966 -file task1clone_disableDATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1clone_disableDATADEV.txt -v commit
+   5.2.2 создаем файл removeDATADEVtask1.txt
+   symconfigure -sid 966 -file task1clone_removeDATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1clone_removeDATADEV.txt -v commit
+   5.2.6 Разбираем metaDEV
+   symconfigure -sid 966 -cmd "dissolve meta dev 020D,0215,0225,0235,0245,0255,0265,0275,0285,0295,02A5,02B5,02C5,02D5,02E5,02F5,0305,0315,0325,0335,0345 ;" prepare -v
+   symconfigure -sid 966 -cmd "dissolve meta dev 020D,0215,0225,0235,0245,0255,0265,0275,0285,0295,02A5,02B5,02C5,02D5,02E5,02F5,0305,0315,0325,0335,0345 ;" commit -v
+   5.3 Удаляем DATAdev и TDEV
+   symconfigure -sid 966 -file task1clone_delTDEV_DATADEV.txt -v -nop prepare
+   symconfigure -sid 966 -file task1clone_delTDEV_DATADEV.txt -v commit
+   5.4 Удаляем пул
+   symconfigure -sid 966 -cmd "delete pool Task1_Clone, type=thin;" -v -nop prepare
+   symconfigure -sid 966 -cmd "delete pool Task1_Clone, type=thin;" -v commit
+   6. Создаем новый тонкий пулл
+   symconfigure -sid 966 -cmd "create pool CloseDayFast type=thin;" -v -nop prepare
+   symconfigure -sid 966 -cmd "create pool CloseDayFast type=thin;" -v commit
+   7. Проверяем что пулы Task1, Scilla_M7, Task1_Clone удалены, а CloseDayFast создан:
+   symcfg -sid 966 list -pool -thin -gb -detail
+   8. Перемщаем DATAdev из Task1 --> CloseDayFast
+   symconfigure -sid 966 -file task1DATADEV_to_closedayfast.txt -v -nop prepare
+   symconfigure -sid 966 -file task1DATADEV_to_closedayfast.txt -v commit
+   9. Так как в пуле Scilla_M7 dataDEV другой геометрии, а в Task1_Clone другого уровня RAID, их нужно пересоздавать и добавить в новый пул:
+   symconfigure -sid 966 -file createDATADEV_dg15_to_CloseDayFast.txt -v -nop prepare
+   symconfigure -sid 966 -file createDATADEV_dg15_to_CloseDayFast.txt -v commit
+   symconfigure -sid 966 -file createDATADEV_dg4_to_CloseDayFast.txt -v -nop prepare
+   symconfigure -sid 966 -file createDATADEV_dg4_to_CloseDayFast.txt -v commit
+   10. Создаем нвые TDEV для пула CloseDayFast:
+   symconfigure -sid 966 -cmd "create dev count=8, emulation=FBA, config=TDEV, size=9038400, meta_member_size=564900, meta_config=striped, binding to pool =CloseDayFast, preallocate size =9038400 ;" prepare -v
+   symconfigure -sid 966 -cmd "create dev count=8, emulation=FBA, config=TDEV, size=9038400, meta_member_size=564900, meta_config=striped, binding to pool =CloseDayFast, preallocate size =9038400 ;" commit -v
+   * 11. Создаем TDEV в пуле (20 metadev * 16 members). [Записываем новые адреса девайсов dev1:dev20]
+   symconfigure -sid 966 -cmd "create dev count=20, emulation=FBA, config=TDEV, size=3608000, meta_member_size=225500, meta_config=striped, binding to pool =CloseDayFast, preallocate size =3608000 ;" -v -nop prepare
+   symconfigure -sid 966 -cmd "create dev count=20, emulation=FBA, config=TDEV, size=3608000, meta_member_size=225500, meta_config=striped, binding to pool =CloseDayFast, preallocate size =3608000 ;" -v commit
+   12. Создаем маппинг лунов хосту
+   symaccess -sid 966 -name SG_CloseDayFast -type storage create
+   * symaccess -sid 966 -name SG_CloseDayFast -type storage add devs dev1:dev20        // Сюда вписываем новые девайсы полученые в 11 шаге
+   symaccess -sid 966 -name PG_CloseDayFast -type port create
+   symaccess -sid 966 -name PG_CloseDayFast -type port add -dirport 7e:0,8f:1,9g:0,10h:1
+   symaccess -sid 966 create view -name MV_CloseDayFast -pg PG_CloseDayFast -ig IG_3_lp03 -sg SG_CloseDayFast
+   12.5 Делаем зоннинг на Brocade (DCX-50; DCX-51)
+   13. Логинимся на 303 сервер и пытаемся увидеть диски
+   lspv
+   cfgmgr
+   * lspv      // Должны появиться 20 новых дисков. Можно воспользоваться командой diff сохранив вывод ДО и ПОСЛЕ
+ 
+   Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE, человеческий фактор, потеря данных.
+   INFO:
+   . план не включает в себя создание зон на brocade
+   . план не включает разбор текущего мапинга на хостах (только со стороны массива)
+   . команды/пункты со знаком * имеют комментарии
+   . все манипуляции с массивом выполняем с 215 сервера

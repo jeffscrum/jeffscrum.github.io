@@ -1,0 +1,121 @@
+.. index:: vmax, tasks
+
+.. meta::
+   :keywords: vmax, tasks
+
+.. _TASK03041192:
+
+.. TASK03041192
+
+VMAX. Расширения ФС /warehouse/oradata до 60Тб
+==============================================
+
+Просьба подготовить план расширения ФС /warehouse/oradata до 60Тб на кластере p795-1-lp01/p795-2-lp11.
+
+1. На VMAX-3 из группы DISK_GROUP_004_Reserve удалить неиспользуемый пул RMOD_STB_FC.
+2. За счёт освободившегося пространства расширить пул DWH_FC до 60+ Тб.
+3. Увеличить размер 20 лунов в пуле DWH_FC.
+4. Расширить ФС /warehouse/oradata до 60 Тб.
+
+.. code:: none
+
+   Смотрим текущий статус пула:
+   symcfg -sid 307 show -pool RMOD_STB_FC -thin -detail
+   
+   Отключаем TDAT-девайсы:
+   symconfigure -sid 307 -cmd "disable dev 0FAA:1391 in pool RMOD_STB_FC, type=thin;" -v prepare
+   symconfigure -sid 307 -cmd "disable dev 0FAA:1391 in pool RMOD_STB_FC, type=thin;" -v commit
+   
+   Выводим из пула RMOD_STB_FC все дата девайсы(1000 устройств):
+   создаем файл deactivate.txt со следующим содержимым:
+   deactivate dev 0FAA in pool RMOD_STB_FC, type=thin;
+   ...
+   deactivate dev 1391 in pool RMOD_STB_FC, type=thin;
+   symconfigure -sid 307 -file deactivate.txt -v -nop prepare
+   symconfigure -sid 307 -file deactivate.txt -v -nop commit
+   
+   Создаем файл "draining.txt" с содержанием:
+   start drain on dev dev 0FAA in pool RMOD_STB_FC, type=thin;
+   ...
+   start drain on dev dev 1391 in pool RMOD_STB_FC, type=thin;
+   symconfigure -sid 307 -file draining.txt -v -nop prepare
+   symconfigure -sid 307 -file draining.txt -v commit
+   
+   После данных действий необходимо ждать неопределенное количество времени, чтобы массив перенес данные с перечисленных DATAdev'ов.
+   Перенос может занять достаточно большое количество времени.
+   После того, как количество используемых трэков на них будет равно нулю можно продолжить.
+   
+   Удаление DATAdev'ов из пула:
+   Создаем файл "removeDATAdev.txt" c содержанием:
+   remove dev 0FAA from pool RMOD_STB_FC type=thin;
+   ...
+   remove dev 1391 from pool RMOD_STB_FC type=thin;
+   symconfigure -sid 307 -file removeDATAdev.txt -v -nop prepare
+   symconfigure -sid 307 -file removeDATAdev.txt -v commit
+   
+   Удаляем сам пул:
+   symconfigure -sid 307 -cmd "delete pool RMOD_STB_FC, type=thin;" -v prepare
+   symconfigure -sid 307 -cmd "delete pool RMOD_STB_FC, type=thin;" -v commit
+   
+   Проверяем что пул удален
+   symcfg -sid 307 list -pool -thin -gb -detail
+   
+   Проверяем текущее количество девайсов в пуле:
+   symcfg -sid 307 show -pool DWH_FC -thin -detail | grep "in Pool"
+   
+   Создаем файл "addDATAdev.txt" c содержанием:
+   add dev 0FAA to pool DWH_FC, type=thin, member_state=ENABLE;
+   ...
+   add dev 1391 to pool DWH_FC, type=thin, member_state=ENABLE;
+   symconfigure -sid 307 -file addDATAdev.txt -v -nop prepare
+   symconfigure -sid 307 -file addDATAdev.txt -v commit
+   
+   Проверяем что девайсы добавились:
+   symcfg -sid 307 show -pool DWH_FC -thin -detail | grep "in Pool"
+   
+   Создаем файл "balancing.txt" с содержанием:
+   start balancing on pool DWH_FC type=thin;
+   symconfigure -sid 307 -cmd "start balancing on pool DWH_FC type=thin;" -v -nop prepare
+   symconfigure -sid 307 -cmd "start balancing on pool DWH_FC type=thin;" -v commit
+   
+   Проверяем что пул начал ре-балансировку. После завершения переходим к следующему шагу:
+   symcfg -sid 307 show -pool DWH_FC -thin |grep "Pool State"
+   
+   Создаем новые девайсы аналогичные существующим (20 metaDEV, собранных из 16 tdev объемом 100000 cyl каждый)
+   symconfigure -sid 307 -cmd "create dev count=20, emulation=FBA, config=TDEV, size=1600000, meta_member_size=100000, meta_config=striped ;" -v prepare
+   symconfigure -sid 307 -cmd "create dev count=20, emulation=FBA, config=TDEV, size=1600000, meta_member_size=100000, meta_config=striped ;" -v commit
+   
+   Создаем файл "bind.txt" с содержанием:
+   bind tdev thindev1 to pool DWH_FC, preallocate size=ALL;
+   ...
+   bind tdev thindev20 to pool DWH_FC, preallocate size=ALL;
+   symconfigure -sid 307 -file bind.txt -v prepare
+   symconfigure -sid 307 -file bind.txt -v commit
+   
+   Проверяем, что у пула не появилась переподписка.
+   symcfg -sid 307 list -pool -thin -detail -gb
+   
+   Добавляем созданные устройства в группу для сервера SG_DWH.
+   symaccess -sid 307  -name SG_DWH -type storage add devs 1500,1510,1520,1530,1540,1550,1560,1570,1580,1590,15A0,15B0,15C0,15D0,15E0,15F0,1600,1610,1620,1630
+   
+   Распознаем диски на сервере:
+   cfgmgr
+   lspv
+     
+   Расширяем дисковую группу:
+   extendvg vmax3_db_vg <hdisk1....hdisk20>
+   
+   Расширяем том DWH_db_lv:
+   chlv -u 40 -x 55920 DWH_db_lv (Изменяем характеристики тома, указывая что будет использоваться 40 дисков и максимально 55920 PP)
+   lsvg vmax3_db_vg
+   lsvg -p vmax3_db_vg
+   extendlv DWH_db_lv <numbers_of_PP> (складываем значения свободных PP из шага выше)
+   
+   Расширяем ФС /warehouse/oradata:
+   lsfs -q /dev/DWH_db_lv (расширяем ФС на весь том [lv size: 117272739840, fs size: 55868129280])
+   chfs -a size=68719476736 /dev/DWH_db_lv (максимальный размер ФС c block-size 4k)
+   
+   Риски: неизвестные ошибки ПО, некорректное отрабатывание команд, человеческий фактор, потеря данных.
+   В случае если нужно, анбиндим девайсы через web
+   Разбираем мета девайсы "symconfigure -sid xxx -cmd "dissolve meta dev 0234;" PREVIEW"
+   Удаляем девайсы "symconfigure -sid xxx -cmd "delete dev 0234:0235;" COMMIT"

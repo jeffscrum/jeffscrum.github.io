@@ -25,6 +25,13 @@
    :maxdepth: 1
 
    hds-standard-work-plans
+   TASK01365461
+   TASK03041192
+   TASK03049093
+   TASK03334903
+   TASK03354440
+   TASK03562213
+   TASK03563742
 
 
 Работа с ОС
@@ -44,3 +51,5 @@
    :maxdepth: 1
 
    ibm-vrm-replacement
+   brocade-dcx-fan-replace
+   

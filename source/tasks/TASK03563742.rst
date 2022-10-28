@@ -1,0 +1,105 @@
+.. index:: vmax, tasks
+
+.. meta::
+   :keywords: vmax, tasks
+
+.. _TASK03563742
+
+.. TASK03563742
+
+VMAX. Удалить диски с серверов (AIX)
+====================================
+
+Прошу подготовить план по удалению  дисков массива vmax с серверов p780-6-lp15 b p780-8-lp20.
+
+Файлы :download:`TASK03563742.tar.gz </_static/TASK03563742.tar.gz>`
+
+.. code:: none
+
+   === DISKS ===
+   - /dev/rhdiskASM1
+   - /dev/rhdiskASM11
+   - /dev/rhdiskASM12
+   - /dev/rhdiskASM13
+   - /dev/rhdiskASM14
+   - /dev/rhdiskASM16
+   - /dev/rhdiskASM17
+   - /dev/rhdiskASM18
+   - /dev/rhdiskASM2
+   - /dev/rhdiskASM3
+   - /dev/rhdiskASM4
+   - /dev/rhdiskASM5
+   - /dev/rhdiskASM6
+   - /dev/rhdiskASM7
+   - /dev/rhdiskASM8
+   
+   ====== Notes ====
+   symaccess -sid 307 list
+   symaccess -sid 307 show SG_CFT -type storage
+   symaccess -sid 307 list -type storage -dev 085D
+   symcfg -sid 307 list -tdev
+   =================
+   0. Убедиться что все данные перенесены на другие диски или 
+   1. Удаляем диски из AIX 
+   1.1 p795-2-lp20:
+   rmdev -dl hdiskASM1
+   rmdev -dl hdiskASM2
+   rmdev -dl hdiskASM3
+   rmdev -dl hdiskASM4
+   rmdev -dl hdiskASM5
+   rmdev -dl hdiskASM6
+   rmdev -dl hdiskASM7
+   rmdev -dl hdiskASM8
+   rmdev -dl hdiskASM11
+   rmdev -dl hdiskASM12
+   rmdev -dl hdiskASM13
+   rmdev -dl hdiskASM14
+   rmdev -dl hdiskASM16
+   rmdev -dl hdiskASM17
+   rmdev -dl hdiskASM18
+   1.2 p795-1-lp15:
+   rmdev -dl hdiskASM1
+   rmdev -dl hdiskASM2
+   rmdev -dl hdiskASM3
+   rmdev -dl hdiskASM4
+   rmdev -dl hdiskASM5
+   rmdev -dl hdiskASM6
+   rmdev -dl hdiskASM7
+   rmdev -dl hdiskASM8
+   rmdev -dl hdiskASM11
+   rmdev -dl hdiskASM12
+   rmdev -dl hdiskASM13
+   rmdev -dl hdiskASM14
+   rmdev -dl hdiskASM16
+   rmdev -dl hdiskASM17
+   rmdev -dl hdiskASM18
+    
+   2. Проверяем маскинг на массиве. Нужный нам MV = MV_CFT
+   symaccess -sid 307 list view
+   symaccess -sid 307 show SG_CFT -type storage
+ 
+ 
+   2.1 Удаляем луны из SG массива
+   symaccess -sid 307 -name SG_CFT -type storage remove devs 085D,086D,087D,088D,089D,08AD,08BD,08CD,0B0E,0B1E,0B2E,0B3E,1392,13A2,13B2 -unmap
+   symaccess -sid 307 -name CFT_FAST_SG -type storage remove devs 085D,086D,087D,088D,089D,08AD,08BD,08CD,0B0E,0B1E,0B2E,0B3E,1392,13A2,13B2 -unmap
+    
+    
+   3. Отключаем устройства symdev:
+   symdev -sid 307 not_ready -dev 085D,086D,087D,088D,089D,08AD,08BD,08CD,0B0E,0B1E,0B2E,0B3E,1392,13A2,13B2
+    
+    
+   4. Выводим TDEV из пула CFT_FC:
+   symconfigure -sid 307 -file unbindTDEV.txt -v -nop prepare
+   symconfigure -sid 307 -file unbindTDEV.txt -v commit
+    
+    
+   5. Разбираем metaDEV
+   symconfigure -sid 307 -cmd "dissolve meta dev 085D,086D,087D,088D,089D,08AD,08BD,08CD,0B0E,0B1E,0B2E,0B3E,1392,13A2,13B2 ;" prepare -v
+   symconfigure -sid 307 -cmd "dissolve meta dev 085D,086D,087D,088D,089D,08AD,08BD,08CD,0B0E,0B1E,0B2E,0B3E,1392,13A2,13B2 ;" commit -v
+    
+    
+   6. Удаляем symdev
+   symconfigure -sid 307 -file delDEV.txt -v -nop prepare
+   symconfigure -sid 307 -file delDEV.txt -v commit
+    
+   Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE

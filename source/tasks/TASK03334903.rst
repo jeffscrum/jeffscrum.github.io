@@ -1,0 +1,133 @@
+.. index:: vmax, tasks
+
+.. meta::
+   :keywords: vmax, tasks
+
+.. _TASK03334903
+
+.. TASK03334903
+
+VMAX. Разобрать пулы и создать новые луны
+=========================================
+
+Прошу подготовить план переразбивки пула Task1DBClone из R5(7+1) в R10( 2-WayMir ). Для нового пула использовать все диски группы DISK_GROUP_002. Новый пул назвать DB_TM_DCI. В новом пуле создать 1 лун 11Тб и показать на bc15tk2.
+
+План случайно закрыл. Финальный план отличался созданием 1 TDEV (0D5D) из 64 кусочков. А также, при удалении DATADEV их необходимо было перевести в состояние Not_Ready.
+
+Файлы :download:`TASK03334903.tar.gz </_static/TASK03334903.tar.gz>`
+
+.. code:: none
+
+   0. Убедиться в наличии актуального бэкапа
+   1. Разбираем текущий мапинг:
+   symaccess -sid 174 list view
+   symaccess -sid 174 delete view -name MV_Task1_Clone_bc15_aix03 -unmap
+   symaccess -sid 174 delete -name IG_Task1_Clone_bc15_aix03 -type initiator -force
+   symaccess -sid 174 delete -name SG_Task1_Clone -type storage -force
+   symaccess -sid 174 delete -name PG_Task1_Clone -type port -force
+   2. Проверяем пулы:
+   symcfg -sid 174 list -pool -thin -gb -detail
+   3. Просматриваем информацию по текущему пулу:
+   symcfg -sid 174 show -pool Task1DBClone -thin -detail 
+   4. Останавливаем клонирование и удаляем клон-группу
+   symclone -g Task1 terminate -tgt
+   symclone -g Task1 query
+   symdg delete Task1 -force
+   5. Разбираем пул Task1DBClone
+   5.1 Выводим TDEV:
+   symconfigure -sid 174 -file unbindTDEV.txt -v -nop prepare
+   symconfigure -sid 174 -file unbindTDEV.txt -v commit
+   5.2 Выводим DATAdev:
+   5.2.1 Отключаем DATADEV из пула:
+   symconfigure -sid 174 -file disableDATADEV.txt -v -nop prepare
+   symconfigure -sid 174 -file disableDATADEV.txt -v commit
+   5.2.2 Удаляем DATADEV из пула:
+   symconfigure -sid 174 -file removeDATADEV.txt -v -nop prepare
+   symconfigure -sid 174 -file removeDATADEV.txt -v commit
+   5.3 Разбираем metaDEV:
+   symconfigure -sid 174 -cmd "dissolve meta dev 0B45,0B4D,0B5D,0B6D,0B7D,0B8D,0B9D,0BAD,0BBD,0BCD,0BDD,0BED,0BFD,0C0D,0C1D,0C2D,0C3D,0C4D,0C5D,0C6D,0C7D ;" prepare -v -nop
+   symconfigure -sid 174 -cmd "dissolve meta dev 0B45,0B4D,0B5D,0B6D,0B7D,0B8D,0B9D,0BAD,0BBD,0BCD,0BDD,0BED,0BFD,0C0D,0C1D,0C2D,0C3D,0C4D,0C5D,0C6D,0C7D ;" commit -v
+   5.4 Удалям TDEV и DATADEV:
+   symconfigure -sid 174 -file delTDEVDATADEV.txt -v -nop prepare
+   symconfigure -sid 174 -file delTDEVDATADEV.txt -v commit
+   5.5 Удаляем пул Task1DBClone:
+   symconfigure -sid 174 -cmd "delete pool Task1DBClone, type=thin;" -v -nop prepare
+   symconfigure -sid 174 -cmd "delete pool Task1DBClone, type=thin;" -v commit
+   6. Создаем новый thin-pool
+   symconfigure -sid 174 -cmd "create pool DB_TM_DCI type=thin;" -v -nop prepare
+   symconfigure -sid 174 -cmd "create pool DB_TM_DCI type=thin;" -v commit
+   7. Создаем новые DATADEV и добавляем их в пул:
+   12303292 | 171*72196=12345516
+   symconfigure -sid 174 -cmd "create dev count=171, size=72196, emulation=FBA, config=2-Way-Mir, attribute=DATADEV, disk_group=2, in pool=DB_TM_DCI, member_state=ENABLE;" prepare -v
+   symconfigure -sid 174 -cmd "create dev count=171, size=72196, emulation=FBA, config=2-Way-Mir, attribute=DATADEV, disk_group=2, in pool=DB_TM_DCI, member_state=ENABLE;" commit -v
+   8. Создаем новый TDEV и добавляем его в пул *[записываем имя нового TDEV]*:
+   12345516 | 12*1028793
+   symconfigure -sid 174 -cmd "create dev count=1, emulation=FBA, config=TDEV, size=2057586, meta_member_size=1028793, meta_config=striped, binding to pool=DB_TM_DCI, preallocate size=2057586 ;" prepare -v
+   symconfigure -sid 174 -cmd "create dev count=1, emulation=FBA, config=TDEV, size=2057586, meta_member_size=1028793, meta_config=striped, binding to pool=DB_TM_DCI, preallocate size=2057586 ;" commit -v
+   9. Отмапливаем лун серверу
+   symaccess -sid 174 -name SG_bc15tk2_dbtmdci -type storage create
+   symaccess -sid 174 -name SG_bc15tk2_dbtmdci -type storage add devs <TDEV1>(см. п. 8)
+   symaccess -sid 174 -name PG_bc15tk2_dbtmdci -type port create
+   symaccess -sid 174 -name PG_bc15tk2_dbtmdci -type port add -dirport 10e:0,5h:1,6h:1,8h:0
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator create
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b4
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b5
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff415192
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff415193
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416402
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416403
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41679e
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41679f
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165f0
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165f1
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416460
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416461
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416ac8
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416ac9
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a10
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a11
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416696
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416697
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b0
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff4165b1
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416b0e
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416b0f
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416528
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416529
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41668e
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff41668f
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a92
+   symaccess -sid 174 -name IG_bc15tk2_dbtmdci -type initiator add -wwn 24000024ff416a93
+   symaccess -sid 174 create view -name MV_bc15tk2_dbtmdci -pg PG_bc15tk2_dbtmdci -ig IG_bc15tk2_dbtmdci -sg SG_bc15tk2_dbtmdci
+   10. Переименовываем хосты для удобства в будущем
+   symaccess -sid 174 -wwn 24000024ff4165b4 rename -alias bc15tk2_01/hba0
+   symaccess -sid 174 -wwn 24000024ff4165b5 rename -alias bc15tk2_01/hba1
+   symaccess -sid 174 -wwn 24000024ff415192 rename -alias bc15tk2_02/hba0
+   symaccess -sid 174 -wwn 24000024ff415193 rename -alias bc15tk2_02/hba1
+   symaccess -sid 174 -wwn 24000024ff416402 rename -alias bc15tk2_03/hba0
+   symaccess -sid 174 -wwn 24000024ff416403 rename -alias bc15tk2_03/hba1
+   symaccess -sid 174 -wwn 24000024ff41679e rename -alias bc15tk2_04/hba0
+   symaccess -sid 174 -wwn 24000024ff41679f rename -alias bc15tk2_04/hba1
+   symaccess -sid 174 -wwn 24000024ff4165f0 rename -alias bc15tk2_05/hba0
+   symaccess -sid 174 -wwn 24000024ff4165f1 rename -alias bc15tk2_05/hba1
+   symaccess -sid 174 -wwn 24000024ff416460 rename -alias bc15tk2_06/hba0
+   symaccess -sid 174 -wwn 24000024ff416461 rename -alias bc15tk2_06/hba1
+   symaccess -sid 174 -wwn 24000024ff416ac8 rename -alias bc15tk2_07/hba0
+   symaccess -sid 174 -wwn 24000024ff416ac9 rename -alias bc15tk2_07/hba1
+   symaccess -sid 174 -wwn 24000024ff416a10 rename -alias bc15tk2_08/hba0
+   symaccess -sid 174 -wwn 24000024ff416a11 rename -alias bc15tk2_08/hba1
+   symaccess -sid 174 -wwn 24000024ff416696 rename -alias bc15tk2_09/hba0
+   symaccess -sid 174 -wwn 24000024ff416697 rename -alias bc15tk2_09/hba1
+   symaccess -sid 174 -wwn 24000024ff4165b0 rename -alias bc15tk2_10/hba0
+   symaccess -sid 174 -wwn 24000024ff4165b1 rename -alias bc15tk2_10/hba1
+   symaccess -sid 174 -wwn 24000024ff416b0e rename -alias bc15tk2_11/hba0
+   symaccess -sid 174 -wwn 24000024ff416b0f rename -alias bc15tk2_11/hba1
+   symaccess -sid 174 -wwn 24000024ff416528 rename -alias bc15tk2_12/hba0
+   symaccess -sid 174 -wwn 24000024ff416529 rename -alias bc15tk2_12/hba1
+   symaccess -sid 174 -wwn 24000024ff41668e rename -alias bc15tk2_13/hba0
+   symaccess -sid 174 -wwn 24000024ff41668f rename -alias bc15tk2_13/hba1
+   symaccess -sid 174 -wwn 24000024ff416a92 rename -alias bc15tk2_14/hba0
+   symaccess -sid 174 -wwn 24000024ff416a93 rename -alias bc15tk2_14/hba1
+   symaccess -sid 174 list devinfo -ig IG_bc15tk2_dbtmdci
+ 
+   Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE, человеческий фактор, потеря данных.

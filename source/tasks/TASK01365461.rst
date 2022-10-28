@@ -1,0 +1,116 @@
+.. index:: vmax, tasks
+
+.. meta::
+   :keywords: vmax, tasks
+
+.. _TASK01365461:
+
+.. TASK01365461
+
+VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911
+==========================================================
+
+Девайсы (DATAdev), за счет которых Вы хотите расширять пул Task1bin_DB, собраны на другой дисковой группе.
+
+Пояснение: девайсы пула Task1bin_DB относятся к дисковой группе "DISK_GROUP_001", а девайсы пула Task911 относятся к дисковой группе "DISK_GROUP_009".
+Диски с этих групп имеют разный размер и располагаются не оптимальным образом относительно друг друга в массиве. Так же размер DATAdev из пула Task1bin_DB равен "MegaBytes:34352", а из пула Task911 -- "MegaBytes:17108". Соответственно, учитывая все вышесказанное, придобавлении этих девайсов в пул Task1bin_DB, пул получится несбалансированным, чтоприведёт к достаточно сильному снижению производительности на thin-девайсах, относящихсяк данному пулу. Так же после добавления новых DATAdev необходимо будет запускать процедуру "balancing" на пул Task1bin_DB, чтобы данные равномерно распределились на все DATAdev, включая новые, что может привести к еще более высокой просадке производительности, т.к. девайсы в пуле будут разного размера.
+Так же при удалении девайсов, относящихся к "tm1-BIN_vg", "tm1-DB_vg", "tm1-arch_vg" все данные на них будут утеряны. И необходимо иметь актуальный бэкап данных с пула  Task1bin_DB, т.к. всегда присутствует риск потери данных при неизвестных ошибках отрабатывания команд SE. Так же необходимо решить дальнейшую судьбу клонов после удаления таргет девайсов.
+
+.. code:: none
+
+   Удаление сессии клонирования:
+   symclone -g Task11a terminate
+   
+   Убираем мапинг на массиве:
+   symaccess -sid 74 -name SG_Task11 -type storage -unmap remove devs 
+   0EF1,0EF5,0F05,0F15,0F25,0F35
+   
+   Удаляем thin-девайсы из пула:
+   
+   Создаем файл "unbind.txt" с содержанием:
+   unbind tdev 0EF1 from pool Task911;
+   unbind tdev 0EF5 from pool Task911;
+   unbind tdev 0F05 from pool Task911;
+   unbind tdev 0F15 from pool Task911;
+   unbind tdev 0F25 from pool Task911;
+   unbind tdev 0F35 from pool Task911;
+   symconfigure -sid 74 -file unbind.txt -v -nop prepare
+   symconfigure -sid 74 -file unbind.txt -v commit
+   
+   Удаление самих thin-девайсов
+   
+   Создаем файл "dissolve.txt" c содержанием:
+   dissolve meta dev 0EF1;
+   dissolve meta dev 0EF5;
+   dissolve meta dev 0F05;
+   dissolve meta dev 0F15;
+   dissolve meta dev 0F25;
+   dissolve meta dev 0F35;
+   symconfigure -sid 74 -file dissolve.txt -v -nop prepare
+   symconfigure -sid 74 -file dissolve.txt -v commit
+   
+   Создаем файл "delete.txt" c содержанием:
+   delete dev 0EF1:0EF4;
+   delete dev 0EF5:0F04;
+   delete dev 0F05:0F14;
+   delete dev 0F15:0F24;
+   delete dev 0F25:0F34;
+   delete dev 0F35:0F3C;
+   symconfigure -sid 74 -file delete.txt -v -nop prepare
+   symconfigure -sid 74 -file delete.txt -v commit
+   
+   После указанных действий необходимо будет подождать некоторое время, чтобы массив освободил место на DATAdev'ах, которое больше не используется.
+   
+   Далее выводим из пула Task911 172 DATAdev'а:
+   
+   Создаем файл "deactivate.txt" с содержанием:
+   deactivate dev 0864 in pool Task911 type = thin;
+   deactivate dev 0865 in pool Task911 type = thin;
+   deactivate dev 0866 in pool Task911 type = thin;
+   
+   ...............Дальше идет перечисление 172-х девайсов.
+   
+   Данные девайсы необходимо подобрать так, чтобы они занимали диски 
+   (физические) целиком.
+   symconfigure -sid 74 -file deactivate.txt -v -nop prepare
+   symconfigure -sid 74 -file deactivate.txt -v commit
+  
+   Создаем файл "draining.txt" с содержанием:
+   start drain on dev 0864 in pool Task911 type=thin;
+   start drain on dev 0865 in pool Task911 type=thin;
+   start drain on dev 0866 in pool Task911 type=thin;
+   
+   ...............Дальше идет перечисление 172-х девайсов.
+   
+   symconfigure -sid 74 -file draining.txt -v -nop prepare
+   symconfigure -sid 74 -file draining.txt -v commit
+   
+   После данных действий необходимо ждать неопределенное количество времени, чтобы массив перенес данные с перечисленных DATAdev'ов.
+   Перенос может занять достаточно большое количество времени.
+   После того, как количество используемых трэков на них будет равно нулю можно продолжить.
+   Удаление DATAdev'ов из пула:
+   
+   Создаем файл "removeDATAdev.txt" c содержанием:
+   remove dev 0864 from pool Task911 type = thin;
+   remove dev 0865 from pool Task911 type = thin;
+   remove dev 0866 from pool Task911 type = thin;
+   
+   ..............Дальше идет перечисление 172-х девайсов.
+   
+   symconfigure -sid 74 -file removeDATAdev.txt -v -nop prepare
+   symconfigure -sid 74 -file removeDATAdev.txt -v commit
+   
+   Добавление DATAdev'ов в новый пул:
+   
+   Создаем файл "addDATAdev.txt" c содержанием:
+   add dev 0864 to pool Task1bin_DB type=thin, member_state=ENABLE;
+   add dev 0865 to pool Task1bin_DB type=thin, member_state=ENABLE;
+   add dev 0866 to pool Task1bin_DB type=thin, member_state=ENABLE;
+   
+   ..............Дальше идет перечисление 172-х девайсов.
+   
+   Создаем файл "balancing.txt" с содержанием:
+   start balancing on pool=Task1bin_DB type=thin;
+   Риски:
+   В любом случае - просадка производительности на пуле Task1bin_DB (достаточно сильная).
+   Неизвестные ошибки ПО, SE и некорректное отрабатывание комманд и потеря данных (необходимо иметь актуальный бэкап данных пула Task1bin_DB).
