@@ -3,14 +3,14 @@
 .. meta::
    :keywords: sun, oracle, exadata, ib, infiniband, AutomaticHighErrorRate, error, disabled
 
-.. _exadata-ib-AutomaticHighErrorRate:
+.. _exadata-ib-automatichigherrorrate:
 
 .. TASK08718144
 
 Exadata. Разблокировка IB порта AutomaticHighErrorRate
 ======================================================
 
-На коммутаторе exasw-ibb01 порт 8 (14B) заблокирован вследствие накопленных ошибок. Давайте сбросим счетчик ошибок, разблокируем порт и через помониторим сервер пару недель на предмет появления ошибок вновь. 
+На коммутаторе exasw-ibb01 порт 8 (14B) заблокирован вследствие накопленных ошибок. Давайте сбросим счетчик ошибок, разблокируем порт и помониторим сервер пару недель на предмет появления ошибок вновь. 
 
 .. code-block:: none
 

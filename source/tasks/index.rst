@@ -52,5 +52,5 @@
 
    ibm-vrm-replacement
    brocade-dcx-fan-replace
-   exadata-ib-AutomaticHighErrorRate
+   exadata-ib-automatichigherrorrate
    
