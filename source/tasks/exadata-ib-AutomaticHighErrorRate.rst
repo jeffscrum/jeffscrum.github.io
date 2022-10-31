@@ -27,35 +27,37 @@ Exadata. Разблокировка IB порта AutomaticHighErrorRate
 
 Для того чтобы снова включить его проделайте следующее:
 
-Команды выполняются на свитче exasw-ibb01 под пользователем root:
+.. code-block:: none
 
-	1. Удалите порт из листа автоблокировки:
-	``# autodisable del 14B H``
-	``# autodisable del 14B L``
-	
-	2. Проверьте что порт 14B удален:
-	``# autodisable list``
-	
-	3. Очистка ошибок в фабрике
-	``# ibdiagnet -pc``
-	
-	4. Добавление порта в список автоблокировки
-	``# autodisable add 14B H``
-	``# autodisable add 14B L``
-	
-	5. Проверьте что порт 14B добавлен:
-	``# autodisable list``
-	
-	6. Включение порта обратно
-	``# enableswitchport --automatic 14B``
-	
-	7. Проверка статуса порта (AdminState и LinkState должны быть "Active", а PhysLinkState должен быть "LinkUp".)
-	``# getportstatus 14B``
-
-Команды выполняются на сервере exa2dbadm01:
-
-	8. Зайдите на сервер exa2dbadm01 и проверьте стутус обоих портов (оба должны быть "Active" и "LinkUp").
-	``# ibstat``
+   Команды выполняются на свитче exasw-ibb01 под пользователем root:
+   
+   	  1. Удалите порт из листа автоблокировки:
+   	  # autodisable del 14B H
+   	  # autodisable del 14B L
+   	
+   	  2. Проверьте что порт 14B удален:
+   	  # autodisable list
+   	  
+   	  3. Очистка ошибок в фабрике
+   	  # ibdiagnet -pc
+   	  
+   	  4. Добавление порта в список автоблокировки
+   	  # autodisable add 14B H
+   	  # autodisable add 14B L
+   	  
+   	  5. Проверьте что порт 14B добавлен:
+   	  # autodisable list
+   	  
+   	  6. Включение порта обратно
+   	  # enableswitchport --automatic 14B
+   	  
+   	  7. Проверка статуса порта (AdminState и LinkState должны быть "Active", а PhysLinkState должен быть "LinkUp".)
+   	  # getportstatus 14B
+   
+   Команды выполняются на сервере exa2dbadm01:
+   
+   	  8. Зайдите на сервер exa2dbadm01 и проверьте стутус обоих портов (оба должны быть "Active" и "LinkUp").
+   	  # ibstat
 
 
 ----
