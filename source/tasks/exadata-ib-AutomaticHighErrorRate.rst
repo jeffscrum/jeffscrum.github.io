@@ -54,9 +54,9 @@ Exadata. Разблокировка IB порта AutomaticHighErrorRate
    	  7. Проверка статуса порта (AdminState и LinkState должны быть "Active", а PhysLinkState должен быть "LinkUp".)
    	  # getportstatus 14B
    
-   Команды выполняются на сервере exa2dbadm01:
+   Команды выполняются на сервере exadbadm01:
    
-   	  8. Зайдите на сервер exa2dbadm01 и проверьте стутус обоих портов (оба должны быть "Active" и "LinkUp").
+   	  8. Зайдите на сервер exadbadm01 и проверьте стутус обоих портов (оба должны быть "Active" и "LinkUp").
    	  # ibstat
 
 
