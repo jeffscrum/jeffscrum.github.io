@@ -90,12 +90,19 @@
    -- ID   | Type | Drive Model                                        | Size     | Status          | Speed    | Temp | Slot ID  | Device ID
    c0u0p0  | HDD  | SEAGATE ST300MM0026 0001S0K263T8                   | 278.4 Gb | Online, Spun Up | 6.0Gb/s  | 31C  | [252:0]  | 12
    c0u0p1  | HDD  | SEAGATE ST300MM0026 0001S0K23LQQ                   | 278.4 Gb | Online, Spun Up | 6.0Gb/s  | 30C  | [252:1]  | 13
-   c0u1p0  | SSD  | S21CNXAG506746T Samsung SSD 850 EVO 1TB EMT01B6Q   | 930.3 Gb | Online, Spun Up | 6.0Gb/s  | N/A  | [252:3]  | 0
+   c0u1p0  | SSD  | Samsung SSD 850 EVO 1TB EMT51B6Q                   | 930.3 Gb | Online, Spun Up | 6.0Gb/s  | N/A  | [252:3]  | 0
    c0u2p0  | HDD  | SEAGATE ST91000640SS 00049XG5VT6F                  | 930.3 Gb | Online, Spun Up | 6.0Gb/s  | 30C  | [252:4]  | 8
    c0u2p1  | HDD  | SEAGATE ST91000640SS 00049XG5VYP6                  | 930.3 Gb | Online, Spun Up | 6.0Gb/s  | 30C  | [252:5]  | 11
    c0u2p2  | HDD  | SEAGATE ST91000640SS 00049XG690HG                  | 930.3 Gb | Online, Spun Up | 6.0Gb/s  | 31C  | [252:6]  | 10
    c0u2p3  | HDD  | SEAGATE ST91000640SS 00049XG690W8                  | 930.3 Gb | Online, Spun Up | 6.0Gb/s  | 33C  | [252:7]  | 9
-   c0u3p0  | SSD  | S1FZNEAG514429 SAMSUNG MZ7WD120HCFV-00003 DXM9203Q | 110.8 Gb | Online, Spun Up | 6.0Gb/s  | N/A  | [252:2]  | 2
+   c0u3p0  | SSD  | SAMSUNG MZ7WD120HCFV-0003 DXM4203Q                 | 110.8 Gb | Online, Spun Up | 6.0Gb/s  | N/A  | [252:2]  | 2
+
+Если запустить скрипт с параметром ``--nagios``, то будут показаны только проблемы:
+
+.. code-block:: bash
+
+   root@s11:~# python megaraid_status.py --nagios
+   RAID ERROR - Arrays: OK:2 Bad:1 - Disks: OK:11 Bad:1
 
 -------
 
