@@ -6,8 +6,8 @@
 .. _exadata-change_supercap:
 
 
-Exadata Change Internal RAID HBA SuperCap
-=========================================
+Exadata. Change Internal RAID HBA SuperCap
+==========================================
 
 Работы проводятся согласно документу Doc ID 1969384.1
 
