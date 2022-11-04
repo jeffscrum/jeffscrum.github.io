@@ -16,6 +16,7 @@ Exadata. Change Internal RAID HBA SuperCap
 1. Выключение CRS
 
 2. Подготовительные шаги:
+   
    * Установить политику кэша WriteThrough для всех логических дисков.
    ``/opt/MegaRAID/MegaCli/MegaCli64 -ldsetprop wt -lall -a0``
 
