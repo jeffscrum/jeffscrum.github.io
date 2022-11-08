@@ -1,7 +1,7 @@
 .. _homeassistant:
 
-Home Assistant
-==============
+Smart Home
+==========
 
 
 .. toctree::
