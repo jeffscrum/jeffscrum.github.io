@@ -18,30 +18,8 @@
    fjs1500-3-a-t5-8-1-ld5-zone
 
 
-Работа с массивами
-------------------
-
-.. toctree::
-   :maxdepth: 1
-
-   hds-standard-work-plans
-   TASK01365461
-   TASK03041192
-   TASK03049093
-   TASK03334903
-   TASK03354440
-   TASK03562213
-   TASK03563742
-
-
-Работа с ОС
------------
-
-.. toctree::
-   :maxdepth: 1
-
-   solaris-branded-zone-ldom
-   solaris-add-prod-network
+Обновление ПО и микрокодов
+--------------------------
 
 
 Работы на железе
@@ -54,4 +32,34 @@
    brocade-dcx-fan-replace
    exadata-ib-AutomaticHighErrorRate
    exadata-change_supercap
-   
+
+
+Работа с ОС
+-----------
+
+.. toctree::
+   :maxdepth: 1
+
+   solaris-branded-zone-ldom
+   solaris-add-prod-network
+
+
+Работы с доменами / зонами / lpar'ами
+-------------------------------------
+
+
+
+Работа с массивами VMAX
+-----------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   hds-standard-work-plans
+   TASK01365461
+   TASK03041192
+   TASK03049093
+   TASK03334903
+   TASK03354440
+   TASK03562213
+   TASK03563742
