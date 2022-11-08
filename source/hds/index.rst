@@ -26,3 +26,4 @@ Midrange
    midrange/hds-midrange-snm-maintenance-mode
    midrange/hds-midrange-snm2-default-password
    midrange/hds-midrange-snm2-maintenance-mode
+   midrange/hds-midrange-install-cheatsheet
