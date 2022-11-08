@@ -12,7 +12,7 @@ proxy.pac
 
 На серверах sun.t.ru, moon.t.ru и mngmnt.t.ru запущен SOCKS5-proxy. Если никакое из условий не выполняется, то запрос уходит на HTTP-proxy сервер srvisa.t.ru.
 
-Сам файлик лежит в C:/\www/\ на grandma и доступен через http
+Сам файлик лежит в ``C:\www\`` на сервере grandma и доступен через http.
 
 .. code-block:: javascript
    :caption: proxy.pac
