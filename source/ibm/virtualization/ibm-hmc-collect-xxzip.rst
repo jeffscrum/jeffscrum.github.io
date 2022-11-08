@@ -17,7 +17,7 @@
 
   * Необходимо разрешить входящие соединения ssh на HMC.
   * В журнале событий HMC узнать номер последней записи xx.
-  * На компьютере, имеющем доступ к HMC, необходимо загрузить программу pscp (http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html), и выполнить команду: ``pscp -scp hscroot@<ip.address.of.HMC>:/opt/ccfw/data/vr/xx/xx.zip xx.zip``, где xx - это номер последней записи в журнале событий.
+  * На компьютере, имеющем доступ к HMC, необходимо загрузить программу `pscp <http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html>`_, и выполнить команду: ``pscp -scp hscroot@<ip.address.of.HMC>:/opt/ccfw/data/vr/xx/xx.zip xx.zip``, где xx - это номер последней записи в журнале событий.
   * После окончания процесса отправьте файл XX.zip на сервер.
 
 - Локально
