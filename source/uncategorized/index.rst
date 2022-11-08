@@ -16,7 +16,8 @@ Uncategorized
    twiki-installation
    buy-radiostation
    proxmox-thinpool-storage
-   certbot-haproxy.rst
+   certbot-haproxy
+   proxy-pac
 
 
 Mediawiki
