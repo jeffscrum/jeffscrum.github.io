@@ -50,3 +50,4 @@ Virtualization
    virtualization/ibm-virtualization-remove-failed-paths-mpio
    virtualization/ibm-virtualization-rmc-connection-issue
    virtualization/hmc-change-vlan-dynamically
+   virtualization/ibm-hmc-collect-xxzip
