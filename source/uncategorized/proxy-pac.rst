@@ -10,7 +10,7 @@ proxy.pac
 
 Для того чтобы каждый раз не переключать proxy-сервер для доступа к системам я написал .pac-файл. На серверах sun.t.ru и moon.t.ru запущен SOCKS5-proxy.
 
-Сам файлик лежит в C:\www\ на grandma и доступен через http
+Сам файлик лежит в C:/\www/\ на grandma и доступен через http
 
 .. code-block:: javascript
    :caption: proxy.pac
