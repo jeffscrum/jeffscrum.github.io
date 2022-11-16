@@ -27,6 +27,7 @@ Hi-End
    hiend/vmax-emc-remote
    hiend/vmax-mibe-ps-replace
    hiend/vmax-checkscript
+   hiend/vmax-usefull-cmds
 
 
 Midrange

@@ -8,4 +8,4 @@
 VRTSexplorer
 ============
 
-Скачиваем на https://sort.veritas.com/data_collectors, после чего заливаем на сервер и запускаем "sh <name.sh>"
+Скачиваем на https://sort.veritas.com/data_collectors, после чего заливаем на сервер и запускаем ``sh <name.sh>``

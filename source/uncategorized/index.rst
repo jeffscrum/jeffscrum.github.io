@@ -19,6 +19,7 @@ Uncategorized
    certbot-haproxy
    proxy-pac
    VRTSexplorer
+   vxvm-root-encapsulation
 
 
 Mediawiki
