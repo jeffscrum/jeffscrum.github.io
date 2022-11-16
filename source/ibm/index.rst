@@ -25,6 +25,7 @@ Storages
    storages/ibm-storages-v7000-cabling
    storages/ibm-storages-v7000-cleardumps
    storages/ibm-storages-v7000-fw-upgrade
+   storages/ibm-storages-hdd-healthcheck
 
 
 Virtualization

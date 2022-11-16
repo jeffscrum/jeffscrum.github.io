@@ -26,6 +26,7 @@ Hi-End
    hiend/vmax-software-rsa-token
    hiend/vmax-emc-remote
    hiend/vmax-mibe-ps-replace
+   hiend/vmax-checkscript
 
 
 Midrange

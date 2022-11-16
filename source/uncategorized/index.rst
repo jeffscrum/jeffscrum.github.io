@@ -18,6 +18,7 @@ Uncategorized
    proxmox-thinpool-storage
    certbot-haproxy
    proxy-pac
+   VRTSexplorer
 
 
 Mediawiki
