@@ -18,9 +18,11 @@ Exadata. Change Internal RAID HBA SuperCap
 2. Подготовительные шаги:
    
    * Установить политику кэша WriteThrough для всех логических дисков.
+   
    ``/opt/MegaRAID/MegaCli/MegaCli64 -ldsetprop wt -lall -a0``
 
    * Проверить что настройки применились WriteThrough
+   
    ``/opt/MegaRAID/MegaCli/MegaCli64 -ldpdinfo -a0 | grep BBU``
 
 3. Выключить сервер `exadbadm01`
@@ -36,9 +38,11 @@ Exadata. Change Internal RAID HBA SuperCap
      - ``/opt/MegaRAID/MegaCli/MegaCli64 -AdpBbuCmd -a0``
 
    * Переключить политику кэша в режим WriteBack
+   
    ``/opt/MegaRAID/MegaCli/MegaCli64 -ldsetprop wb -lall -a0``
 
    * Проверить что настройки применились WriteBack
+   
    ``/opt/MegaRAID/MegaCli/MegaCli64 -ldpdinfo -a0 | grep BBU``
 
 6. Запустить CRS
