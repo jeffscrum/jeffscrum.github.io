@@ -45,6 +45,7 @@
    solaris-add-prod-network
    solaris-vxvm-upgrade
    vxvm-upgrade
+   aix-vios-update
 
 
 Работы с доменами / зонами / lpar'ами
