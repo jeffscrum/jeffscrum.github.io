@@ -76,3 +76,4 @@
    TASK03562213
    TASK03563742
    TASK03598846
+   vmax-map-disks
