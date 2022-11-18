@@ -11,8 +11,6 @@
 Exadata Machine
 ---------------
 
-Просмотр серийного номера комплекса целиком
-
 .. code-block:: none
 
   [root@exadbadm01 ~]# ipmitool sunoem cli "show /SP system_identifier" | grep "system_identifier ="
@@ -21,8 +19,6 @@ Exadata Machine
 
 Compute Nodes
 -------------
-
-Просмотр серийных номеров db-серверов
 
 .. code-block:: none
 
@@ -33,8 +29,6 @@ Compute Nodes
 
 Storage Cells
 -------------
-
-Просмотр серийных номеров cell-серверов
 
 .. code-block:: none
 
@@ -47,8 +41,6 @@ Storage Cells
 
 InfiniBand
 ----------
-
-Просмотр серийных номеров infiniband-свитчей
 
 .. code-block:: none
 
