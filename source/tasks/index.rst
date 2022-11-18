@@ -40,6 +40,7 @@
    exadata-ib-AutomaticHighErrorRate
    exadata-change_supercap
    p795-reboot
+   ibm-bch-switchgw
 
 
 Работа с ОС
