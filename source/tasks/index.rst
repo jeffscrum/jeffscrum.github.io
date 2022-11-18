@@ -16,6 +16,7 @@
    fjs1500-3-a-t5-8-1-ld3-zone
    fjs1500-3-a-t5-8-1-ld4-zone
    fjs1500-3-a-t5-8-1-ld5-zone
+   vmax-to-g600
 
 
 Обновление ПО и микрокодов
