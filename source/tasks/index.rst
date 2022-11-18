@@ -46,6 +46,7 @@
    solaris-vxvm-upgrade
    vxvm-upgrade
    aix-vios-update
+   aix-vios-update-22350
 
 
 Работы с доменами / зонами / lpar'ами
