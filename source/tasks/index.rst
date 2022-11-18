@@ -44,6 +44,7 @@
    solaris-branded-zone-ldom
    solaris-add-prod-network
    solaris-vxvm-upgrade
+   vxvm-upgrade
 
 
 Работы с доменами / зонами / lpar'ами
