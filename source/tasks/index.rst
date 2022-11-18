@@ -39,6 +39,7 @@
    brocade-dcx-fan-replace
    exadata-ib-AutomaticHighErrorRate
    exadata-change_supercap
+   p795-reboot
 
 
 Работа с ОС
