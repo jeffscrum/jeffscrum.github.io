@@ -21,6 +21,10 @@ BGP
   /routing bgp instance set default as=64522 ignore-as-path-len=yes router-id=<YOUR_IP_ADDRESS>
   /routing bgp peer add hold-time=4m in-filter=bgp_in keepalive-time=1m multihop=yes name=antifilter remote-address=45.154.73.71 remote-as=65432 ttl=default
   /routing filter add action=accept chain=bgp_in comment="Set nexthop to VPN" set-in-nexthop-direct=<GATEWAY_INTERFACE>
+  # Or use only selected BGP Community
+  #/routing filter add action=accept chain=bgp_in bgp-communities=65432:500 comment="Set nexthop to VPN" set-in-nexthop-direct=<GATEWAY_INTERFACE>
+  /routing filter add chain=bgp_in action=discard comment="Discard other"
+
 
 .. note:: Команды выше подходят для настройки роутеров с ROS 6. Для настройки ROS 7 они чуть изменятся.
 
