@@ -9,6 +9,7 @@ Uncategorized
    batch-log-archive
    davinci-studio-trick
    download-scribd-book
+   docker-temporary-failure-resolving
    latex-installation
    pandoc
    putty-socks5-tunnel
