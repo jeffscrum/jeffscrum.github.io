@@ -1,6 +1,10 @@
-sphinx
-sphinx_rtd_theme
+sphinx==6.0.0
+sphinx_rtd_theme==1.1.1
 sphinx_copybutton
 sphinx-notfound-page
 sphinx-sitemap
 sphinx-favicon
+#sphinx-disqus
+#sphinx-last-updated-by-git
+#sphinx_tabs
+#sphinx_togglebutton
