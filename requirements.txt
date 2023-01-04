@@ -1,9 +1,9 @@
 sphinx==5.3.0
 sphinx_rtd_theme==1.1.1
-sphinx_copybutton
-sphinx-notfound-page
-sphinx-sitemap
-sphinx-favicon
+sphinx_copybutton==0.5.1
+sphinx-notfound-page==0.8.3
+sphinx-sitemap==2.4.0
+sphinx-favicon==0.2
 #sphinx-disqus
 #sphinx-last-updated-by-git
 #sphinx_tabs
