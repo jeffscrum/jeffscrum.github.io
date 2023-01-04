@@ -39,6 +39,14 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut in mauris justo. Cla
 
    tourism/index
 
+
+.. toctree::
+   :caption: Recipes
+   :maxdepth: 2
+   :hidden:
+
+   recipes/index
+
  
 .. Indices and tables
 .. ==================
