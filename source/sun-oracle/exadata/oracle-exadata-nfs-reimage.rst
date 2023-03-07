@@ -135,6 +135,23 @@ Exadata NFS ReImage
 Этап V. Инсталляция
 ~~~~~~~~~~~~~~~~~~~
 
+Настраиваем статический ip-адрес или dhcp в ILOM кадого сервера. Адрес должен быть в одной сети с NFS-сервером.
+
+.. code-block:: none
+
+   cd /SP/network
+   set pendingipdiscovery=dhcp
+   set commitpending=true
+
+   или
+
+   cd /SP/network
+   set pendingipdiscovery=static
+   set pendingipaddress=192.168.1.10
+   set pendingipnetmask=255.255.255.0
+   set pendingipgateway=192.168.1.1254
+   set commitpending=true
+
 В ILOM нужно примонтировать iso-образ в зависимости от типа сервера и указать серверу загрузиться с cdrom.
 
 .. code-block:: none
