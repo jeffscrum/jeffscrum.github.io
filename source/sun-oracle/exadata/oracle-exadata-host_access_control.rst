@@ -45,7 +45,7 @@
          get-runtime      - Maintenance command: import system configuration settings, storing them in host_access_control parameter settings files.
          restore          - Maintenance command: reapply settings previously set by this utility, as in after an upgrade
 
-Например, посмотрим настройки pam-аутентификации:
+Посмотрим настройки pam-аутентификации:
 
 .. code-block:: none
 
@@ -68,13 +68,13 @@
 - Настроить сложность паролей: ``--passwdqc``
 - И т.д.
 
-Например, нам нужно изменить количество неудачных логинов и время блокировки пользователя.
+Например, нам нужно изменить количество неудачных логинов и время блокировки пользователя (`oracle-exadata-root-unlock`_).
 
 Текущие настройки можно посмотреть так:
 
 .. code-block:: none
 
-    opt/oracle.cellos/host_access_control pam-auth -s
+    opt/oracle.cellos/host_access_control pam-auth --status
      
     [2023-03-08 12:10:54 +0300] [INFO] [IMG-SEC-0601] Deny on login failure count is deny=5
     [2023-03-08 12:10:54 +0300] [INFO] [IMG-SEC-0602] Account lock-out time is lock_time=600
@@ -91,7 +91,7 @@
 
 .. code-block:: none
 
-    /opt/oracle.cellos/host_access_control pam-auth -s
+    /opt/oracle.cellos/host_access_control pam-auth --status
      
     [2018-10-08 15:10:54 +0200] [INFO] [IMG-SEC-0801] Deny on login failure count is deny=10
     [2018-10-08 15:10:54 +0200] [INFO] [IMG-SEC-0802] Account lock-out time is lock_time=0
