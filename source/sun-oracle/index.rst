@@ -1,3 +1,8 @@
+.. index:: exadata, oracle, sun
+
+.. meta::
+   :keywords: exadata, oracle, sun
+
 .. _sun-oracle:
 
 Sun & Oracle
@@ -11,11 +16,12 @@ Exadata
 
    exadata/oracle-exadata-cabling-table
    exadata/oracle-exadata-fmod-position
+   exadata/oracle-exadata-get-serial
+   exadata/oracle-exadata-host_access_control
    exadata/oracle-exadata-lacp
    exadata/oracle-exadata-nfs-reimage
    exadata/oracle-exadata-pxe-reimage
    exadata/oracle-exadata-root-unlock
-   exadata/oracle-exadata-get-serial
 
 Hardware
 --------
