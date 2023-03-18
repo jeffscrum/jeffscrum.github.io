@@ -56,7 +56,7 @@ notfound_urls_prefix = None
 # -- sphinx-sitemap --------------------------------------------------------
 # https://pypi.org/project/sphinx-sitemap/
 sitemap_filename = 'sitemap.xml'
-sitemap_url_scheme = "{link}" # the default URL format is {version}{lang}{link}
+sitemap_url_scheme = "/{link}" # the default URL format is {version}{lang}{link}
 
 
 # -- sphinx-favicon --------------------------------------------------------
