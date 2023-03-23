@@ -11,6 +11,7 @@ Linux
    debian-bonding
    debian-install-jre
    debug-email-server
+   confluence-ubuntu-license
    linux-3proxy
    linux-awk
    linux-centos-install-kernel
