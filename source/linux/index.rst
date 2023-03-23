@@ -26,5 +26,6 @@ Linux
    linux-wireguard-installation
    ubuntu-postfix-gmail-relay
    ubuntu18-russian-apt-sources
+   ubuntu_outline_vpn
    vagrant-add-box-manual
    linux-centos8-yum-error
