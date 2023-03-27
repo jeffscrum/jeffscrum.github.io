@@ -6,6 +6,7 @@ Uncategorized
 .. toctree::
    :maxdepth: 1
 
+   amazon-kindle-so
    batch-log-archive
    davinci-studio-trick
    download-scribd-book
