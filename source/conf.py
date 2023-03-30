@@ -36,7 +36,7 @@ extensions = [
 	'notfound.extension',
 	'sphinx_copybutton',
 	'sphinx_sitemap',
-	'sphinx-favicon'
+	'sphinx_favicon'
   #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
