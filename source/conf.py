@@ -114,7 +114,7 @@ html_theme_options = {
 # A list of paths that contain extra files not directly related to the documentation, such as robots.txt or .htaccess.
 # Relative paths are taken as relative to the configuration directory. They are copied to the output directory.
 # They will overwrite any existing file of the same name.
-html_extra_path = ['robots.txt']
+html_extra_path = ['robots.txt', 'google9440938d37e02f4d.html']
 
 # These paths are either relative to html_static_path
 # or fully qualified paths (eg. https://...)
