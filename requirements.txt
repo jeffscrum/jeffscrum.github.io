@@ -3,7 +3,7 @@ sphinx_rtd_theme==1.2.0
 sphinx_copybutton==0.5.1
 sphinx-notfound-page==0.8.3
 sphinx-sitemap==2.5.0
-sphinx-favicon==1.0.1 # Please update the name used in the extension list of your conf.py from "sphinx-favicon" to "sphinx_favicon"
+sphinx-favicon==1.0.1
 #sphinx-disqus
 #sphinx-last-updated-by-git
 #sphinx_tabs
