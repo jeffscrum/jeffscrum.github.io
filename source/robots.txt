@@ -4,3 +4,4 @@ Disallow: /uncategorized/davinci-studio-trick.html
 Disallow: /sd/
 
 Sitemap: https://pages.ksomov.ru/sitemap.xml
+Host: https://pages.ksomov.ru
