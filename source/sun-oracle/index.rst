@@ -1,7 +1,7 @@
-.. index:: exadata, oracle, sun
+.. index:: exadata, oracle, sun, solaris
 
 .. meta::
-   :keywords: exadata, oracle, sun
+   :keywords: exadata, oracle, sun, solaris, ilom, xscf, hardware, nfs, pxe, reimage, zfs, sru
 
 .. _sun-oracle:
 
