@@ -1,7 +1,7 @@
 User-agent: *
 Disallow: /brocade/bna-trial-reset.html
 Disallow: /uncategorized/davinci-studio-trick.html
-Disallow: /sd/
+Disallow: /_static/sd/
 
 Sitemap: https://pages.ksomov.ru/sitemap.xml
 Host: https://pages.ksomov.ru
