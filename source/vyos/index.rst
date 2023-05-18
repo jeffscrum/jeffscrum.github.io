@@ -12,4 +12,5 @@ VyOS provides a free routing platform that competes directly with other commerci
 
    vyos-build-image
    vyos-cloud-influx
+   vyos-forwarding-single-host-wan-traffic-via-vpn
    vyos-wg-configure
