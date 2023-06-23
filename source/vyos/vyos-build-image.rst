@@ -24,4 +24,4 @@ Build the image
     --debian-security-mirror "https://mirror.yandex.ru/debian-security"
   sudo make iso
 
-После успешной сборки готовый iso-файл будет находиться в каталоге `build` с именем `live-image-[architecture].hybrid.iso`
+После успешной сборки готовый iso-файл будет находиться в каталоге `build` с именем `live-image-[architecture].hybrid.iso` или `vyos-[version]-[architecture].iso`.
