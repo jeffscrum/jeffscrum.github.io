@@ -1,9 +1,9 @@
-.. index:: vyos, build, docker, iso
+.. index:: vyos, build, docker, iso, equuleus
 
 .. meta::
-   :keywords: vyos, docker, build, iso
+   :keywords: vyos, docker, build, iso, equuleus
 
-.. _build-vyos:
+.. _vyos-build-image:
 
 Build the image
 ===============
@@ -23,3 +23,5 @@ Build the image
     --debian-mirror "https://mirror.yandex.ru/debian" \
     --debian-security-mirror "https://mirror.yandex.ru/debian-security"
   sudo make iso
+
+После успешной сборки готовый iso-файл будет находиться в каталоге `build` с именем `live-image-[architecture].hybrid.iso`
