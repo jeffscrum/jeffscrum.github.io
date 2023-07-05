@@ -31,7 +31,7 @@ Download the GeoIPLite2 database.
     $ cd /usr/share/GeoIP
     $ sudo wget -P /tmp https://centminmod.com/centminmodparts/geoip2-lite/GeoLite2-Country.tar.gz
     $ sudo tar -xzf /tmp/GeoLite2-Country.tar.gz -C /usr/share/GeoIP --strip-components=1
-    $ sudo rm COPYRIGHT.txt LICENSE.txt
+    $ sudo rm COPYRIGHT.txt LICENSE.txt /tmp/GeoLite2-Country.tar.gz
 
 Edit nginx config ``/etc/nginx/nginx.conf``. Add this below the ``http {`` line to only allow Russian IPs You can use `ISO’s full,
 searchable list of all country codes <https://www.iso.org/obp/ui/#search>`_ to find your code.
