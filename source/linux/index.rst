@@ -7,18 +7,20 @@ Linux
    :maxdepth: 1
 
    ansible-get-facts
+   confluence-ubuntu-license
    debian-auto-install-preseed
    debian-bonding
    debian-install-jre
    debug-email-server
-   confluence-ubuntu-license
    linux-3proxy
    linux-awk
    linux-centos-install-kernel
+   linux-centos8-yum-error
    linux-docker-logs-clean
    linux-lc-all-unset
    linux-megacli
    linux-mysql-operations
+   linux-nginx-geoip2-block
    linux-speedtest-cli
    linux-strongswan-eap-mschapv2
    linux-tar-multithread
@@ -29,4 +31,3 @@ Linux
    ubuntu18-russian-apt-sources
    ubuntu_outline_vpn
    vagrant-add-box-manual
-   linux-centos8-yum-error
