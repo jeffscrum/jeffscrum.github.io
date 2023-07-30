@@ -15,6 +15,10 @@ Mikrotik и antifilter.download
 BGP
 ---
 
+
+Router OS 6
+~~~~~~~~~~~
+
 .. code-block:: bash
 
   /ip route add dst-address=45.154.73.71/32 gateway=<GATEWAY_FOR_CONNECT>
@@ -26,7 +30,20 @@ BGP
   /routing filter add chain=bgp_in action=discard comment="Discard other"
 
 
-.. note:: Команды выше подходят для настройки роутеров с ROS 6. Для настройки ROS 7 они чуть изменятся.
+Router OS 7
+~~~~~~~~~~~
+
+.. code-block:: bash
+
+  /routing bgp template
+  add as=64522 disabled=no hold-time=4m input.filter=antifilter-bgp_in .ignore-as-path-len=yes keepalive-time=1m multihop=yes name=antifilter routing-table=main
+  
+  /routing filter rule
+  add chain=antifilter-bgp_in disabled=no rule="set gw <GATEWAY_INTERFACE>; accept;"
+  
+  /routing bgp connection
+  add disabled=no hold-time=4m input.filter=antifilter-bgp_in .ignore-as-path-len=yes keepalive-time=1m local.address=192.168.88.1 .role=ebgp multihop=yes name=antifilter_bgp remote.address=45.154.73.71/32 .as=65432 router-id=<YOUR_IP_ADDRESS> routing-table=main templates=antifilter
+
 
 Скрипт
 ------
