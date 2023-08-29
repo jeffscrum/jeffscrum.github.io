@@ -5,6 +5,8 @@ payload:
   - DOMAIN-SUFFIX,tmdb.org
   - DOMAIN-SUFFIX,namecheap.com
   - DOMAIN-SUFFIX,rutracker.org
+  - DOMAIN-SUFFIX,rutracker.cc
+  - DOMAIN-SUFFIX,rutracker.cr
   - DOMAIN-SUFFIX,rutor.org
   - DOMAIN-SUFFIX,nnmclub.to
   - DOMAIN-SUFFIX,flibusta.is
