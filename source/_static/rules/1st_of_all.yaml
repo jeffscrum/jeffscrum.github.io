@@ -5,15 +5,16 @@
 payload:
   - DOMAIN,ifconfig.me
   - DOMAIN,ifconfig.co
-  - DOMAIN-SUFFIX,themoviedb.org
-  - DOMAIN-SUFFIX,tmdb.org
-  - DOMAIN-SUFFIX,namecheap.com
-  - DOMAIN-SUFFIX,rutracker.org
-  - DOMAIN-SUFFIX,rutracker.cc
-  - DOMAIN-SUFFIX,rutracker.cr
-  - DOMAIN-SUFFIX,rutor.org
-  - DOMAIN-SUFFIX,nnmclub.to
+  - DOMAIN-SUFFIX,dell.com
   - DOMAIN-SUFFIX,flibusta.is
   - DOMAIN-SUFFIX,librusec.club
+  - DOMAIN-SUFFIX,namecheap.com
+  - DOMAIN-SUFFIX,nnmclub.to
   - DOMAIN-SUFFIX,oracle.com
-  - DOMAIN-SUFFIX,dell.com
+  - DOMAIN-SUFFIX,rutor.org
+  - DOMAIN-SUFFIX,rutracker.cc
+  - DOMAIN-SUFFIX,rutracker.cr
+  - DOMAIN-SUFFIX,rutracker.org
+  - DOMAIN-SUFFIX,strava.com
+  - DOMAIN-SUFFIX,tmdb.org
+  - DOMAIN-SUFFIX,themoviedb.org
