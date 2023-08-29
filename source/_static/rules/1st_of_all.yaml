@@ -1,3 +1,7 @@
+#
+# https://github.com/Loyalsoldier/clash-rules
+#
+
 payload:
   - DOMAIN,ifconfig.me
   - DOMAIN,ifconfig.co
@@ -12,3 +16,4 @@ payload:
   - DOMAIN-SUFFIX,flibusta.is
   - DOMAIN-SUFFIX,librusec.club
   - DOMAIN-SUFFIX,oracle.com
+  - DOMAIN-SUFFIX,dell.com
