@@ -1,2 +1,2 @@
 payload:
-  - DOMAIN-SUFFIX,telemetry.mozilla.org
+  - '+.telemetry.mozilla.org'
