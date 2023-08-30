@@ -4,5 +4,5 @@ Disallow: /uncategorized/davinci-studio-trick.html
 Disallow: /_static/sd/
 Disallow: /_static/rules/
 
-Sitemap: https://kb.ksomov.ru/sitemap.xml
-Host: https://kb.ksomov.ru
+Sitemap: https://pages.ksomov.ru/sitemap.xml
+Host: https://pages.ksomov.ru
