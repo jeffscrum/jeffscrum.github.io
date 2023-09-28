@@ -2,7 +2,7 @@ sphinx
 sphinx_rtd_theme
 sphinx_copybutton
 sphinx-notfound-page
-sphinx-sitemap==2.5.
+sphinx-sitemap
 sphinx-favicon
 #sphinx-disqus
 #sphinx-last-updated-by-git
