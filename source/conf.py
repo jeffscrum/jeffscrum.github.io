@@ -18,7 +18,7 @@ import sphinx_rtd_theme
 # -- Project information -----------------------------------------------------
 
 project = u'Ёжъ'
-copyright = u'2022, Jeff Scrum'
+copyright = u'2023, Jeff Scrum'
 author = u'Jeff Scrum'
 language = 'en'
 source_encoding = 'utf-8'
