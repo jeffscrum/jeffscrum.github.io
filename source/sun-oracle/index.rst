@@ -20,6 +20,7 @@ Exadata
    exadata/oracle-exadata-host_access_control
    exadata/oracle-exadata-lacp
    exadata/oracle-exadata-nfs-reimage
+   exadata/oracle-exadata-optane-pmem
    exadata/oracle-exadata-pxe-reimage
    exadata/oracle-exadata-root-unlock
 
