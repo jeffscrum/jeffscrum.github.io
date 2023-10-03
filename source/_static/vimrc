@@ -1,4 +1,0 @@
-source $VIMRUNTIME/defaults.vim
-set mouse-=a
-syntax on
-filetype on
