@@ -5,8 +5,8 @@
 
 .. _oracle-exadata-optane-pmem:
 
-Optane Persistent Memory Module
-===============================
+Intel Optane Persistent Memory Module
+=====================================
 
 Уже несколько раз попадал в неприятную ситуацию, когда на площадку привозят модуль PMEM, а он оказывается не тот.
 
