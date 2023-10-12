@@ -14,3 +14,4 @@ Smart Home
    homeassistant-unsupported-installation
    homeassistant-small-meteo-sensors
    homeassistant-rollback
+   homeassistant-squeezelite
