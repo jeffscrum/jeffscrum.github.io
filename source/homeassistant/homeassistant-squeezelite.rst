@@ -83,3 +83,10 @@ Squeezelite
   chmod +x /root/data2mqtt.sh
   crontab -e
   Add line "*/5 * * * * /root/data2mqtt.sh" 
+
+----
+
+Links:
+
+ - `Logitec forum <https://forums.slimdevices.com/forum/user-forums/3rd-party-software/97932-squeezelite-troubleshooting?101436-Squeezelite-troubleshooting>`_
+ - `Tutorial <http://www.gerrelt.nl/RaspberryPi/wordpress/tutorial-installing-squeezelite-player-on-raspbian/>`_
