@@ -72,7 +72,7 @@
     mount -t sysfs sys /mnt/debinst/sys
     mount -t proc proc /mnt/debinst/proc
 
-Редактируем файл репозиториев /mnt/debinst/etc/apt/sources.list:
+Редактируем файл репозиториев '/mnt/debinst/etc/apt/sources.list':
 
 .. code-block:: bash
 
@@ -118,7 +118,7 @@
 
 Настройка часового пояса: ``dpkg-reconfigure tzdata``
 
-При помощи 'blkid' смотрим UUID раздела /dev/vda1 и редактируем /etc/fstab:
+При помощи 'blkid' смотрим UUID раздела /dev/vda1 и редактируем '/etc/fstab':
 
 .. code-block:: bash
 
