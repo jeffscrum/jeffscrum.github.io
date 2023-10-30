@@ -24,14 +24,13 @@
     nmcli c m "Wired connection 1" ipv4.method manual
     nmcli c u "Wired connection 1"
 
-Задаем пароль пользователя root: `passwd`
+Задаем пароль пользователя root: ``passwd``
 
-Далее я рекомендую подключиться к серверу по SSH, чтобы удобнее было копировать команды: `ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@123.45.67.89`
+Далее я рекомендую подключиться к серверу по SSH, чтобы удобнее было копировать команды: ``ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@123.45.67.89``
 
-Затираем разметку диска: `dd if=/dev/zero of=/dev/vda bs=1M count=50`
+Затираем разметку диска: ``dd if=/dev/zero of=/dev/vda bs=1M count=50``
 
 Создаем разделы диска. Я создам один раздел на весь диск, а swap будет либо в виде файла, либо использую zswap:
-
 
 .. code-block:: none
 
@@ -40,7 +39,7 @@
       mkpart primary ext4 1MiB -0 \
       quit
 
-Создаем ФС на разделе: `mkfs.ext4 -m 2 /dev/vda1`
+Создаем ФС на разделе: ``mkfs.ext4 -m 2 /dev/vda1``
 
 Скачиваем и устанавливаем программу debootstrap:
 
@@ -102,9 +101,9 @@
     deb http://deb.debian.org/debian bookworm-backports main non-free-firmware
     #deb-src http://deb.debian.org/debian bookworm-backports main non-free-firmware
 
-Выполняем chroot для того чтобы попасть в новое окружение: `LANG=C.UTF-8 chroot /mnt/debinst /bin/bash` 
+Выполняем chroot для того чтобы попасть в новое окружение: ``LANG=C.UTF-8 chroot /mnt/debinst /bin/bash``
 
-Обновляем все установленные пакеты: `apt-get update && apt-get upgrade`
+Обновляем все установленные пакеты: ``apt-get update && apt-get upgrade``
 
 Устанавливаем пакет locale и генерируем необходимые локали:
 
@@ -117,7 +116,7 @@
     echo 'LC_ALL="en_US.UTF-8"' >> /etc/default/locale
     echo 'LANGUAGE="en_US:en"' >> /etc/default/locale
 
-Настройка часового пояса: `dpkg-reconfigure tzdata`
+Настройка часового пояса: ``dpkg-reconfigure tzdata``
 
 При помощи 'blkid' смотрим UUID раздела / и редактируем /etc/fstab:
 
@@ -132,7 +131,7 @@
     # <file system> <mount point>   <type>  <options>       <dump>  <pass>
     UUID="fa821b1b-321a-4d88-a285-d8912b05ff59" / ext4 errors=remount-ro 0 1
 
-Перемонтируем разделы: `mount -a`
+Перемонтируем разделы: ``mount -a``
 
 Устанавливаем пакеты ядра и необходимые утилиты. Я буду использовать ядро cloud, но можно установить и обычное 'linux-image-amd64':
 
@@ -178,7 +177,7 @@
     ff02::2 ip6-allrouters
     ff02::3 ip6-allhosts
 
-Смотрим mac-адрес сетевой карты: `ip a | grep ether`
+Смотрим mac-адрес сетевой карты: ``ip a | grep ether``
 
 Редактируем файл '/etc/network/interfaces' с сетевыми настройками:
 
