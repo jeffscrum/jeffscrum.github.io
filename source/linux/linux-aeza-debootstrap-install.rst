@@ -28,7 +28,7 @@
 
 Далее я рекомендую подключиться к серверу по SSH, чтобы удобнее было копировать команды: ``ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no root@123.45.67.89``
 
-Затираем разметку диска: ``dd if=/dev/zero of=/dev/vda bs=1M count=50``
+Удаляем предыдущую разметку диска: ``dd if=/dev/zero of=/dev/vda bs=1M count=50``
 
 Создаем разделы диска. Я создам один раздел на весь диск, а swap будет либо в виде файла, либо использую zswap:
 
@@ -88,7 +88,7 @@
 
 .. code-block:: bash
 
-    #Debian12
+    #!Debian12
     deb http://deb.debian.org/debian bookworm main non-free-firmware
     #deb-src http://deb.debian.org/debian bookworm main non-free-firmware
     
@@ -105,7 +105,7 @@
 
 Обновляем все установленные пакеты: ``apt-get update && apt-get upgrade``
 
-Устанавливаем пакет locale и генерируем необходимые локали:
+Устанавливаем пакет 'locale' и генерируем необходимые локали:
 
 .. code-block:: bash
 
