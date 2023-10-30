@@ -10,9 +10,9 @@
 
 Иногда по каким-то причинам хочется переустановить ОС на сервере не через скрипты хостера. Например, когда в дистрибутиве хостера много лишнего софта, а объем диска совсем небольшой.
 
-При помощи `debootstrap <https://www.debian.org/releases/stable/i386/apds03.en.html>_` можно установить как Debian, так и Ubuntu. Я покажу на примере установки ОС на хостинге AEZA.
+При помощи `debootstrap <https://www.debian.org/releases/stable/i386/apds03.en.html>`_ можно установить как Debian, так и Ubuntu. Я покажу на примере установки ОС на хостинге AEZA.
 
-На многих хостингах можно загрузиться с `SystemRescue CD <https://www.system-rescue.org>_`. Ставим курсор на первый пункт "Boot SystemRescue using default options", жмем :kbd:`Tab`. Теперь нужно дописать опцию 'nofirewall' и жмем :kbd:`Enter`.
+На многих хостингах можно загрузиться с `SystemRescue CD <https://www.system-rescue.org>`_. Ставим курсор на первый пункт "Boot SystemRescue using default options", жмем :kbd:`Tab`. Теперь нужно дописать опцию 'nofirewall' и жмем :kbd:`Enter`.
 
 После того как ОС загрузилась, настраиваем сетевое подключение (в случае DHCP сеть будет настроена автоматически):
 
