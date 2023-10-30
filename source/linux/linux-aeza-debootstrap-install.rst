@@ -48,7 +48,7 @@
     wget -O /tmp/debootstrap_1.0.132_all.deb http://deb.debian.org/debian/pool/main/d/debootstrap/debootstrap_1.0.132_all.deb
     ar -p /tmp/debootstrap_1.0.132_all.deb data.tar.gz | tar -xz -C /
 
-Создаем точку монтирования будущего корня и монтируем его:
+Создаем точку монтирования будущего корневого раздела и монтируем его:
 
 .. code-block:: bash
 
@@ -101,7 +101,7 @@
     deb http://deb.debian.org/debian bookworm-backports main non-free-firmware
     #deb-src http://deb.debian.org/debian bookworm-backports main non-free-firmware
 
-Выполняем chroot для того чтобы попасть в новое окружение: ``LANG=C.UTF-8 chroot /mnt/debinst /bin/bash``
+Выполняем 'chroot' для того чтобы попасть в новое окружение: ``LANG=C.UTF-8 chroot /mnt/debinst /bin/bash``
 
 Обновляем все установленные пакеты: ``apt-get update && apt-get upgrade``
 
@@ -118,7 +118,7 @@
 
 Настройка часового пояса: ``dpkg-reconfigure tzdata``
 
-При помощи 'blkid' смотрим UUID раздела / и редактируем /etc/fstab:
+При помощи 'blkid' смотрим UUID раздела /dev/vda1 и редактируем /etc/fstab:
 
 .. code-block:: bash
 
@@ -133,7 +133,7 @@
 
 Перемонтируем разделы: ``mount -a``
 
-Устанавливаем пакеты ядра и необходимые утилиты. Я буду использовать ядро cloud, но можно установить и обычное 'linux-image-amd64':
+Устанавливаем пакеты ядра и необходимые утилиты:
 
 .. code-block:: bash
 
@@ -153,7 +153,7 @@
     sed -i 's/^GRUB_TIMEOUT=.*$/GRUB_TIMEOUT=3/g' /etc/default/grub
     update-grub
 
-Задаем новой системе hostname и настройки DNS:
+Задаем новой системе имя и настройки DNS:
 
 .. code-block:: bash
 
@@ -191,7 +191,7 @@
     auto ens3
     iface ens3 inet static
         address   123.45.67.89
-        netmask   255.255.255.0
+        netmask   255.255.255.255
         gateway   10.0.0.1
         hwaddress ether 52:54:00:12:41:d8
         dns-nameservers 1.1.1.1 8.8.8.8
@@ -203,7 +203,7 @@
         dns-nameservers 2606:4700::1111
 
 
-Задавем пароль root и разрешаем ему подключение по паролю:
+Задаем пароль root и разрешаем ему ssh подключение по паролю:
 
 .. code-block:: bash
 
