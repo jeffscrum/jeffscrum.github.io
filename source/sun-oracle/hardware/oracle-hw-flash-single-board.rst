@@ -80,3 +80,6 @@ How to Flashupdate a Single board on Sun Fire servers
    * Sun Fire E6900 Server
    * Netra 1280 Server
    * Netra 1290 Server
+
+---
+How to Flashupdate a Single board on Sun Fire[TM] v1280, E2900, 3800, 4800, 4810, 6800, E4900, E6900, or Netra 1280, 1290 servers (Doc ID 1012868.1)
