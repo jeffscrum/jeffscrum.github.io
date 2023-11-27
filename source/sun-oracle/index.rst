@@ -38,6 +38,7 @@ Hardware
    hardware/oracle-hw-se6120-battery-replace
    hardware/oracle-hw-xscf-snapshot
    hardware/oracle-hw-zfs-disk-replace
+   hardware/oracle-hw-flash-single-board
 
 Software
 --------
