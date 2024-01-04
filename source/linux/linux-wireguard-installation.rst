@@ -31,8 +31,12 @@
    
    # Генерируем приватный и публичный ключи клиентов
    wg genkey | sudo tee /etc/wireguard/keys/user.key | wg pubkey | sudo tee /etc/wireguard/keys/user.key.pub
+
    
-   
+   # Генерируем ключ шифрования (PresharedKey)
+   wg genpsk | tee /etc/wireguard/presharedkey
+
+
    # Настройка подключений к серверу (секций [Peer] может быть несколько). Имя интерфейса смотрим в `ip a` (в примере ens3)
    ---- /etc/wireguard/wg0.conf ----
    [Interface]
@@ -44,9 +48,9 @@
 
    [Peer]
    PublicKey = <PUBLIC_CLIENT_KEY>
+   PresharedKey = <PRESHARED_KEY>
    AllowedIPs = 172.16.34.2/32	# адрес клиента в сети VPN
-   
-   
+   ---- end file ----
     
    # Запускаем сервер и добавляем интерфейс в автозапуск
    sudo wg-quick up wg0
@@ -86,12 +90,14 @@
    Address = 172.16.34.2/32 # адрес клиента в VPN (см /etc/wireguard/wg0.conf)
    DNS = 8.8.8.8,8.8.4.4	# DNS которыми будет пользоваться клиент
    PrivateKey = <PRIVATE_CLIENT_KEY>
+
    [Peer]
    PublicKey = <PUBLIC_SERVER_KEY>
+   PresharedKey = <PRESHARED_KEY>
    AllowedIPs = 0.0.0.0/0
    Endpoint = <SERVER_IP_OR_FQDN>:51820
    PersistentKeepalive = 25 # Проверять доступность сервера каждые 25 секунд
-   
+   ---- end file ----
    
    # Чтобы не переносить конфиг вручную на телефон, сгенерируем qr-код и выведем его в консоль
    sudo qrencode -t ansiutf8 < /etc/wireguard/configs/user.conf
