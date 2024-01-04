@@ -25,21 +25,23 @@
    
    
    # Генерируем приватный и публичный ключи сервера
-   sudo mkdir -p /etc/wireguard/server
-   wg genkey | sudo tee /etc/wireguard/server/server.key | wg pubkey | sudo tee /etc/wireguard/server/server.key.pub
+   sudo mkdir -p /etc/wireguard/keys
+   wg genkey | sudo tee /etc/wireguard/keys/server.key | wg pubkey | sudo tee /etc/wireguard/keys/server.key.pub
    
    
    # Генерируем приватный и публичный ключи клиентов
-   sudo mkdir -p /etc/wireguard/clients/
-   wg genkey | sudo tee /etc/wireguard/clients/user.key | wg pubkey | sudo tee /etc/wireguard/clients/user.key.pub
+   wg genkey | sudo tee /etc/wireguard/keys/user.key | wg pubkey | sudo tee /etc/wireguard/keys/user.key.pub
    
    
-   # Настройка подключений к серверу (секций [Peer] может быть несколько)
+   # Настройка подключений к серверу (секций [Peer] может быть несколько). Имя интерфейса смотрим в `ip a` (в примере ens3)
    ---- /etc/wireguard/wg0.conf ----
    [Interface]
    Address = 172.16.34.1/24 # адрес сервера в сети VPN
    ListenPort = 51820	# порт WireGuard (udp)
    PrivateKey = <PRIVATE_SERVER_KEY>
+   PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -t nat -A POSTROUTING -o ens3 -j MASQUERADE
+   PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -t nat -D POSTROUTING -o ens3 -j MASQUERADE
+
    [Peer]
    PublicKey = <PUBLIC_CLIENT_KEY>
    AllowedIPs = 172.16.34.2/32	# адрес клиента в сети VPN
@@ -78,7 +80,8 @@
     
    # Настройки клиентов
    # Ключи мы сгененрировали ранее, теперь они нам снова понадобятся
-   ---- /etc/wireguard/clients/user.conf ----
+   mkdir -p /etc/wireguard/configs/user.conf
+   ---- /etc/wireguard/configs/user.conf ----
    [Interface]
    Address = 172.16.34.2/32 # адрес клиента в VPN (см /etc/wireguard/wg0.conf)
    DNS = 8.8.8.8,8.8.4.4	# DNS которыми будет пользоваться клиент
@@ -87,15 +90,15 @@
    PublicKey = <PUBLIC_SERVER_KEY>
    AllowedIPs = 0.0.0.0/0
    Endpoint = <SERVER_IP_OR_FQDN>:51820
-   PersistentKeepalive = 20 # Проверять доступность сервера каждые 20 секунд
+   PersistentKeepalive = 25 # Проверять доступность сервера каждые 25 секунд
    
    
    # Чтобы не переносить конфиг вручную на телефон, сгенерируем qr-код и выведем его в консоль
-   sudo qrencode -t ansiutf8 < /etc/wireguard/clients/user.conf
+   sudo qrencode -t ansiutf8 < /etc/wireguard/configs/user.conf
    
    
    # Если требуется передать qr-код другому человеку, то его можно просто сфотографировать или сгенерировать PNG
-   sudo qrencode -t png -o user.png < /etc/wireguard/clients/user.conf
+   sudo qrencode -t png -o user.png < /etc/wireguard/configs/user.conf
    
    
    # Теперь достаточно открыть приложение WireGuard на телефоне и отсканировать полученный код
