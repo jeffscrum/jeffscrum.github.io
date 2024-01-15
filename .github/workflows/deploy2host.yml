@@ -1,15 +1,14 @@
 name: "Deploy to host"
 on:
   push:
-    branches:
-      - gh-pages
+    branches: [ "gh-pages"]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     timeout-minutes: 5
     steps:
-      - name: Deploy on host
+      - name: Deploy to host
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
