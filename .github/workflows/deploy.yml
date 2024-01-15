@@ -70,4 +70,14 @@ jobs:
           force_orphan: true
    #       exclude_assets: '_sources/*'
           cname: pages.ksomov.ru
-     
+
+      - name: Deploy to host
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          port: ${{ secrets.SSH_PORT }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_KEY }}
+          command_timeout: 30m
+          script: |
+            bash update.sh
