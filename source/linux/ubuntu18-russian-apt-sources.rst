@@ -12,7 +12,7 @@ Russian apt-sources in Ubuntu 18
 
 .. code-block:: bash
 
-   # RU sources
+   ### RU sources
    deb http://ru.archive.ubuntu.com/ubuntu/ bionic main restricted
    deb http://ru.archive.ubuntu.com/ubuntu/ bionic-updates main restricted
    deb http://ru.archive.ubuntu.com/ubuntu/ bionic universe
@@ -20,4 +20,4 @@ Russian apt-sources in Ubuntu 18
    deb http://ru.archive.ubuntu.com/ubuntu/ bionic multiverse
    deb http://ru.archive.ubuntu.com/ubuntu/ bionic-updates multiverse
    deb http://ru.archive.ubuntu.com/ubuntu/ bionic-backports main restricted universe multiverse
-   #
+   ###
