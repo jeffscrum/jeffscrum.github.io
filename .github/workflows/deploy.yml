@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # https://github.com/marketplace/actions/checkout
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
           lfs: true
@@ -19,14 +19,15 @@ jobs:
       # https://github.com/marketplace/actions/setup-python
       # ^-- This gives info on matrix testing.
       - name: Install Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: 3.9
+          python-version: 3.10
 
       # https://docs.github.com/en/actions/guides/building-and-testing-python#caching-dependencies
       # ^-- How to set up caching for pip on Ubuntu
+      # https://github.com/marketplace/actions/cache
       - name: Cache pip
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: ~/.cache/pip
           key: ${{ runner.os }}-pip-${{ hashFiles('requirements.txt') }}
@@ -52,14 +53,13 @@ jobs:
 #           git branch -a
 #           git remote -v
 
-      # Build
-      # 
+      # Sphinx Build html
       - name: Sphinx Build HTML
         run: |
           make html
 
       # Deploy on GitHub Pages
-      # https://github.com/peaceiris/actions-gh-pages
+      # https://github.com/marketplace/actions/github-pages-action
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         if: ${{ github.event_name == 'push' }}
@@ -71,7 +71,9 @@ jobs:
    #       exclude_assets: '_sources/*'
           cname: pages.ksomov.ru
 
-      - name: Deploy to host
+      # Deploy on host
+      # https://github.com/marketplace/actions/ssh-remote-commands
+      - name: Deploy on host
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SSH_HOST }}
