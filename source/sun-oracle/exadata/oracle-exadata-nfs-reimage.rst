@@ -104,6 +104,14 @@ Exadata NFS ReImage
 .. literalinclude:: dhcpd-nfs.conf
    :language: bash
 
+
+На всякий случай проверяем что в файле конфигурации нет ошибок
+
+.. code-block:: bash
+
+   dhcpd -t -cf /etc/dhcp/dhcpd.conf
+
+
 Перезапускаем DHCP Server
 
 .. code-block:: bash
