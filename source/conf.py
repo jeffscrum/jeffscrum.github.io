@@ -36,8 +36,8 @@ extensions = [
 	'notfound.extension',
 	'sphinx_copybutton',
 	'sphinx_sitemap',
-	'sphinx_favicon',
-    'sphinx_disqus.disqus'
+	'sphinx_favicon'
+    #'sphinx_disqus.disqus'
 	#'sphinx_last_updated_by_git'
 	#'sphinx_togglebutton', # https://pypi.org/project/sphinx-togglebutton/
 	#'sphinx_tabs.tabs' # https://sphinx-tabs.readthedocs.io/en/latest/
@@ -45,7 +45,7 @@ extensions = [
 
 
 # -- sphinx_disqus.disqus --------------------------------------------------
-disqus_shortname = 'pagesksomov'
+#disqus_shortname = 'pagesksomov'
 
 
 # -- sphinx-notfound-page --------------------------------------------------
