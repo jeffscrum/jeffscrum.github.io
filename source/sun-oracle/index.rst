@@ -24,6 +24,7 @@ Exadata
    exadata/oracle-exadata-pxe-reimage
    exadata/oracle-exadata-root-unlock
    exadata/oracle-exadata-zdlra-default-hw
+   exadata/oracle-exadata-zdlra-extend-fs
 
 Hardware
 --------
