@@ -4,6 +4,6 @@ sphinx_copybutton==0.5.2
 sphinx-notfound-page==1.0.0
 sphinx-sitemap==2.5.1
 sphinx-favicon==1.0.1
-#sphinx-disqus
+sphinx-disqus
 #sphinx-last-updated-by-git
 #sphinx_tabs
