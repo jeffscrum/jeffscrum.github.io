@@ -11,12 +11,21 @@ ZDLRA RA21
 Compute Server (Oracle Server X9-2)
 
 - 2 x 32-core Intel(R) Xeon(R) Platinum 8358 CPU @ 2.60GHz
-- 384 Gb RAM (12 x 32GB DDR4-3200)
-- 2 x 3.84TB NVMe SSD (2.5'')
+- 384 Gb RAM (12 x 32 GB DDR4-3200)
+- 2 x 3.84 TB NVMe SSD (2.5'')
 - 1 Dual Port QSFP28 100GbE Adapter Gen 4
 - 1 Dual 10/25-Gigabit SFP28 Ethernet Card
 - 1 Dual 10/25-Gigabit SFP28 Ethernet Card (optional)
 
+Storage Server (Oracle Server X9-2L)
+
+- 1 x Intel(R) Xeon(R) Platinum 8352Y CPU @ 2.20GHz
+- 128 Gb RAM (8 x 16 Gb DDR4-3200)
+- 1 Raid HBA (MegaRAID SAS 9361-16i)
+- 12 x 18 TB HDD (7200 RPM SAS-3)
+- 2 x 6.4 TB Flash Accelerator F640 v3
+- 2 x 240 GB M.2 SSD
+- 1 Dual Port QSFP28 100GbE Adapter
 
 ZDLRA X9M
 ~~~~~~~~~
