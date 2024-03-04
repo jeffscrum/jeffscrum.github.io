@@ -107,7 +107,6 @@ html_theme = 'sphinx_rtd_theme'
 html_baseurl = 'https://pages.ksomov.ru'
 html_title = 'Ёжъ'
 html_theme_options = {
-    'display_version': True,
     'analytics_id': 'G-NP47XWF3FQ',
     'analytics_anonymize_ip': False
 }
