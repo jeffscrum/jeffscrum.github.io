@@ -25,11 +25,6 @@ source_encoding = 'utf-8'
 source_suffix = '.rst'
 today_fmt = '%d.%m.%Y'
 
-# The short X.Y version
-version = '1.000'
-# The full version, including alpha/beta/rc tags
-release = '1.000'
-
 # -- General configuration ---------------------------------------------------
 
 # Add any Sphinx extension module names here, as strings. They can be
@@ -112,6 +107,7 @@ html_theme = 'sphinx_rtd_theme'
 html_baseurl = 'https://pages.ksomov.ru'
 html_title = 'Ёжъ'
 html_theme_options = {
+    'display_version': True,
     'analytics_id': 'G-NP47XWF3FQ',
     'analytics_anonymize_ip': False
 }
