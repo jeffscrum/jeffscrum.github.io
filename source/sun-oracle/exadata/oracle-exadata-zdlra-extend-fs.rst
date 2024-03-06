@@ -2,8 +2,8 @@
 
 .. _oracle-exadata-zdlra-extend-fs:
 
-Exadata & ZDLRA Extend Filesystem
-=================================
+How to extend filesystem on Exadata & ZDLRA
+===========================================
 
 .. note::
     
