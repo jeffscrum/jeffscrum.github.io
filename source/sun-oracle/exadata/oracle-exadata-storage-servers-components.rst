@@ -172,7 +172,7 @@ Exadata Storage Server X6-2 High Capacity
 - Disk storage: 12 x 8 TB 7.2 K RPM High Capacity SAS disks (in earlier releases, the high capacity disks were 4 TB)
 - Flash storage: 4 x 3.2 TB flash accelerator F320 PCIe card
 - Disk controller HBA with 1 GB cache
-- RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)) - all ports active
+- RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active
 - 4 embedded Gigabit Ethernet ports
 - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port
 
