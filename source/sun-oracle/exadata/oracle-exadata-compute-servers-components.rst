@@ -248,7 +248,7 @@ Oracle Exadata X2-2 Database Server Hardware Components
   - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port
   - 1 dual-port 10 GbE PCIe 2.0 network card with Intel 82599 10 GbE controller
 
-.. note
+.. note::
 
    Sun Fire X4170 M2 Oracle Database Servers ship from the factory with 96 GB of memory with 12 of the 18 DIMM slots populated with 8 GB DIMMs. The optional X2-2 Memory Expansion Kit can be used to populate the remaining 6 empty slots with 16 GB DIMMs to bring the total memory to 192 GB (12 x 8 GB and 6 x 16 GB), or replace the existing 8 GB DIMMs with 16 GB DIMMs and add memory to bring the total memory to 288 GB (18 x 16 GB).  
    The memory expansion kit is primarily for consolidation workloads where many databases are run on each database server. In this scenario, the CPU usage is often low while the memory usage is very high.  
