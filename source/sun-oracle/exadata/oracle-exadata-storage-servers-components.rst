@@ -5,9 +5,12 @@
 
 .. _oracle-exadata-cell-servers-components:
 
+Oracle Exadata Storage Server Hardware Components
+=================================================
+
 
 Exadata Storage Server X10M Extreme Flash
-=========================================
+-----------------------------------------
 
 - CPU: 2 x 32-core AMD EPYC 9334 processors @ 2.7 GHz (up to 3.9 GHz)
 - RAM: 1.5 TB (24 x 64 GB DIMMs) including XRMEM cache
@@ -21,8 +24,7 @@ Exadata Storage Server X10M Extreme Flash
 
 
 Exadata Storage Server X10M High Capacity
-=========================================
-
+------------------------------------------
 - CPU: 2 x 32-core AMD EPYC 9334 processors @ 2.7 GHz (up to 3.9 GHz)
 - RAM: 1.5 TB (24 x 64 GB DIMMs) including XRMEM cache
 - Disk storage: 12 x 22 TB hard disk drives (HDD)
@@ -34,7 +36,7 @@ Exadata Storage Server X10M High Capacity
 
 
 Exadata Storage Server X10M Extended 
-====================================
+------------------------------------
 
 - CPU: 1 x 32-core AMD EPYC 9334 processor @ 2.7 GHz (up to 3.9 GHz)
 - RAM: 128 GB (4 x 32 GB DIMMs)
@@ -46,7 +48,7 @@ Exadata Storage Server X10M Extended
 
 
 Exadata Storage Server X9M-2 Extreme Flash
-==========================================
+------------------------------------------
 
 - CPU: 2 x 32-core Intel Xeon 8352Y processors @ 2.2 GHz
 - RAM: 256 GB (16 x 16 GB DDR4 3200 MT/s DIMMs)
@@ -59,7 +61,7 @@ Exadata Storage Server X9M-2 Extreme Flash
 
 
 Exadata Storage Server X9M-2 High Capacity
-==========================================
+------------------------------------------
 
 - CPU: 2 x 32-core Intel Xeon 8352Y processors @ 2.2 GHz, but only half of the CPU cores are enabled on Eighth Rack configurations
 - RAM: 256 GB (16 x 16 GB DDR4 3200 MT/s DIMMs)
@@ -74,7 +76,7 @@ Exadata Storage Server X9M-2 High Capacity
 
 
 Exadata Storage Server X9M-2 Extended 
-=====================================
+-------------------------------------
 
 - CPU: 1 x 32-core Intel Xeon 8352Y processor @ 2.2 GHz
 - RAM: 96 GB (6 x 16 GB DDR4 3200 MT/s DIMMs)
@@ -87,7 +89,7 @@ Exadata Storage Server X9M-2 Extended
 
 
 Exadata Storage Server X8M-2 and X8-2 Extreme Flash
-===================================================
+---------------------------------------------------
 
 - CPU: 2 x 16-core Intel Xeon 5218 Processors @ 2.3GHz
 - RAM: 192 GB RAM (12 x 16 GB DIMMs)(full 6 channels)
@@ -100,7 +102,7 @@ Exadata Storage Server X8M-2 and X8-2 Extreme Flash
 
 
 Exadata Storage Server X8M-2 and X8-2 High Capacity
-===================================================
+---------------------------------------------------
 
 - CPU: 2 x 16-core Intel Xeon 5218 Processors @ 2.3GHz
 - RAM: 192 GB RAM (12 x 16 GB DIMMs)(full 6 channels)
@@ -115,7 +117,7 @@ Exadata Storage Server X8M-2 and X8-2 High Capacity
 
 
 Exadata Storage Server X8M-2 and X8-2 Extended 
-==============================================
+----------------------------------------------
 
 - CPU: 1 x 16-core Intel Xeon 5218 Processor @ 2.3GHz
 - RAM: 96 GB RAM (6 x 16 GB DIMMs)(full 6 channels)
@@ -128,7 +130,7 @@ Exadata Storage Server X8M-2 and X8-2 Extended
 
 
 Exadata Storage Server X7-2 Extreme Flash
-=========================================
+-----------------------------------------
 
 - CPU: 2 x Intel Xeon Silver 4114 Processors @ 2.20GHz
 - RAM: 192 GB RAM (12 x 16 GB)(full 6 channels)
@@ -139,7 +141,7 @@ Exadata Storage Server X7-2 Extreme Flash
 
 
 Exadata Storage Server X7-2 High Capacity
-=========================================
+-----------------------------------------
 
 - CPU: 2 x Intel Xeon Silver 4114 Processors @ 2.20GHz
 - RAM: 192 GB RAM (12 x 16 GB) – full 6 channels
@@ -152,7 +154,7 @@ Exadata Storage Server X7-2 High Capacity
 
 
 Exadata Storage Server X6-2 Extreme Flash
-=========================================
+-----------------------------------------
 
 - CPU: 2 x 10-Core Intel Xeon CPU E5-2630 v4 @ 2.2 GHz
 - RAM: 128 GB RAM (8 x 16 GB)
@@ -163,7 +165,7 @@ Exadata Storage Server X6-2 Extreme Flash
 
 
 Exadata Storage Server X6-2 High Capacity
-=========================================
+-----------------------------------------
 
 - CPU: 2 x 10-Core Intel Xeon CPU E5-2630 v4 @ 2.2 GHz
 - RAM: 128 GB RAM (8 x 16 GB)
@@ -176,7 +178,7 @@ Exadata Storage Server X6-2 High Capacity
 
 
 Exadata Storage Server X5-2 Extreme Flash
-=========================================
+-----------------------------------------
 
 - CPU: 2 x 8-Core Intel Xeon CPU E5-2630 v3 @ 2.40GHz
 - RAM: 64 GB RAM (8x 8 GB)
@@ -187,7 +189,7 @@ Exadata Storage Server X5-2 Extreme Flash
 
 
 Exadata Storage Server X5-2 High Capacity
-=========================================
+-----------------------------------------
 
 - CPU: 2 x 8-Core Intel Xeon CPU E5-2630 v3 (2.40GHz)
 - RAM: 96 GB RAM (4x 8 GB and 4x 16 GB)
@@ -200,7 +202,7 @@ Exadata Storage Server X5-2 High Capacity
 
 
 Exadata Storage Server X4-2
-===========================
+---------------------------
 
 - CPU: 2 x 6-Core Intel Xeon E5-2630 v2 processors (2.6 GHz)
 - RAM: 96 GB RAM (4 x 8 GB, and 4 x 16 GB))
@@ -213,7 +215,7 @@ Exadata Storage Server X4-2
 
 
 Exadata Storage Server X3-2
-===========================
+---------------------------
 
 - CPU: 2 x 6-Core Intel Xeon E5-2630L processors (2 GHz)
 - RAM: 64 GB RAM (8 x 8 GB)
@@ -226,7 +228,7 @@ Exadata Storage Server X3-2
 
 
 Exadata Storage Server Sun Fire X4270 M2
-========================================
+----------------------------------------
 
 - CPU: 2 x 6-Core Intel Xeon L5640 processors (2.26 GHz)
 - RAM: 24 GB RAM
@@ -239,7 +241,7 @@ Exadata Storage Server Sun Fire X4270 M2
 
 
 Exadata Storage Server Sun Fire X4275
-=====================================
+-------------------------------------
 
 - CPU: 2 x 4-Core Intel Xeon E5540 processors (2.53 GHz)
 - RAM: 24 GB RAM

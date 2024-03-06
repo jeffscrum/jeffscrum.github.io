@@ -5,8 +5,11 @@
 
 .. _oracle-exadata-compute-servers-components:
 
+Oracle Exadata Database Server Hardware Components
+==================================================
+
 Oracle Exadata X10M Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - CPU: 2 x 96-core AMD EPYC 9J14 processors @ 2.6 GHz (up to 3.7 GHz)
 - RAM: 512 GB RAM (16 x 32 GB DIMMs), 1.5 TB (24 x 64 GB DIMMs), 2.25 TB (24 x 96 GB DIMMs), or 3 TB (24 x 128 GB DIMMs)
@@ -23,7 +26,7 @@ Oracle Exadata X10M Database Server Hardware Components
 
 
 Oracle Exadata X9M-2 Database Server Hardware Components
-========================================================
+--------------------------------------------------------
 
 - CPU: 32-core Intel Xeon 8358 processors @ 2.6 GHz:
   - Flexible configuration: 2 CPUs
@@ -43,7 +46,7 @@ Oracle Exadata X9M-2 Database Server Hardware Components
 
 
 Oracle Exadata X9M-8 Database Server Hardware Components
-========================================================
+--------------------------------------------------------
 
 - CPU: 8 x 24-core Intel Xeon Platinum 8268 Processors @ 2.9GHz
 - RAM: 3 TB (48 x 64 GB DIMMs), expandable to a maximum of 6 TB (96 x 64 GB DIMMs)
@@ -56,7 +59,7 @@ Oracle Exadata X9M-8 Database Server Hardware Components
 
 
 Oracle Exadata X8M-2 Database Server Hardware Components
-========================================================
+--------------------------------------------------------
 
 - CPU: 2 x 24-core Intel Xeon Platinum 8260 Processors @ 2.4 GHz
 - RAM: 384 GB RAM (12 x 32 GB DIMMs), expandable to 1.5 TB (24 x 64 GB DIMMs) with memory expansion kit
@@ -70,7 +73,7 @@ Oracle Exadata X8M-2 Database Server Hardware Components
 
 
 Oracle Exadata X8M-8 Database Server Hardware Components
-========================================================
+--------------------------------------------------------
 
 - CPU: 8 x 24-core Intel Xeon Platinum 8268 Processors @ 2.9GHz
 - RAM: 3 TB (48 x 64 GB DIMMs)
@@ -82,7 +85,7 @@ Oracle Exadata X8M-8 Database Server Hardware Components
 
 
 Oracle Exadata X8-2 Database Server Hardware Components
-========================================================
+-------------------------------------------------------
 
 - CPU: 2 x 24-core Intel Xeon Platinum 8260 Processors @ 2.4 GHz
 - RAM: 384 GB RAM (12 x 32 GB DIMMs), expandable to 768 GB (12 x 64 GB DIMMs) or 1.5 TB (24 x 64 GB DIMMs) with memory expansion kit
@@ -96,7 +99,7 @@ Oracle Exadata X8-2 Database Server Hardware Components
 
 
 Oracle Exadata X8-8 Database Server Hardware Components
-========================================================
+-------------------------------------------------------
 
 - CPU: 8 x 24-core Intel Xeon Platinum 8268 Processors @ 2.9GHz
 - RAM: 3 TB (48 x 64 GB DIMMs) RAM, expandable to 6 TB (96 x 64 GB DIMMs) with memory expansion kit
@@ -108,7 +111,7 @@ Oracle Exadata X8-8 Database Server Hardware Components
 
 
 Oracle Exadata X7-2 Database Server Hardware Components
-========================================================
+-------------------------------------------------------
 
 - CPU: 2 x 24-core Intel Xeon Platinum 8160 Processors @ 2.10GHz
 - RAM: 384 GB RAM, expandable to 768 GB (12 x 64 GB) or 1.5 TB (24 x 64GB) with memory expansion kit
@@ -121,7 +124,7 @@ Oracle Exadata X7-2 Database Server Hardware Components
 
 
 Oracle Exadata X7-8 Database Server Hardware Components
-========================================================
+-------------------------------------------------------
 
 - CPU: 8 x 24-core Intel Xeon Platinum 8168 Processors @ 2.70GHz
 - RAM: 3TB (48 x 64 GB) RAM, expandable to 6 TB (96 x 64 GB) with memory expansion kit
@@ -132,7 +135,7 @@ Oracle Exadata X7-8 Database Server Hardware Components
 
 
 Oracle Exadata X6-2 Database Server Hardware Components
-========================================================
+-------------------------------------------------------
 
 - CPU: 2 x 22-core Intel Xeon E5-2699 v4 processors @ 2.2 GHz
 - RAM: 256 GB (8 x 32 GB) RAM expandable to 512 GB (16 x 32 GB) or 768 GB (24 x 32 GB) with memory expansion kit
@@ -145,7 +148,7 @@ Oracle Exadata X6-2 Database Server Hardware Components
 
 
 Oracle Exadata X5-2 Database Server Hardware Components
-========================================================
+-------------------------------------------------------
 
 - CPU: 2 x 18-Core Intel Xeon E5-2699 v3 processors @ 2.3 GHz
 - RAM: 256 GB (8 x 32 GB) RAM expandable to 768 GB with memory expansion kit
@@ -158,7 +161,7 @@ Oracle Exadata X5-2 Database Server Hardware Components
 
 
 Oracle Exadata X5-8 and X6-8 Database Server Hardware Components
-================================================================
+----------------------------------------------------------------
 
 - CPU: 8 x 18-Core Intel Xeon E7-8895 v3 processors @ 2.6 GHz
 - RAM: 2 TB (64 x 32 GB) RAM, expandable to 6 TB (192 x 32 GB) with memory expansion kit
@@ -171,7 +174,7 @@ Oracle Exadata X5-8 and X6-8 Database Server Hardware Components
 
 
 Oracle Exadata X4-2 Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - CPU: 2 x 12-Core Intel Xeon E5-2697 v2 processors @ 2.7 GHz
 - RAM: 256 GB (16 x 16 GB) RAM expandable to 512 GB with memory expansion kit
@@ -184,7 +187,7 @@ Oracle Exadata X4-2 Database Server Hardware Components
 
 
 Oracle Exadata X4-8 Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - CPU: 8 x 15-Core Intel Xeon E5-8895 v2 processors @ 2.8 GHz
 - RAM: 2 TB (64 x 32 GB) RAM expandable to 4 TB or 6 TB with memory expansion kit
@@ -197,7 +200,7 @@ Oracle Exadata X4-8 Database Server Hardware Components
 
 
 Oracle Exadata X3-2 Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - CPU: 2 x 8-Core Eight-Core Intel Xeon E5-2690 processors @ 2.9 GHz
 - RAM: 256 GB (16 x 16 GB) RAM expandable to 512 GB with memory expansion kit
@@ -210,7 +213,7 @@ Oracle Exadata X3-2 Database Server Hardware Components
 
 
 Oracle Exadata X3-8 Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - CPU: 8 x 10-Core Intel Xeon E7-8870 Processors @ 2.40 GHz
 - RAM: 2 TB RAM (128 x 16 GB)
@@ -224,7 +227,7 @@ Oracle Exadata X3-8 Database Server Hardware Components
 
 
 Oracle Exadata X2-2 Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - Components of Sun Fire X4170 Oracle Database Servers
   - CPU: 2 x 4-Core Intel Xeon E5540 processors @ 2.53 GHz
@@ -253,7 +256,7 @@ Oracle Exadata X2-2 Database Server Hardware Components
 
 
 Oracle Exadata X2-8 Database Server Hardware Components
-=======================================================
+-------------------------------------------------------
 
 - Components of Sun Fire X4800 Oracle Database Servers
   - CPU: 8 x 8-core Intel Xeon X7560 Processors @ 2.26 GHz
