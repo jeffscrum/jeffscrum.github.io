@@ -250,8 +250,10 @@ Oracle Exadata X2-2 Database Server Hardware Components
 
 .. note::
 
-   Sun Fire X4170 M2 Oracle Database Servers ship from the factory with 96 GB of memory with 12 of the 18 DIMM slots populated with 8 GB DIMMs. The optional X2-2 Memory Expansion Kit can be used to populate the remaining 6 empty slots with 16 GB DIMMs to bring the total memory to 192 GB (12 x 8 GB and 6 x 16 GB), or replace the existing 8 GB DIMMs with 16 GB DIMMs and add memory to bring the total memory to 288 GB (18 x 16 GB).  
-   The memory expansion kit is primarily for consolidation workloads where many databases are run on each database server. In this scenario, the CPU usage is often low while the memory usage is very high.  
+   Sun Fire X4170 M2 Oracle Database Servers ship from the factory with 96 GB of memory with 12 of the 18 DIMM slots populated with 8 GB DIMMs. The optional X2-2 Memory Expansion Kit can be used to populate the remaining 6 empty slots with 16 GB DIMMs to bring the total memory to 192 GB (12 x 8 GB and 6 x 16 GB), or replace the existing 8 GB DIMMs with 16 GB DIMMs and add memory to bring the total memory to 288 GB (18 x 16 GB).
+
+   The memory expansion kit is primarily for consolidation workloads where many databases are run on each database server. In this scenario, the CPU usage is often low while the memory usage is very high.
+
    However, there is a downside to populating all the memory slots as the frequency of the memory DIMMs drop to 800 MHz from 1333 MHz. The performance effect of the slower memory appears as increased CPU utilization. The average measured increase in CPU utilization is typically between 5% and 10%. The increase varies greatly by workload. In test workloads, several workloads had almost zero increase, while one workload had as high as a 20% increase.
 
 
