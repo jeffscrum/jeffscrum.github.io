@@ -1,7 +1,7 @@
-.. index:: proxmox, thinpool, storage
+.. index:: proxmox, thinpool, storage, lvm
 
 .. meta::
-   :keywords: proxmox, thinpool, storage
+   :keywords: proxmox, thinpool, storage, lvm
 
 .. _proxmox-thinpool-storage:
 
@@ -16,8 +16,7 @@ Create a Proxmox LVM Thinpool
     
      fdisk /dev/sdb
      g
-     w
-     p
+     n
      1
      t
      lvm
@@ -44,7 +43,7 @@ Create a Proxmox LVM Thinpool
 
   .. code-block:: none
   
-    dd if=/dev/zero bs=512 count=1 of=/dev/sdb1 status=progress
+    dd if=/dev/zero bs=1M count=50 of=/dev/sdb1 status=progress
 
 3. Создаем новую таблицу разделов
 
@@ -67,7 +66,7 @@ Create a Proxmox LVM Thinpool
 
 6. Добавляем хранилище в Proxmox
 
-  Переходим в раздел Datacentre --> Disks --> LVM-Thin и жмем "Create Thinpool".
+  Переходим в раздел Datacentre --> Storage --> LVM-Thin и жмем "Create Thinpool".
   
   .. image:: /images/proxmox-lvm-thin.png
     :width: 600
