@@ -93,6 +93,5 @@ jobs:
           priority: 3
           headers: '${{ secrets.NTFY_HEADERS }}'
           tags: successfully,completed, vyos
-          details: VyOS Workflow has been successfully completed!
+          details: ITDrafts - Workflow has been successfully completed!
           icon: 'https://camo.githubusercontent.com/4156ab02e63c8758759f12c8cf3646e88c68bc72b9ba90dabe6f308033b6d265/68747470733a2f2f63646e342e69636f6e66696e6465722e636f6d2f646174612f69636f6e732f69636f6e73696d706c652d6c6f676f74797065732f3531322f6769746875622d3531322e706e67'
-          image: true
