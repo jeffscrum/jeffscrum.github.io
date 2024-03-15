@@ -5,72 +5,91 @@
 
 .. _linux-megacli:
 
-Полезные команды для работы с MegaCLI
-=====================================
+Установка и работа с MegaCLI
+============================
+
+Установка
+---------
+
+Для установки в Debian 12 или Proxmox:
+
+.. code-block:: bash
+
+   apt-get install libncurses5
+   wget -O /tmp/megacli_8.07.14-2_all.deb "https://kb.ksomov.ru/_static/megacli_8.07.14-2_all.deb" && dpkg -i /tmp/megacli_8.07.14-2_all.deb
+
+Команды
+-------
+
+Полезные команды (исполняемый файл /opt/MegaRAID/MegaCli/MegaCli64 ):
 
 .. code-block:: none
 
    # Быстрая проверка
-   megacli -LdPdInfo -aALL | grep -E "(Id|State |Bad Blocks|Firmware state|Error Count|Predictive Failure Count)"
+   ./MegaCli64 -LdPdInfo -aALL | grep -E "(Id|State |Bad Blocks|Firmware state|Error Count|Predictive Failure Count)"
 
    # Просмотр журнала событий BBU, где можно найти информацию по проверкам и автоисправлению  битых секторов
-   megacli -fwtermlog -dsply -aall > /tmp/ttylog.txt
+   ./MegaCli64 -FwTermLog -Dsply -aALL > /tmp/ttylog.txt
    
    # Полная информация о всех адаптеров контроллера
-   megacli -AdpAllInfo -aALL
+   ./MegaCli64 -AdpAllInfo -aALL
    
    # Полная информация о настройках и дисках
-   megacli -CfgDsply -aALL
+   ./MegaCli64 -CfgDsply -aALL
    
    # Информация о последних событиях, где можно найти информацию о сбои в работе дисков
-   megacli -AdpEventLog -GetLatest 4000 -f events.log -aALL
-   megacli -AdpEventLog -GetEvents -f events.log -aALL
+   ./MegaCli64 -AdpEventLog -GetLatest 4000 -f events.log -aALL
+   ./MegaCli64 -AdpEventLog -GetEvents -f events.log -aALL
    
    # Информация о всех доступных корпусах контроллера
-   megacli -EncInfo -aALL
+   ./MegaCli64 -EncInfo -aALL
    
    # Список всех логических дисков и типе RAID-а в котором они собраны
-   megacli -LDInfo -Lall -aALL
+   ./MegaCli64 -LDInfo -Lall -aALL
    
    # Список всех физических дисков
-   megacli -PDList -aALL
+   ./MegaCli64 -PDList -aALL
    
    # Информация о конкретном физическом диске
-   # Типовая комманда megacli -pdinfo -physdrv [E1:S2] -aALL
+   # Типовая комманда ./MegaCli64 -pdInfo -Physdrv [E1:S2] -aALL
    # E1 - Enclosure Device ID: 1, S2 - Slot Number: 2
    
-   # To get it need to run - megacli -LdPdInfo -aALL | grep -E "ID|Slot"
-   megacli -pdinfo -physdrv [32:9] -aALL
+   # To get it need to run - ./MegaCli64 -LdPdInfo -aALL | grep -E "ID|Slot"
+   ./MegaCli64 -pdInfo -Physdrv [32:9] -aALL
    
    # Подсветить диск (для поиска)
    #Start blinking
-   megacli -PdLocate -start -physdrv\[4:3\]  -aALL
-   megacli -PdLocate -start -physdrv\[4:2\]  -aALL
-   megacli -PdLocate -start -physdrv\[4:1\]  -aALL
+   ./MegaCli64 -PdLocate -start -Physdrv\[4:3\]  -aALL
+   ./MegaCli64 -PdLocate -start -Physdrv\[4:2\]  -aALL
+   ./MegaCli64 -PdLocate -start -Physdrv\[4:1\]  -aALL
    #Stop blinking
-   megacli -PdLocate -stop  -physdrv\[4:1\]  -aALL
-   megacli -PdLocate -stop  -physdrv\[4:2\]  -aALL
-   megacli -PdLocate -stop  -physdrv\[4:3\]  -aALL
+   ./MegaCli64 -PdLocate -stop  -Physdrv\[4:1\]  -aALL
+   ./MegaCli64 -PdLocate -stop  -Physdrv\[4:2\]  -aALL
+   ./MegaCli64 -PdLocate -stop  -Physdrv\[4:3\]  -aALL
     
    # Проверка состояния BBU (Battery Backup Unit)
-   megacli -adpbbucmd -aall
+   ./MegaCli64 -AdpBbuCmd -aALL
    
    # Посмотреть прогресс добавления диска в RAID
-   megacli -pdrbld -showprog -physdrv[4:0] -aAll
+   ./MegaCli64 -PDRbld -ShowProg -Physdrv[4:0] -aAll
 
    # Create LogicalDisk 
-   megacli -CfgLdAdd -r0[32:6,32:7,32:8] wb direct CachedBadBBU -a0 (или NoCachedBadBBU)
+   ./MegaCli64 -CfgLdAdd -r0[32:6,32:7,32:8] wb direct CachedBadBBU -a0 (или NoCachedBadBBU)
    
    # Список всех логических дисков и типе RAID-а в котором они собраны
-   megacli -LDInfo -Lall -aALL
+   ./MegaCli64 -LDInfo -Lall -aALL
    
    # Посмотреть прогресс добавления диска в RAID 
-   megacli -pdrbld -showprog -physdrv[32:14] -aAll
+   ./MegaCli64 -PDRbld -ShowProg -Physdrv[32:14] -aAll
 
    # remove LogicalDisk
-   megacli -CfgLdDel -L2 -a0
+   ./MegaCli64 -CfgLdDel -L2 -a0
 
-Ну небольшой скрипт для вывода информации в удобном виде :download:`megaraid_status.py </_static/megaraid_status.tar.gz>`
+
+Скрипт мониторинга
+------------------
+
+Небольшой скрипт для вывода информации в удобном виде :download:`megaraid_status.py </_static/megaraid_status.tar.gz>`
 
 .. code-block:: bash
 
@@ -108,6 +127,3 @@
 
 Related Links:
 - `S.M.A.R.T. (часть 1). Мониторинг SCSI дисков под LSI 2108 (megaraid) RAID контроллером <http://sysadm.pp.ua/linux/monitoring-systems/smart-under-lsi-2108-kontroller.html>`_
-
-
-
