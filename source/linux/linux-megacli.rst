@@ -43,7 +43,13 @@
    
    # Информация о всех доступных корпусах контроллера
    ./MegaCli64 -EncInfo -aALL
-   
+
+   # Включение Disk Cache Policy для диска L0
+   ./MegaCli64 -LDSetProp -EnDskCache -L0 -a0
+
+   # Выключение Disk Cache Policy для диска L0
+   ./MegaCli64 -LDSetProp -DisDskCache -L0 -a0
+
    # Список всех логических дисков и типе RAID-а в котором они собраны
    ./MegaCli64 -LDInfo -Lall -aALL
    
@@ -71,19 +77,27 @@
    ./MegaCli64 -AdpBbuCmd -aALL
    
    # Посмотреть прогресс добавления диска в RAID
-   ./MegaCli64 -PDRbld -ShowProg -Physdrv[4:0] -aAll
+   ./MegaCli64 -PDRbld -ShowProg -Physdrv[32:14] -aAll
 
-   # Create LogicalDisk 
+   # Создание логического диска (Logical Disk)
    ./MegaCli64 -CfgLdAdd -r0[32:6,32:7,32:8] wb direct CachedBadBBU -a0 (или NoCachedBadBBU)
    
    # Список всех логических дисков и типе RAID-а в котором они собраны
    ./MegaCli64 -LDInfo -Lall -aALL
-   
-   # Посмотреть прогресс добавления диска в RAID 
-   ./MegaCli64 -PDRbld -ShowProg -Physdrv[32:14] -aAll
 
-   # remove LogicalDisk
+   # Удаление логического диска (Logical Disk)
    ./MegaCli64 -CfgLdDel -L2 -a0
+
+   ## Expand Logical Disk
+      1. First gather information:
+         ./MegaCli64 -getLdExpansionInfo -L0 -a0
+ 
+      2. From here you should have enough information to use the default command:
+         ./MegaCli64 -LdExpansion -pN -dontExpandArray -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL
+ 
+         For example, if my controller were 0, my PD I wanted to add was PD 4 and my Logical drive was 0;
+         ./MegaCli64 -LdExpansion -p4 -L0 -a0
+
 
 
 Скрипт мониторинга
@@ -127,3 +141,4 @@
 
 Related Links:
 - `S.M.A.R.T. (часть 1). Мониторинг SCSI дисков под LSI 2108 (megaraid) RAID контроллером <http://sysadm.pp.ua/linux/monitoring-systems/smart-under-lsi-2108-kontroller.html>`_
+- `wikitech.wikimedia.org <https://wikitech.wikimedia.org/wiki/MegaCli>`_
