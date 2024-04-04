@@ -177,7 +177,7 @@ Oracle Exadata X4-2 Database Server Hardware Components
 -------------------------------------------------------
 
 - CPU: 2 x 12-Core Intel Xeon E5-2697 v2 processors @ 2.7 GHz
-- RAM: 256 GB (16 x 16 GB) RAM expandable to 512 GB with memory expansion kit
+- RAM: 256 GB (16 x 16 GB) RAM expandable to 512 GB (16 x 32 GB) with memory expansion kit
 - System storage: 4 x 600 GB 10K RPM SAS disks
 - Disk controller HBA with 512 MB battery-backed write cache, and swappable battery backup unit (BBU)
 - RDMA Network Fabric: 2 InfiniBand 4X QDR (40 Gb/s) ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA))
