@@ -286,7 +286,8 @@ Oracle Exadata X2-8 Database Server Hardware Components
 
   - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port
 
-- Components of Sun Server X2-8 Oracle Database Server
+
+- Components of Sun Server X2-8 Oracle Database Server (Sun Fire X4800 M2)
 
   - CPU: 8 x 10-core Intel Xeon E7-8870 Processors (2.40 GHz)
   - RAM: 2 TB RAM (128 x 16 GB)
