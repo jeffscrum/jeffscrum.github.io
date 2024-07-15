@@ -18,8 +18,10 @@ Oracle Exadata X10M Database Server Hardware Components
 - Administration network: 1 x 1 GbE Base-T Ethernet port
 - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port
 - Client and additional network connectivity:
+
   - Two factory-installed CX6-LX network cards. Each card contains 2 x SFP+/SFP28 ports (10/25 GbE)
   - Up to 3 optional network cards. Each card can be any of the following:
+
     - CX6-LX with 2 x SFP+/SFP28 ports (10/25 GbE)
     - CX6-DX with 2 x QSFP28 ports (100GbE). Each QSFP28 port can support one 10 GbE or 25 GbE link with appropriate breakout cables.
     - Fortpond RJ45 Ethernet with 4 x 10GBASE-T ports (10 GbE)
@@ -29,17 +31,23 @@ Oracle Exadata X9M-2 Database Server Hardware Components
 --------------------------------------------------------
 
 - CPU: 32-core Intel Xeon 8358 processors @ 2.6 GHz:
+
   - Flexible configuration: 2 CPUs
   - Eighth Rack: 1 CPU
+
 - RAM:
+
   - Flexible configuration: 512 GB RAM (16 x 32 GB DIMMs), expandable to 1 TB (16 x 64 GB DIMMs), 1.5 TB (16 x 32 GB and 16 x 64 GB DIMMs), or 2 TB (32 x 64 GB DIMMs) with memory expansion kit
   - Eighth Rack: 384 GB RAM (12 x 32 GB DIMMs), expandable to 1 TB (16 x 64 GB DIMMs) with memory expansion kit
+
 - System storage: 2 x 3.84 TB PCIe 4.0 NVMe storage drives, expandable to 4 drives
 - RDMA Network Fabric: 1 x dual-port CX5 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)
 - Administration network: 1 x 1 GbE Base-T Ethernet port
 - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port
 - Client and additional network connectivity:
+
   - Flexible configuration options:
+
     - Two factory-installed network cards. Each card contains 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE)
     - One optional field-installed network card containing 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE) or 2 x QSFP28 ports (100GbE). Each QSFP28 port can support one 10 GbE or 25 GbE link with appropriate breakout cables.
   - Eighth Rack: Two factory-installed network cards only. Each card contains 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE)
@@ -53,8 +61,10 @@ Oracle Exadata X9M-8 Database Server Hardware Components
 - System storage: 2 x 6.4 TB flash accelerator PCIe cards (Hot-Pluggable)
 - RDMA Network Fabric: 4 x dual-port QSFP28 100 Gb/s PCIe 3.0 RDMA Network Fabric cards - all ports active
 - Network connectivity:
+
   - 8 x 10GBASE-T ports (1/10 GbE) - 1 port used for the administration network
   - 8 x SFP+/SFP28 ports (10/25 GbE)
+
 - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port
 
 
