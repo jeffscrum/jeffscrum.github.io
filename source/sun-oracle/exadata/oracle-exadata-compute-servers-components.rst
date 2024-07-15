@@ -292,4 +292,5 @@ Oracle Exadata X2-8 Database Server Hardware Components
 
 
 ----
+
 Parent topic: `Hardware Components of Oracle Exadata <https://docs.oracle.com/en/engineered-systems/exadata-database-machine/dbmso/hardware-components-exadata-db-machine.html>`_
