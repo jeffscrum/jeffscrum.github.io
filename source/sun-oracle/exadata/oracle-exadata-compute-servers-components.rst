@@ -263,25 +263,31 @@ Oracle Exadata X2-8 Database Server Hardware Components
 -------------------------------------------------------
 
 - Components of Sun Fire X4800 Oracle Database Servers
+
   - CPU: 8 x 8-core Intel Xeon X7560 Processors @ 2.26 GHz
   - RAM: 1 TB RAM
   - System storage: 8 x 300GB 10K RPM SAS Disks
   - Disk Controller HBA with 512MB Battery-backed cache
   - RDMA Network Fabric: 4 dual-port 4X QDR InfiniBand PCIe 2.0 Express Modules (EM)
   - 2 Network Express Modules (NEM) providing the following:
+
     - 8 x 10 Gb Ethernet network ports using SFP+ connectors (based on Intel 82599 10 GbE controller)
     - 8 x 1 Gb Ethernet network ports
+
   - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port
 
 - Components of Sun Server X2-8 Oracle Database Server
+
   - CPU: 8 x 10-core Intel Xeon E7-8870 Processors (2.40 GHz)
   - RAM: 2 TB RAM (128 x 16 GB)
   - System storage: 8 x 300GB 10K RPM SAS Disks
   - Disk Controller HBA with 512MB Battery-backed cache
   - RDMA Network Fabric: 4 dual-port 4X QDR InfiniBand PCIe 2.0 Express Modules (EM)
   - 2 Network Express Modules (NEM) providing the following:
+
     - 8 x 10 Gb Ethernet network ports using SFP+ connectors (based on Intel 82599 10 GbE controller)
     - 8 x 1 Gb Ethernet network ports
+
   - Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port
 
 
