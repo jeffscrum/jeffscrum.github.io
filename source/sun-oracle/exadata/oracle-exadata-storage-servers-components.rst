@@ -15,8 +15,10 @@ Exadata Storage Server X10M Extreme Flash
 - CPU: 2 x 32-core AMD EPYC 9334 processors @ 2.7 GHz (up to 3.9 GHz)
 - RAM: 1.5 TB (24 x 64 GB DIMMs) including XRMEM cache
 - Flash storage:
+
   - 4 x 30.72 TB capacity-optimized flash devices (for primary data storage)
   - 4 x 6.8 TB performance-optimized flash devices (primarily for high-performance low-latency caching using Exadata Smart Flash Cache and Exadata Smart Flash Log)
+
 - System storage: 2 x 480 GB NVMe devices
 - RDMA Network Fabric: 1 x dual-port CX7 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)
 - Administration network: 1 x 1 GbE Base-T Ethernet port
@@ -254,4 +256,5 @@ Exadata Storage Server Sun Fire X4275
 
 
 ----
+
 Parent topic: `Hardware Components of Oracle Exadata <https://docs.oracle.com/en/engineered-systems/exadata-database-machine/dbmso/hardware-components-exadata-db-machine.html>`_
