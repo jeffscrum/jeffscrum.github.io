@@ -252,7 +252,7 @@ Oracle Exadata X2-2 Database Server Hardware Components
 - Components of Sun Fire X4170 M2 Oracle Database Servers
 
   - CPU: 2 x 6-Core Intel Xeon X5675 processors @ 3.06 GHz
-  - RAM: 96 GB RAM (12 x 8 GB) expandable to 288 GB with memory expansion kit
+  - RAM: 96 GB RAM (12 x 8 GB) expandable to 288 GB (18 x 16 Gb) with memory expansion kit
   - System storage: 4 x 300 GB 10 K RPM SAS disks
   - Disk controller HBA with 512 MB battery-backed write cache
   - RDMA Network Fabric: Dual-port 4X QDR (40 Gb/s) InfiniBand Host Channel Adapter (HCA)
