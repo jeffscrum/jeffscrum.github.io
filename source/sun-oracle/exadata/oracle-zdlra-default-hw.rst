@@ -38,24 +38,6 @@ Storage Server (Oracle Server X9-2L)
 - 2 x NVMe PCIe4.0 Flash Cards
 
 
-Exadata X9M
-~~~~~~~~~~~
-
-Storage Server Extreme Flash (EF) (Oracle Server X9-2L):
-
-- 2 x 32-core Intel(R) Xeon(R) 8352Y processors (2.2 GHz)
-- 256 GB RAM
-- 1.5 TB Persistent Memory
-- 8 x 6.4 TB NVMe PCIe4.0 Flash cards
-
-Storage Server High Capacity (HC) (Oracle Server X9-2L):
-
-- 2 x 32-core Intel(R) Xeon(R) 8352Y processors (2.2 GHz)
-- 256 GB RAM
-- 1.5 TB Persistent Memory
-- 12 x 18 TB 7,200 RPM disks
-- 4 x 6.4 TB NVMe PCIe4.0 Flash cards
-
 
 .. Для переделки сервера от ZDLRA X9M под Exadata X9M Extreme Flash:
      - Установить дополнительный процессор 2.2GHz 32-Core Intel Xeon 8352Y (pn 8207510)
