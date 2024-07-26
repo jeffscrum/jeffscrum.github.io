@@ -2,7 +2,7 @@
 
 .. _oracle-exadata-zdlra-default-hw:
 
-ZDLRA & Exadata Default Hardware 
+ZDLRA Default Hardware 
 ================================
 
 ZDLRA RA21
