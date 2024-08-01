@@ -106,10 +106,10 @@ html_theme = 'sphinx_rtd_theme'
 #html_favicon = '_static/images/favicon.ico'
 html_baseurl = 'https://kb.ksomov.ru'
 html_title = 'Ёжъ'
-html_theme_options = {
-    'analytics_id': 'G-NP47XWF3FQ',
-    'analytics_anonymize_ip': False
-}
+# html_theme_options = {
+#     'analytics_id': 'G-NP47XWF3FQ',
+#     'analytics_anonymize_ip': False
+# }
 
 # A list of paths that contain extra files not directly related to the documentation, such as robots.txt or .htaccess.
 # Relative paths are taken as relative to the configuration directory. They are copied to the output directory.
