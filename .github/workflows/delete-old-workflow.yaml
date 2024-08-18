@@ -1,7 +1,7 @@
 name: Delete old workflow runs
 on:
   schedule:
-    - cron: '50 * * * *'  # At 03:08 on Sunday
+    - cron: '15 03 * * 0'  # At 03:15 on Sunday
 
 jobs:
   del_runs:
