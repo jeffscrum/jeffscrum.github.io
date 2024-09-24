@@ -8,6 +8,10 @@
 Build the image
 ===============
 
+.. warning::
+
+   VyOS закрыли публичный доступ к своему репозиторию. Теперь бесплатно только rolling release. Обещали некую `Stream <https://blog.vyos.io/introducing-vyos-stream>`_ версию, но пока что её нет и когда появится неизвестно.
+
 .. code-block:: bash
 
   # For VyOS 1.3 (equuleus)
