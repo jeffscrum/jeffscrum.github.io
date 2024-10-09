@@ -35,12 +35,12 @@ Exadata NFS ReImage
 
 Смотрим требования к версии image в ТЗ, после чего смотрим документ `Doc ID 888828.1 <https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=221272342314719&id=888828.1&_afrWindowMode=0&_adf.ctrl-state=vuh4usj6f_109>`_ на сайте support.oracle.com. В этом документе находим нужную нам версию image и в правом столбце жмем ссылку напротив нужного нам релиза (*Supplemental README ...*). В открывшемся README нужно найти секцию 'Software and Image files' в которой описаны все необходимые файлы которые понадобятся для скачивания.
 
-.. image:: /images/exadata-nfs-reimage-1.png
+.. image:: /images/exadata-nfs-reimage-1.webp
   :width: 600
 
 Теперь идем на сайт `edelivery.oracle.com <https://edelivery.oracle.com/osdc/faces/SoftwareDelivery>`_ и в строке поиска набираем *'Oracle Exadata Storage Server'*, после чего кликаем на нужную нам версию. В верхнем правом углу нажимаем 'Checkout' и 'Continue', после чего соглашаемся с лицензией и снова 'Continue'. Проверяем что нам предлагают скачивать те же файлы что мы видели ранее. Скачиваем.
 
-.. image:: /images/exadata-nfs-reimage-2.png
+.. image:: /images/exadata-nfs-reimage-2.webp
   :width: 600
 
 После того как оба файла скачали - распаковываем.
