@@ -9,8 +9,8 @@ Cabling Tables for Oracle Exadata
 
 Cabling Tables for Oracle Exadata Database Machine X8-2, X8-8, X7-2, and X7-8
 
-.. image:: /images/dbmso_ap_001.png
+.. image:: /images/dbmso_ap_001.webp
   :width: 400
 
-.. image:: /images/dbmso_ap_002.png
+.. image:: /images/dbmso_ap_002.webp
   :width: 400

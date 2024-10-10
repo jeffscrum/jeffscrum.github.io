@@ -9,5 +9,5 @@ FMod positions (Flash-card)
 
 Данные карты использовались на первых экзадатах, поэтому, скорее всего, с таким вы уже вряд ли столкнетесь.
 
-.. image:: /images/fmod_position.jpeg
+.. image:: /images/fmod_position.webp
   :width: 400

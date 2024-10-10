@@ -38,7 +38,7 @@
        select * from system_property
        where name = 'dcfm.install.time' or name = 'license.lastLicenseCheckTime' or name = 'license.expiryDate'        
 
-    .. image:: /images/bna-postgre.jpeg
+    .. image:: /images/bna-postgre.webp
        :width: 800
 
 

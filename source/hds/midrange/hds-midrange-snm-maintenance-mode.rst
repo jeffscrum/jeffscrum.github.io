@@ -12,5 +12,5 @@ HDS SNM Maintenance Mode
 #. Нажимаем комбинацию клавиш :kbd:`Ctrl` + :kbd:`Shift` + :kbd:`e`.
 #. После чего "Operation Mode" сменится на "Maintenance Mode".
 
-.. image:: /images/snm_to_maintenance_1.jpeg
-.. image:: /images/snm_to_maintenance_2.jpeg
+.. image:: /images/snm_to_maintenance_1.webp
+.. image:: /images/snm_to_maintenance_2.webp

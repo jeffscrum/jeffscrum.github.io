@@ -12,6 +12,6 @@ Outdoor Food Ration Calculator
 
 Программа сохраняет раскладки в файл \*.rc
 
-.. image:: /images/ofrc.jpeg
+.. image:: /images/ofrc.webp
 
 Скачать саму программу, дополнительные справочники и дополнительные раскладки можно тут - :download:`Download<https://app.box.com/s/lam4rbm73zst5abo81ytrqw52ieiu0cj>`

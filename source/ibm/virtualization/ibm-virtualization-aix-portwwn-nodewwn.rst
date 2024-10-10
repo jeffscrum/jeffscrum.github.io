@@ -8,5 +8,5 @@
 port-wwn & node-wwn
 ===================
 
-.. image:: /images/port_node_wwn.png
+.. image:: /images/port_node_wwn.webp
     :width: 350

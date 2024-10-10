@@ -16,6 +16,6 @@ VMAX. Отключение Deferred Maintenance
 2. Измените "Spare Replace" на "None".
 3. Нажмите зеленую галочку наверху, для того что бы изменения применились.
 
-.. image:: /images/vmax-deffered-maintenance.png
+.. image:: /images/vmax-deffered-maintenance.webp
 
 После проделанных действий кейс будет открываться всякий раз, когда будет сломан новый диск.

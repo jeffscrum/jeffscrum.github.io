@@ -10,7 +10,7 @@ Squeezelite
 
 Для работы мультирума в системе умного дома я использую Logitech Media Server (LMS) и клиентов на Orange Pi Zero + Interface Board с миниджеком. Это решение имеет низкую стоимость и достаточную производительность, а также без проблем работает в WiFi сетях как 2.4GHz, так и 5GHz.
 
-.. image:: /images/Orange-Pi-Zero-Audio-Interface-Board-Large.png
+.. image:: /images/Orange-Pi-Zero-Audio-Interface-Board-Large.webp
   :width: 600
 
 Настройка

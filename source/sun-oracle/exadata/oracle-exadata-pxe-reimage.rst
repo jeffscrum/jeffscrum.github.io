@@ -240,7 +240,7 @@ Exadata PXE ReImage
 Внимательно следим за процессом загрузки, нужно убедиться что сервер получил верные сетевые настройки от DHCP-сервера.
 Когда сервер получит IP адрес и загрузит все необходимое по TFTP вы увидите менюшку.
 
-.. image:: /images/exadata-pxe-bootmenu.png
+.. image:: /images/exadata-pxe-bootmenu.webp
   :width: 640
 
 Для запуска инсталляции нужного сервера впишите "compute" или "storage" и нажмите Enter.

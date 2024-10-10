@@ -8,7 +8,7 @@
 Ростбиф Тендерлойн с соусом из лесной клюквы
 ============================================
 
-  .. image:: /images/rostbif-0.jpeg
+  .. image:: /images/rostbif-0.webp
      :align: center
 
 Первое правило приготовления качественного ростбифа – это правильно выбранная говяжья вырезка.
@@ -56,17 +56,17 @@
   7. Соус из лесной клюквы перелейте в сотейник и прогрейте на среднем огне 1 -- 2 минуты.
   8. Ростбиф нарежьте на ломтики и разложите по тарелкам, рядом выложите запеченные овощи, посыпьте их оставшейся петрушкой и подавайте с **клюквенным соусом**.
 
-  .. image:: /images/rostbif-1.jpeg
+  .. image:: /images/rostbif-1.webp
 
-  .. image:: /images/rostbif-2.jpeg
+  .. image:: /images/rostbif-2.webp
 
-  .. image:: /images/rostbif-3.jpeg
+  .. image:: /images/rostbif-3.webp
 
-  .. image:: /images/rostbif-4.jpeg
+  .. image:: /images/rostbif-4.webp
 
-  .. image:: /images/rostbif-5.jpeg
+  .. image:: /images/rostbif-5.webp
 
-  .. image:: /images/rostbif-6.jpeg
+  .. image:: /images/rostbif-6.webp
 
 
 

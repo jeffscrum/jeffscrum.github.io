@@ -15,4 +15,4 @@ VMAX. Тестовый CallHome
 3. Нажимаем кнопку "ОК" в появившемся окне.
 4. Смотрим результат.
 
-.. image:: /images/vmax-callhome.jpeg
+.. image:: /images/vmax-callhome.webp

@@ -8,7 +8,7 @@
 Банановый Пирог
 ===============
 
-  .. image:: /images/banana-pie.jpeg
+  .. image:: /images/banana-pie.webp
      :align: center
 
 

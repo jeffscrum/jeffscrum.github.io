@@ -10,7 +10,7 @@ SEA for IBM Bladecenter
 
 Недавно я занимался инсталляцией сервера для одного из заказчиков. Конфигурация оборудования была такой - IBM BC-H, в котором установленно одно сдвоенное p-series лезвие (PS701/702). Сетевые интерфейсы, приходящие с разных цисок были объеденены между собой в Etherchannel на VIOS. Далее на этих Etherchannel был настроен SEA, который и "прокидывался" в LPAR'ы. Схема организации сетевого доступа изображена ниже.
 
-.. image:: /images/bladecenter-sea-1.jpeg
+.. image:: /images/bladecenter-sea-1.webp
     :width: 400
 
 До тех пор, пока я не начал создавать SEA все шло великолепно. Когда же я пытался создать SEA, то получал вот такую ошибку:
@@ -44,9 +44,9 @@ SEA for IBM Bladecenter
 
 Далее создаем SEA либо через CLI (mkvdev -sea ent6 -vadapter ent2 -default ent2 -defaultid 255), либо используя WEB интерфейс IVM (в этом случае будет создан интерфейс SEA и на него назначен тот ip-адрес, который был на etherchannel интерфейсе)
 
-.. image:: /images/bladecenter-sea-2.jpeg
+.. image:: /images/bladecenter-sea-2.webp
     :width: 400
-.. image:: /images/bladecenter-sea-3.jpeg
+.. image:: /images/bladecenter-sea-3.webp
     :width: 400
 
 Теперь, при создании LPAR'а мы линкуем ent0 в первый виртуальный свитч, а ent1 - во второй.
