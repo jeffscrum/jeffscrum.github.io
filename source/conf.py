@@ -51,6 +51,7 @@ extensions = [
 # -- sphinx-notfound-page --------------------------------------------------
 # https://sphinx-notfound-page.readthedocs.io/en/latest/configuration.html
 notfound_urls_prefix = None
+notfound_template = '404.html'
 
 
 # -- sphinx-sitemap --------------------------------------------------------
