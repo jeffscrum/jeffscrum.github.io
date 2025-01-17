@@ -7,6 +7,7 @@ Uncategorized
    :maxdepth: 1
 
    amazon-kindle-so
+   sendfile2amazon_kindle
    batch-log-archive
    davinci-studio-trick
    download-scribd-book
