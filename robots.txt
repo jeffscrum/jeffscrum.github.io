@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /brocade/bna-trial-reset.html
+Disallow: /uncategorized/davinci-studio-trick.html
+Disallow: /_static/sd/
+
+User-agent: PetalBot
+Disallow: /pages/
+Disallow: /label/
+Disallow: /display/
+Disallow: /plugins/
+
+Sitemap: https://pages.ksomov.ru/sitemap.xml
+Host: https://pages.ksomov.ru

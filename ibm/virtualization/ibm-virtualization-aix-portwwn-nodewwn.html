@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ibm, aix, nodewwn, portwwn" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>port-wwn &amp; node-wwn &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/ibm/virtualization/ibm-virtualization-aix-portwwn-nodewwn.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How To Remove Missing Paths In AIX" href="ibm-virtualization-aix-remove-missing-path.html" />
+    <link rel="prev" title="No Login Prompt After AIX Install (Serial)" href="ibm-virtualization-aix-no-login-prompt.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">IBM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#bladecenter">Bladecenter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#storages">Storages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#virtualization">Virtualization</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-boot-lun.html">Как узнать с какого из VMAX отдан лун</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-download.html">How To Download AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-install-apar.html">Installing a Interim Fix (APAR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-install-sshd.html">Installing OpenSSH on an AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-no-login-prompt.html">No Login Prompt After AIX Install (Serial)</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">port-wwn &amp; node-wwn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-remove-missing-path.html">How To Remove Missing Paths In AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-sync-lvm.html">How To Sync LVM-raid In AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-assign-pvid.html">Assign PVID to a new disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-boot-cdrom-wosms.html">Загрузка с CD-ROM без SMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-check-and-clear-attention-led.html">Check And Clear Attention LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-define-boot-disk.html">How to define boot disk in AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-hmc-upgrade-network.html">HMC Update over network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-p750-fw-update.html">Обновление микрокода сервера IBM p750</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-remove-failed-paths-mpio.html">How To Remove The Failed Paths In MPIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-rmc-connection-issue.html">Fixing the No RMC Connection Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmc-change-vlan-dynamically.html">Сhange VLAN on HMC dynamically (SEA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-hmc-collect-xxzip.html">Как собрать xx.zip в HMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-aix-usefull-cmds.html">Полезные команды для AIX</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">IBM</a></li>
+      <li class="breadcrumb-item active">port-wwn &amp; node-wwn</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/ibm/virtualization/ibm-virtualization-aix-portwwn-nodewwn.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="port-wwn-node-wwn">
+<span id="ibm-virtualization-aix-portwwn-nodewwn"></span><span id="index-0"></span><h1>port-wwn &amp; node-wwn<a class="headerlink" href="#port-wwn-node-wwn" title="Link to this heading"></a></h1>
+<a class="reference internal image-reference" href="../../_images/port_node_wwn.webp"><img alt="../../_images/port_node_wwn.webp" src="../../_images/port_node_wwn.webp" style="width: 350px;" /></a>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ibm-virtualization-aix-no-login-prompt.html" class="btn btn-neutral float-left" title="No Login Prompt After AIX Install (Serial)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ibm-virtualization-aix-remove-missing-path.html" class="btn btn-neutral float-right" title="How To Remove Missing Paths In AIX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

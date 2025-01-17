@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HDS Конфигурирование через RAIDcom &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/hds/hds-raidcom.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="HDS Emergency License Key" href="hds-emergency-license-key.html" />
+    <link rel="prev" title="HDS Licenses Recovery Procedure" href="hds-license-recovery.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">HDS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="hds-midrange-rga-firmware.html">HDS Microcode Availability Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="hds-license-recovery.html">HDS Licenses Recovery Procedure</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">HDS Конфигурирование через RAIDcom</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#horcm">Настройка HORCM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Конфигурация массива</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="hds-emergency-license-key.html">HDS Emergency License Key</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#midrange">Midrange</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">HDS</a></li>
+      <li class="breadcrumb-item active">HDS Конфигурирование через RAIDcom</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/hds/hds-raidcom.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hds-raidcom">
+<span id="index-0"></span><span id="id1"></span><h1>HDS Конфигурирование через RAIDcom<a class="headerlink" href="#hds-raidcom" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>SSH Port on MidRange controllers = 20522</p>
+</div>
+<section id="horcm">
+<h2>Настройка HORCM<a class="headerlink" href="#horcm" title="Link to this heading"></a></h2>
+<p>Когда требуется настройка по профилю, при инсталляции, то делать это через Storage Navigator очень долго. Гораздо быстрее использовать CLI при помощи RAIDcom. Пример настройки подключения к массиву и последующий план настройки.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>root@lpar:~# cat /etc/horcm601.conf
+HORCM_MON
+# configure service port in /etc/services or use fixed port
+# ip_address    service         poll(10ms)      timeout(10ms)
+#localhost       horcm601        1000            3000
+localhost       11002        1000            3000
+
+HORCM_CMD
+#
+# For HDS HiEnd use IP of SVP
+# For HDS Gx00 use IP of CTRL-1 &amp; CTRL-2
+#
+# dev_name dev_name dev_name
+# \\.\IPCMD-192.168.1.100-31001  \\.\IPCMD-192.168.1.101-31001
+\\.\IPCMD-10.0.0.16  \\.\IPCMD-10.0.0.17
+
+root@lpar:~#
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Конфигурация массива<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Пример можно посмотреть в “Command Control Interface User and Reference Guide” на странице 5-26.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>*//<span class="w"> </span>Логинимся<span class="w"> </span>на<span class="w"> </span>массив
+raidcom<span class="w"> </span>-login<span class="w"> </span>USER01<span class="w"> </span>PASSWORD01<span class="w"> </span>-IH601
+
+*//<span class="w"> </span>Включаем<span class="w"> </span>блокировку
+raidcom<span class="w"> </span>lock<span class="w"> </span>resource<span class="w"> </span>-resource_grp_name<span class="w"> </span>meta_resource<span class="w"> </span>-IH601
+
+*//<span class="w"> </span>Включение<span class="w"> </span>Port<span class="w"> </span>Security
+raidcom<span class="w"> </span>modify<span class="w"> </span>port<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>-security_switch<span class="w"> </span>y<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>port<span class="w"> </span>-port<span class="w"> </span>CL1-G<span class="w"> </span>-security_switch<span class="w"> </span>y<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>port<span class="w"> </span>-port<span class="w"> </span>CL3-E<span class="w"> </span>-security_switch<span class="w"> </span>y<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>port<span class="w"> </span>-port<span class="w"> </span>CL3-G<span class="w"> </span>-security_switch<span class="w"> </span>y<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Создание<span class="w"> </span>HG
+raidcom<span class="w"> </span>add<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>-host_grp_name<span class="w"> </span>e880_vios201<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL1-G<span class="w"> </span>-host_grp_name<span class="w"> </span>e880_vios201<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL3-E<span class="w"> </span>-host_grp_name<span class="w"> </span>e880_vios201<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL3-G<span class="w"> </span>-host_grp_name<span class="w"> </span>e880_vios201<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Изменение<span class="w"> </span>HG<span class="w"> </span>на<span class="w"> </span>типа<span class="w"> </span>AIX
+raidcom<span class="w"> </span>modify<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-host_mode<span class="w"> </span><span class="m">15</span><span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL1-G<span class="w"> </span>e880_vios201<span class="w"> </span>-host_mode<span class="w"> </span><span class="m">15</span><span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL3-E<span class="w"> </span>e880_vios201<span class="w"> </span>-host_mode<span class="w"> </span><span class="m">15</span><span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL3-G<span class="w"> </span>e880_vios201<span class="w"> </span>-host_mode<span class="w"> </span><span class="m">15</span><span class="w"> </span>-IH601
+radicom<span class="w"> </span>get<span class="w"> </span>host_grp<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Добавление<span class="w"> </span>WWN<span class="w"> </span>в<span class="w"> </span>HG
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269b6<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269b7<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269e6<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269e7<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b226989<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b22698a<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269d4<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269d5<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>get<span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Создание<span class="w"> </span><span class="nb">alias</span><span class="w"> </span>для<span class="w"> </span>WWN
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269b6<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P1_C2_T1<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269b7<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P1_C2_T2<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269e6<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P1_C6_T1<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269e7<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P1_C6_T2<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b226989<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P2_C2_T1<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b22698a<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P2_C2_T2<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269d4<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P2_C6_T1<span class="w"> </span>-IH601
+raidcom<span class="w"> </span><span class="nb">set</span><span class="w"> </span>hba_wwn<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-hba_wwn<span class="w"> </span>100000109b2269d5<span class="w"> </span>-IH601<span class="w"> </span>-wwn_nickname<span class="w"> </span>e880_vios201_EXP1_P2_C6_T2<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Создание<span class="w"> </span>луна
+raidcom<span class="w"> </span>add<span class="w"> </span>ldev<span class="w"> </span>-pool<span class="w"> </span><span class="m">0</span><span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-capacity<span class="w"> </span>200G<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>ldev<span class="w"> </span>-pool<span class="w"> </span><span class="m">0</span><span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:02<span class="w"> </span>-capacity<span class="w"> </span>200G<span class="w"> </span>-IH601
+
+*//<span class="w"> </span>Форматирование<span class="w"> </span>луна<span class="w"> </span><span class="o">(</span>quick<span class="w"> </span>format<span class="o">)</span>
+raidcom<span class="w"> </span>initialize<span class="w"> </span>ldev<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-operation<span class="w"> </span>qfmt<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>initialize<span class="w"> </span>ldev<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:02<span class="w"> </span>-operation<span class="w"> </span>qfmt<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Переименование<span class="w"> </span>луна
+raidcom<span class="w"> </span>modify<span class="w"> </span>ldev<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-ldev_name<span class="w"> </span>e880-vios201_boot<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>modify<span class="w"> </span>ldev<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:02<span class="w"> </span>-ldev_name<span class="w"> </span>e880-vios202_boot<span class="w"> </span>-IH601
+
+//<span class="w"> </span>Маппинг<span class="w"> </span>лунов
+raidcom<span class="w"> </span>add<span class="w"> </span>lun<span class="w"> </span>-port<span class="w"> </span>CL1-E<span class="w"> </span>e880_vios201<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>lun<span class="w"> </span>-port<span class="w"> </span>CL1-G<span class="w"> </span>e880_vios201<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>lun<span class="w"> </span>-port<span class="w"> </span>CL3-E<span class="w"> </span>e880_vios201<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-IH601
+raidcom<span class="w"> </span>add<span class="w"> </span>lun<span class="w"> </span>-port<span class="w"> </span>CL3-G<span class="w"> </span>e880_vios201<span class="w"> </span>-ldev_id<span class="w"> </span><span class="m">02</span>:01<span class="w"> </span>-IH601
+
+*//<span class="w"> </span>Снимаем<span class="w"> </span>блокировку
+raidcom<span class="w"> </span>unlock<span class="w"> </span>resource<span class="w"> </span>-resource_grp_name<span class="w"> </span>meta_resource<span class="w"> </span>-IH601
+
+*//<span class="w"> </span>Разлогиниваемся
+raidcom<span class="w"> </span>-logout<span class="w"> </span>-IH601
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hds-license-recovery.html" class="btn btn-neutral float-left" title="HDS Licenses Recovery Procedure" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="hds-emergency-license-key.html" class="btn btn-neutral float-right" title="HDS Emergency License Key" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

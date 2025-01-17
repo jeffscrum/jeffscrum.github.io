@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="vmax, tasks" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VMAX. Свалка планов &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/vmax-svalka.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Обо всем на свете" href="../tourism/index.html" />
+    <link rel="prev" title="VMAX. Отмапливание дисков" href="vmax-map-disks.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Миграция данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Работа с ОС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hds-standard-work-plans.html">HDS. Стандартный план работ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK01365461.html">VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03041192.html">VMAX. Расширения ФС /warehouse/oradata до 60Тб</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03049093.html">VMAX. Разобрать пулы и создать новые луны</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03334903.html">VMAX. Переразбить пул с другим RAID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03354440.html">VMAX. Переразбивка пулов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03562213.html">VMAX. Удалить диски с нод кластера (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03563742.html">VMAX. Удалить диски с серверов (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03598846.html">VMAX. Подключение SSD Tier к HDD Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-map-disks.html">VMAX. Отмапливание дисков</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">VMAX. Свалка планов</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#task01869498">TASK01869498</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task01555851">TASK01555851</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#task01555480">TASK01555480</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">VMAX. Свалка планов</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/vmax-svalka.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vmax">
+<span id="vmax-svalka"></span><span id="index-0"></span><h1>VMAX. Свалка планов<a class="headerlink" href="#vmax" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Какие-то ошметки, но мало ли пригодятся</p>
+</div>
+<section id="task01869498">
+<h2>TASK01869498<a class="headerlink" href="#task01869498" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=================================================================================
+Миграция /rmod, /rmod/archlog, /rmod/db
+=================================================================================
+Переразбивка массива и показывание девайсов на сервер.
+1. Создаем тонкий пул:
+symconfigure -sid 307 -cmd &quot;create pool RMOD_STB_FC, type=thin;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;create pool RMOD_STB_FC, type=thin;&quot; -v commit
+2. Создаем data-устройства:
+symconfigure -sid 307 -cmd &quot;create dev count=1000, size=32060,
+emulation=fba, data_member_count=7, config=RAID-5, disk_group=4,
+attribute=datadev;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;create dev count=1000, size=32060,
+emulation=fba, data_member_count=7, config=RAID-5, disk_group=4,
+attribute=datadev;&quot; -v commit
+Записываем номера созданных устройств: datadev1:datadev1000
+3. Добавляем data-устройства:
+symconfigure -sid 307 -cmd &quot;add dev datadev1:datadev1000 to pool
+RMOD_STB_FC type=thin, member_state=ENABLE;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;add dev datadev1:datadev1000 to pool
+RMOD_STB_FC type=thin, member_state=ENABLE;&quot; -v commit
+4. Создаем thin-устройства для тома db:
+symconfigure -sid 307 -cmd &quot;create dev count=16, size=91000,
+config=TDEV, emulation=fba;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;create dev count=16, size=91000,
+config=TDEV, emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: thindevdb1:thindevdb16
+Создаем meta-устройства
+symconfigure -sid 307 -cmd &quot;form meta from dev thindevdb1,
+config=striped, count=16;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;form meta from dev thindevdb1,
+config=striped, count=16;&quot; -v commit
+-------------------------------------------
+Создаем thin-устройства для тома archlogs:
+symconfigure -sid 307 -cmd &quot;create dev count=16, size=34134,
+config=TDEV, emulation=fba;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;create dev count=16, size=34134,
+config=TDEV, emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: thindevarc1:thindevarc16
+Создаем meta-устройства
+symconfigure -sid 307 -cmd &quot;form meta from dev thindevarc1,
+config=striped, count=16;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;form meta from dev thindevarc1,
+config=striped, count=16;&quot; -v commit
+-------------------------------------------
+Создаем thin-устройства для тома bin:
+symconfigure -sid 307 -cmd &quot;create dev count=8, size=68268, config=TDEV,
+emulation=fba;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;create dev count=8, size=68268, config=TDEV,
+emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: thindevarc1:thindevarc8
+Создаем meta-устройства
+symconfigure -sid 307 -cmd &quot;form meta from dev thindevbin1,
+config=striped, count=8;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;form meta from dev thindevbin1,
+config=striped, count=8;&quot; -v commit
+5.1 Повторяем шаг 4 (том db) для создания 20 meta-устройств. Записываем их номера:
+5.2 Повторяем шаг 4 (том archlogs) для создания 2 meta-устройств. Записываем их номера:
+5.3 Повторяем шаг 4 (том bin) для создания 1 meta-устройств. Записываем их номера:
+6. Биндим metadev в пул:
+Создаем файл &quot;bind.txt&quot; с содержанием:
+bind tdev thindevdb1 to pool RMOD_STB_FC, preallocate size=ALL;
+bind tdev thindevdb2 to pool RMOD_STB_FC, preallocate size=ALL;
+bind tdev thindevdb3 to pool RMOD_STB_FC, preallocate size=ALL;
+bind tdev thindevdb4 to pool RMOD_STB_FC, preallocate size=ALL;
+bind tdev thindevdb5 to pool RMOD_STB_FC, preallocate size=ALL;
+bind tdev thindevdb6 to pool RMOD_STB_FC, preallocate size=ALL;
+...
+</pre></div>
+</div>
+</section>
+<section id="task01555851">
+<h2>TASK01555851<a class="headerlink" href="#task01555851" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------
+Расширение девайса на p795-lp04 - VMAX.
+------------------------------------------------------
+Данная ФС расположена на страйпе из 7 девайсов:
+hdisk12
+         EC Level....................602966
+         LIC Node VPD................0B79
+hdisk10
+         EC Level....................602966
+         LIC Node VPD................06F3
+hdisk14
+         EC Level....................602966
+         LIC Node VPD................0B89
+hdisk15
+         EC Level....................602966
+         LIC Node VPD................111D
+hdisk13
+         EC Level....................602966
+         LIC Node VPD................0B81
+hdisk16
+         EC Level....................602966
+         LIC Node VPD................1125
+hdisk11
+         EC Level....................602966
+         LIC Node VPD................0B71
+1. Создаем Thin+BCV девайс, с помощью которого будет производиться расширение.
+symconfigure -sid 66 -cmd &quot;create dev count=8, size=20075,
+config=BCV+TDEV, emulation=fba;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;create dev count=8, size=20075,
+config=BCV+TDEV, emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: ldev1:ldev8
+Создаем мета устройство.
+symconfigure -sid 66 -cmd &quot;form meta from dev ldev1, config=striped, count=8;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;form meta from dev ldev1, config=striped, count=8;&quot; -v commit
+2. В пуле TASK911 два террабайта свободного места. В нем будем проводить расширение.
+symconfigure -sid 66 -cmd &quot;bind tdev ldev1 to pool Task911, preallocate size=ALL, allocate_type=persistent;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;bind tdev ldev1 to pool Task911, preallocate size=ALL, allocate_type=persistent;&quot; -v commit
+3. Создаем девайсы для прикрепления.
+symconfigure -sid 66 -cmd &quot;create dev count=4, size=20075, config=TDEV, emulation=fba;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;create dev count=4, size=20075, config=TDEV, emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: ldev2:ldev3
+4. Запускаем процедуру расширения устройства.
+symconfigure -sid 66 -cmd &quot;add dev ldev2:ldev3 to meta 0B79, protect_data=TRUE, bcv_meta_head=ldev1;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;add dev ldev2:ldev3 to meta 0B79, protect_data=TRUE, bcv_meta_head=ldev1;&quot; -v commit
+Запускать с managment станций, т.к. процесс достаточно долгий. Ждем ее окончания.
+Пункты 3 и 4 повторяем для остальных девайсов: 06F3; 0B89; 111D; 0B81; 1125; 0B71.
+Каждый последующий девайс необходимо расширять после окончания предыдущего, т.к. используется одно и то же BCV устройство.
+5. После завершения процедуры на массиве для всех устройств, идем на сервер p795-lp04:
+
+root@p795-lp04:~# lsvg cc-hist-vmax1
+VOLUME GROUP:       cc-hist-vmax             VG IDENTIFIER: 00c1d38700004c0000000142084c95d6
+VG STATE:           active                   PP SIZE:        128 megabyte(s)
+VG PERMISSION:      read/write               TOTAL PPs:      9400 (1203200 megabytes)
+MAX LVs:            256                      FREE PPs:       0 (0 megabytes)
+LVs:                3                        USED PPs:       9400 (1203200 megabytes)
+OPEN LVs:           3                        QUORUM:         5 (Enabled)
+TOTAL PVs:          8                        VG DESCRIPTORS: 8
+STALE PVs:          0                        STALE PPs:      0
+ACTIVE PVs:         8                        AUTO ON:        yes
+MAX PPs per VG:     32768                    MAX PVs:        1024
+LTG size (Dynamic): 1024 kilobyte(s)         AUTO SYNC:      no
+HOT SPARE:          no                       BB POLICY: relocatable
+</pre></div>
+</div>
+</section>
+<section id="task01555480">
+<h2>TASK01555480<a class="headerlink" href="#task01555480" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>------------------------------------------------------
+Расширение девайса на p795-3-lp03 - Vmax-1.
+------------------------------------------------------
+
+Данная ФС расположена на девайсе:
+hdisk2
+        EC Level....................602966
+        LIC Node VPD................15A1
+
+1. Создаем Thin+BCV девайс, с помощью которого будет производиться расширение.
+
+symconfigure -sid 66 -cmd &quot;create dev count=8, size=27307, config=BCV+TDEV, emulation=fba;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;create dev count=8, size=27307, config=BCV+TDEV, emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: ldev1:ldev8
+
+Создаем мета устройство.
+symconfigure -sid 66 -cmd &quot;form meta from dev ldev1, config=striped, count=8;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;form meta from dev ldev1, config=striped, count=8;&quot; -v commit
+
+2. В пуле TASK911 три террабайта свободного места. В нем будем проводить расширение.
+
+symconfigure -sid 66 -cmd &quot;bind tdev ldev1 to pool Task911, preallocate size=ALL, allocate_type=persistent;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;bind tdev ldev1 to pool Task911, preallocate size=ALL, allocate_type=persistent;&quot; -v commit
+
+3. Создаем девайсы для прикрепления.
+
+symconfigure -sid 66 -cmd &quot;create dev count=5, size=27307, config=TDEV, emulation=fba;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;create dev count=5, size=27307, config=TDEV, emulation=fba;&quot; -v commit
+Записываем номера созданных устройств: ldev2:ldev3
+
+4. Запускаем процедуру расширения устройства.
+
+symconfigure -sid 66 -cmd &quot;add dev ldev2:ldev3 to meta 15A1, protect_data=TRUE, bcv_meta_head=ldev1;&quot; -v prepare
+symconfigure -sid 66 -cmd &quot;add dev ldev2:ldev3 to meta 15A1, protect_data=TRUE, bcv_meta_head=ldev1;&quot; -v commit
+Запускать с managment станций, т.к. процесс достаточно долгий. Ждем ее окончания.
+
+5. После завершения процедуры на массиве, идем на сервер p795-lp03:
+
+root@p795-lp03:~# lsvg cc-front-vmax1
+VOLUME GROUP:       cc-front-vmax1           VG IDENTIFIER: 00c1d38700004c0000000141ff551411
+VG STATE:           active                   PP SIZE:        128 megabyte(s)
+VG PERMISSION:      read/write               TOTAL PPs:      1599 (204672 megabytes)
+MAX LVs:            256                      FREE PPs:       0 (0 megabytes)
+LVs:                4                        USED PPs:       1599 (204672 megabytes)
+OPEN LVs:           4                        QUORUM:         2 (Enabled)
+TOTAL PVs:          1                        VG DESCRIPTORS: 2
+STALE PVs:          0                        STALE PPs:      0
+ACTIVE PVs:         1                        AUTO ON:        yes
+MAX PPs per VG:     32768                    MAX PVs:        1024
+LTG size (Dynamic): 1024 kilobyte(s)         AUTO SYNC:      no
+HOT SPARE:          no                       BB POLICY: relocatable
+PV RESTRICTION:     none                     INFINITE RETRY: no
+
+root@p795-lp03:~# lslv fscc-front-save
+LOGICAL VOLUME:     fscc-front-save        VOLUME GROUP: cc-front-vmax1
+LV IDENTIFIER:      00c1d38700004c0000000141ff551411.4
+PERMISSION:     read/write
+VG STATE:           active/complete        LV STATE: opened/syncd
+TYPE:               jfs2                   WRITE VERIFY:   off
+MAX LPs:            512                    PP SIZE:        128
+megabyte(s)
+COPIES:             1                      SCHED POLICY: parallel
+LPs:                399                    PPs:            399
+STALE PPs:          0                      BB POLICY:
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="vmax-map-disks.html" class="btn btn-neutral float-left" title="VMAX. Отмапливание дисков" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../tourism/index.html" class="btn btn-neutral float-right" title="Обо всем на свете" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="macos, mac" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Installing Software Updates Mac OS X &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/mac/macos-cli-install-updates.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="How to install NVIDIA drivers on Mac OS" href="macos-install-nvidia-drv.html" />
+    <link rel="prev" title="Installing packages from the terminal" href="macos-cli-install-pkg.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mac OS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="macos-allow-anywhare-source.html">Allow Installation of Apps from Anywhere</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-burn-iso.html">Burn ISO to DVD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-change-macaddr.html">Set a new mac address on startup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-change-passw-sparse.html">Change Password on Encrypted Sparse Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-checksum.html">Get Checksum</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-cli-install-pkg.html">Installing packages from the terminal</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Installing Software Updates Mac OS X</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Проверка обновлений</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Установка обновлений</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="macos-install-nvidia-drv.html">How to install NVIDIA drivers on Mac OS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-show-version.html">How to show Mac OS version in terminal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-show-wifi-passwd.html">Wi-Fi пароли и Keychain Access через CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-speedup-time-machine.html">Speed up Time Machine backups</a></li>
+<li class="toctree-l2"><a class="reference internal" href="macos-sync-unsaved-sublime.html">Sync sublime un-saved windows</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Mac OS</a></li>
+      <li class="breadcrumb-item active">Installing Software Updates Mac OS X</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/mac/macos-cli-install-updates.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="installing-software-updates-mac-os-x">
+<span id="macos-cli-install-updates"></span><span id="index-0"></span><h1>Installing Software Updates Mac OS X<a class="headerlink" href="#installing-software-updates-mac-os-x" title="Link to this heading"></a></h1>
+<p>Перед тем как выполнять проверку или установку обновлений необходимо получить права root - <code class="docutils literal notranslate"><span class="pre">sudo</span> <span class="pre">-s</span></code></p>
+<section id="id1">
+<h2>Проверка обновлений<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash-3.2# softwareupdate --list
+Software Update Tool
+Copyright 2002-2010 Apple
+Software Update found the following new or updated software:
+   * Safari6.1.4MountainLion-6.1.4
+    Safari (6.1.4), 51692K [recommended]
+   * Mac App Store Update-1.0
+    Mac App Store Update (1.0), 3697K [recommended] [restart]
+   * AirPortUtility-6.3.1
+    AirPort Utility (6.3.1), 21104K [recommended]
+   * SecUpd2014-002MtLion-1.0
+    Security Update 2014-002 (1.0), 132404K [recommended] [restart]
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Установка обновлений<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>bash-3.2# softwareupdate --install -a
+Software Update Tool
+Copyright 2002-2010 Apple
+
+Downloading Safari
+   2.7 MB of 213.9 MB
+   6.8 MB of 213.9 MB — Less than a minute
+   8.9 MB of 213.9 MB — Less than a minute
+....
+   44.8 MB of 213.9 MB — Less than a minute
+   49.1 MB of 213.9 MB — Less than a minute
+Verifying Safari
+Waiting to install Safari
+Downloading Mac App Store Update
+   55.9 MB of 213.9 MB — Less than a minute
+Verifying Mac App Store Update
+Waiting to install Mac App Store Update
+Downloading AirPort Utility
+   59.7 MB of 213.9 MB — Less than a minute
+   64.4 MB of 213.9 MB — Less than a minute
+   69.5 MB of 213.9 MB — Less than a minute
+   75.1 MB of 213.9 MB — Less than a minute
+Verifying AirPort Utility
+Waiting to install AirPort Utility
+Downloading Security Update 2014-002
+   82.2 MB of 213.9 MB — Less than a minute
+   87.5 MB of 213.9 MB — Less than a minute
+....
+   197.4 MB of 213.9 MB — About 5 seconds
+   203.2 MB of 213.9 MB — About 5 seconds
+   209 MB of 213.9 MB — About 5 seconds
+Verifying Security Update 2014-002
+Waiting to install Security Update 2014-002
+   Checking packages...
+Installing
+   About 3 minutes
+   About 2 minutes
+   About a minute
+   Less than a minute
+   About 10 seconds
+   About 5 seconds
+Installed Safari
+Installed Mac App Store Update
+Installed AirPort Utility
+Installed Security Update 2014-002
+Done.
+You have installed one or more updates that requires that you restart your
+computer.  Please restart immediately.
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="macos-cli-install-pkg.html" class="btn btn-neutral float-left" title="Installing packages from the terminal" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="macos-install-nvidia-drv.html" class="btn btn-neutral float-right" title="How to install NVIDIA drivers on Mac OS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

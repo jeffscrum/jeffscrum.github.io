@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="vmax, tasks" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VMAX. Переразбивка пулов &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/TASK03354440.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VMAX. Удалить диски с нод кластера (AIX)" href="TASK03562213.html" />
+    <link rel="prev" title="VMAX. Переразбить пул с другим RAID" href="TASK03334903.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Миграция данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Работа с ОС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hds-standard-work-plans.html">HDS. Стандартный план работ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK01365461.html">VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03041192.html">VMAX. Расширения ФС /warehouse/oradata до 60Тб</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03049093.html">VMAX. Разобрать пулы и создать новые луны</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03334903.html">VMAX. Переразбить пул с другим RAID</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">VMAX. Переразбивка пулов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03562213.html">VMAX. Удалить диски с нод кластера (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03563742.html">VMAX. Удалить диски с серверов (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03598846.html">VMAX. Подключение SSD Tier к HDD Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-map-disks.html">VMAX. Отмапливание дисков</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-svalka.html">VMAX. Свалка планов</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">VMAX. Переразбивка пулов</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/TASK03354440.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="task03354440"><span id="index-0"></span></span><section id="vmax">
+<h1>VMAX. Переразбивка пулов<a class="headerlink" href="#vmax" title="Link to this heading"></a></h1>
+<p>Прошу подготовить план переразбивки пула Task1bin_DB на VMAX-2.
+Текущие луны пула убрать с хостов p795-1-lp04/p795-2-lp01 и из пула.
+На весь объём пула создать 4 луна и показать на p780-2-lp07.
+Пул Task1bin_DB переименовать в rback_fast</p>
+<p>Файлы <a class="reference download internal" download="" href="../_downloads/1ecbd29d5a0d171d18ae2fc86e2024a6/TASK03354440.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">TASK03354440.tar.gz</span></code></a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>======== Notes ========
+symaccess -sid 174 list view
+Максимальный размер metaDEV = 240 Gb
+// проверка девайся принадлежности SG
+symaccess -sid 174 list -type storage -dev 09E5
+=======================
+0. Убедиться в наличии свежего бэкапа данных
+1. Удаление дисков на серверах
+p795-2-lp01:
+exportvg csBackBin_vmax2
+exportvg csBackVG_vmax2
+rmdev -dl hdisk60
+rmdev -dl hdisk61
+rmdev -dl hdisk62
+rmdev -dl hdisk63
+rmdev -dl hdisk64
+rmdev -dl hdisk65
+rmdev -dl hdisk66
+rmdev -dl hdisk67
+rmdev -dl hdisk68
+rmdev -dl hdisk69
+rmdev -dl hdisk70
+rmdev -dl hdisk71
+rmdev -dl hdisk72
+rmdev -dl hdisk73
+rmdev -dl hdisk74
+rmdev -dl hdisk75
+rmdev -dl hdisk76
+rmdev -dl hdisk77
+rmdev -dl hdisk78
+rmdev -dl hdisk79
+rmdev -dl hdisk80
+
+p795-1-lp04:
+varyoffvg csBackVG_vmax2
+varyoffvg csBackBin_vmax2
+exportvg csBackVG_vmax2
+exportvg csBackBin_vmax2
+rmdev -dl hdisk59
+rmdev -dl hdisk60
+rmdev -dl hdisk61
+rmdev -dl hdisk62
+rmdev -dl hdisk63
+rmdev -dl hdisk64
+rmdev -dl hdisk65
+rmdev -dl hdisk66
+rmdev -dl hdisk67
+rmdev -dl hdisk68
+rmdev -dl hdisk69
+rmdev -dl hdisk70
+rmdev -dl hdisk71
+rmdev -dl hdisk72
+rmdev -dl hdisk73
+rmdev -dl hdisk74
+rmdev -dl hdisk75
+rmdev -dl hdisk76
+rmdev -dl hdisk77
+rmdev -dl hdisk78
+rmdev -dl hdisk79
+
+1. Просматриваем информацию по текущему пулу:
+symcfg -sid 174 show -pool Task1bin_DB -thin -detail
+2. Удаляем текущий маппинг:
+symaccess -sid 174 -name SG_rback -type storage remove devs 09DD,09E5,09F5,0A05,0A15,0A25,0A35,0A45,0A55,0A65,0A75,0A85,0A95,0AA5,0AB5,0AC5,0AD5,0AE5,0AF5,0B05,0B15 -unmap
+3. Разбираем пул Task1bin_DB
+3.0 Переводим TDEV в состояние Not_ready
+symdev -sid 174  not_ready -dev 09DD,09E5,09F5,0A05,0A15,0A25,0A35,0A45,0A55,0A65,0A75,0A85,0A95,0AA5,0AB5,0AC5,0AD5,0AE5,0AF5,0B05,0B15
+3.1 Выводим TDEV (процедура займет некоторое время):
+symconfigure -sid 174 -file unbindTDEV.txt -v -nop prepare
+symconfigure -sid 174 -file unbindTDEV.txt -v commit
+//
+//  Ждем пока завершится процесс и столбец &quot;Pool Allocated Tracks&quot; станет 0%
+//  while sleep 30; do symcfg -sid 174 show -pool Task1bin_DB -thin -detail; done
+//
+3.2 Отмапливаем TDEV от FA-портов:
+symconfigure -sid 174 -file unmapTDEV.txt -v -nop prepare
+symconfigure -sid 174 -file unmapTDEV.txt -v commit
+3.3 Разбираем metaTDEV:
+symconfigure -sid 174 -file dissolveTDEV.txt -v -nop prepare
+symconfigure -sid 174 -file dissolveTDEV.txt -v commit
+3.4 Удалям TDEV:
+symconfigure -sid 174 -cmd &quot;delete dev 09DD:0B24;&quot; prepare -v -nop
+symconfigure -sid 174 -cmd &quot;delete dev 09DD:0B24;&quot; commit -v
+//
+//  Выясняется что эти девайсы так же в SG_Task1bin, которая завязана в FAST. Разбираем и удаляем SG, проверив что для нее нет MV
+//  symfast -sid 174 -fp_name Task1bin disassociate -sg SG_Task1bin
+//  symaccess -sid 174 -name SG_Task1bin -type storage remove devs 09E5,09F5,0A05,0A15,0A25,0A35,0A45,0A55,0A65,0A75,0A85,0A95,0AA5,0AB5,0AC5,0AD5,0AE5,0AF5,0B05,0B15
+//  symaccess -sid 174 delete -name SG_Task1bin -type storage
+//
+4. Переименовываем пул:
+symconfigure -sid 174 -cmd &quot;rename pool Task1bin_DB to rback_fast type = thin;&quot; -v -nop prepare
+symconfigure -sid 174 -cmd &quot;rename pool Task1bin_DB to rback_fast type = thin;&quot; -v commit
+5. Создаем новые TDEV и SG под них (записываем их имена (TDEV1:TDEV4))
+// всего у нас 888 dataDEV по 36642 cyl = 32538096 cyl = 29789.5166015625 Gb
+// нужно создать 4 LUN по 8134524 cyl = 7447.379150390625 Gb
+// создаем 4 dev, состоящих из 32 metaDEV по 254201 cyl = 32537728 cyl = 29789.1796875 Gb
+symaccess -sid 174 -name SG_rback_fast -type storage create
+symconfigure -sid 174 -cmd &quot;create dev count=4, emulation=FBA, config=TDEV, size=8134432, meta_member_size=254201, meta_config=striped, binding to pool =rback_fast, preallocate size =8134432 ;&quot; prepare -v -nop
+symconfigure -sid 174 -cmd &quot;create dev count=4, emulation=FBA, config=TDEV, size=8134432, meta_member_size=254201, meta_config=striped, binding to pool =rback_fast, preallocate size =8134432 ;&quot; commit -v
+//
+//  Записываем имена новых DEV1:DEV4
+//
+5.1 Добавляем новые TDEV в SG:
+symaccess -sid 174 -name SG_rback_fast -type storage add devs 09DD,09FD,0A1D,0A3D
+
+6. Создаем новый маппинг:
+// 4 порта сервера
+// 4 порта массива
+symaccess -sid 174 -name IG_rback_fast -type initiator create
+symaccess -sid 174 -name IG_rback_fast -type initiator add -wwn c050760401bf0031
+symaccess -sid 174 -name IG_rback_fast -type initiator add -wwn c050760401bf0033
+symaccess -sid 174 -name IG_rback_fast -type initiator add -wwn c050760401bf0035
+symaccess -sid 174 -name IG_rback_fast -type initiator add -wwn c050760401bf0037
+symaccess -sid 174 -name PG_rback_fast -type port create
+symaccess -sid 174 -name PG_rback_fast -type port add -dirport 5f:1,6f:1,8g:0,9g:0
+symaccess -sid 174 create view -name MV_rback_fast -pg PG_rback_fast -ig IG_rback_fast -sg SG_rback_fast
+7. Переименовываем хосты для удобства в будущем
+symaccess -sid 174 -wwn c050760401bf0031 rename -alias p780-2-lp07/fcs0
+symaccess -sid 174 -wwn c050760401bf0033 rename -alias p780-2-lp07/fcs1
+symaccess -sid 174 -wwn c050760401bf0035 rename -alias p780-2-lp07/fcs2
+symaccess -sid 174 -wwn c050760401bf0037 rename -alias p780-2-lp07/fcs3
+******************
+*** Часть с созданием зоннинга
+******************
+DCX50:
+zonecreate VMAX_2_p780_2_lp07_fcs0_second,&quot;p795_2_lp07_fcs0_second;VMAX_2_8G_0;VMAX_2_9G_0&quot;
+zonecreate VMAX_2_p780_2_lp07_fcs2_second,&quot;p795_2_lp07_fcs2_second;VMAX_2_8G_0;VMAX_2_9G_0&quot;
+cfgadd cf_121_002,&quot;VMAX_2_p780_2_lp07_fcs0_second;VMAX_2_p780_2_lp07_fcs2_second&quot;
+cfgsave
+cfgenable cf_121_002
+
+DCX51:
+zonecreate VMAX_2_p780_lp07_fcs1_second,&quot;p795_2_lp07_fcs1_second;VMAX_2_5F_1;VMAX_2_6F_1&quot;
+zonecreate VMAX_2_p780_lp07_fcs3_second,&quot;p795_2_lp07_fcs3_second;VMAX_2_5F_1;VMAX_2_6F_1&quot;
+cfgadd cf_122_002,&quot;VMAX_2_p780_lp07_fcs1_second;VMAX_2_p780_lp07_fcs3_second&quot;
+cfgsave
+cfgenable cf_122_002
+
+Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE, человеческий фактор, потеря данных.
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TASK03334903.html" class="btn btn-neutral float-left" title="VMAX. Переразбить пул с другим RAID" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TASK03562213.html" class="btn btn-neutral float-right" title="VMAX. Удалить диски с нод кластера (AIX)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="How to replace replace battery Sun StorEge 6120" name="description" />
+<meta content="sun, oracle, StorEge, 6120, battery" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sun StorEdge 6120 Battery Replace &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/sun-oracle/hardware/oracle-hw-se6120-battery-replace.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to collect XSCF snapshot" href="oracle-hw-xscf-snapshot.html" />
+    <link rel="prev" title="Sun Power Calculator" href="oracle-hw-power-calc.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sun &amp; Oracle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#exadata">Exadata</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#hardware">Hardware</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-hdd-model.html">How to know HDD model</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-ilom-password-reset.html">Сброс пароля ILOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-ilom-send-break.html">How to send break in ILOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-ilom-update.html">Обновляем ILOM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-power-calc.html">Sun Power Calculator</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Sun StorEdge 6120 Battery Replace</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-xscf-snapshot.html">How to collect XSCF snapshot</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-zfs-disk-replace.html">ZFS disk replacement on Solaris</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-hw-flash-single-board.html">How to Flashupdate a Single board on Sun Fire servers</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#solaris">Solaris</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sun &amp; Oracle</a></li>
+      <li class="breadcrumb-item active">Sun StorEdge 6120 Battery Replace</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/sun-oracle/hardware/oracle-hw-se6120-battery-replace.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sun-storedge-6120-battery-replace">
+<span id="oracle-hw-se6120-battery-replace"></span><span id="index-0"></span><h1>Sun StorEdge 6120 Battery Replace<a class="headerlink" href="#sun-storedge-6120-battery-replace" title="Link to this heading"></a></h1>
+<p>Недавно, меняя батарею на массиве Sun StorEge 6120 я столкнулся с хитростью. А именно с тем, что после замены батареи автоматически не сбросился ее статус и срок годности (см. u1b2):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SS6120:/:&lt;2&gt;refresh -s
+Current Date and Time:  Wed Aug 22 13:15:11 GMT 2012
+Next Scheduled Refresh: Mon Sep 24 02:21:30 GMT 2012
+Battery   State     Last Health Check              Warranty Expiration
+-------   -------   ----------------------------   ----------------------------
+u1b1      normal    not tested                     Fri May 23 14:53:09 GMT 2014
+u1b2      failed    Mon Sep 22 09:51:15 GMT 2008   Fri Jun 29 06:33:32 GMT 2007
+u2b1      normal    Mon Aug 20 05:19:07 GMT 2012   Sat May 04 14:56:07 GMT 2013
+u2b2      normal    Mon Aug 20 08:38:46 GMT 2012   Thu May 23 11:07:17 GMT 2013
+</pre></div>
+</div>
+<p>Для решения этой проблемы нужно перейти в сервисный режим командой “sun”. Далее массив запросит сервисный пароль - вводим “arrayservice”</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SS6120:/:&lt;3&gt;sun
+Password: *******
+sun: commands enabled
+</pre></div>
+</div>
+<p>После этого для нас станут доступны сервисные команды. Нас интересует команда “.bat”:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SS6120:/:&lt;16&gt;.bat help
+Usage :
+    bat -c u[encid]pcu[1|2]       ----&gt; clear battery status
+    bat -d [u[encid]pcu[1|2]]     ----&gt; complete debugging information
+    bat -D [u[encid]pcu[1|2]]     ----&gt; limited debugging information
+    bat -f u[encid]pcu[1|2]       ----&gt; mark battery as failed
+    bat -i u[encid]pcu[1|2]       ----&gt; initialize battery warranty date
+    bat -m [norm|none|fast]       ----&gt; battery management mode
+    bat -r u[encid]pcu[1|2]       ----&gt; set recharge date to current date
+    bat -s u[encid]pcu[1|2]       ----&gt; battery status information
+    bat -u                        ----&gt; update cache mode calculation
+</pre></div>
+</div>
+<p>Для начала нам необходимо сбросить счетчик использования батареи:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SS6120:/:&lt;17&gt;.bat -i u1b2
+SS6120:/:&lt;18&gt;refresh -s
+Current Date and Time:  Wed Aug 22 13:26:11 GMT 2012
+Next Scheduled Refresh: Mon Sep 24 02:21:30 GMT 2012
+Battery   State     Last Health Check              Warranty Expiration
+-------   -------   ----------------------------   ----------------------------
+u1b1      normal    not tested                     Fri May 23 14:53:09 GMT 2014
+u1b2      failed    not tested                     Wed Jun 25 13:23:01 GMT 2014
+u2b1      normal    Mon Aug 20 05:19:07 GMT 2012   Sat May 04 14:56:07 GMT 2013
+u2b2      normal    Mon Aug 20 08:38:46 GMT 2012   Thu May 23 11:07:17 GMT 2013
+</pre></div>
+</div>
+<p>Теперь, когда счетчик сброшен нам нужно избавиться от статуса failed для батареи:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>SS6120:/:&lt;17&gt;.bat -c u1b2
+SS6120:/:&lt;18&gt;refresh -s
+Current Date and Time:  Wed Aug 22 13:26:11 GMT 2012
+Next Scheduled Refresh: Mon Sep 24 02:21:30 GMT 2012
+Battery   State     Last Health Check              Warranty Expiration
+-------   -------   ----------------------------   ----------------------------
+u1b1      normal    not tested                     Fri May 23 14:53:09 GMT 2014
+u1b2      charge    not tested                     Wed Jun 25 13:23:01 GMT 2014
+u2b1      normal    Mon Aug 20 05:19:07 GMT 2012   Sat May 04 14:56:07 GMT 2013
+u2b2      normal    Mon Aug 20 08:38:46 GMT 2012   Thu May 23 11:07:17 GMT 2013
+</pre></div>
+</div>
+<p>Вот и все, теперь нам остается лишь дождаться когда батарея зарядится…</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oracle-hw-power-calc.html" class="btn btn-neutral float-left" title="Sun Power Calculator" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oracle-hw-xscf-snapshot.html" class="btn btn-neutral float-right" title="How to collect XSCF snapshot" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

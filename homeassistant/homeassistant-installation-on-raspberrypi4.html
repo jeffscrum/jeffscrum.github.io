@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home Assistant на RaspberriPi4 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/homeassistant/homeassistant-installation-on-raspberrypi4.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Flashing Esphome" href="homeassistant-flashing-esphome.html" />
+    <link rel="prev" title="Home Assistant Downgrade" href="homeassistant-downgrade.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Smart Home</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-downgrade.html">Home Assistant Downgrade</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Home Assistant на RaspberriPi4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-flashing-esphome.html">Flashing Esphome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-reset-gui-password.html">Reset Admin Password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-unsupported-installation.html">Unsupported Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-small-meteo-sensors.html">Small Meteo Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-rollback.html">Rollback plan</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-squeezelite.html">Squeezelite</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Smart Home</a></li>
+      <li class="breadcrumb-item active">Home Assistant на RaspberriPi4</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/homeassistant/homeassistant-installation-on-raspberrypi4.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="home-assistant-raspberripi4">
+<span id="homeassistant-installation-on-raspberrypi4"></span><span id="index-0"></span><h1>Home Assistant на RaspberriPi4<a class="headerlink" href="#home-assistant-raspberripi4" title="Link to this heading"></a></h1>
+<p>Предполагается что загрузка происходит с SSD диска, а не SD-карты.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># boot from SD without USB drive</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>vcgencmd<span class="w"> </span>bootloader<span class="se">\_</span>version
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/default/rpi-eeprom-update
+<span class="c1"># change to &#39;stable&#39;</span>
+<span class="c1"># show available versions</span>
+ls<span class="w"> </span>-la<span class="w"> </span>/lib/firmware/raspberrypi/bootloader/stable/
+<span class="c1">#install version 2020-07-31 or past</span>
+sudo<span class="w"> </span>rpi-eeprom-update<span class="w"> </span>-d<span class="w"> </span>-f<span class="w"> </span>/lib/firmware/raspberrypi/bootloader/stable/pieeprom-2020-07-31.bin
+<span class="c1"># install latest version</span>
+sudo<span class="w"> </span>rpi-eeprom-update<span class="w"> </span>-d<span class="w"> </span>-a
+sudo<span class="w"> </span>shutdown<span class="w"> </span>-r<span class="w"> </span>now
+<span class="c1"># update Raspberry firmware</span>
+sudo<span class="w"> </span>rpi-update
+<span class="c1"># configure to use USB as boot-device</span>
+sudo<span class="w"> </span>raspi-config
+<span class="w">    </span>Advanced<span class="w"> </span>Options<span class="w"> </span>--&gt;<span class="w"> </span>Boot<span class="w"> </span>Order<span class="w"> </span>--&gt;<span class="w"> </span>B1.<span class="w"> </span>Boot<span class="w"> </span>from<span class="w"> </span>USB<span class="w"> </span>device<span class="w"> </span><span class="k">if</span><span class="w"> </span>SD<span class="w"> </span>card<span class="w"> </span>boot<span class="w"> </span>fails<span class="w"> </span>--&gt;<span class="w"> </span>Finish<span class="w"> </span>--&gt;<span class="w"> </span>Reboot
+
+<span class="c1"># connect USB drive (image has to be flashed)</span>
+sudo<span class="w"> </span>mkdir<span class="w"> </span>/mnt/ssddisk
+sudo<span class="w"> </span>mount<span class="w"> </span>/dev/sda1<span class="w"> </span>/mnt/ssddisk
+sudo<span class="w"> </span>cp<span class="w"> </span>/boot/<span class="se">\*</span>.elf<span class="w"> </span>/mnt/ssddisk/
+sudo<span class="w"> </span>cp<span class="w"> </span>/boot/<span class="se">\*</span>.dat<span class="w"> </span>/mnt/ssddisk/
+sudo<span class="w"> </span>halt
+
+<span class="c1"># remove SD</span>
+<span class="c1"># boot</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade<span class="w"> </span>-y
+sudo<span class="w"> </span>adduser<span class="w"> </span>cfish
+sudo<span class="w"> </span>usermod<span class="w"> </span>-a<span class="w"> </span>-G<span class="w"> </span>adm,dialout,cdrom,sudo,audio,video,plugdev,games,users,input,netdev,gpio,i2c,spi<span class="w"> </span>cfish
+
+<span class="c1">## Security</span>
+<span class="c1"># relogin and check user cfish</span>
+<span class="c1"># lock pi user</span>
+sudo<span class="w"> </span>usermod<span class="w"> </span>-L<span class="w"> </span>pi
+<span class="c1"># OR remove pi user</span>
+
+sudo<span class="w"> </span>pkill<span class="w"> </span>-u<span class="w"> </span>pi
+sudo<span class="w"> </span>deluser<span class="w"> </span>-remove-home<span class="w"> </span>pi
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/sudoers.d/010<span class="se">\_</span>pi-nopasswd
+<span class="c1"># change to &#39;cfish ALL=(ALL) PASSWD: ALL&#39;</span>
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/ssh/sshd<span class="se">\_</span>config
+<span class="c1"># edit &quot;AllowUsers alice bob&quot; or</span>
+<span class="c1"># edit &quot;DenyUsers jane john&quot;</span>
+sudo<span class="w"> </span>systemctl<span class="w"> </span>restart<span class="w"> </span>ssh
+
+<span class="c1"># change size of SWAP</span>
+sudo<span class="w"> </span>dphys-swapfile<span class="w"> </span>swapoff
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/dphys-swapfile
+<span class="c1"># change CONF_SWAPSIZE=2048</span>
+sudo<span class="w"> </span>dphys-swapfile<span class="w"> </span>swapon
+/etc/init.d/dphys-swapfile<span class="w"> </span>restart
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>ufw
+sudo<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;IPv6=off&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/ufw/ufw.conf
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>
+sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>install<span class="w"> </span>fail2ban
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/fail2ban/jail.local
+----
+<span class="o">[</span>DEFAULT<span class="o">]</span>
+<span class="nv">ignoreip</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">192</span>.168.0.170<span class="w"> </span><span class="m">172</span>.16.0.0/23
+<span class="nv">findtime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3600</span>
+<span class="nv">maxretry</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">3</span>
+<span class="nv">bantime</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">86400</span>
+<span class="o">[</span>sshd<span class="o">]</span>
+<span class="nv">enabled</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">22</span>
+<span class="o">[</span>asterisk<span class="o">]</span>
+<span class="nv">enabled</span><span class="w">  </span><span class="o">=</span><span class="w"> </span><span class="nb">true</span>
+<span class="nv">port</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="m">5060</span>
+<span class="nv">filter</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>asterisk
+<span class="nv">logpath</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>/var/log/asterisk/security
+<span class="nv">action</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>iptables-allports<span class="se">\[</span><span class="nv">name</span><span class="o">=</span>ASTERISK,<span class="w"> </span><span class="nv">protocol</span><span class="o">=</span>all<span class="o">]</span>
+
+----
+service<span class="w"> </span>fail2ban<span class="w"> </span>restart
+
+<span class="c1"># configure network</span>
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/network/interfaces
+----
+auto<span class="w"> </span>lo
+iface<span class="w"> </span>lo<span class="w"> </span>inet<span class="w"> </span>loopback
+<span class="c1">#iface eth0 inet manual</span>
+allow-hotplug<span class="w"> </span>eth0
+iface<span class="w"> </span>eth0<span class="w"> </span>inet<span class="w"> </span>static
+<span class="w">    </span>address<span class="w"> </span><span class="m">192</span>.168.88.30
+<span class="w">    </span>netmask<span class="w"> </span><span class="m">255</span>.255.255.0
+<span class="w">    </span>gateway<span class="w"> </span><span class="m">192</span>.168.88.1
+----
+
+<span class="c1"># Locale settings</span>
+sudo<span class="w"> </span>raspi-config
+<span class="w">    </span>Localisation<span class="w"> </span>Options<span class="w"> </span>--&gt;<span class="w"> </span>Locale<span class="w"> </span>--&gt;<span class="w"> </span>en_US.UTF-8
+<span class="w">    </span>Localisation<span class="w"> </span>Options<span class="w"> </span>--&gt;<span class="w"> </span>Timezone<span class="w"> </span>--&gt;<span class="w"> </span>Europe<span class="w"> </span>--&gt;<span class="w"> </span>Moscow
+
+<span class="c1"># Update channel</span>
+sudo<span class="w"> </span>vi<span class="w"> </span>/etc/default/rpi-eeprom-update
+<span class="c1"># change to &#39;stable&#39;</span>
+<span class="c1">## Hassio install</span>
+sudo<span class="w"> </span>apt<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>dist-upgrade<span class="w"> </span>-y<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>sudo<span class="w"> </span>apt<span class="w"> </span>autoremove<span class="w"> </span>-y
+sudo<span class="w"> </span>-i
+apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>software-properties-common<span class="w"> </span>apparmor-utils<span class="w"> </span>apt-transport-https<span class="w"> </span>ca-certificates<span class="w"> </span>curl<span class="w"> </span>dbus<span class="w"> </span>jq<span class="w"> </span>network-manager
+systemctl<span class="w"> </span>disable<span class="w"> </span>ModemManager
+systemctl<span class="w"> </span>stop<span class="w"> </span>ModemManager
+shutdown<span class="w"> </span>-r<span class="w"> </span>now
+curl<span class="w"> </span>-sSL<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+<span class="c1"># Link: https://github.com/home-assistant/supervised-installer</span>
+curl<span class="w"> </span>-Lo<span class="w"> </span>installer.sh<span class="w"> </span>https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh
+bash<span class="w"> </span>installer.sh<span class="w"> </span>--machine<span class="w"> </span>raspberrypi4
+curl<span class="w"> </span>-sL<span class="w"> </span>https://raw.githubusercontent.com/home-assistant/supervised-installer/master/installer.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash<span class="w"> </span>-s<span class="w"> </span>--<span class="w"> </span>-m<span class="w"> </span>qemuarm-64
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="homeassistant-downgrade.html" class="btn btn-neutral float-left" title="Home Assistant Downgrade" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="homeassistant-flashing-esphome.html" class="btn btn-neutral float-right" title="Flashing Esphome" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

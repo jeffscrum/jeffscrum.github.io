@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="mikrotik, bgp" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mikrotik и antifilter.download &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/mikrotik/mikrotik-antifilter-configure.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Backup and Restore Mikrotik Configuration" href="mikrotik-backup-and-restore-configuration.html" />
+    <link rel="prev" title="Mikrotik" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Mikrotik</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Mikrotik и antifilter.download</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#bgp">BGP</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#router-os-6">Router OS 6</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#router-os-7">Router OS 7</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Скрипт</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id3">Добавление листа</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Удаление листа</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-backup-and-restore-configuration.html">Backup and Restore Mikrotik Configuration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-default-fw-rules.html">Mikrotik Default Firewall Rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-install-cloud-router.html">Install Mikrotik Cloud Router</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-old-ssh-hostkeyalgorithm.html">Mikrotik HostKeyAlgorithm</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-port-forward-cli.html">Mikrotik Port Forward</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-static-dns-name-add.html">Добавление статической DNS записи</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mikrotik-traffic-over-vpn.html">Направляем трафик через VPN</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Mikrotik</a></li>
+      <li class="breadcrumb-item active">Mikrotik и antifilter.download</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/mikrotik/mikrotik-antifilter-configure.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mikrotik-antifilter-download">
+<span id="mikrotik-antifilter-configure"></span><span id="index-0"></span><h1>Mikrotik и antifilter.download<a class="headerlink" href="#mikrotik-antifilter-download" title="Link to this heading"></a></h1>
+<p>Более подробную информацию о сервисе вы можете посмотреть на <a class="reference external" href="https://antifilter.download/">страничке проекта</a></p>
+<p>Сервис предлагает несколько способов получния адресов – BGP или скриптом.</p>
+<section id="bgp">
+<h2>BGP<a class="headerlink" href="#bgp" title="Link to this heading"></a></h2>
+<section id="router-os-6">
+<h3>Router OS 6<a class="headerlink" href="#router-os-6" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/ip<span class="w"> </span>route<span class="w"> </span>add<span class="w"> </span>dst-address<span class="o">=</span><span class="m">45</span>.154.73.71/32<span class="w"> </span><span class="nv">gateway</span><span class="o">=</span>&lt;GATEWAY_FOR_CONNECT&gt;
+/routing<span class="w"> </span>bgp<span class="w"> </span>instance<span class="w"> </span><span class="nb">set</span><span class="w"> </span>default<span class="w"> </span><span class="nv">as</span><span class="o">=</span><span class="m">64522</span><span class="w"> </span>ignore-as-path-len<span class="o">=</span>yes<span class="w"> </span>router-id<span class="o">=</span>&lt;YOUR_IP_ADDRESS&gt;
+/routing<span class="w"> </span>bgp<span class="w"> </span>peer<span class="w"> </span>add<span class="w"> </span>hold-time<span class="o">=</span>4m<span class="w"> </span><span class="k">in</span>-filter<span class="o">=</span>bgp_in<span class="w"> </span>keepalive-time<span class="o">=</span>1m<span class="w"> </span><span class="nv">multihop</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">name</span><span class="o">=</span>antifilter<span class="w"> </span>remote-address<span class="o">=</span><span class="m">45</span>.154.73.71<span class="w"> </span>remote-as<span class="o">=</span><span class="m">65432</span><span class="w"> </span><span class="nv">ttl</span><span class="o">=</span>default
+/routing<span class="w"> </span>filter<span class="w"> </span>add<span class="w"> </span><span class="nv">action</span><span class="o">=</span>accept<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>bgp_in<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Set nexthop to VPN&quot;</span><span class="w"> </span>set-in-nexthop-direct<span class="o">=</span>&lt;GATEWAY_INTERFACE&gt;
+<span class="c1"># Or use only selected BGP Community</span>
+<span class="c1">#/routing filter add action=accept chain=bgp_in bgp-communities=65432:500 comment=&quot;Set nexthop to VPN&quot; set-in-nexthop-direct=&lt;GATEWAY_INTERFACE&gt;</span>
+/routing<span class="w"> </span>filter<span class="w"> </span>add<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>bgp_in<span class="w"> </span><span class="nv">action</span><span class="o">=</span>discard<span class="w"> </span><span class="nv">comment</span><span class="o">=</span><span class="s2">&quot;Discard other&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="router-os-7">
+<h3>Router OS 7<a class="headerlink" href="#router-os-7" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>/routing<span class="w"> </span>bgp<span class="w"> </span>template
+add<span class="w"> </span><span class="nv">as</span><span class="o">=</span><span class="m">64522</span><span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>no<span class="w"> </span>hold-time<span class="o">=</span>4m<span class="w"> </span>input.filter<span class="o">=</span>antifilter-bgp_in<span class="w"> </span>.ignore-as-path-len<span class="o">=</span>yes<span class="w"> </span>keepalive-time<span class="o">=</span>1m<span class="w"> </span><span class="nv">multihop</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">name</span><span class="o">=</span>antifilter<span class="w"> </span>routing-table<span class="o">=</span>main
+
+/routing<span class="w"> </span>filter<span class="w"> </span>rule
+add<span class="w"> </span><span class="nv">chain</span><span class="o">=</span>antifilter-bgp_in<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>no<span class="w"> </span><span class="nv">rule</span><span class="o">=</span><span class="s2">&quot;set gw &lt;GATEWAY_INTERFACE&gt;; accept;&quot;</span>
+
+/routing<span class="w"> </span>bgp<span class="w"> </span>connection
+add<span class="w"> </span><span class="nv">disabled</span><span class="o">=</span>no<span class="w"> </span>hold-time<span class="o">=</span>4m<span class="w"> </span>input.filter<span class="o">=</span>antifilter-bgp_in<span class="w"> </span>.ignore-as-path-len<span class="o">=</span>yes<span class="w"> </span>keepalive-time<span class="o">=</span>1m<span class="w"> </span>local.address<span class="o">=</span><span class="m">192</span>.168.88.1<span class="w"> </span>.role<span class="o">=</span>ebgp<span class="w"> </span><span class="nv">multihop</span><span class="o">=</span>yes<span class="w"> </span><span class="nv">name</span><span class="o">=</span>antifilter_bgp<span class="w"> </span>remote.address<span class="o">=</span><span class="m">45</span>.154.73.71/32<span class="w"> </span>.as<span class="o">=</span><span class="m">65432</span><span class="w"> </span>router-id<span class="o">=</span>&lt;YOUR_IP_ADDRESS&gt;<span class="w"> </span>routing-table<span class="o">=</span>main<span class="w"> </span><span class="nv">templates</span><span class="o">=</span>antifilter
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id2">
+<h2>Скрипт<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h3>Добавление листа<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>Для скачивания и применения листа можно воспользоваться скриптом. Новый лист будет сохранен с именем “list-antifilter”</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>:do {
+ 
+    :local retryflag true;
+    :local maxretry 3;
+    :local delay 120s;
+    :local url &quot;https://antifilter.download/list/allyouneed.lst&quot;;
+    :local listname &quot;list-antifilter&quot;;
+ 
+    :for retry from=1 to=$maxretry step=1 do={
+ 
+        :if (retryflag) do={
+ 
+            :set $retryflag false;
+            :set $counter 0;
+ 
+            :if (retry &gt; 1) do={
+                :delay $delay;
+            };
+ 
+            :do {
+                /ip firewall address-list remove [find where list=($listname.&quot;-updated&quot;)];
+            } on-error={};
+ 
+            :do {
+                /ip firewall address-list add list=($listname.&quot;-updated&quot;) address=antifilter.download comment=&quot;antifilter.download&quot;;
+            } on-error={};
+ 
+            :local filesize ([/tool fetch url=$url keep-result=no as-value]-&gt;&quot;total&quot;);
+            :local chunksize 64000;
+            :local start 0;
+            :local end ($chunksize - 1);
+            :local chunks ($filesize / ($chunksize / 1024));
+            :local lastchunk ($filesize % ($chunksize / 1024));
+ 
+            :if ($lastchunk &gt; 0) do={
+                :set $chunks ($chunks + 1);
+            };
+ 
+            :for chunk from=1 to=$chunks step=1 do={
+ 
+                :local comparesize ([/tool fetch url=$url keep-result=no as-value]-&gt;&quot;total&quot;);
+ 
+                :if ($comparesize = $filesize) do={
+                    :set $data ([:tool fetch url=$url http-header-field=&quot;Range: bytes=$start-$end&quot; output=user as-value]-&gt;&quot;data&quot;);
+                } else={
+                    :set $data [:toarray &quot;&quot;];
+                    :set $retryflag true;
+                };
+ 
+                :local regexp &quot;^((25[0-5]|(2[0-4]|[01]?[0-9]?)[0-9])\\.){3}(25[0-5]|(2[0-4]|[01]?[0-9]?)[0-9])(\\/(3[0-2]|[0-2]?[0-9])){0,1}\$&quot;;
+ 
+                :if ($start &gt; 0) do={
+                    :set $data [:pick $data ([:find $data &quot;\n&quot;]+1) [:len $data]];
+                };
+                 
+                :while ([:len $data]!=0) do={
+                    :local line [:pick $data 0 [:find $data &quot;\n&quot;]];
+ 
+                    :if ( $line ~ $regexp ) do={    
+                        :do {
+                            /ip firewall address-list add list=($listname.&quot;-updated&quot;) address=$line;
+                            :set $counter ($counter + 1);
+                        } on-error={};        
+                    };
+ 
+                    :set $data [:pick $data ([:find $data &quot;\n&quot;]+1) [:len $data]];
+ 
+                    :if ([:len $data] &lt; 256) do={
+                        :set $data [:toarray &quot;&quot;];
+                    };
+                };
+ 
+                :set $start (($start-512) + $chunksize); 
+                :set $end (($end-512) + $chunksize); 
+             
+            };
+         
+        };
+ 
+    };
+ 
+    :if ($counter &gt; 0) do={
+        :do {
+            /ip firewall address-list remove [find where list=$listname];
+        } on-error={};
+ 
+        :do {
+            :foreach address in=[/ip firewall address-list find list=($listname.&quot;-updated&quot;)] do={
+                :do {
+                    /ip firewall address-list set list=$listname $address;
+                } on-error={};
+            };
+        } on-error={};
+    };
+ 
+} on-error={};
+</pre></div>
+</div>
+</section>
+<section id="id4">
+<h3>Удаление листа<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>Удалить адресный лист при в CLI можно командой:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">/</span><span class="n">ip</span> <span class="n">firewall</span> <span class="n">address</span><span class="o">-</span><span class="nb">list</span> <span class="n">remove</span> <span class="p">[</span><span class="o">/</span><span class="n">ip</span> <span class="n">firewall</span> <span class="n">address</span><span class="o">-</span><span class="nb">list</span> <span class="n">find</span> <span class="nb">list</span><span class="o">=</span><span class="nb">list</span><span class="o">-</span><span class="n">antifilter</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Mikrotik" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="mikrotik-backup-and-restore-configuration.html" class="btn btn-neutral float-right" title="Backup and Restore Mikrotik Configuration" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

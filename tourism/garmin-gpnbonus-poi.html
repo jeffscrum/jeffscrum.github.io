@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="tourism, poi, garmin, gazprom" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>POI с заправками газпромнефть для Garmin &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tourism/garmin-gpnbonus-poi.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Garmin Topo Map (OSM + SRTM)" href="garmin-osm-topo-map.html" />
+    <link rel="prev" title="Прокат снаряжения в Москве" href="equipment-rent.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Обо всем на свете</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="equipment-list.html">Список снаряжения</a></li>
+<li class="toctree-l2"><a class="reference internal" href="equipment-rent.html">Прокат снаряжения в Москве</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">POI с заправками газпромнефть для Garmin</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Получаем базу точек с сайта</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Загрузка точек в прибор</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="garmin-osm-topo-map.html">Garmin Topo Map (OSM + SRTM)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="get-objects-osm.html">Извлечение объектов из OSM</a></li>
+<li class="toctree-l2"><a class="reference internal" href="isotonic.html">Самодельный изотоник</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mgu-bu-exam.html">Билеты школы БУ турклуба МГУ 2016 г.</a></li>
+<li class="toctree-l2"><a class="reference internal" href="mountain-sickness.html">Горная болезнь</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ofrc.html">Outdoor Food Ration Calculator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="paper-standarts.html">Стандартные размеры листов в мм</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pereprava.html">Техника сооружения навесной переправы</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Обо всем на свете</a></li>
+      <li class="breadcrumb-item active">POI с заправками газпромнефть для Garmin</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tourism/garmin-gpnbonus-poi.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="poi-garmin">
+<span id="garmin-gpnbonus-poi"></span><span id="index-0"></span><h1>POI с заправками газпромнефть для Garmin<a class="headerlink" href="#poi-garmin" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Дизайн сайта изменился, теперь невозможно получить координаты точек таким способом</p>
+</div>
+<section id="id1">
+<h2>Получаем базу точек с сайта<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Для получения базы переходим на сайт www.gpnbonus.ru в раздел “Наши АЗС”, после чего в выпадающем списке выбираем “показать АЗС всех регионов”.
+Нам нужно скопировать URL этой странички, после чего подставить его для программы CURL.
+На выходе получим CSV файл с точками.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>curl<span class="w"> </span><span class="s2">&quot;https://www.gpnbonus.ru/our_azs/?region_id=all&amp;region_name=%D0%9F%D0%BE%D0%BA%D0%B0%D0%B7%D0%B0%D1%82%D1%8C+%D0%90%D0%97%D0%A1+%D0%B2%D1%81%D0%B5%D1%85+%D1%80%D0%B5%D0%B3%D0%B8%D0%BE%D0%BD%D0%BE%D0%B2&amp;CenterLon=38.929526&amp;CenterLat=55.531728&amp;city=&quot;</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-A<span class="w"> </span><span class="m">1</span><span class="w"> </span>GPS<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>-v<span class="w"> </span>GPS<span class="w"> </span><span class="p">|</span><span class="w"> </span>egrep<span class="w"> </span><span class="o">[[</span>:digit:<span class="o">]]</span><span class="w"> </span><span class="p">|</span><span class="w"> </span>awk<span class="w"> </span><span class="s1">&#39;{print $1 &quot;,&quot; $2 &quot;,Газпромнефть&quot;}&#39;</span><span class="w"> </span>&gt;<span class="w"> </span>gaz.csv
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Загрузка точек в прибор<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Далее все что нам нужно - это воспользовавшись программой Garmin POI Loader, загрузить точки из CSV файла в навигатор.
+Если нужна особая иконка для точек, то ее нужно положить в тот же каталог что и CSV с тем же именем.</p>
+<p>Требования для иконки следующие:</p>
+<ul class="simple">
+<li><p>Format .bmp file type</p></li>
+<li><p>8 or 16 bit RGB color palette</p></li>
+<li><p>24x24 pixels in size (HiRes = 38x38)</p></li>
+<li><p>Transparency color is magenta RGB: R=255, G=0, B=255</p></li>
+<li><p>The name must be identical to the .csv or .gpx file</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="equipment-rent.html" class="btn btn-neutral float-left" title="Прокат снаряжения в Москве" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="garmin-osm-topo-map.html" class="btn btn-neutral float-right" title="Garmin Topo Map (OSM + SRTM)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

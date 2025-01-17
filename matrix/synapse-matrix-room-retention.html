@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="matrix, synapse, room, retention, lifetime" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Synapse Room Retention Policy &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/matrix/synapse-matrix-room-retention.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Mikrotik" href="../mikrotik/index.html" />
+    <link rel="prev" title="Matrix Bot" href="matrix-bot.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Matrix</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="matrix-bot.html">Matrix Bot</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Synapse Room Retention Policy</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#server-configuration">Server configuration</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#default-policy">Default policy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#purge-jobs">Purge jobs</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#lifetime-limits">Lifetime limits</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#room-configuration">Room configuration</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#note-on-reclaiming-disk-space">Note on reclaiming disk space</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Matrix</a></li>
+      <li class="breadcrumb-item active">Synapse Room Retention Policy</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/matrix/synapse-matrix-room-retention.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="synapse-room-retention-policy">
+<span id="synapse-matrix-room-retention"></span><span id="index-0"></span><h1>Synapse Room Retention Policy<a class="headerlink" href="#synapse-room-retention-policy" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Please note that, as this feature isn’t part of the Matrix specification yet, this implementation is to be considered as experimental. There are known bugs which may cause database corruption. Proceed with caution.</p>
+</div>
+<section id="server-configuration">
+<h2>Server configuration<a class="headerlink" href="#server-configuration" title="Link to this heading"></a></h2>
+<p>Support for this feature can be enabled and configured by adding a the <code class="docutils literal notranslate"><span class="pre">retention</span></code> in the Synapse configuration file.</p>
+<p>To enable support for message retention policies, set the setting <code class="docutils literal notranslate"><span class="pre">enabled</span></code> in this section to <code class="docutils literal notranslate"><span class="pre">true</span></code>.</p>
+<section id="default-policy">
+<h3>Default policy<a class="headerlink" href="#default-policy" title="Link to this heading"></a></h3>
+<p>A default message retention policy is a policy defined in Synapse’s configuration that is used by Synapse for every room that doesn’t have a message retention policy configured in its state. This allows server admins to ensure that messages are never kept indefinitely in a server’s database.</p>
+<p>A default policy can be defined as such, by adding the retention option in the configuration file and adding these sub-options:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">default_policy</span><span class="p">:</span>
+<span class="w">  </span><span class="nt">min_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span>
+<span class="w">  </span><span class="nt">max_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1y</span>
+</pre></div>
+</div>
+<p>Here, min_lifetime and max_lifetime have the same meaning and level of support as previously described. They can be expressed either as a duration (using the units s (seconds), m (minutes), h (hours), d (days), w (weeks) and y (years)) or as a number of milliseconds.</p>
+</section>
+<section id="purge-jobs">
+<h3>Purge jobs<a class="headerlink" href="#purge-jobs" title="Link to this heading"></a></h3>
+<p>Purge jobs are the jobs that Synapse runs in the background to purge expired events from the database. They are only run if support for message retention policies is enabled in the server’s configuration. If no configuration for purge jobs is configured by the server admin, Synapse will use a default configuration, which is described here in the configuration manual.</p>
+<p>Some server admins might want a finer control on when events are removed depending on an event’s room’s policy. This can be done by setting the <code class="docutils literal notranslate"><span class="pre">purge_jobs</span></code> sub-section in the <code class="docutils literal notranslate"><span class="pre">retention</span></code> section of the configuration file. An example of such configuration could be:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">purge_jobs</span><span class="p">:</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">longest_max_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">12h</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shortest_max_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">3d</span>
+<span class="w">    </span><span class="nt">longest_max_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1w</span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span>
+<span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">shortest_max_lifetime</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1w</span>
+<span class="w">    </span><span class="nt">interval</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">2d</span>
+</pre></div>
+</div>
+<p>In this example, we define three jobs:</p>
+<ul class="simple">
+<li><p>one that runs twice a day (every 12 hours) and purges events in rooms which policy’s <code class="docutils literal notranslate"><span class="pre">max_lifetime</span></code> is lower or equal to 3 days.</p></li>
+<li><p>one that runs once a day and purges events in rooms which policy’s <code class="docutils literal notranslate"><span class="pre">max_lifetime</span></code> is between 3 days and a week.</p></li>
+<li><p>one that runs once every 2 days and purges events in rooms which policy’s <code class="docutils literal notranslate"><span class="pre">max_lifetime</span></code> is greater than a week.</p></li>
+</ul>
+<p>Note that this example is tailored to show different configurations and features slightly more jobs than it’s probably necessary (in practice, a server admin would probably consider it better to replace the two last jobs with one that runs once a day and handles rooms which policy’s <code class="docutils literal notranslate"><span class="pre">max_lifetime</span></code> is greater than 3 days).</p>
+<p>Keep in mind, when configuring these jobs, that a purge job can become quite heavy on the server if it targets many rooms, therefore prefer having jobs with a low interval that target a limited set of rooms. Also make sure to include a job with no minimum and one with no maximum to make sure your configuration handles every policy.</p>
+<p>As previously mentioned in this documentation, while a purge job that runs e.g. every day means that an expired event might stay in the database for up to a day after its expiry, Synapse hides expired events from clients as soon as they expire, so the event is not visible to local users between its expiry date and the moment it gets purged from the server’s database.</p>
+</section>
+<section id="lifetime-limits">
+<h3>Lifetime limits<a class="headerlink" href="#lifetime-limits" title="Link to this heading"></a></h3>
+<p>Server admins can set limits on the values of max_lifetime to use when purging old events in a room. These limits can be defined under the retention option in the configuration file:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">allowed_lifetime_min</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1d</span>
+<span class="nt">allowed_lifetime_max</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">1y</span>
+</pre></div>
+</div>
+<p>The limits are considered when running purge jobs. If necessary, the effective value of max_lifetime will be brought between <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_min</span></code> and <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_max</span></code> (inclusive). This means that, if the value of <code class="docutils literal notranslate"><span class="pre">max_lifetime</span></code> defined in the room’s state is lower than `` allowed_lifetime_min``, the value of <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_min</span></code> will be used instead. Likewise, if the value of max_lifetime is higher than <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_max</span></code>, the value of <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_max</span></code> will be used instead.</p>
+<p>In the example above, we ensure Synapse never deletes events that are less than one day old, and that it always deletes events that are over a year old.</p>
+<p>If a default policy is set, and its max_lifetime value is lower than <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_min</span></code> or higher than <code class="docutils literal notranslate"><span class="pre">allowed_lifetime_max</span></code>, the same process applies.</p>
+</section>
+</section>
+<section id="room-configuration">
+<h2>Room configuration<a class="headerlink" href="#room-configuration" title="Link to this heading"></a></h2>
+<p>To configure a room’s message retention policy, a room’s admin or moderator needs to send a state event in that room with the type <code class="docutils literal notranslate"><span class="pre">m.room.retention</span></code> and the following content:</p>
+<ol class="arabic simple">
+<li><p>Type <code class="docutils literal notranslate"><span class="pre">/devtools</span></code>.</p></li>
+<li><p>Select “Explore room state” -&gt; “Send custom state event”</p></li>
+<li><p>Set event type to <code class="docutils literal notranslate"><span class="pre">m.room.retention</span></code> (“State Key” can be left blank)</p></li>
+</ol>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="p p-Indicator">{</span>
+<span class="w">    </span><span class="s">&quot;max_lifetime&quot;</span><span class="p p-Indicator">:</span><span class="w"> </span><span class="nv">...</span>
+<span class="p p-Indicator">}</span>
+</pre></div>
+</div>
+<ol class="arabic simple" start="4">
+<li><p>Press “Send”</p></li>
+</ol>
+<p>In this event’s content, the <code class="docutils literal notranslate"><span class="pre">max_lifetime</span></code> parameter has the same meaning as previously described, and needs to be expressed in milliseconds. The event’s content can also include a <code class="docutils literal notranslate"><span class="pre">min_lifetime</span></code> parameter, which has the same meaning and limited support as previously described.</p>
+</section>
+<section id="note-on-reclaiming-disk-space">
+<h2>Note on reclaiming disk space<a class="headerlink" href="#note-on-reclaiming-disk-space" title="Link to this heading"></a></h2>
+<p>While purge jobs actually delete data from the database, the disk space used by the database might not decrease immediately on the database’s host. However, even though the database engine won’t free up the disk space, it will start writing new data into where the purged data was.</p>
+<p>If you want to reclaim the freed disk space anyway and return it to the operating system, the server admin needs to run <code class="docutils literal notranslate"><span class="pre">VACUUM</span> <span class="pre">FULL;</span></code> (or <code class="docutils literal notranslate"><span class="pre">VACUUM;</span></code> for SQLite databases) on Synapse’s database (see the related <a class="reference external" href="https://www.postgresql.org/docs/current/sql-vacuum.html">PostgreSQL documentation</a>).</p>
+<hr class="docutils" />
+<p>Link: <a class="reference external" href="https://matrix-org.github.io/synapse/latest/message_retention_policies.html">Synapse Configuration Manual</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="matrix-bot.html" class="btn btn-neutral float-left" title="Matrix Bot" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../mikrotik/index.html" class="btn btn-neutral float-right" title="Mikrotik" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

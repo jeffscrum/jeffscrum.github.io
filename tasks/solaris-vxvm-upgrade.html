@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="sun, solaris, vxvm, upgrade" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Upgrade Solaris u3 to Solaris u11 and VxVM 5.1 to 6.2 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/solaris-vxvm-upgrade.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Обновление Veritas SF на f3800-1" href="vxvm-upgrade.html" />
+    <link rel="prev" title="How to add production network in LDom" href="solaris-add-prod-network.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Миграция данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id5">Работа с ОС</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="solaris-branded-zone-ldom.html">Install And Configure Solaris 10 Branded Zone In Ldom</a></li>
+<li class="toctree-l3"><a class="reference internal" href="solaris-add-prod-network.html">How to add production network in LDom</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Upgrade Solaris u3 to Solaris u11 and VxVM 5.1 to 6.2</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">План работ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">План отката</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="vxvm-upgrade.html">Обновление Veritas SF на f3800-1</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aix-vios-update.html">Обновление VIOs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="aix-vios-update-22350.html">Обновление VIOs до версии 2.2.3.50</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vxvm-remove-disks.html">Отключение san-диска в VxVM</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">Upgrade Solaris u3 to Solaris u11 and VxVM 5.1 to 6.2</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/solaris-vxvm-upgrade.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="upgrade-solaris-u3-to-solaris-u11-and-vxvm-5-1-to-6-2">
+<span id="solaris-vxvm-upgrade"></span><span id="index-0"></span><h1>Upgrade Solaris u3 to Solaris u11 and VxVM 5.1 to 6.2<a class="headerlink" href="#upgrade-solaris-u3-to-solaris-u11-and-vxvm-5-1-to-6-2" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Бэкап выполняется при помоще разрыва зеркала и демонтажа одного из дисков</p>
+</div>
+<section id="id1">
+<h2>План работ<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------------------
+Этап 0: Бэкапы
+---------------------
+1) Убедиться в наличии бэкапа
+2) Собрать explorer
+
+---------------------
+Этап 1: Манипуляции с VxFS
+---------------------
+3) Поднимаем версию disk layout до v7
+# vxupgrade -n 7 &lt;mount_point&gt;
+4) Записываем загрузочную метку на оба диска
+# vxbootsetup -g rootdg vx-rootdisk
+# vxbootsetup -g rootdg vx-rootmirror
+
+---------------------
+Этап 2: Проверки, разрыв зеркал, чистка плексов, АНинкапсуляция
+---------------------
+5) Выключаем ОС
+# init 0
+6) Вытаскиваем физический диск HDD0
+7) Загружаемся с диска HDD1
+8) Выключаем ОС
+# init 0
+9) Вынимаем диск HDD1
+10) Вставляем диск HDD0
+11) Загружаем ОС и удаляем все плексы в состоянии failed
+vxplex -g rootdg -o rm dis crash-02
+vxplex -g rootdg -o rm dis home-02
+vxplex -g rootdg -o rm dis rootvol-02
+vxplex -g rootdg -o rm dis swapvol-02
+vxplex -g rootdg -o rm dis var-02
+12) Проводим АНинкапсуляцию рутового диска
+# vxunroot
+13) Перезагружаем ОС и проверяем что система работает на слайсах
+# df -h
+
+---------------------
+Этап 3: Удаление VxVM и VCS
+---------------------
+14) Удаляем VxVM 5.1 и VCS 5.1
+# /opt/VRTS/install/uninstallsf
+# /opt/VRTS/install/uninstallvcs
+
+---------------------
+Этап 4: Установка нового релиза Solaris и обновление
+---------------------
+15) Загружаем систему с cd-rom&#39;a
+(ok) boot cdrom
+16) Апгрейдимся на релиз Solaris 10 u11
+
+---------------------
+Этап 5: Установка патчей EIS
+---------------------
+17.1) Монтируем EIS
+# lofiadm -a EIS.iso
+# mount -o ro -F hsfs /dev/lofi/1 /mnt
+17.2) Обновляем Explorer и другое служебное ПО
+# /mnt/sun/install/setup-standard.sh
+17.3) Перелогиниваемся
+# exit
+17.4) Установка патчей
+# init s
+# cd /mnt/sun/patch/10/
+# unpack-patches -rq /tmp
+18) Перезагружаемся
+
+---------------------
+Этап 6: Установка VxVM 6.2 и патчей
+---------------------
+19) Инсталлируем VxVM 6.2 и патчи
+# gunzip VRTS_SF_HA_Solutions_6.2_Solaris_SPARC.tar.gz
+# tar -xf VRTS_SF_HA_Solutions_6.2_Solaris_SPARC.tar
+# ./installer
+# shutdown -i6 -y -g0
+# gunzip sfha-sol10_sparc-MR-6.2.1.tar.gz
+# tar -xf sfha-sol10_sparc-MR-6.2.1.tar
+# ./installer
+# shutdown -i6 -y -g0
+# gunzip fs-sol10_sparc-Patch-6.2.1.100.tar.gz
+# tar -xf fs-sol10_sparc-Patch-6.2.1.100.tar
+# ./installVRTSvxfs621P1
+# shutdown -i6 -y -g0
+
+---------------------
+Этап 7: Инкапсуляция рутового диска
+---------------------
+20) Удаляем старую дисковую группу если она осталась(проверив что мы все еще на слайсах)
+# vxdisk list
+# df -h
+# vxdg destroy rootdg
+21) Инкапсулируем рутовый диск
+# vxdiskadm --&gt; Encapsulate one or more disks
+22) Перезагружаемся и проверяем что системный диск под управлением VxVM
+# shutdown -i6 -y -g0
+
+---------------------
+Этап 8: Зеркалирование
+---------------------
+22) Вставляем физический диск HDD1
+23) Переводим диск HDD1 под управление VxVM и зеркалируем
+# vxdisksetup -i c1t1d0 format=sliced noreserve
+# vxdg -g rootdg adddisk rootmirror=c1t1d0
+# vxdiskadm --&gt; Mirror volumes on a disk
+# eeprom use-nvramrc?=true
+# eeprom boot-device=rootdisk rootmirror
+24) Проверяем стутус синхронизации дисков
+#vxtask list
+
+     Риски: Неизвестные ошибки ПО, человечелский фактор, некорректная АНинкапсуляция, некорректная инкапсуляция.
+     В случае наступления рисков действуем по плану отката
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>План отката<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>1) Выключаем сервер
+# init 0
+2) Вынимаем диск HDD0
+3) Вставляем диск HDD1
+4) Загружаем ОС и удаляем все плексы в состоянии failed
+# vxplex -g rootdg -r rm dis &lt;plex&gt;
+5) Вставляем диск HDD0
+6) Переводим диск HDD0 под управление VxVM и зеркалируем
+# vxdisksetup -i c1t0d0 format=sliced noreserve
+# vxdg -g rootdg adddisk rootdisk=c1t0d0
+# vxdiskadm (Выбираем пункт №6)
+# eeprom use-nvramrc?=true
+# eeprom boot-device=rootdisk rootmirror
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="solaris-add-prod-network.html" class="btn btn-neutral float-left" title="How to add production network in LDom" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="vxvm-upgrade.html" class="btn btn-neutral float-right" title="Обновление Veritas SF на f3800-1" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

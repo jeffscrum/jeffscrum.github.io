@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Exadata PXE ReImage HowTo" name="description" />
+<meta content="exadata, reimage, pxe, tftp" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Exadata PXE ReImage &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/sun-oracle/exadata/oracle-exadata-pxe-reimage.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Temporary User Lockout On Exadata" href="oracle-exadata-root-unlock.html" />
+    <link rel="prev" title="Intel Optane Persistent Memory Module" href="oracle-exadata-optane-pmem.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sun &amp; Oracle</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#exadata">Exadata</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-cabling-table.html">Cabling Tables for Oracle Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-fmod-position.html">FMod positions (Flash-card)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-get-serial.html">Как найти серийный номер Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-host_access_control.html">Настройки безопасности на Exadata при помощи host_access_control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-lacp.html">Exadata LACP Configure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-nfs-reimage.html">Exadata NFS ReImage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-optane-pmem.html">Intel Optane Persistent Memory Module</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Exadata PXE ReImage</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#i">Этап I. Подготовка профиля</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#ii">Этап II. Скачивание дистрибутивов</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iii">Этап III. Настройка сервера инсталляции</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#iv">Этап IV. Заполнение профиля</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#v">Этап V. Инсталляция</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Возможные проблемы</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-root-unlock.html">Temporary User Lockout On Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-compute-servers-components.html">Oracle Exadata Database Server Hardware Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-storage-servers-components.html">Oracle Exadata Storage Server Hardware Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-zdlra-extend-fs.html">How to extend filesystem on Exadata &amp; ZDLRA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#solaris">Solaris</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sun &amp; Oracle</a></li>
+      <li class="breadcrumb-item active">Exadata PXE ReImage</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/sun-oracle/exadata/oracle-exadata-pxe-reimage.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="exadata-pxe-reimage">
+<span id="oracle-exadata-pxe-reimage"></span><span id="index-0"></span><h1>Exadata PXE ReImage<a class="headerlink" href="#exadata-pxe-reimage" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Это устаревший способ. Удобнее и быстрее использовать NFS Server. Смотрите статью <a class="reference internal" href="oracle-exadata-nfs-reimage.html#oracle-exadata-nfs-reimage"><span class="std std-ref">Exadata NFS ReImage</span></a></p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ul class="simple">
+<li><p>Exadata X2-X6 - BIOS-Based System</p></li>
+<li><p>Exadata X7-X8 - UEFI-Based System</p></li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<dl class="simple">
+<dt>Для проведения re-image нам потребуется:</dt><dd><ul class="simple">
+<li><p>Профиль OEDA, приготовленный в Linux</p></li>
+<li><p>Сервер с Linux</p></li>
+<li><p>HTTP Server</p></li>
+<li><p>DHCP Server</p></li>
+<li><p>TFTP Server</p></li>
+</ul>
+</dd>
+</dl>
+</div>
+<section id="i">
+<h2>Этап I. Подготовка профиля<a class="headerlink" href="#i" title="Link to this heading"></a></h2>
+<p>Для того чтобы перезалить экзадату нужно подготовить install-сервер, а так же профиль.
+Профиль готовится в OEDA (Oracle Exadata Deployment Assistant), скачать можно на <a class="reference external" href="https://support.oracle.com/epmos/faces/ui/patch/PatchDetail.jspx?parent=DOCUMENT&amp;sourceId=888828.1&amp;patchId=30640393">support.oracle.com</a>.
+После посторения профиля нам понадобится только файл <em>“customer-exa-preconf… .csv”</em>. Его нужно будет переименовать в <em>preconf.csv</em>, он понадобится нам позже.</p>
+</section>
+<section id="ii">
+<h2>Этап II. Скачивание дистрибутивов<a class="headerlink" href="#ii" title="Link to this heading"></a></h2>
+<p>Смотрим требования к версии image в ТЗ, после чего смотрим документ <a class="reference external" href="https://support.oracle.com/epmos/faces/DocContentDisplay?_afrLoop=221272342314719&amp;id=888828.1&amp;_afrWindowMode=0&amp;_adf.ctrl-state=vuh4usj6f_109">Doc ID 888828.1</a> на сайте support.oracle.com. В этом документе находим нужную нам версию image и в правом столбце жмем ссылку напротив нужного нам релиза (<em>Supplemental README …</em>). В открывшемся README нужно найти секцию ‘Software and Image files’ в которой описаны все необходимые файлы которые понадобятся для скачивания.</p>
+<a class="reference internal image-reference" href="../../_images/exadata-nfs-reimage-1.webp"><img alt="../../_images/exadata-nfs-reimage-1.webp" src="../../_images/exadata-nfs-reimage-1.webp" style="width: 600px;" /></a>
+<p>Теперь идем на сайт <a class="reference external" href="https://edelivery.oracle.com/osdc/faces/SoftwareDelivery">edelivery.oracle.com</a> и в строке поиска набираем <em>‘Oracle Exadata Storage Server’</em>, после чего кликаем на нужную нам версию. В верхнем правом углу нажимаем ‘Checkout’ и ‘Continue’, после чего соглашаемся с лицензией и снова ‘Continue’. Проверяем что нам предлагают скачивать те же файлы что мы видели ранее. Скачиваем.</p>
+<a class="reference internal image-reference" href="../../_images/exadata-nfs-reimage-2.webp"><img alt="../../_images/exadata-nfs-reimage-2.webp" src="../../_images/exadata-nfs-reimage-2.webp" style="width: 600px;" /></a>
+<p>После того как оба файла скачали - распаковываем.</p>
+</section>
+<section id="iii">
+<h2>Этап III. Настройка сервера инсталляции<a class="headerlink" href="#iii" title="Link to this heading"></a></h2>
+<p>На этом этапе мы готовим install-сервер на базе Oracle Enterprise Linux 7.7</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p><a class="reference download external" download="" href="https://app.box.com/s/i6kwjvetzjd2v7joa18aqwftujjg6rho"><code class="xref download docutils literal notranslate"><span class="pre">В</span> <span class="pre">аттаче</span> <span class="pre">лежат</span> <span class="pre">все</span> <span class="pre">необходимые</span> <span class="pre">файлы</span> <span class="pre">конфигурации</span></code></a></p>
+</div>
+<section id="id1">
+<h3>Установка необходимых пакетов<a class="headerlink" href="#id1" title="Link to this heading"></a></h3>
+<p>У вас должен быть подключен репозиторий из интернета, либо используйте репозиторий CD-ROM</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>yum<span class="w"> </span>install<span class="w"> </span>dhcp<span class="w"> </span>tftp-server<span class="w"> </span>syslinux<span class="w"> </span>nfs-utils<span class="w"> </span>rpcbind<span class="w"> </span>httpd.x86_64<span class="w"> </span>telnet<span class="w"> </span>vim<span class="w"> </span>xinetd
+</pre></div>
+</div>
+</section>
+<section id="firewall">
+<h3>Отключение firewall<a class="headerlink" href="#firewall" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>stop<span class="w"> </span>firewalld
+systemctl<span class="w"> </span>disable<span class="w"> </span>firewalld
+systemctl<span class="w"> </span>mask<span class="w"> </span>--now<span class="w"> </span>firewalld
+</pre></div>
+</div>
+</section>
+<section id="selinux">
+<h3>Отключаем SELinux<a class="headerlink" href="#selinux" title="Link to this heading"></a></h3>
+<p>Для этого в файле <cite>/etc/selinux/config</cite> изменяем директиву <code class="docutils literal notranslate"><span class="pre">SELINUX=enforcing</span></code> на <code class="docutils literal notranslate"><span class="pre">SELINUX=disabled</span></code>, после чего перезагружаемся.</p>
+</section>
+<section id="nfs">
+<h3>Настройка NFS сервера<a class="headerlink" href="#nfs" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>nfs-server
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>rpcbind
+mkdir<span class="w"> </span>-p<span class="w"> </span>/tftpboot/linux-install/pxelinux.cfg/
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;/tftpboot/linux-install  *(ro,sync,no_root_squash)&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/exports
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;/var/www/html/x86_64/19.3.6  *(ro,sync,no_root_squash)&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/exports
+systemctl<span class="w"> </span>restart<span class="w"> </span>rpcbind
+systemctl<span class="w"> </span>restart<span class="w"> </span>nfs-server
+systemctl<span class="w"> </span>status<span class="w"> </span>nfs
+showmount<span class="w"> </span>-e
+rpcinfo<span class="w"> </span>-p
+</pre></div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<ul class="simple">
+<li><p>NFS debug enable: rpcdebug -m nfsd all</p></li>
+<li><p>NFS debug disable: rpcdebug -m nfsd -c all</p></li>
+</ul>
+</div>
+</section>
+<section id="tftp">
+<h3>Настройка TFTP сервера<a class="headerlink" href="#tftp" title="Link to this heading"></a></h3>
+<ol class="arabic simple">
+<li><p>Редактируем конфиг <cite>/etc/xinetd.d/tftp</cite>.</p></li>
+<li><p>Изменяем ‘disable’ на ‘no’.</p></li>
+<li><p>Изменяем ‘server_args’ на <code class="docutils literal notranslate"><span class="pre">-s</span> <span class="pre">/tftpboot</span> <span class="pre">--verbose</span></code> для логирования в /var/log/messages.</p></li>
+</ol>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>tftp.service
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>xinetd.service
+systemctl<span class="w"> </span>restart<span class="w"> </span>tftp.service
+systemctl<span class="w"> </span>restart<span class="w"> </span>xinetd.service
+systemctl<span class="w"> </span>status<span class="w"> </span>xinetd.service
+systemctl<span class="w"> </span>status<span class="w"> </span>tftp.service
+</pre></div>
+</div>
+</section>
+<section id="web-apache">
+<h3>Настройка web-сервера Apache<a class="headerlink" href="#web-apache" title="Link to this heading"></a></h3>
+<p>Домашний каталог web-сервера по-умолчанию <code class="docutils literal notranslate"><span class="pre">/var/www/html/</span></code>. В этот каталог мы копируем ISO образы ОС и файлы MD5.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/var/www/html/x86_64/iso/
+cp<span class="w"> </span>V994561-01/compute_19.2.11.0.0_LINUX.X64_200224-1.x86_64.iso<span class="w"> </span>/var/www/html/x86_64/iso/
+cp<span class="w"> </span>V994561-01/compute_19.2.11.0.0_LINUX.X64_200224-1.x86_64.iso.md5<span class="w"> </span>/var/www/html/x86_64/iso/
+cp<span class="w"> </span>V994562-01/cell_19.2.11.0.0_LINUX.X64_200224-1.x86_64.iso<span class="w"> </span>/var/www/html/x86_64/iso/
+cp<span class="w"> </span>V994562-01/cell_19.2.11.0.0_LINUX.X64_200224-1.x86_64.iso.md5<span class="w"> </span>/var/www/html/x86_64/iso/
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>httpd
+systemctl<span class="w"> </span>restart<span class="w"> </span>httpd
+systemctl<span class="w"> </span>status<span class="w"> </span>httpd
+</pre></div>
+</div>
+</section>
+<section id="pxe">
+<h3>Настройка PXE сервера<a class="headerlink" href="#pxe" title="Link to this heading"></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>-p<span class="w"> </span>/tftpboot/linux-install/pxelinux.cfg
+cp<span class="w"> </span>/usr/share/syslinux/pxelinux.0<span class="w"> </span>/tftpboot/linux-install/
+cp<span class="w"> </span>/usr/share/syslinux/menu.c32<span class="w"> </span>/tftpboot/linux-install/
+cp<span class="w"> </span>V994561-01/initrd-iso-19.2.11.0.0-200224-compute.img<span class="w"> </span>/tftpboot/linux-install/
+cp<span class="w"> </span>V994561-01/vmlinux-iso-19.2.11.0.0-200224-compute<span class="w"> </span>/tftpboot/linux-install/
+cp<span class="w"> </span>V994562-01/initrd-iso-19.2.11.0.0-200224-cell.img<span class="w"> </span>/tftpboot/linux-install/
+cp<span class="w"> </span>V994562-01/vmlinux-iso-19.2.11.0.0-200224-cell<span class="w"> </span>/tftpboot/linux-install/
+</pre></div>
+</div>
+<p>Внутри каталога <cite>/tftpboot/linux-install/pxelinux.cfg</cite> создаем файл ‘default’ со следующим содержимым</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>#UI menu.c32
+PROMPT 1
+TIMEOUT 600         # 60 seconds
+DEFAULT local
+ONTIMEOUT local
+DISPLAY boot.msg
+
+MENU TITLE Exadata ReImage Server
+
+LABEL local
+    MENU LABEL ^1) Boot local HDD
+    LOCALBOOT 0
+
+LABEL compute
+    MENU LABEL ^2) Install Compute Node 19.2.11.0.0
+    kernel vmlinux-iso-19.2.11.0.0-200224-compute
+    append initrd=initrd-iso-19.2.11.0.0-200224-compute.img pxe factory stit reboot-on-success notests=diskgroup dhcp preconf=10.152.240.95:/tftpboot/linux-install/preconf.csv iso-uri=http://10.152.240.95/x86_64/iso/compute_19.2.11.0.0_LINUX.X64_200224-1.x86_64.iso console=ttyS0,115200n8
+
+LABEL storage
+    MENU LABEL ^3) Install Cell Node 19.2.11.0.0
+    kernel vmlinux-iso-19.2.11.0.0-200224-cell
+    append initrd=initrd-iso-19.2.11.0.0-200224-cell.img pxe factory stit reboot-on-success notests=diskgroup dhcp preconf=10.152.240.95:/tftpboot/linux-install/preconf.csv iso-uri=http://10.152.240.95/x86_64/iso/cell_19.2.11.0.0_LINUX.X64_200224-1.x86_64.iso console=ttyS0,115200n8
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>В данном случае 10.152.240.95 это адрес install сервера, на котором лежат и образы ОС, и файл конфигурации.
+Если у вас UEFI-Based System, то вам нужно создавать другой файл - grub.cfg (см ссылки внизу статьи)</p>
+</div>
+</section>
+<section id="dhcp">
+<h3>Настройка DHCP сервера<a class="headerlink" href="#dhcp" title="Link to this heading"></a></h3>
+<p>Создаем конфиг <cite>/etc/dhcp/dhcpd.conf</cite>.
+Для каждого хоста указываем его mac-адрес, иначе он не получит IP адрес</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># - UEFI Part</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="nb">set</span><span class="w"> </span><span class="nv">vendorclass</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>option<span class="w"> </span>vendor-class-identifier<span class="p">;</span>
+option<span class="w"> </span>pxe-system-type<span class="w"> </span>code<span class="w"> </span><span class="nv">93</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>unsigned<span class="w"> </span>integer<span class="w"> </span><span class="m">16</span><span class="p">;</span>
+<span class="nb">set</span><span class="w"> </span><span class="nv">pxetype</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>option<span class="w"> </span>pxe-system-type<span class="p">;</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="w"> </span>
+option<span class="w"> </span>domain-name<span class="w"> </span><span class="s2">&quot;example.com&quot;</span><span class="p">;</span>
+ddns-update-style<span class="w"> </span>interim<span class="p">;</span>
+deny<span class="w"> </span>unknown-clients<span class="p">;</span>
+not<span class="w"> </span>authoritative<span class="p">;</span>
+<span class="w"> </span>
+allow<span class="w"> </span>bootp<span class="p">;</span>
+allow<span class="w"> </span>booting<span class="p">;</span>
+<span class="w"> </span>
+option<span class="w"> </span>ip-forwarding<span class="w">    </span>false<span class="p">;</span><span class="w">  </span><span class="c1"># No IP forwarding</span>
+option<span class="w"> </span>mask-supplier<span class="w">    </span>false<span class="p">;</span><span class="w">  </span><span class="c1"># Don&#39;t respond to ICMP Mask req</span>
+<span class="w"> </span>
+subnet<span class="w"> </span><span class="m">10</span>.152.240.0<span class="w"> </span>netmask<span class="w"> </span><span class="m">255</span>.255.252.0<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>option<span class="w"> </span>subnet-mask<span class="w">    </span><span class="m">255</span>.255.252.0<span class="p">;</span>
+<span class="w">  </span>option<span class="w"> </span>routers<span class="w">        </span><span class="m">10</span>.152.240.1<span class="p">;</span><span class="w">       </span><span class="c1"># Use real gateway or laptop IP</span>
+<span class="w">  </span>default-lease-time<span class="w"> </span><span class="m">14400</span><span class="p">;</span>
+<span class="w">  </span>max-lease-time<span class="w"> </span><span class="m">28800</span><span class="p">;</span>
+<span class="w"> </span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1"># - UEFI Part</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="w">  </span><span class="k">if</span><span class="w"> </span>substring<span class="o">(</span>vendorclass,<span class="w"> </span><span class="m">0</span>,<span class="w"> </span><span class="m">9</span><span class="o">)=</span><span class="s2">&quot;PXEClient&quot;</span><span class="w"> </span><span class="o">{</span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="nv">pxetype</span><span class="o">=</span><span class="m">00</span>:06<span class="w"> </span>or<span class="w"> </span><span class="nv">pxetype</span><span class="o">=</span><span class="m">00</span>:07<span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>filename<span class="w"> </span><span class="s2">&quot;linux-install/efi/shim.efi&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span><span class="w"> </span><span class="k">else</span><span class="w"> </span><span class="o">{</span>
+<span class="w">        </span>filename<span class="w"> </span><span class="s2">&quot;linux-install/pxelinux.0&quot;</span><span class="p">;</span>
+<span class="w">    </span><span class="o">}</span>
+<span class="w">  </span><span class="o">}</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="w"> </span>
+<span class="o">}</span>
+<span class="w"> </span>
+group<span class="w"> </span><span class="o">{</span>
+<span class="w">  </span>next-server<span class="w"> </span><span class="m">10</span>.152.240.95<span class="p">;</span>
+<span class="w">  </span>option<span class="w"> </span>root-path<span class="w"> </span><span class="s2">&quot;10.152.240.95:/tftpboot/linux-install&quot;</span><span class="p">;</span>
+<span class="w"> </span>
+<span class="w">  </span>host<span class="w"> </span>dbadm401<span class="w"> </span><span class="o">{</span>
+<span class="w">    </span>hardware<span class="w"> </span>ethernet<span class="w"> </span><span class="m">90</span>:23:FC:DE:E9:4D<span class="p">;</span>
+<span class="w">    </span>fixed-address<span class="w"> </span><span class="m">10</span>.152.240.81<span class="p">;</span>
+<span class="o">}</span>
+<span class="w"> </span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+<span class="c1">#  .END FILE.</span>
+<span class="c1"># ------------------------------------------------------------------------------</span>
+</pre></div>
+</div>
+<p>Перезапускаем DHCP Server</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>dhcpd.service
+systemctl<span class="w"> </span>restart<span class="w"> </span>dhcpd.service
+systemctl<span class="w"> </span>status<span class="w"> </span>dhcpd.service
+</pre></div>
+</div>
+</section>
+</section>
+<section id="iv">
+<h2>Этап IV. Заполнение профиля<a class="headerlink" href="#iv" title="Link to this heading"></a></h2>
+<p>Чтобы инсталлятор мог использовать профиль его нужно дозаполнить.
+Для этого нужно поочередно зайти на ILOM каждого сервера и выполнить команду <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">/SYS/MB/NET0</span></code> или <code class="docutils literal notranslate"><span class="pre">/SYS/SMOD0/MB/NET0</span></code> или <code class="docutils literal notranslate"><span class="pre">show</span> <span class="pre">/SYS/SMOD/MB/NET0</span></code> (зависит от можели серера) и ищем <em>mac</em> в строке <cite>fru_macaddress</cite> или командой <code class="docutils literal notranslate"><span class="pre">ibhosts</span></code>, если вдруг будете ставить через Infiniband.
+После того как вы получили mac-адрес интерфейса, его необходимо вписать в файл <cite>preconf.csv</cite>. Сделать это нужно между запятыми, после слова “Management” и перед указанием IP-адреса для нужного сервера.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>... bondeth0,eth0::::,Management,&lt;mac:address:paste:here&gt;,10.152.240.159,255.255.252.0 ...
+</pre></div>
+</div>
+<p>После того как mac-адреса для всех серверов будут заполнны, файл необходимо положить рядом с iso-файлом. (например ‘/export/preconf.csv’)</p>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>Будьте внимательны со строками которые заполняете.
+Файл нельзя редактировать через EXCEL – используйте текстовый редактор.</p>
+</div>
+</section>
+<section id="v">
+<h2>Этап V. Инсталляция<a class="headerlink" href="#v" title="Link to this heading"></a></h2>
+<p>Устанавливаем boot_device = PXE, и включаем сервер</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>-&gt; cd /HOST/
+-&gt; set boot_device=pxe
+-&gt; start /SYS
+-&gt; start /SP/console
+</pre></div>
+</div>
+<p>Внимательно следим за процессом загрузки, нужно убедиться что сервер получил верные сетевые настройки от DHCP-сервера.
+Когда сервер получит IP адрес и загрузит все необходимое по TFTP вы увидите менюшку.</p>
+<a class="reference internal image-reference" href="../../_images/exadata-pxe-bootmenu.webp"><img alt="../../_images/exadata-pxe-bootmenu.webp" src="../../_images/exadata-pxe-bootmenu.webp" style="width: 640px;" /></a>
+<p>Для запуска инсталляции нужного сервера впишите “compute” или “storage” и нажмите Enter.
+Опять же внимательно смотрим и проверяем все ли корректно передалось серверу и тот ли preconf.csv будет применен.
+Если все верно, то дальше просто ждем. Сервер сам обновит все необходимые прошивки, если это требуется, и несколько раз может перезагружаться - следите за логами.</p>
+<p>В конечном итоге запустится тест и после его прохождения сервер напишет о том что установка закончена.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2020-03-10 15:50:44 +0300 2020-03-10 15:50:44 +0300 [FACTORY_TEST_END] Post installation tests ended with success
+2020-03-10 15:50:44 +0300 2020-03-10 15:50:44 +0300 [FACTORY_COMPLETE] Imaging ended with success
+</pre></div>
+</div>
+<p>Со STORAGE-серверами у меня было так что последняя проверка проходила неудачно и тогда сервер писал вот так:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>2020-03-10 15:34:50 +0300 The first boot completed with FAILURE
+2020-03-10 15:34:50 +0300 2020-03-10 15:34:50 +0300 [FACTORY_ERROR] Overall status failure
+2020-03-10 15:34:50 +0300 2020-03-10 15:34:50 +0300 [FACTORY_TEST_END] Post installation tests ended with failure
+2020-03-10 15:34:50 +0300 2020-03-10 15:34:50 +0300 [FACTORY_COMPLETE] Imaging ended with failure
+</pre></div>
+</div>
+<p>Перезагружаем сервер – <code class="docutils literal notranslate"><span class="pre">shutdown</span> <span class="pre">-r</span> <span class="pre">now</span></code>. После перезагрузки сервер через некоторое время еще раз запустит все необходимые проверки и напишет что все OK.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Run validation ipmisettings - PASSED
+Run validation misceachboot - PASSED
+Run validation celldstatus - PASSED
+Run validation saveconfig - BACKGROUND RUN
+2020-03-10 15:43:01 +0300 The each boot completed with SUCCESS
+2020-03-10 15:43:01 +0300 Overall image status was failure. Switch it to success
+</pre></div>
+</div>
+<p>Теперь проверяем что все настройки конфига применились верно и отдаем сервер специалистам Oracle для настройки кластера.</p>
+</section>
+<section id="id2">
+<h2>Возможные проблемы<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>В случае ошибки на NFS-client</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[root@exadata ~]# showmount -e 10.2.12.5
+clnt_create: RPC: Port mapper failure - Authentication error
+</pre></div>
+</div>
+<p>Необходимо установить разрешение на стороне NFS-server, добавив в файл <cite>/etc/hosts.allow</cite> строки:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>rpcbind : ALL
+mountd : ALL
+lockd : ALL
+rquotad : ALL
+statd : ALL
+in.tftpd : ALL
+</pre></div>
+</div>
+<p>Проверить разрешения можно при помощи команды:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>[root@exadata ~]# tcpdmatch rpcbind 10.2.12.5
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Related Links:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://support.oracle.com/epmos/faces/DocumentDisplay?_afrLoop=280328147928927&amp;id=1900335.1&amp;_adf.ctrl-state=qfe4iz1vw_52">Exadata: How to Create a NFS Mount on a Database Node (Doc ID 1900335.1)</a></p></li>
+<li><p><a class="reference external" href="https://www.browserling.com/tools/ip-to-hex">Convert IP Address to Hex Format</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/en/operating-systems/oracle-linux/7/install/ol7-install-pxe-boot-uefi.html">Boot Loader Configuration for UEFI-Based PXE Clients</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/en/operating-systems/oracle-linux/7/install/ol7-install-pxe-boot-bios.html">Boot Loader Configuration for BIOS-Based PXE Clients</a></p></li>
+<li><p><a class="reference external" href="https://docs.oracle.com/en/operating-systems/oracle-linux/7/install/ol7-install-boot-options.html">Installation Boot Options</a></p></li>
+<li><p><a class="reference external" href="https://www.awstest.stepi.net/2018/07/exadata-security-the-joy-of-pxe-and-uefi-secure-boot-violation/">Exadata Security - The Joy Of Pxe And Uefi</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oracle-exadata-optane-pmem.html" class="btn btn-neutral float-left" title="Intel Optane Persistent Memory Module" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oracle-exadata-root-unlock.html" class="btn btn-neutral float-right" title="Temporary User Lockout On Exadata" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

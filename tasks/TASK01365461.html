@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="vmax, tasks" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/TASK01365461.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VMAX. Расширения ФС /warehouse/oradata до 60Тб" href="TASK03041192.html" />
+    <link rel="prev" title="HDS. Стандартный план работ" href="hds-standard-work-plans.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Миграция данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Работа с ОС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hds-standard-work-plans.html">HDS. Стандартный план работ</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03041192.html">VMAX. Расширения ФС /warehouse/oradata до 60Тб</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03049093.html">VMAX. Разобрать пулы и создать новые луны</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03334903.html">VMAX. Переразбить пул с другим RAID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03354440.html">VMAX. Переразбивка пулов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03562213.html">VMAX. Удалить диски с нод кластера (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03563742.html">VMAX. Удалить диски с серверов (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03598846.html">VMAX. Подключение SSD Tier к HDD Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-map-disks.html">VMAX. Отмапливание дисков</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-svalka.html">VMAX. Свалка планов</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/TASK01365461.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="task01365461"><span id="index-0"></span></span><section id="vmax-task1bin-db-task911">
+<h1>VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911<a class="headerlink" href="#vmax-task1bin-db-task911" title="Link to this heading"></a></h1>
+<p>Девайсы (DATAdev), за счет которых Вы хотите расширять пул Task1bin_DB, собраны на другой дисковой группе.</p>
+<p>Пояснение: девайсы пула Task1bin_DB относятся к дисковой группе “DISK_GROUP_001”, а девайсы пула Task911 относятся к дисковой группе “DISK_GROUP_009”.
+Диски с этих групп имеют разный размер и располагаются не оптимальным образом относительно друг друга в массиве. Так же размер DATAdev из пула Task1bin_DB равен “MegaBytes:34352”, а из пула Task911 – “MegaBytes:17108”. Соответственно, учитывая все вышесказанное, придобавлении этих девайсов в пул Task1bin_DB, пул получится несбалансированным, чтоприведёт к достаточно сильному снижению производительности на thin-девайсах, относящихсяк данному пулу. Так же после добавления новых DATAdev необходимо будет запускать процедуру “balancing” на пул Task1bin_DB, чтобы данные равномерно распределились на все DATAdev, включая новые, что может привести к еще более высокой просадке производительности, т.к. девайсы в пуле будут разного размера.
+Так же при удалении девайсов, относящихся к “tm1-BIN_vg”, “tm1-DB_vg”, “tm1-arch_vg” все данные на них будут утеряны. И необходимо иметь актуальный бэкап данных с пула  Task1bin_DB, т.к. всегда присутствует риск потери данных при неизвестных ошибках отрабатывания команд SE. Так же необходимо решить дальнейшую судьбу клонов после удаления таргет девайсов.</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Удаление сессии клонирования:
+symclone -g Task11a terminate
+
+Убираем мапинг на массиве:
+symaccess -sid 74 -name SG_Task11 -type storage -unmap remove devs
+0EF1,0EF5,0F05,0F15,0F25,0F35
+
+Удаляем thin-девайсы из пула:
+
+Создаем файл &quot;unbind.txt&quot; с содержанием:
+unbind tdev 0EF1 from pool Task911;
+unbind tdev 0EF5 from pool Task911;
+unbind tdev 0F05 from pool Task911;
+unbind tdev 0F15 from pool Task911;
+unbind tdev 0F25 from pool Task911;
+unbind tdev 0F35 from pool Task911;
+symconfigure -sid 74 -file unbind.txt -v -nop prepare
+symconfigure -sid 74 -file unbind.txt -v commit
+
+Удаление самих thin-девайсов
+
+Создаем файл &quot;dissolve.txt&quot; c содержанием:
+dissolve meta dev 0EF1;
+dissolve meta dev 0EF5;
+dissolve meta dev 0F05;
+dissolve meta dev 0F15;
+dissolve meta dev 0F25;
+dissolve meta dev 0F35;
+symconfigure -sid 74 -file dissolve.txt -v -nop prepare
+symconfigure -sid 74 -file dissolve.txt -v commit
+
+Создаем файл &quot;delete.txt&quot; c содержанием:
+delete dev 0EF1:0EF4;
+delete dev 0EF5:0F04;
+delete dev 0F05:0F14;
+delete dev 0F15:0F24;
+delete dev 0F25:0F34;
+delete dev 0F35:0F3C;
+symconfigure -sid 74 -file delete.txt -v -nop prepare
+symconfigure -sid 74 -file delete.txt -v commit
+
+После указанных действий необходимо будет подождать некоторое время, чтобы массив освободил место на DATAdev&#39;ах, которое больше не используется.
+
+Далее выводим из пула Task911 172 DATAdev&#39;а:
+
+Создаем файл &quot;deactivate.txt&quot; с содержанием:
+deactivate dev 0864 in pool Task911 type = thin;
+deactivate dev 0865 in pool Task911 type = thin;
+deactivate dev 0866 in pool Task911 type = thin;
+
+...............Дальше идет перечисление 172-х девайсов.
+
+Данные девайсы необходимо подобрать так, чтобы они занимали диски
+(физические) целиком.
+symconfigure -sid 74 -file deactivate.txt -v -nop prepare
+symconfigure -sid 74 -file deactivate.txt -v commit
+
+Создаем файл &quot;draining.txt&quot; с содержанием:
+start drain on dev 0864 in pool Task911 type=thin;
+start drain on dev 0865 in pool Task911 type=thin;
+start drain on dev 0866 in pool Task911 type=thin;
+
+...............Дальше идет перечисление 172-х девайсов.
+
+symconfigure -sid 74 -file draining.txt -v -nop prepare
+symconfigure -sid 74 -file draining.txt -v commit
+
+После данных действий необходимо ждать неопределенное количество времени, чтобы массив перенес данные с перечисленных DATAdev&#39;ов.
+Перенос может занять достаточно большое количество времени.
+После того, как количество используемых трэков на них будет равно нулю можно продолжить.
+Удаление DATAdev&#39;ов из пула:
+
+Создаем файл &quot;removeDATAdev.txt&quot; c содержанием:
+remove dev 0864 from pool Task911 type = thin;
+remove dev 0865 from pool Task911 type = thin;
+remove dev 0866 from pool Task911 type = thin;
+
+..............Дальше идет перечисление 172-х девайсов.
+
+symconfigure -sid 74 -file removeDATAdev.txt -v -nop prepare
+symconfigure -sid 74 -file removeDATAdev.txt -v commit
+
+Добавление DATAdev&#39;ов в новый пул:
+
+Создаем файл &quot;addDATAdev.txt&quot; c содержанием:
+add dev 0864 to pool Task1bin_DB type=thin, member_state=ENABLE;
+add dev 0865 to pool Task1bin_DB type=thin, member_state=ENABLE;
+add dev 0866 to pool Task1bin_DB type=thin, member_state=ENABLE;
+
+..............Дальше идет перечисление 172-х девайсов.
+
+Создаем файл &quot;balancing.txt&quot; с содержанием:
+start balancing on pool=Task1bin_DB type=thin;
+Риски:
+В любом случае - просадка производительности на пуле Task1bin_DB (достаточно сильная).
+Неизвестные ошибки ПО, SE и некорректное отрабатывание комманд и потеря данных (необходимо иметь актуальный бэкап данных пула Task1bin_DB).
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hds-standard-work-plans.html" class="btn btn-neutral float-left" title="HDS. Стандартный план работ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TASK03041192.html" class="btn btn-neutral float-right" title="VMAX. Расширения ФС /warehouse/oradata до 60Тб" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

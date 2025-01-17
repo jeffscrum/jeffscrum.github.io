@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="linux, raid, megacli" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Установка и работа с MegaCLI &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/linux/linux-megacli.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Шпаргалка по MySQL" href="linux-mysql-operations.html" />
+    <link rel="prev" title="LC_ALL = (unset)" href="linux-lc-all-unset.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible-get-facts.html">Сбор и вывод ansible_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="confluence-ubuntu-license.html">Установка Confluence + лицензия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-auto-install-preseed.html">Файлы автоматической установки linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-bonding.html">Debian Bonding (active-backup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-install-jre.html">Install Oracle JRE on Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug-email-server.html">Debugging Email Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-3proxy.html">Настройка SOCKS5 прокси сервера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-aeza-debootstrap-install.html">Установка Linux при помощи debootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-awk.html">Обработка строк при помощи awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos8-yum-error.html">Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos-install-kernel.html">Установка свежего ядра в Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-docker-logs-clean.html">Чистим логи Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-lc-all-unset.html">LC_ALL = (unset)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка и работа с MegaCLI</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Установка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Команды</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Скрипт мониторинга</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="linux-mysql-operations.html">Шпаргалка по MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-nginx-geoip2-block.html">GeoIP2 Block NGINX Debian 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-speedtest-cli.html">Linux SpeedTest via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-strongswan-eap-mschapv2.html">StrongSwan with eap-mschapv2 enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-tar-multithread.html">TAR Multithread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-telegram-login-notify.html">Уведомление о логине в Telegram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-var-log-journal-clean.html">Чистим логи /var/log/journal/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-wireguard-installation.html">Установка Wireguard на Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_outline_vpn.html">Установка Outline VPN на Ubuntu 20.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu18-russian-apt-sources.html">Russian apt-sources in Ubuntu 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu-postfix-gmail-relay.html">Postfix Relay для Gmail в Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant-add-box-manual.html">Add a downloaded .box file to Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Установка и работа с MegaCLI</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/linux/linux-megacli.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="megacli">
+<span id="linux-megacli"></span><span id="index-0"></span><h1>Установка и работа с MegaCLI<a class="headerlink" href="#megacli" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>Установка<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Для установки в Debian 12 или Proxmox:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>install<span class="w"> </span>libncurses5
+wget<span class="w"> </span>-O<span class="w"> </span>/tmp/megacli_8.07.14-2_all.deb<span class="w"> </span><span class="s2">&quot;https://kb.ksomov.ru/_static/megacli_8.07.14-2_all.deb&quot;</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>dpkg<span class="w"> </span>-i<span class="w"> </span>/tmp/megacli_8.07.14-2_all.deb
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Команды<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Полезные команды (исполняемый файл /opt/MegaRAID/MegaCli/MegaCli64 ):</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Быстрая проверка
+./MegaCli64 -LdPdInfo -aALL | grep -E &quot;(Id|State |Bad Blocks|Firmware state|Error Count|Predictive Failure Count)&quot;
+
+# Просмотр журнала событий BBU, где можно найти информацию по проверкам и автоисправлению  битых секторов
+./MegaCli64 -FwTermLog -Dsply -aALL &gt; /tmp/ttylog.txt
+
+# Полная информация о всех адаптеров контроллера
+./MegaCli64 -AdpAllInfo -aALL
+
+# Полная информация о настройках и дисках
+./MegaCli64 -CfgDsply -aALL
+
+# Информация о последних событиях, где можно найти информацию о сбои в работе дисков
+./MegaCli64 -AdpEventLog -GetLatest 4000 -f events.log -aALL
+./MegaCli64 -AdpEventLog -GetEvents -f events.log -aALL
+
+# Информация о всех доступных корпусах контроллера
+./MegaCli64 -EncInfo -aALL
+
+# Включение Disk Cache Policy для диска L0
+./MegaCli64 -LDSetProp -EnDskCache -L0 -a0
+
+# Выключение Disk Cache Policy для диска L0
+./MegaCli64 -LDSetProp -DisDskCache -L0 -a0
+
+# Список всех логических дисков и типе RAID-а в котором они собраны
+./MegaCli64 -LDInfo -Lall -aALL
+
+# Список всех физических дисков
+./MegaCli64 -PDList -aALL
+
+# Информация о конкретном физическом диске
+# Типовая комманда ./MegaCli64 -pdInfo -Physdrv [E1:S2] -aALL
+# E1 - Enclosure Device ID: 1, S2 - Slot Number: 2
+
+# To get it need to run - ./MegaCli64 -LdPdInfo -aALL | grep -E &quot;ID|Slot&quot;
+./MegaCli64 -pdInfo -Physdrv [32:9] -aALL
+
+# Подсветить диск (для поиска)
+#Start blinking
+./MegaCli64 -PdLocate -start -Physdrv\[4:3\]  -aALL
+./MegaCli64 -PdLocate -start -Physdrv\[4:2\]  -aALL
+./MegaCli64 -PdLocate -start -Physdrv\[4:1\]  -aALL
+#Stop blinking
+./MegaCli64 -PdLocate -stop  -Physdrv\[4:1\]  -aALL
+./MegaCli64 -PdLocate -stop  -Physdrv\[4:2\]  -aALL
+./MegaCli64 -PdLocate -stop  -Physdrv\[4:3\]  -aALL
+
+# Проверка состояния BBU (Battery Backup Unit)
+./MegaCli64 -AdpBbuCmd -aALL
+
+# Посмотреть прогресс добавления диска в RAID
+./MegaCli64 -PDRbld -ShowProg -Physdrv[32:14] -aAll
+
+# Создание логического диска (Logical Disk)
+./MegaCli64 -CfgLdAdd -r0[32:6,32:7,32:8] wb direct CachedBadBBU -a0 (или NoCachedBadBBU)
+
+# Список всех логических дисков и типе RAID-а в котором они собраны
+./MegaCli64 -LDInfo -Lall -aALL
+
+# Удаление логического диска (Logical Disk)
+./MegaCli64 -CfgLdDel -L2 -a0
+
+## Expand Logical Disk
+   1. First gather information:
+      ./MegaCli64 -getLdExpansionInfo -L0 -a0
+
+   2. From here you should have enough information to use the default command:
+      ./MegaCli64 -LdExpansion -pN -dontExpandArray -Lx|-L0,1,2|-Lall -aN|-a0,1,2|-aALL
+
+      For example, if my controller were 0, my PD I wanted to add was PD 4 and my Logical drive was 0;
+      ./MegaCli64 -LdExpansion -p4 -L0 -a0
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>Скрипт мониторинга<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>Небольшой скрипт для вывода информации в удобном виде <a class="reference download internal" download="" href="../_downloads/96b4d36cea48010bf98e7ccd3830139a/megaraid_status.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">megaraid_status.py</span></code></a></p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@s19:~#<span class="w"> </span>python<span class="w"> </span>megaraid_status.py
+--<span class="w"> </span>Controller<span class="w"> </span>information<span class="w"> </span>--
+--<span class="w"> </span>ID<span class="w"> </span><span class="p">|</span><span class="w"> </span>H/W<span class="w"> </span>Model<span class="w">         </span><span class="p">|</span><span class="w"> </span>RAM<span class="w">    </span><span class="p">|</span><span class="w"> </span>Temp<span class="w"> </span><span class="p">|</span><span class="w"> </span>Firmware
+c0<span class="w">    </span><span class="p">|</span><span class="w"> </span>LSI<span class="w"> </span>MegaRAID<span class="w"> </span>ROMB<span class="w"> </span><span class="p">|</span><span class="w"> </span>1024MB<span class="w"> </span><span class="p">|</span><span class="w"> </span>57C<span class="w">  </span><span class="p">|</span><span class="w"> </span>FW:<span class="w"> </span><span class="m">23</span>.18.0-0013
+
+--<span class="w"> </span>Array<span class="w"> </span>information<span class="w"> </span>--
+--<span class="w"> </span>ID<span class="w"> </span><span class="p">|</span><span class="w"> </span>Type<span class="w">   </span><span class="p">|</span><span class="w">    </span>Size<span class="w"> </span><span class="p">|</span><span class="w">  </span>Strpsz<span class="w"> </span><span class="p">|</span><span class="w">   </span>Flags<span class="w"> </span><span class="p">|</span><span class="w"> </span>DskCache<span class="w"> </span><span class="p">|</span><span class="w">   </span>Status<span class="w"> </span><span class="p">|</span><span class="w">  </span>OS<span class="w"> </span>Path<span class="w"> </span><span class="p">|</span><span class="w"> </span>InProgress
+c0u0<span class="w">  </span><span class="p">|</span><span class="w"> </span>RAID-1<span class="w"> </span><span class="p">|</span><span class="w">    </span>278G<span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">64</span><span class="w"> </span>KB<span class="w"> </span><span class="p">|</span><span class="w">   </span>RA,WT<span class="w"> </span><span class="p">|</span><span class="w">  </span>Default<span class="w"> </span><span class="p">|</span><span class="w">  </span>Optimal<span class="w"> </span><span class="p">|</span><span class="w"> </span>/dev/sda<span class="w"> </span><span class="p">|</span><span class="w"> </span>None
+c0u1<span class="w">  </span><span class="p">|</span><span class="w"> </span>RAID-0<span class="w"> </span><span class="p">|</span><span class="w">    </span>930G<span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">64</span><span class="w"> </span>KB<span class="w"> </span><span class="p">|</span><span class="w">   </span>RA,WB<span class="w"> </span><span class="p">|</span><span class="w">  </span>Enabled<span class="w"> </span><span class="p">|</span><span class="w">  </span>Optimal<span class="w"> </span><span class="p">|</span><span class="w"> </span>/dev/sdb<span class="w"> </span><span class="p">|</span><span class="w"> </span>None
+c0u2<span class="w">  </span><span class="p">|</span><span class="w"> </span>RAID-5<span class="w"> </span><span class="p">|</span><span class="w">   </span>2725G<span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">64</span><span class="w"> </span>KB<span class="w"> </span><span class="p">|</span><span class="w">   </span>RA,WT<span class="w"> </span><span class="p">|</span><span class="w">  </span>Default<span class="w"> </span><span class="p">|</span><span class="w">  </span>Optimal<span class="w"> </span><span class="p">|</span><span class="w"> </span>/dev/sdc<span class="w"> </span><span class="p">|</span><span class="w"> </span>None
+c0u3<span class="w">  </span><span class="p">|</span><span class="w"> </span>RAID-0<span class="w"> </span><span class="p">|</span><span class="w">    </span>111G<span class="w"> </span><span class="p">|</span><span class="w">   </span><span class="m">64</span><span class="w"> </span>KB<span class="w"> </span><span class="p">|</span><span class="w"> </span>ADRA,WB<span class="w"> </span><span class="p">|</span><span class="w">  </span>Enabled<span class="w"> </span><span class="p">|</span><span class="w">  </span>Optimal<span class="w"> </span><span class="p">|</span><span class="w"> </span>/dev/sdd<span class="w"> </span><span class="p">|</span><span class="w"> </span>None
+
+--<span class="w"> </span>Disk<span class="w"> </span>information<span class="w"> </span>--
+--<span class="w"> </span>ID<span class="w">   </span><span class="p">|</span><span class="w"> </span>Type<span class="w"> </span><span class="p">|</span><span class="w"> </span>Drive<span class="w"> </span>Model<span class="w">                                        </span><span class="p">|</span><span class="w"> </span>Size<span class="w">     </span><span class="p">|</span><span class="w"> </span>Status<span class="w">          </span><span class="p">|</span><span class="w"> </span>Speed<span class="w">    </span><span class="p">|</span><span class="w"> </span>Temp<span class="w"> </span><span class="p">|</span><span class="w"> </span>Slot<span class="w"> </span>ID<span class="w">  </span><span class="p">|</span><span class="w"> </span>Device<span class="w"> </span>ID
+c0u0p0<span class="w">  </span><span class="p">|</span><span class="w"> </span>HDD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SEAGATE<span class="w"> </span>ST300MM0026<span class="w"> </span>0001S0K263T8<span class="w">                   </span><span class="p">|</span><span class="w"> </span><span class="m">278</span>.4<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>31C<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:0<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">12</span>
+c0u0p1<span class="w">  </span><span class="p">|</span><span class="w"> </span>HDD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SEAGATE<span class="w"> </span>ST300MM0026<span class="w"> </span>0001S0K23LQQ<span class="w">                   </span><span class="p">|</span><span class="w"> </span><span class="m">278</span>.4<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>30C<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:1<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">13</span>
+c0u1p0<span class="w">  </span><span class="p">|</span><span class="w"> </span>SSD<span class="w">  </span><span class="p">|</span><span class="w"> </span>Samsung<span class="w"> </span>SSD<span class="w"> </span><span class="m">850</span><span class="w"> </span>EVO<span class="w"> </span>1TB<span class="w"> </span>EMT51B6Q<span class="w">                   </span><span class="p">|</span><span class="w"> </span><span class="m">930</span>.3<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>N/A<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:3<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">0</span>
+c0u2p0<span class="w">  </span><span class="p">|</span><span class="w"> </span>HDD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SEAGATE<span class="w"> </span>ST91000640SS<span class="w"> </span>00049XG5VT6F<span class="w">                  </span><span class="p">|</span><span class="w"> </span><span class="m">930</span>.3<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>30C<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:4<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">8</span>
+c0u2p1<span class="w">  </span><span class="p">|</span><span class="w"> </span>HDD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SEAGATE<span class="w"> </span>ST91000640SS<span class="w"> </span>00049XG5VYP6<span class="w">                  </span><span class="p">|</span><span class="w"> </span><span class="m">930</span>.3<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>30C<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:5<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">11</span>
+c0u2p2<span class="w">  </span><span class="p">|</span><span class="w"> </span>HDD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SEAGATE<span class="w"> </span>ST91000640SS<span class="w"> </span>00049XG690HG<span class="w">                  </span><span class="p">|</span><span class="w"> </span><span class="m">930</span>.3<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>31C<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:6<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">10</span>
+c0u2p3<span class="w">  </span><span class="p">|</span><span class="w"> </span>HDD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SEAGATE<span class="w"> </span>ST91000640SS<span class="w"> </span>00049XG690W8<span class="w">                  </span><span class="p">|</span><span class="w"> </span><span class="m">930</span>.3<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>33C<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:7<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">9</span>
+c0u3p0<span class="w">  </span><span class="p">|</span><span class="w"> </span>SSD<span class="w">  </span><span class="p">|</span><span class="w"> </span>SAMSUNG<span class="w"> </span>MZ7WD120HCFV-0003<span class="w"> </span>DXM4203Q<span class="w">                 </span><span class="p">|</span><span class="w"> </span><span class="m">110</span>.8<span class="w"> </span>Gb<span class="w"> </span><span class="p">|</span><span class="w"> </span>Online,<span class="w"> </span>Spun<span class="w"> </span>Up<span class="w"> </span><span class="p">|</span><span class="w"> </span><span class="m">6</span>.0Gb/s<span class="w">  </span><span class="p">|</span><span class="w"> </span>N/A<span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="o">[</span><span class="m">252</span>:2<span class="o">]</span><span class="w">  </span><span class="p">|</span><span class="w"> </span><span class="m">2</span>
+</pre></div>
+</div>
+<p>Если запустить скрипт с параметром <code class="docutils literal notranslate"><span class="pre">--nagios</span></code>, то будут показаны только проблемы:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@s11:~#<span class="w"> </span>python<span class="w"> </span>megaraid_status.py<span class="w"> </span>--nagios
+RAID<span class="w"> </span>ERROR<span class="w"> </span>-<span class="w"> </span>Arrays:<span class="w"> </span>OK:2<span class="w"> </span>Bad:1<span class="w"> </span>-<span class="w"> </span>Disks:<span class="w"> </span>OK:11<span class="w"> </span>Bad:1
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Related Links:
+- <a class="reference external" href="http://sysadm.pp.ua/linux/monitoring-systems/smart-under-lsi-2108-kontroller.html">S.M.A.R.T. (часть 1). Мониторинг SCSI дисков под LSI 2108 (megaraid) RAID контроллером</a>
+- <a class="reference external" href="https://wikitech.wikimedia.org/wiki/MegaCli">wikitech.wikimedia.org</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-lc-all-unset.html" class="btn btn-neutral float-left" title="LC_ALL = (unset)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-mysql-operations.html" class="btn btn-neutral float-right" title="Шпаргалка по MySQL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="exadata, intel, amd, configuration, components, servers, compute, db, pmem" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oracle Exadata Database Server Hardware Components &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/sun-oracle/exadata/oracle-exadata-compute-servers-components.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Oracle Exadata Storage Server Hardware Components" href="oracle-exadata-storage-servers-components.html" />
+    <link rel="prev" title="Temporary User Lockout On Exadata" href="oracle-exadata-root-unlock.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sun &amp; Oracle</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#exadata">Exadata</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-cabling-table.html">Cabling Tables for Oracle Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-fmod-position.html">FMod positions (Flash-card)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-get-serial.html">Как найти серийный номер Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-host_access_control.html">Настройки безопасности на Exadata при помощи host_access_control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-lacp.html">Exadata LACP Configure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-nfs-reimage.html">Exadata NFS ReImage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-optane-pmem.html">Intel Optane Persistent Memory Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-pxe-reimage.html">Exadata PXE ReImage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-root-unlock.html">Temporary User Lockout On Exadata</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Oracle Exadata Database Server Hardware Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x10m-database-server-hardware-components">Oracle Exadata X10M Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x9m-2-database-server-hardware-components">Oracle Exadata X9M-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x9m-8-database-server-hardware-components">Oracle Exadata X9M-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x8m-2-database-server-hardware-components">Oracle Exadata X8M-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x8m-8-database-server-hardware-components">Oracle Exadata X8M-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x8-2-database-server-hardware-components">Oracle Exadata X8-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x8-8-database-server-hardware-components">Oracle Exadata X8-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x7-2-database-server-hardware-components">Oracle Exadata X7-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x7-8-database-server-hardware-components">Oracle Exadata X7-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x6-2-database-server-hardware-components">Oracle Exadata X6-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x5-2-database-server-hardware-components">Oracle Exadata X5-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x5-8-and-x6-8-database-server-hardware-components">Oracle Exadata X5-8 and X6-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x4-2-database-server-hardware-components">Oracle Exadata X4-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x4-8-database-server-hardware-components">Oracle Exadata X4-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x3-2-database-server-hardware-components">Oracle Exadata X3-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x3-8-database-server-hardware-components">Oracle Exadata X3-8 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x2-2-database-server-hardware-components">Oracle Exadata X2-2 Database Server Hardware Components</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#oracle-exadata-x2-8-database-server-hardware-components">Oracle Exadata X2-8 Database Server Hardware Components</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-storage-servers-components.html">Oracle Exadata Storage Server Hardware Components</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-zdlra-extend-fs.html">How to extend filesystem on Exadata &amp; ZDLRA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#solaris">Solaris</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sun &amp; Oracle</a></li>
+      <li class="breadcrumb-item active">Oracle Exadata Database Server Hardware Components</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/sun-oracle/exadata/oracle-exadata-compute-servers-components.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="oracle-exadata-database-server-hardware-components">
+<span id="oracle-exadata-compute-servers-components"></span><span id="index-0"></span><h1>Oracle Exadata Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-database-server-hardware-components" title="Link to this heading"></a></h1>
+<section id="oracle-exadata-x10m-database-server-hardware-components">
+<h2>Oracle Exadata X10M Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x10m-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 96-core AMD EPYC 9J14 processors &#64; 2.6 GHz (up to 3.7 GHz)</p></li>
+<li><p>RAM: 512 GB RAM (16 x 32 GB DIMMs), 1.5 TB (24 x 64 GB DIMMs), 2.25 TB (24 x 96 GB DIMMs), or 3 TB (24 x 128 GB DIMMs)</p></li>
+<li><p>System storage: 2 x 3.84 TB PCIe 4.0 NVMe storage devices, expandable to 4 devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX7 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Client and additional network connectivity:</p>
+<ul>
+<li><p>Two factory-installed CX6-LX network cards. Each card contains 2 x SFP+/SFP28 ports (10/25 GbE)</p></li>
+<li><p>Up to 3 optional network cards. Each card can be any of the following:</p>
+<ul>
+<li><p>CX6-LX with 2 x SFP+/SFP28 ports (10/25 GbE)</p></li>
+<li><p>CX6-DX with 2 x QSFP28 ports (100GbE). Each QSFP28 port can support one 10 GbE or 25 GbE link with appropriate breakout cables.</p></li>
+<li><p>Fortpond RJ45 Ethernet with 4 x 10GBASE-T ports (10 GbE)</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="oracle-exadata-x9m-2-database-server-hardware-components">
+<h2>Oracle Exadata X9M-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x9m-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 32-core Intel Xeon 8358 processors &#64; 2.6 GHz:</p>
+<ul>
+<li><p>Flexible configuration: 2 CPUs</p></li>
+<li><p>Eighth Rack: 1 CPU</p></li>
+</ul>
+</li>
+<li><p>RAM:</p>
+<ul>
+<li><p>Flexible configuration: 512 GB RAM (16 x 32 GB DIMMs), expandable to 1 TB (16 x 64 GB DIMMs), 1.5 TB (16 x 32 GB and 16 x 64 GB DIMMs), or 2 TB (32 x 64 GB DIMMs) with memory expansion kit</p></li>
+<li><p>Eighth Rack: 384 GB RAM (12 x 32 GB DIMMs), expandable to 1 TB (16 x 64 GB DIMMs) with memory expansion kit</p></li>
+</ul>
+</li>
+<li><p>System storage: 2 x 3.84 TB PCIe 4.0 NVMe storage drives, expandable to 4 drives</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX5 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Client and additional network connectivity:</p>
+<ul>
+<li><p>Flexible configuration options:</p>
+<ul>
+<li><p>Two factory-installed network cards. Each card contains 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE)</p></li>
+<li><p>One optional field-installed network card containing 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE) or 2 x QSFP28 ports (100GbE). Each QSFP28 port can support one 10 GbE or 25 GbE link with appropriate breakout cables.</p></li>
+</ul>
+</li>
+<li><p>Eighth Rack: Two factory-installed network cards only. Each card contains 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE)</p></li>
+</ul>
+</li>
+</ul>
+</section>
+<section id="oracle-exadata-x9m-8-database-server-hardware-components">
+<h2>Oracle Exadata X9M-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x9m-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 24-core Intel Xeon Platinum 8268 Processors &#64; 2.9GHz</p></li>
+<li><p>RAM: 3 TB (48 x 64 GB DIMMs), expandable to a maximum of 6 TB (96 x 64 GB DIMMs)</p></li>
+<li><p>System storage: 2 x 6.4 TB flash accelerator PCIe cards (Hot-Pluggable)</p></li>
+<li><p>RDMA Network Fabric: 4 x dual-port QSFP28 100 Gb/s PCIe 3.0 RDMA Network Fabric cards - all ports active</p></li>
+<li><p>Network connectivity:</p>
+<ul>
+<li><p>8 x 10GBASE-T ports (1/10 GbE) - 1 port used for the administration network</p></li>
+<li><p>8 x SFP+/SFP28 ports (10/25 GbE)</p></li>
+</ul>
+</li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x8m-2-database-server-hardware-components">
+<h2>Oracle Exadata X8M-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x8m-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 24-core Intel Xeon Platinum 8260 Processors &#64; 2.4 GHz</p></li>
+<li><p>RAM: 384 GB RAM (12 x 32 GB DIMMs), expandable to 1.5 TB (24 x 64 GB DIMMs) with memory expansion kit</p></li>
+<li><p>System storage: 4 x 1.2 TB boot drive/hard disks, hot swappable, expandable to 8 drives</p></li>
+<li><p>Disk controller HBA with 2 GB cache (no batteries)</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port QSFP28 100 Gb/s PCIe 3.0 RDMA Network Fabric card - both ports active</p></li>
+<li><p>Client network: 2 x SFP+/SFP28 ports (10/25 GbE) or 2 x 10GBASE-T ports (10 GbE)</p></li>
+<li><p>Backup/optional networks: 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x8m-8-database-server-hardware-components">
+<h2>Oracle Exadata X8M-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x8m-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 24-core Intel Xeon Platinum 8268 Processors &#64; 2.9GHz</p></li>
+<li><p>RAM: 3 TB (48 x 64 GB DIMMs)</p></li>
+<li><p>System storage: 2 x 6.4 TB flash accelerator PCIe cards (Hot-Pluggable)</p></li>
+<li><p>RDMA Network Fabric: 4 x dual-port QSFP28 100 Gb/s PCIe 3.0 RDMA Network Fabric cards - all ports active</p></li>
+<li><p>8 x 10GBASE-T ports (10 GbE) - 1 port used for the administration network</p></li>
+<li><p>8 x SFP+/SFP28 ports (10/25 GbE)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x8-2-database-server-hardware-components">
+<h2>Oracle Exadata X8-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x8-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 24-core Intel Xeon Platinum 8260 Processors &#64; 2.4 GHz</p></li>
+<li><p>RAM: 384 GB RAM (12 x 32 GB DIMMs), expandable to 768 GB (12 x 64 GB DIMMs) or 1.5 TB (24 x 64 GB DIMMs) with memory expansion kit</p></li>
+<li><p>System storage: 4 x 1.2 TB boot drive/hard disks, hot swappable, expandable to 8 drives</p></li>
+<li><p>Disk controller HBA with 2 GB cache (no batteries)</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) ports (PCIe 3.0) - both ports active</p></li>
+<li><p>Client network: 2 x SFP+/SFP28 ports (10/25 GbE) or 2 x 10GBASE-T ports (10 GbE)</p></li>
+<li><p>Backup/optional networks: 2 x SFP+/SFP28 ports (10/25 GbE) or 4 x 10GBASE-T ports (10 GbE)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x8-8-database-server-hardware-components">
+<h2>Oracle Exadata X8-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x8-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 24-core Intel Xeon Platinum 8268 Processors &#64; 2.9GHz</p></li>
+<li><p>RAM: 3 TB (48 x 64 GB DIMMs) RAM, expandable to 6 TB (96 x 64 GB DIMMs) with memory expansion kit</p></li>
+<li><p>System storage: 2 x 6.4 TB flash accelerator PCIe cards (Hot-Pluggable)</p></li>
+<li><p>RDMA Network Fabric: 8 x InfiniBand 4X QDR (40 Gb/s) ports (PCIe 3.0) - all ports active</p></li>
+<li><p>8 x 10GBASE-T ports (10 GbE) - 1 port used for the administration network</p></li>
+<li><p>8 x SFP+/SFP28 ports (10/25 GbE)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x7-2-database-server-hardware-components">
+<h2>Oracle Exadata X7-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x7-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 24-core Intel Xeon Platinum 8160 Processors &#64; 2.10GHz</p></li>
+<li><p>RAM: 384 GB RAM, expandable to 768 GB (12 x 64 GB) or 1.5 TB (24 x 64GB) with memory expansion kit</p></li>
+<li><p>System storage: 4 x 600 GB 10K RPM SAS disks, hot swappable, expandable to 8 drives</p></li>
+<li><p>Disk controller HBA with 2 GB cache (no batteries)</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gbps) ports (PCIe 3.0), both ports active</p></li>
+<li><p>Client network: 2 x 10 GbE Base-T Ethernet ports or 2 x 10GbE/25GbE Ethernet SFP28 Ports</p></li>
+<li><p>Backup/optional networks: 2 x 10GbE/25GbE Ethernet SFP28 Ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100/1000 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x7-8-database-server-hardware-components">
+<h2>Oracle Exadata X7-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x7-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 24-core Intel Xeon Platinum 8168 Processors &#64; 2.70GHz</p></li>
+<li><p>RAM: 3TB (48 x 64 GB) RAM, expandable to 6 TB (96 x 64 GB) with memory expansion kit</p></li>
+<li><p>RDMA Network Fabric: 8 x InfiniBand 4X QDR (40 Gbps) ports (PCIe 3.0) - all ports active</p></li>
+<li><p>8 x 10 GbE Base-T Ethernet ports (8 embedded ports based on the Intel 722 1/10GbE Controller)</p></li>
+<li><p>8 x 10GbE/25GbE Ethernet SFP28 Ports (4 Dual-port 10/25 GbE PCIe 3.0 network card based on the Broadcom BCM57414 10Gb/25Gb Ethernet Controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100/1000 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x6-2-database-server-hardware-components">
+<h2>Oracle Exadata X6-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x6-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 22-core Intel Xeon E5-2699 v4 processors &#64; 2.2 GHz</p></li>
+<li><p>RAM: 256 GB (8 x 32 GB) RAM expandable to 512 GB (16 x 32 GB) or 768 GB (24 x 32 GB) with memory expansion kit</p></li>
+<li><p>System storage: 4 x 600 GB 10K RPM SAS disks, hot swappable, expandable to 8x</p></li>
+<li><p>Disk controller HBA with 1 GB cache (no more batteries)</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gbps) ports (PCIe 3.0), both ports active</p></li>
+<li><p>4 x 1 GbE/10 GbE Base-T Ethernet ports</p></li>
+<li><p>2 x 10 GbE Ethernet SFP+ ports (1 dual-port 10 GbE PCIe 2.0 network card based on the Intel 82599 10 GbE controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100/1000 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x5-2-database-server-hardware-components">
+<h2>Oracle Exadata X5-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x5-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 18-Core Intel Xeon E5-2699 v3 processors &#64; 2.3 GHz</p></li>
+<li><p>RAM: 256 GB (8 x 32 GB) RAM expandable to 768 GB with memory expansion kit</p></li>
+<li><p>System storage: 4 x 600 GB 10K RPM SAS disks</p></li>
+<li><p>Disk controller HBA with 1 GB supercap-backed write cache</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4X QDR (40 Gb/s) ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 x 1 GbE/10GbE Base-T Ethernet ports</p></li>
+<li><p>2 x 10 GbE Ethernet SFP+ ports (1 dual-port 10GbE PCIe 2.0 network card based on the Intel 82599 10 GbE controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100/1000 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x5-8-and-x6-8-database-server-hardware-components">
+<h2>Oracle Exadata X5-8 and X6-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x5-8-and-x6-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 18-Core Intel Xeon E7-8895 v3 processors &#64; 2.6 GHz</p></li>
+<li><p>RAM: 2 TB (64 x 32 GB) RAM, expandable to 6 TB (192 x 32 GB) with memory expansion kit</p></li>
+<li><p>System storage: 8 x 600 GB 10K RPM SAS disks (hot swappable)</p></li>
+<li><p>Disk controller HBA with 1 GB cache</p></li>
+<li><p>RDMA Network Fabric: 8 x InfiniBand 4X QDR (40 Gbps) ports (PCIe 3.0) - all ports active</p></li>
+<li><p>10 x 1 GbE Base-T Ethernet ports (2 Quad-port PCIe 2.0 network card, and 2 embedded ports based on the Intel I350 1 GbE Controller technology)</p></li>
+<li><p>8 x 10 GbE Ethernet SFP+ ports (4 Dual-port 10 GbE PCIe 2.0 network card based on the Intel 82599 10 GbE Controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100/1000 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x4-2-database-server-hardware-components">
+<h2>Oracle Exadata X4-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x4-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 12-Core Intel Xeon E5-2697 v2 processors &#64; 2.7 GHz</p></li>
+<li><p>RAM: 256 GB (16 x 16 GB) RAM expandable to 512 GB (16 x 32 GB) with memory expansion kit</p></li>
+<li><p>System storage: 4 x 600 GB 10K RPM SAS disks</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache, and swappable battery backup unit (BBU)</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4X QDR (40 Gb/s) ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 x 1 GbE/10GbE Base-T Ethernet ports</p></li>
+<li><p>2 x 10 GbE Ethernet SFP+ ports (1 dual-port 10GbE PCIe 2.0 network card based on the Intel 82599 10 GbE controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x4-8-database-server-hardware-components">
+<h2>Oracle Exadata X4-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x4-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 15-Core Intel Xeon E5-8895 v2 processors &#64; 2.8 GHz</p></li>
+<li><p>RAM: 2 TB (64 x 32 GB) RAM expandable to 4 TB or 6 TB with memory expansion kit</p></li>
+<li><p>System storage: 7 x 600 GB 10K RPM SAS disks</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache, and swappable battery backup unit (BBU)</p></li>
+<li><p>RDMA Network Fabric: 8 InfiniBand 4X QDR (40 Gb/s) ports</p></li>
+<li><p>10 x 1 GbE Base-T Ethernet ports</p></li>
+<li><p>8 x 10 GbE Ethernet SFP+ ports (4 dual-port 10GbE PCIe 2.0 network card based on the Intel 82599 10 GbE controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100/1000 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x3-2-database-server-hardware-components">
+<h2>Oracle Exadata X3-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x3-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 8-Core Eight-Core Intel Xeon E5-2690 processors &#64; 2.9 GHz</p></li>
+<li><p>RAM: 256 GB (16 x 16 GB) RAM expandable to 512 GB with memory expansion kit</p></li>
+<li><p>System storage: 4 x 300 GB 10K RPM SAS disks</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4X QDR (40 Gb/s) ports (1 dual-port PCIe 2.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 x 1 GbE/10GbE Base-T Ethernet ports</p></li>
+<li><p>2 x 10 GbE Ethernet SFP+ ports (1 dual-port 10GbE PCIe 2.0 network card based on the Intel 82599 10 GbE controller technology)</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x3-8-database-server-hardware-components">
+<h2>Oracle Exadata X3-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x3-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 8 x 10-Core Intel Xeon E7-8870 Processors &#64; 2.40 GHz</p></li>
+<li><p>RAM: 2 TB RAM (128 x 16 GB)</p></li>
+<li><p>System storage: 8 x 300GB 10K RPM SAS Disks</p></li>
+<li><p>Disk Controller HBA with 512MB Battery-backed cache</p></li>
+<li><p>RDMA Network Fabric: 8 x InfiniBand QDR (40 Gb/s) Ports</p></li>
+<li><p>2 Network Express Modules (NEM) providing the following:
+- 8 x 10 Gb Ethernet network ports using SFP+ connectors (based on Intel 82599 10 GbE controller)
+- 8 x 1 Gb Ethernet network ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="oracle-exadata-x2-2-database-server-hardware-components">
+<h2>Oracle Exadata X2-2 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x2-2-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Components of Sun Fire X4170 Oracle Database Servers</p>
+<ul>
+<li><p>CPU: 2 x 4-Core Intel Xeon E5540 processors &#64; 2.53 GHz</p></li>
+<li><p>RAM: 72 GB RAM expandable to 144 GB with memory expansion kit</p></li>
+<li><p>System storage: 4 x 146 GB 10K RPM SAS disks</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache</p></li>
+<li><p>RDMA Network Fabric: Dual-port 4X QDR (40 Gb/s) InfiniBand Host Channel Adapter (HCA)</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</li>
+<li><p>Components of Sun Fire X4170 M2 Oracle Database Servers</p>
+<ul>
+<li><p>CPU: 2 x 6-Core Intel Xeon X5675 processors &#64; 3.06 GHz</p></li>
+<li><p>RAM: 96 GB RAM (12 x 8 GB) expandable to 288 GB (18 x 16 Gb) with memory expansion kit</p></li>
+<li><p>System storage: 4 x 300 GB 10 K RPM SAS disks</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache</p></li>
+<li><p>RDMA Network Fabric: Dual-port 4X QDR (40 Gb/s) InfiniBand Host Channel Adapter (HCA)</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+<li><p>1 dual-port 10 GbE PCIe 2.0 network card with Intel 82599 10 GbE controller</p></li>
+</ul>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Sun Fire X4170 M2 Oracle Database Servers ship from the factory with 96 GB of memory with 12 of the 18 DIMM slots populated with 8 GB DIMMs. The optional X2-2 Memory Expansion Kit can be used to populate the remaining 6 empty slots with 16 GB DIMMs to bring the total memory to 192 GB (12 x 8 GB and 6 x 16 GB), or replace the existing 8 GB DIMMs with 16 GB DIMMs and add memory to bring the total memory to 288 GB (18 x 16 GB).</p>
+<p>The memory expansion kit is primarily for consolidation workloads where many databases are run on each database server. In this scenario, the CPU usage is often low while the memory usage is very high.</p>
+<p>However, there is a downside to populating all the memory slots as the frequency of the memory DIMMs drop to 800 MHz from 1333 MHz. The performance effect of the slower memory appears as increased CPU utilization. The average measured increase in CPU utilization is typically between 5% and 10%. The increase varies greatly by workload. In test workloads, several workloads had almost zero increase, while one workload had as high as a 20% increase.</p>
+</div>
+</section>
+<section id="oracle-exadata-x2-8-database-server-hardware-components">
+<h2>Oracle Exadata X2-8 Database Server Hardware Components<a class="headerlink" href="#oracle-exadata-x2-8-database-server-hardware-components" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>Components of Sun Fire X4800 Oracle Database Servers</p>
+<ul>
+<li><p>CPU: 8 x 8-core Intel Xeon X7560 Processors &#64; 2.26 GHz</p></li>
+<li><p>RAM: 1 TB RAM</p></li>
+<li><p>System storage: 8 x 300GB 10K RPM SAS Disks</p></li>
+<li><p>Disk Controller HBA with 512MB Battery-backed cache</p></li>
+<li><p>RDMA Network Fabric: 4 dual-port 4X QDR InfiniBand PCIe 2.0 Express Modules (EM)</p></li>
+<li><p>2 Network Express Modules (NEM) providing the following:</p>
+<ul>
+<li><p>8 x 10 Gb Ethernet network ports using SFP+ connectors (based on Intel 82599 10 GbE controller)</p></li>
+<li><p>8 x 1 Gb Ethernet network ports</p></li>
+</ul>
+</li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</li>
+<li><p>Components of Sun Server X2-8 Oracle Database Server (Sun Fire X4800 M2)</p>
+<ul>
+<li><p>CPU: 8 x 10-core Intel Xeon E7-8870 Processors (2.40 GHz)</p></li>
+<li><p>RAM: 2 TB RAM (128 x 16 GB)</p></li>
+<li><p>System storage: 8 x 300GB 10K RPM SAS Disks</p></li>
+<li><p>Disk Controller HBA with 512MB Battery-backed cache</p></li>
+<li><p>RDMA Network Fabric: 4 dual-port 4X QDR InfiniBand PCIe 2.0 Express Modules (EM)</p></li>
+<li><p>2 Network Express Modules (NEM) providing the following:</p>
+<ul>
+<li><p>8 x 10 Gb Ethernet network ports using SFP+ connectors (based on Intel 82599 10 GbE controller)</p></li>
+<li><p>8 x 1 Gb Ethernet network ports</p></li>
+</ul>
+</li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p>Parent topic: <a class="reference external" href="https://docs.oracle.com/en/engineered-systems/exadata-database-machine/dbmso/hardware-components-exadata-db-machine.html">Hardware Components of Oracle Exadata</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oracle-exadata-root-unlock.html" class="btn btn-neutral float-left" title="Temporary User Lockout On Exadata" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oracle-exadata-storage-servers-components.html" class="btn btn-neutral float-right" title="Oracle Exadata Storage Server Hardware Components" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

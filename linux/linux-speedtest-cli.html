@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="linux, speedtest, cli" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Linux SpeedTest via CLI &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/linux/linux-speedtest-cli.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="StrongSwan with eap-mschapv2 enabled" href="linux-strongswan-eap-mschapv2.html" />
+    <link rel="prev" title="GeoIP2 Block NGINX Debian 11" href="linux-nginx-geoip2-block.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible-get-facts.html">Сбор и вывод ansible_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="confluence-ubuntu-license.html">Установка Confluence + лицензия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-auto-install-preseed.html">Файлы автоматической установки linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-bonding.html">Debian Bonding (active-backup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-install-jre.html">Install Oracle JRE on Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug-email-server.html">Debugging Email Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-3proxy.html">Настройка SOCKS5 прокси сервера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-aeza-debootstrap-install.html">Установка Linux при помощи debootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-awk.html">Обработка строк при помощи awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos8-yum-error.html">Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos-install-kernel.html">Установка свежего ядра в Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-docker-logs-clean.html">Чистим логи Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-lc-all-unset.html">LC_ALL = (unset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-megacli.html">Установка и работа с MegaCLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-mysql-operations.html">Шпаргалка по MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-nginx-geoip2-block.html">GeoIP2 Block NGINX Debian 11</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Linux SpeedTest via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-strongswan-eap-mschapv2.html">StrongSwan with eap-mschapv2 enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-tar-multithread.html">TAR Multithread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-telegram-login-notify.html">Уведомление о логине в Telegram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-var-log-journal-clean.html">Чистим логи /var/log/journal/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-wireguard-installation.html">Установка Wireguard на Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_outline_vpn.html">Установка Outline VPN на Ubuntu 20.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu18-russian-apt-sources.html">Russian apt-sources in Ubuntu 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu-postfix-gmail-relay.html">Postfix Relay для Gmail в Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant-add-box-manual.html">Add a downloaded .box file to Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Linux SpeedTest via CLI</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/linux/linux-speedtest-cli.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="linux-speedtest-via-cli">
+<span id="linux-speedtest-cli"></span><span id="index-0"></span><h1>Linux SpeedTest via CLI<a class="headerlink" href="#linux-speedtest-via-cli" title="Link to this heading"></a></h1>
+<p>Так как на сервере не GUI, то измерить скорость канала попробуем через CLI при помощи speedtest-cli</p>
+<p>Устанавливаем утилиту и даем ей права на исполнение</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py</span>
+<span class="c1"># chmod +x speedtest-cli</span>
+</pre></div>
+</div>
+<p>Теперь смотрим список доступных серверов SpeedTest и выбираем тот который отвечает нашим хотелкам. Я выбрал сервера в России, так как мне нужно было узнать скорость канала до РФ.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ./speedtest-cli --list | egrep -i Russian</span>
+<span class="m">13484</span><span class="o">)</span><span class="w"> </span>Ekran<span class="w"> </span><span class="o">(</span>Kaliningrad,<span class="w"> </span>Russian<span class="w"> </span>Federation<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">1400</span>.03<span class="w"> </span>km<span class="o">]</span>
+<span class="m">2598</span><span class="o">)</span><span class="w"> </span>Rostelecom<span class="w"> </span><span class="o">(</span>Kaliningrad,<span class="w"> </span>Russian<span class="w"> </span>Federation<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">1404</span>.16<span class="w"> </span>km<span class="o">]</span>
+<span class="m">4090</span><span class="o">)</span><span class="w"> </span>Etype<span class="w"> </span><span class="o">(</span>Kaliningrad,<span class="w"> </span>Russian<span class="w"> </span>Federation<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">1404</span>.16<span class="w"> </span>km<span class="o">]</span>
+<span class="m">1352</span><span class="o">)</span><span class="w"> </span>Tis-Dialog<span class="w"> </span><span class="o">(</span>Kaliningrad,<span class="w"> </span>Russian<span class="w"> </span>Federation<span class="o">)</span><span class="w"> </span><span class="o">[</span><span class="m">1404</span>.16<span class="w"> </span>km<span class="o">]</span>
+</pre></div>
+</div>
+<p>Запускаем тест и указываем номер сервера</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ./speedtest-cli --simple --server 2598</span>
+Ping:<span class="w"> </span><span class="m">38</span>.458<span class="w"> </span>ms
+Download:<span class="w"> </span><span class="m">477</span>.09<span class="w"> </span>Mbit/s
+Upload:<span class="w"> </span><span class="m">481</span>.75<span class="w"> </span>Mbit/s
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-nginx-geoip2-block.html" class="btn btn-neutral float-left" title="GeoIP2 Block NGINX Debian 11" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-strongswan-eap-mschapv2.html" class="btn btn-neutral float-right" title="StrongSwan with eap-mschapv2 enabled" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

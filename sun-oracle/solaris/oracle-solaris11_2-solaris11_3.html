@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="oracle, solaris11" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Solaris 11.2 to Solaris 11.3 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/sun-oracle/solaris/oracle-solaris11_2-solaris11_3.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Uncategorized" href="../../uncategorized/index.html" />
+    <link rel="prev" title="Solaris 10 + ZFS Patching" href="oracle-solaris10-zfs-patching.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sun &amp; Oracle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#exadata">Exadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#solaris">Solaris</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oracle-solaris-eis-download.html">Oracle EIS Download</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-solaris-sru-update.html">Solaris 11 SRU Update</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-solaris10-zfs-patching.html">Solaris 10 + ZFS Patching</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Solaris 11.2 to Solaris 11.3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sun &amp; Oracle</a></li>
+      <li class="breadcrumb-item active">Solaris 11.2 to Solaris 11.3</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/sun-oracle/solaris/oracle-solaris11_2-solaris11_3.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="solaris-11-2-to-solaris-11-3">
+<span id="oracle-solaris11-2-solaris11-3"></span><span id="index-0"></span><h1>Solaris 11.2 to Solaris 11.3<a class="headerlink" href="#solaris-11-2-to-solaris-11-3" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>В случае если мы прыгаем на другой релиз, то нужно дополнительно развернуть базовый IPS репозиторий (Doc ID 1277964.1)</p>
+</div>
+<ol class="arabic simple">
+<li><p>Скачиваем образы Solaris 11 Repo c сайта Oracle.com (<a class="reference external" href="http://www.oracle.com/technetwork/server-storage/solaris11/downloads/local-repository-2245081.html">Create a Local Repository</a>)</p></li>
+<li><p>Закачиваем пакеты на сервер и подготавливаем репозиторий</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># chmod -x install-repo.ksh
+# mkdir /Solaris11_Repo/
+# ./install-repo.ksh -d /Solaris11_Repo/ -c -v -y
+Using sol-11_3-repo download.
+
+Comparing checksums of downloaded files...done. Checksums match.
+
+Uncompressing sol-11_3-repo_1of5.zip...done.
+Uncompressing sol-11_3-repo_2of5.zip...done.
+Uncompressing sol-11_3-repo_3of5.zip...done.
+Uncompressing sol-11_3-repo_4of5.zip...done.
+Uncompressing sol-11_3-repo_5of5.zip...done.
+Repository can be found in /Solaris11_Repo/.
+Initiating repository verification.
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li><p>Добавляем репозиторий в систему</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># pkg set-publisher -g file:///Solaris11_Repo/ solaris
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Установка обновлений</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># pkg update --accept
+
+            Packages to remove:  28
+           Packages to install:  84
+            Packages to update: 485
+            Packages to change:   1
+           Mediators to change:   7
+       Create boot environment: Yes
+Create backup boot environment:  No
+DOWNLOAD                                PKGS         FILES    XFER (MB)   SPEED
+Completed                            598/598   27955/27955  600.1/600.1    0B/s
+
+PHASE                                          ITEMS
+Removing old actions                       6058/6058
+Installing new actions                   18544/18544
+Updating modified actions                17208/17208
+Updating package state database                 Done
+Updating package cache                       513/513
+Updating image state                            Done
+Creating fast lookup database                   Done
+Updating package cache                           1/1
+
+A clone of solaris-2 exists and has been updated and activated.
+On the next boot the Boot Environment solaris-3 will be
+mounted on &#39;/&#39;.  Reboot when ready to switch to this updated BE.
+
+Updating package cache                           1/1
+
+---------------------------------------------------------------------------
+NOTE: Please review release notes posted at:
+
+https://support.oracle.com/rs?type=doc&amp;id=1672221.1
+---------------------------------------------------------------------------
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Проверяем что новое окржение создано и будет активировано при загрузке, после чего перезагружаемся в него</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># beadm list
+BE        Flags Mountpoint Space   Policy Created
+--        ----- ---------- -----   ------ -------
+solaris   -     -          8.29M   static 2015-02-18 19:38
+solaris-1 -     -          10.34M  static 2015-02-24 20:33
+solaris-2 N     /          111.63M static 2015-06-25 02:38
+solaris-3 R     -          46.22G  static 2016-11-08 11:06
+
+# shutdown -i6 -g0
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>После перезагрузки проверяем версию ПО и можем приступать к накату патчей для S11.3 (seealso: <a class="reference internal" href="oracle-solaris-sru-update.html#oracle-solaris-sru-update"><span class="std std-ref">Solaris 11 SRU Update</span></a>)</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span># pkg list entire
+NAME (PUBLISHER)                                  VERSION                    IFO
+entire                                            0.5.11-0.175.3.1.0.5.0     i--
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oracle-solaris10-zfs-patching.html" class="btn btn-neutral float-left" title="Solaris 10 + ZFS Patching" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../uncategorized/index.html" class="btn btn-neutral float-right" title="Uncategorized" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

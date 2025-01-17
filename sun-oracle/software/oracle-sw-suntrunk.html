@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="oracle, solaris, suntrunk" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Port trunk при помощи SUN Trunking &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/sun-oracle/software/oracle-sw-suntrunk.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Using WGET to Download MOS Patches" href="oracle-sw-wget-oracle-patches.html" />
+    <link rel="prev" title="Sunfreeware" href="oracle-sw-sunfreeware.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sun &amp; Oracle</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#exadata">Exadata</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#software">Software</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-eis-version.html">How To Determinate Installation EIS Patches</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-ld-show-mem.html">List Available Memory on LDM</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-ld-sol10.html">Solaris 10 on LDOMs</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-long-login-t3.html">Long Login Problem With T3</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-solaris10-ipmp.html">Настройка IPMP в Solaris 10</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-sshd-start.html">Solaris. Стартуем SSHd вручную</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-sunfreeware.html">Sunfreeware</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Port trunk при помощи SUN Trunking</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-sw-wget-oracle-patches.html">Using WGET to Download MOS Patches</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#solaris">Solaris</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sun &amp; Oracle</a></li>
+      <li class="breadcrumb-item active">Port trunk при помощи SUN Trunking</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/sun-oracle/software/oracle-sw-suntrunk.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="port-trunk-sun-trunking">
+<span id="oracle-sw-suntrunk"></span><span id="index-0"></span><h1>Port trunk при помощи SUN Trunking<a class="headerlink" href="#port-trunk-sun-trunking" title="Link to this heading"></a></h1>
+<ol class="arabic simple">
+<li><p>Скачиваем Sun Trunking 1.3 (p10264589_130_SOLARIS64.zip)</p></li>
+<li><p>Скачиваем Patch 121181-06: Sun Trunking Utility 1.3:maintenance patch</p></li>
+<li><p>Устанавливаем Sun Trunking 1.3</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>unzip p10264589_130_SOLARIS64.zip
+unzip Sun_Trunking_1.3_s10_2.zip
+cd Sun_Trunking_1.3_s10_2/
+./install
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li><p>Проверяем что пакет установился</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>pkginfo -l SUNWtrku
+pkginfo -l SUNWtrkm
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li><p>Устанавливаем патч 121181-06 и перезагружаемся</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>patchadd /var/spool/patch/123456-07
+init 6
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="6">
+<li><p>Пробуем собрать транк</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nettr -setup 10 device=ce members=2,3,4,5 policy=3
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="7">
+<li><p>Проверяем</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-none notranslate"><div class="highlight"><pre><span></span>nettr -conf
+
+Key: 10; Policy: 3;
+Aggr MAC address: 01:23:ab:45:c6:72
+Name    Original-Mac-Addr   Speed   Duplex   Link Status
+----    -----------------   -----   ------   ---- ------
+ce2     01:23:ab:45:c6:72     1000    full     up    enb
+ce3     01:23:ab:45:c6:73     1000    full     up    enb
+ce4     01:23:ab:45:c6:74     1000    full     up    enb
+ce5     01:23:ab:45:c6:75     1000    full     up    enb
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="8">
+<li><p>Если все собралось, то сразу записываем команду в файлик <cite>/etc/opt/SUNWconn/bin/nettr.sh</cite></p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1">#Add Sun Trunking Configuration entries below.</span>
+nettr<span class="w"> </span>-setup<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="nv">device</span><span class="o">=</span>ce<span class="w"> </span><span class="nv">members</span><span class="o">=</span><span class="m">2</span>,3,4,5<span class="w"> </span><span class="nv">policy</span><span class="o">=</span><span class="m">3</span><span class="w"> </span><span class="nv">lacp</span><span class="o">=</span>p<span class="w"> </span><span class="nv">ptimer</span><span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+<ol class="arabic simple" start="9">
+<li><p>Теперь можно настраивать интерфесы</p></li>
+</ol>
+<blockquote>
+<div><div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ifconfig<span class="w"> </span>ce2<span class="w"> </span>plumb<span class="w"> </span><span class="m">10</span>.1.35.35<span class="w"> </span>up
+</pre></div>
+</div>
+</div></blockquote>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oracle-sw-sunfreeware.html" class="btn btn-neutral float-left" title="Sunfreeware" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oracle-sw-wget-oracle-patches.html" class="btn btn-neutral float-right" title="Using WGET to Download MOS Patches" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

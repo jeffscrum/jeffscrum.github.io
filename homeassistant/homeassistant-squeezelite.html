@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="squeezelite, raspbian, armbian, linux, lms, Logitech Media Server, multiroom, audio, home assistant" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Squeezelite &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/homeassistant/homeassistant-squeezelite.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="IBM" href="../ibm/index.html" />
+    <link rel="prev" title="Rollback plan" href="homeassistant-rollback.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Smart Home</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-downgrade.html">Home Assistant Downgrade</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-installation-on-raspberrypi4.html">Home Assistant на RaspberriPi4</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-flashing-esphome.html">Flashing Esphome</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-reset-gui-password.html">Reset Admin Password</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-unsupported-installation.html">Unsupported Installation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-small-meteo-sensors.html">Small Meteo Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="homeassistant-rollback.html">Rollback plan</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Squeezelite</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Настройка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Дополнительно</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Smart Home</a></li>
+      <li class="breadcrumb-item active">Squeezelite</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/homeassistant/homeassistant-squeezelite.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="squeezelite">
+<span id="homeassistant-squeezelite"></span><span id="index-0"></span><h1>Squeezelite<a class="headerlink" href="#squeezelite" title="Link to this heading"></a></h1>
+<p>Для работы мультирума в системе умного дома я использую Logitech Media Server (LMS) и клиентов на Orange Pi Zero + Interface Board с миниджеком. Это решение имеет низкую стоимость и достаточную производительность, а также без проблем работает в WiFi сетях как 2.4GHz, так и 5GHz.</p>
+<a class="reference internal image-reference" href="../_images/Orange-Pi-Zero-Audio-Interface-Board-Large.webp"><img alt="../_images/Orange-Pi-Zero-Audio-Interface-Board-Large.webp" src="../_images/Orange-Pi-Zero-Audio-Interface-Board-Large.webp" style="width: 600px;" /></a>
+<section id="id1">
+<h2>Настройка<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Первое что делаем - идем и скачиваем свежий Armbian на сайте <a class="reference external" href="https://www.armbian.com/orange-pi-zero/">armbian.com</a> и устанавливаем ОС на плату.</p>
+<p>Теперь устанавливаем необходимые пакеты: <cite>apt-get install squeezelite</cite></p>
+<p>Для того чтобы система увидела звуковую карту запускаем <cite>armbian-config</cite> и ставим галочку напротив ‘System &gt; Hardware &gt; analog-codec’.</p>
+<p>Перезагружаем систему: <cite>shutdown -r now</cite></p>
+<p>Запускаем <cite>alsamixer</cite> и поднимаем громкость до 95% для DAC.</p>
+<p>Редактируем файл ‘/etc/default/squeezelite’ и вставляем в него следующее содержимое:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Defaults for squeezelite initscript sourced by /etc/init.d/squeezelite</span>
+<span class="c1"># installed at /etc/default/squeezelite by the maintainer scripts</span>
+
+<span class="c1"># The name for the squeezelite player:</span>
+<span class="c1"># SL_NAME=&quot;$(hostname -s)&quot;</span>
+<span class="nv">SL_NAME</span><span class="o">=</span><span class="s2">&quot;my_player&quot;</span>
+
+<span class="c1"># ALSA output device:</span>
+<span class="nv">SL_SOUNDCARD</span><span class="o">=</span><span class="s2">&quot;hw:CARD=Codec,DEV=0&quot;</span>
+
+<span class="c1"># Squeezebox server (Logitech Media Server):</span>
+<span class="c1"># Uncomment the next line if you want to point squeezelite at the IP address of</span>
+<span class="c1"># your squeezebox server. This is usually unnecessary as the server is</span>
+<span class="c1"># automatically discovered.</span>
+<span class="nv">SB_SERVER_IP</span><span class="o">=</span><span class="s2">&quot;192.168.1.11&quot;</span>
+
+<span class="c1"># Additional options to pass to squeezelite:</span>
+<span class="c1"># Please do not include -z to make squeezelite daemonise itself.</span>
+<span class="nv">SB_EXTRA_ARGS</span><span class="o">=</span><span class="s2">&quot;-a 80:40::0 -m 12:42:8e:10:6e:90&quot;</span>
+</pre></div>
+</div>
+<p>Перезапускаем Squeezelite: <cite>service squeezelite restart</cite> и проверяем что процесс успешно работает <cite>ps -ef | grep squeezelite</cite>. Если нет, то скорее всего неверно указано устройство вывода, посмотреть список можно командой <cite>squeezelite -l</cite>.</p>
+<p>Если все работает корректно, то в LMS вы увидите нового клиента и сможете проигрывать на нем звук.</p>
+</section>
+<section id="id2">
+<h2>Дополнительно<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Температуру платы мы будем снимать при помощи сенсора на плате и отправлять через mqtt в Home Assistant, где выведем ее в любом нужном месте.</p>
+<p>Для этого устанавливаем дополнительные пакеты: <cite>apt-get install lm-sensors jq mosquitto-clients</cite></p>
+<p>После того как установка завершена, запускаем <cite>sensors-detect</cite> для того чтобы все сенсоры определились (нам нужно смотреть температуру CPU).</p>
+<p>Теперь напишем скрипт, задача которого будет проста - получать и преобразовывать вывод команды ‘sensors’, округлять полученное значение до целого числа и отправлять на сервер mqtt в определенный топик. После чего эти данные можно выводить в HA при помощи соответствующего <a class="reference external" href="https://www.home-assistant.io/integrations/sensor.mqtt/">сенсора</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="ch">#!/bin/bash</span>
+<span class="nv">ip</span><span class="o">=</span><span class="m">192</span>.168.11.11<span class="w">    </span><span class="c1"># mqtt server ip</span>
+<span class="nv">usr</span><span class="o">=</span><span class="s2">&quot;mqtt&quot;</span><span class="w">          </span><span class="c1"># mqtt user</span>
+<span class="nv">pass</span><span class="o">=</span><span class="s2">&quot;mqtt&quot;</span><span class="w">         </span><span class="c1"># mqtt password</span>
+
+<span class="nv">cpu_temp_raw_data</span><span class="o">=</span><span class="k">$(</span>sensors<span class="w"> </span>-A<span class="w"> </span>-u<span class="w"> </span>-j<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span><span class="s1">&#39;.[&quot;cpu_thermal-virtual-0&quot;].temp1.temp1_input&#39;</span><span class="k">)</span>
+<span class="nv">cpu_temp</span><span class="o">=</span><span class="si">${</span><span class="nv">cpu_temp_raw_data</span><span class="p">%.*</span><span class="si">}</span>
+
+mosquitto_pub<span class="w"> </span>-h<span class="w"> </span><span class="nv">$ip</span><span class="w"> </span>-t<span class="w"> </span><span class="s2">&quot;homeassistant/sensor/orange_bedroom/cpu_temperature&quot;</span><span class="w"> </span>-m<span class="w"> </span><span class="nv">$cpu_temp</span><span class="w"> </span>-u<span class="w"> </span><span class="nv">$usr</span><span class="w"> </span>-P<span class="w"> </span><span class="nv">$pass</span>
+</pre></div>
+</div>
+<p>Теперь необходимо сделать наш скрипт исполняемым и добавить в crontab (запуск каждые 5 минут).</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>chmod +x /root/data2mqtt.sh
+crontab -e
+Add line &quot;*/5 * * * * /root/data2mqtt.sh&quot;
+</pre></div>
+</div>
+<hr class="docutils" />
+<p>Links:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://forums.slimdevices.com/forum/user-forums/3rd-party-software/97932-squeezelite-troubleshooting?101436-Squeezelite-troubleshooting">Logitec forum</a></p></li>
+<li><p><a class="reference external" href="http://www.gerrelt.nl/RaspberryPi/wordpress/tutorial-installing-squeezelite-player-on-raspbian/">Tutorial</a></p></li>
+</ul>
+</div></blockquote>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="homeassistant-rollback.html" class="btn btn-neutral float-left" title="Rollback plan" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../ibm/index.html" class="btn btn-neutral float-right" title="IBM" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

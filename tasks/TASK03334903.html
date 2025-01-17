@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="vmax, tasks" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VMAX. Переразбить пул с другим RAID &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/TASK03334903.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VMAX. Переразбивка пулов" href="TASK03354440.html" />
+    <link rel="prev" title="VMAX. Разобрать пулы и создать новые луны" href="TASK03049093.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Миграция данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Работа с ОС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hds-standard-work-plans.html">HDS. Стандартный план работ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK01365461.html">VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03041192.html">VMAX. Расширения ФС /warehouse/oradata до 60Тб</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03049093.html">VMAX. Разобрать пулы и создать новые луны</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">VMAX. Переразбить пул с другим RAID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03354440.html">VMAX. Переразбивка пулов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03562213.html">VMAX. Удалить диски с нод кластера (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03563742.html">VMAX. Удалить диски с серверов (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03598846.html">VMAX. Подключение SSD Tier к HDD Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-map-disks.html">VMAX. Отмапливание дисков</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-svalka.html">VMAX. Свалка планов</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">VMAX. Переразбить пул с другим RAID</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/TASK03334903.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="task03334903"><span id="index-0"></span></span><section id="vmax-raid">
+<h1>VMAX. Переразбить пул с другим RAID<a class="headerlink" href="#vmax-raid" title="Link to this heading"></a></h1>
+<p>Прошу подготовить план переразбивки пула Task1DBClone из R5 (7+1) в R10 (2-WayMir). Для нового пула использовать все диски группы DISK_GROUP_002. Новый пул назвать DB_TM_DCI. В новом пуле создать 1 лун 11Тб и показать на bc12tv2.</p>
+<p>План случайно закрыл. Финальный план отличался созданием 1 TDEV (0D5D) из 64 кусочков. А также, при удалении DATADEV их необходимо было перевести в состояние Not_Ready.</p>
+<p>Файлы <a class="reference download internal" download="" href="../_downloads/22eccbc381efaf4540c7db117530cdd0/TASK03334903.tar.gz"><code class="xref download docutils literal notranslate"><span class="pre">TASK03334903.tar.gz</span></code></a></p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>0. Убедиться в наличии актуального бэкапа
+1. Разбираем текущий мапинг:
+symaccess -sid 174 list view
+symaccess -sid 174 delete view -name MV_Task1_Clone_bc15_aix03 -unmap
+symaccess -sid 174 delete -name IG_Task1_Clone_bc15_aix03 -type initiator -force
+symaccess -sid 174 delete -name SG_Task1_Clone -type storage -force
+symaccess -sid 174 delete -name PG_Task1_Clone -type port -force
+2. Проверяем пулы:
+symcfg -sid 174 list -pool -thin -gb -detail
+3. Просматриваем информацию по текущему пулу:
+symcfg -sid 174 show -pool Task1DBClone -thin -detail
+4. Останавливаем клонирование и удаляем клон-группу
+symclone -g Task1 terminate -tgt
+symclone -g Task1 query
+symdg delete Task1 -force
+5. Разбираем пул Task1DBClone
+5.1 Выводим TDEV:
+symconfigure -sid 174 -file unbindTDEV.txt -v -nop prepare
+symconfigure -sid 174 -file unbindTDEV.txt -v commit
+5.2 Выводим DATAdev:
+5.2.1 Отключаем DATADEV из пула:
+symconfigure -sid 174 -file disableDATADEV.txt -v -nop prepare
+symconfigure -sid 174 -file disableDATADEV.txt -v commit
+5.2.2 Удаляем DATADEV из пула:
+symconfigure -sid 174 -file removeDATADEV.txt -v -nop prepare
+symconfigure -sid 174 -file removeDATADEV.txt -v commit
+5.3 Разбираем metaDEV:
+symconfigure -sid 174 -cmd &quot;dissolve meta dev 0B45,0B4D,0B5D,0B6D,0B7D,0B8D,0B9D,0BAD,0BBD,0BCD,0BDD,0BED,0BFD,0C0D,0C1D,0C2D,0C3D,0C4D,0C5D,0C6D,0C7D ;&quot; prepare -v -nop
+symconfigure -sid 174 -cmd &quot;dissolve meta dev 0B45,0B4D,0B5D,0B6D,0B7D,0B8D,0B9D,0BAD,0BBD,0BCD,0BDD,0BED,0BFD,0C0D,0C1D,0C2D,0C3D,0C4D,0C5D,0C6D,0C7D ;&quot; commit -v
+5.4 Удалям TDEV и DATADEV:
+symconfigure -sid 174 -file delTDEVDATADEV.txt -v -nop prepare
+symconfigure -sid 174 -file delTDEVDATADEV.txt -v commit
+5.5 Удаляем пул Task1DBClone:
+symconfigure -sid 174 -cmd &quot;delete pool Task1DBClone, type=thin;&quot; -v -nop prepare
+symconfigure -sid 174 -cmd &quot;delete pool Task1DBClone, type=thin;&quot; -v commit
+6. Создаем новый thin-pool
+symconfigure -sid 174 -cmd &quot;create pool DB_TM_DCI type=thin;&quot; -v -nop prepare
+symconfigure -sid 174 -cmd &quot;create pool DB_TM_DCI type=thin;&quot; -v commit
+7. Создаем новые DATADEV и добавляем их в пул:
+12303292 | 171*72196=12345516
+symconfigure -sid 174 -cmd &quot;create dev count=171, size=72196, emulation=FBA, config=2-Way-Mir, attribute=DATADEV, disk_group=2, in pool=DB_TM_DCI, member_state=ENABLE;&quot; prepare -v
+symconfigure -sid 174 -cmd &quot;create dev count=171, size=72196, emulation=FBA, config=2-Way-Mir, attribute=DATADEV, disk_group=2, in pool=DB_TM_DCI, member_state=ENABLE;&quot; commit -v
+8. Создаем новый TDEV и добавляем его в пул *[записываем имя нового TDEV]*:
+12345516 | 12*1028793
+symconfigure -sid 174 -cmd &quot;create dev count=1, emulation=FBA, config=TDEV, size=2057586, meta_member_size=1028793, meta_config=striped, binding to pool=DB_TM_DCI, preallocate size=2057586 ;&quot; prepare -v
+symconfigure -sid 174 -cmd &quot;create dev count=1, emulation=FBA, config=TDEV, size=2057586, meta_member_size=1028793, meta_config=striped, binding to pool=DB_TM_DCI, preallocate size=2057586 ;&quot; commit -v
+9. Отмапливаем лун серверу
+symaccess -sid 174 -name SG_bc15tv2_dbtmdci -type storage create
+symaccess -sid 174 -name SG_bc15tv2_dbtmdci -type storage add devs &lt;TDEV1&gt;(см. п. 8)
+symaccess -sid 174 -name PG_bc15tv2_dbtmdci -type port create
+symaccess -sid 174 -name PG_bc15tv2_dbtmdci -type port add -dirport 10e:0,5h:1,6h:1,8h:0
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator create
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b4
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b5
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff415192
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff415193
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416402
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416403
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41679e
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41679f
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165f0
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165f1
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416460
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416461
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416ac8
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416ac9
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a10
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a11
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416696
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416697
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b0
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff4165b1
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416b0e
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416b0f
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416528
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416529
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41668e
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff41668f
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a92
+symaccess -sid 174 -name IG_bc15tv2_dbtmdci -type initiator add -wwn 26000024ff416a93
+symaccess -sid 174 create view -name MV_bc15tv2_dbtmdci -pg PG_bc15tv2_dbtmdci -ig IG_bc15tv2_dbtmdci -sg SG_bc15tv2_dbtmdci
+10. Переименовываем хосты для удобства в будущем
+symaccess -sid 174 -wwn 26000024ff4165b4 rename -alias bc15tv2_01/hba0
+symaccess -sid 174 -wwn 26000024ff4165b5 rename -alias bc15tv2_01/hba1
+symaccess -sid 174 -wwn 26000024ff415192 rename -alias bc15tv2_02/hba0
+symaccess -sid 174 -wwn 26000024ff415193 rename -alias bc15tv2_02/hba1
+symaccess -sid 174 -wwn 26000024ff416402 rename -alias bc15tv2_03/hba0
+symaccess -sid 174 -wwn 26000024ff416403 rename -alias bc15tv2_03/hba1
+symaccess -sid 174 -wwn 26000024ff41679e rename -alias bc15tv2_04/hba0
+symaccess -sid 174 -wwn 26000024ff41679f rename -alias bc15tv2_04/hba1
+symaccess -sid 174 -wwn 26000024ff4165f0 rename -alias bc15tv2_05/hba0
+symaccess -sid 174 -wwn 26000024ff4165f1 rename -alias bc15tv2_05/hba1
+symaccess -sid 174 -wwn 26000024ff416460 rename -alias bc15tv2_06/hba0
+symaccess -sid 174 -wwn 26000024ff416461 rename -alias bc15tv2_06/hba1
+symaccess -sid 174 -wwn 26000024ff416ac8 rename -alias bc15tv2_07/hba0
+symaccess -sid 174 -wwn 26000024ff416ac9 rename -alias bc15tv2_07/hba1
+symaccess -sid 174 -wwn 26000024ff416a10 rename -alias bc15tv2_08/hba0
+symaccess -sid 174 -wwn 26000024ff416a11 rename -alias bc15tv2_08/hba1
+symaccess -sid 174 -wwn 26000024ff416696 rename -alias bc15tv2_09/hba0
+symaccess -sid 174 -wwn 26000024ff416697 rename -alias bc15tv2_09/hba1
+symaccess -sid 174 -wwn 26000024ff4165b0 rename -alias bc15tv2_10/hba0
+symaccess -sid 174 -wwn 26000024ff4165b1 rename -alias bc15tv2_10/hba1
+symaccess -sid 174 -wwn 26000024ff416b0e rename -alias bc15tv2_11/hba0
+symaccess -sid 174 -wwn 26000024ff416b0f rename -alias bc15tv2_11/hba1
+symaccess -sid 174 -wwn 26000024ff416528 rename -alias bc15tv2_12/hba0
+symaccess -sid 174 -wwn 26000024ff416529 rename -alias bc15tv2_12/hba1
+symaccess -sid 174 -wwn 26000024ff41668e rename -alias bc15tv2_13/hba0
+symaccess -sid 174 -wwn 26000024ff41668f rename -alias bc15tv2_13/hba1
+symaccess -sid 174 -wwn 26000024ff416a92 rename -alias bc15tv2_14/hba0
+symaccess -sid 174 -wwn 26000024ff416a93 rename -alias bc15tv2_14/hba1
+symaccess -sid 174 list devinfo -ig IG_bc15tv2_dbtmdci
+
+Риски: неизвестные ошибки ПО, некорректное отрабатывание команд SE, человеческий фактор, потеря данных.
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TASK03049093.html" class="btn btn-neutral float-left" title="VMAX. Разобрать пулы и создать новые луны" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TASK03354440.html" class="btn btn-neutral float-right" title="VMAX. Переразбивка пулов" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

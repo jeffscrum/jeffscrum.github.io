@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Twiki Installation &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/uncategorized/twiki-installation.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Покупаем радиостанцию официально" href="buy-radiostation.html" />
+    <link rel="prev" title="Синхронизация файла сессий Sublime" href="sublime-session-file.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Uncategorized</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="amazon-kindle-so.html">Amazon Special Offers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sendfile2amazon_kindle.html">Send files to Amazon Kindle</a></li>
+<li class="toctree-l2"><a class="reference internal" href="batch-log-archive.html">Архивирование логов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="davinci-studio-trick.html">Davinci Resolve Studio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="download-scribd-book.html">How to download a book from Scribd</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docker-temporary-failure-resolving.html">Docker build “Temporary failure resolving ‘deb.debian.org’”</a></li>
+<li class="toctree-l2"><a class="reference internal" href="latex-installation.html">Установка LaTeX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="pandoc.html">Pandoc на практике</a></li>
+<li class="toctree-l2"><a class="reference internal" href="putty-socks5-tunnel.html">Putty SOCKS5-proxy туннель в Windows</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sublime-session-file.html">Синхронизация файла сессий Sublime</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Twiki Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Подготовка сервера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#twiki">Настройка Twiki</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#foswiki">Настройка Foswiki</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="buy-radiostation.html">Покупаем радиостанцию официально</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proxmox-thinpool-storage.html">Create a Proxmox LVM Thinpool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="certbot-haproxy.html">HAProxy and Letsencrypt</a></li>
+<li class="toctree-l2"><a class="reference internal" href="proxy-pac.html">proxy.pac</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tcpdump-wireshark.html">Capturing with ‘tcpdump’ for viewing with Wireshark</a></li>
+<li class="toctree-l2"><a class="reference internal" href="VRTSexplorer.html">VRTSexplorer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vxvm-root-encapsulation.html">VxVM. Root disk Encapsulation and Mirroring</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#mediawiki">Mediawiki</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Uncategorized</a></li>
+      <li class="breadcrumb-item active">Twiki Installation</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/uncategorized/twiki-installation.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="twiki-installation">
+<span id="index-0"></span><span id="id1"></span><h1>Twiki Installation<a class="headerlink" href="#twiki-installation" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Статья уже, скорее всего, морально устарела. Сейчас есть современные движки для ведения wiki. Основное удобство Twiki было отсутствее необходимости иметь БД. Например, <a class="reference external" href="https://www.dokuwiki.org/dokuwiki">DokuWiki</a> умеет все тоже самое, на проще в настройке. Поэтому статья скорее архивная.</p>
+</div>
+<section id="id2">
+<h2>Подготовка сервера<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># ssh ключ</span>
+cat<span class="w"> </span>.ssh/id_rsa.pub<span class="w"> </span><span class="p">|</span><span class="w"> </span>ssh<span class="w"> </span>root@wiki.ksomov.ru<span class="w"> </span><span class="s2">&quot;mkdir -p ~/.ssh &amp;&amp; cat &gt;&gt; ~/.ssh/authorized_keys&quot;</span>
+
+<span class="c1"># Меняем hostname и TZ</span>
+<span class="nb">export</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;twiki.ksomov.ru&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>/etc/hostname
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;LANG=en_US.UTF-8&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/etc/environment
+dpkg-reconfigure<span class="w"> </span>tzdata
+shutdown<span class="w"> </span>-r<span class="w"> </span>now
+
+<span class="c1">## Готовим кодировки</span>
+sudo<span class="w"> </span>locale-gen<span class="w"> </span>UTF-8
+<span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;ru_RU.KOI8-R KOI8-R&quot;</span><span class="w"> </span>&gt;&gt;<span class="w"> </span>/var/lib/locales/supported.d/local
+locale-gen
+
+<span class="c1"># Обновляем пакеты</span>
+aptitude<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>aptitude<span class="w"> </span>upgrade
+
+<span class="c1"># Устанавливаем пакеты</span>
+apt-get<span class="w"> </span>install<span class="w"> </span>apache2<span class="w"> </span>libgdal-perl<span class="w"> </span>libcgi-session-perl<span class="w"> </span>libhtml-tree-perl<span class="w"> </span>liberror-perl<span class="w"> </span>libfreezethaw-perl<span class="w"> </span>libjpeg62<span class="w"> </span>rcs<span class="w"> </span>libapache2-mod-perl2-doc<span class="w"> </span>libapache2-mod-perl2<span class="w"> </span>libapache2-mod-php5<span class="w"> </span>latex2html<span class="w"> </span>sendmail-bin
+
+<span class="c1"># Устанавливаем модули Perl</span>
+perl<span class="w"> </span>-MCPAN<span class="w"> </span>-e<span class="w"> </span>shell
+install<span class="w"> </span>Algorithm::Diff<span class="w"> </span>CGI<span class="w"> </span>CGI::Carp<span class="w"> </span>Config<span class="w"> </span>Cwd<span class="w"> </span>Data::Dumper<span class="w"> </span>Encode<span class="w"> </span>File::Copy<span class="w"> </span>File::Find<span class="w"> </span>File::Spec<span class="w"> </span>File::Temp<span class="w"> </span>FileHandle<span class="w"> </span>HTML::Parser<span class="w"> </span>HTML::Entities<span class="w"> </span>IO::File<span class="w"> </span>Net::SMTP<span class="w"> </span>Text::Diff<span class="w"> </span>Time::Local<span class="w"> </span>Archive::Tar<span class="w"> </span>Authen::SASL<span class="w"> </span>CGI::Cookie<span class="w"> </span>CGI::Session<span class="w"> </span>Crypt::SMIME<span class="w"> </span>Digest::base<span class="w"> </span>Digest::SHA1<span class="w"> </span>JSON<span class="w"> </span>Locale::Maketext::Lexicon<span class="w"> </span>Net::SMTP<span class="w"> </span>URI
+
+<span class="c1"># Перечитываем файл Апача</span>
+sudo<span class="w"> </span>/etc/init.d/apache2<span class="w"> </span>reload
+
+<span class="c1"># Готовим каталог twiki</span>
+mkdir<span class="w"> </span>/websrv<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/websrv
+wget<span class="w"> </span>https://dl.dropboxusercontent.com/u/4094570/TWiki-6.0.1.tgz
+tar<span class="w"> </span>-xvf<span class="w"> </span>TWiki-6.0.1.tgz<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span>mv<span class="w"> </span>twiki<span class="w"> </span>twiki.ksomov.ru
+chown<span class="w"> </span>-R<span class="w"> </span>www-data:www-data<span class="w"> </span>twiki.ksomov.ru
+
+<span class="c1"># Подготавливаем TWiki</span>
+mv<span class="w"> </span>/websrv/twiki.ksomov.ru/bin/LocalLib.cfg.txt<span class="w"> </span>/websrv/twiki.ksomov.ru/bin/LocalLib.cfg
+
+<span class="c1"># Редактируем файл LocalLib.cfg. Указываем правильный путь до каталога lib</span>
+<span class="c1"># $twikiLibPath = &quot;/websrv/twiki.ksomov.ru/lib&quot;;</span>
+
+<span class="c1"># Используя http://twiki.org/cgi-bin/view/TWiki/ApacheConfigGenerator или http://foswiki.org/Support/ApacheConfigGenerator</span>
+<span class="c1"># создаем файл конфигурации. см. ниже</span>
+<span class="c1"># кладем в /etc/apache2/sites-available</span>
+ln<span class="w"> </span>-s<span class="w"> </span>/etc/apache2/sites-available/twiki.ksomov.ru.conf<span class="w"> </span>/etc/apache2/sites-enabled/
+rm<span class="w"> </span>/etc/apache2/sites-enabled/000-default.conf
+
+<span class="c1"># Подключаем необходимые модули</span>
+a2enmod<span class="w"> </span>rewrite
+a2enmod<span class="w"> </span>cgi
+service<span class="w"> </span>apache2<span class="w"> </span>restart
+
+<span class="c1"># Запускаем конфигуратор</span>
+http://twiki.ksomov.ru/bin/configure
+
+<span class="c1"># Далее можем ходить по http://twiki.ksomov.ru</span>
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>В web-конфигураторе указываем <code class="docutils literal notranslate"><span class="pre">{Site}{Locale}</span> <span class="pre">=</span> <span class="pre">ru_RU.KOI8-R</span></code>; <code class="docutils literal notranslate"><span class="pre">{Site}{CharSet}</span> <span class="pre">=</span> <span class="pre">KOI8-R</span></code>; <code class="docutils literal notranslate"><span class="pre">{Languages}{ru}{Enabled}</span> <span class="pre">=</span> <span class="pre">true</span></code></p>
+</div>
+</section>
+<section id="twiki">
+<h2>Настройка Twiki<a class="headerlink" href="#twiki" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Autogenerated httpd.conf file for TWiki.
+# Generated at http://twiki.org/cgi-bin/view/TWiki/ApacheConfigGenerator
+# IMPORTANT NOTE: Make sure to enable mod_cgi in the primary apache configuration file.
+# We set an environment variable called blockAccess.
+#
+# Setting a BrowserMatchNoCase to ^$ is important. It prevents TWiki from
+# including its own topics as URLs and also prevents other TWikis from
+# doing the same. This is important to prevent the most obvious
+# Denial of Service attacks.
+#
+# You can expand this by adding more BrowserMatchNoCase statements to
+# block evil browser agents trying the impossible task of mirroring a twiki
+#
+# Example:
+# BrowserMatchNoCase ^SiteSucker blockAccess
+# BrowserMatchNoCase ^$ blockAccess
+BrowserMatchNoCase ^$ blockAccess
+&lt;IfModule mod_perl.c&gt;
+    # Mod_perl preloading
+    PerlSwitches -T
+&lt;/IfModule&gt;
+# The ScriptAlias defines the bin directory as a directory where CGI
+# scripts are allowed.
+# The first parameter will be part of the URL to your installation e.g.
+# http://example.com/do/view/...
+# The second parameter must point to the physical path on your disc.
+ScriptAlias /bin &quot;/websrv/twiki.ksomov.ru/bin&quot;
+# The Alias defines a url that points to the twiki pub directory, which
+# is the root of file attachments.
+Alias /pub &quot;/websrv/twiki.ksomov.ru/pub&quot;
+# Block access to typical spam related attachments
+# Except the TWiki directory which is read only and does have attached html files.
+SetEnvIf Request_URI &quot;/pub/.*\.[hH][tT][mM][lL]?$&quot; blockAccess
+SetEnvIf Request_URI &quot;/pub/TWiki/.*\.[hH][tT][mM][lL]?$&quot; !blockAccess
+# This specifies the options on the TWiki scripts directory. The ExecCGI
+# and SetHandler tell apache that it contains scripts. &quot;Require all granted&quot;
+# lets any IP address access this URL.
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/bin&quot;&gt;
+    AllowOverride None
+    Require all granted
+    Deny from env=blockAccess
+    Options ExecCGI FollowSymLinks
+    SetHandler cgi-script
+    # Password file for TWiki users
+    AuthUserFile /websrv/twiki.ksomov.ru/data/.htpasswd
+    AuthName &#39;Enter your WikiName: (First name and last name, no space, no dots, capitalized, e.g. JohnSmith)&#39;
+    AuthType Basic
+    # File to return on access control error (e.g. wrong password)
+    ErrorDocument 401 /bin/view/TWiki/TWikiRegistration
+&lt;/Directory&gt;
+# This sets the options on the pub directory, which contains attachments and
+# other files like CSS stylesheets and icons. AllowOverride None stops a
+# user installing a .htaccess file that overrides these options.
+# Note that files in pub are *not* protected by TWiki Access Controls,
+# so if you want to control access to files attached to topics you need to
+# block access to the specific directories same way as the ApacheConfigGenerator
+# blocks access to the pub directory of the Trash web
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/pub&quot;&gt;
+    Options None
+    AllowOverride None
+    Require all granted
+    Deny from env=blockAccess
+    # Disable execusion of PHP scripts
+    php_admin_flag engine off
+    # This line will redefine the mime type for the most common types of scripts
+    AddType text/plain .shtml .php .php3 .phtml .phtm .pl .py .cgi
+#add an Expires header that is sufficiently in the future that the browser does not even ask if its uptodate
+# reducing the load on the server significantly
+#IF you can, you should enable this - it _will_ improve your twiki experience, even if you set it to under one day.
+# you may need to enable expires_module in your main apache config
+#LoadModule expires_module libexec/httpd/mod_expires.so
+#AddModule mod_expires.c
+#&lt;ifmodule mod_expires.c&gt;
+#  &lt;filesmatch &quot;\.(jpg|gif|png|css|js)$&quot;&gt;
+#       ExpiresActive on
+#       ExpiresDefault &quot;access plus 11 days&quot;
+#   &lt;/filesmatch&gt;
+#&lt;/ifmodule&gt;
+&lt;/Directory&gt;
+# Spammers are known to attach their stuff and then move it to trash where it remains unnoticed.
+# We prevent viewing any attachments directly from pub
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/pub/Trash&quot;&gt;
+   deny from all
+&lt;/Directory&gt;
+</pre></div>
+</div>
+</section>
+<section id="foswiki">
+<h2>Настройка Foswiki<a class="headerlink" href="#foswiki" title="Link to this heading"></a></h2>
+<p>Как альтернатива, можно использовать Foswiki - форк Twiki</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span># Autogenerated httpd.conf file for Foswiki.
+# Generated at http://foswiki.org/Support/ApacheConfigGenerator?vhost=twiki.ksomov.ru;port=;dir=/websrv/twiki.ksomov.ru;symlink=;pathurl=/;shorterurls=enabled;engine=CGI;fastcgimodule=fcgid;fcgidreqlen=;apver=2;confighost=;configip=;configuser=;loginmanager=Template;htpath=;errordocument=UserRegistration;errorcustom=;disablephp=on;blockpubhtml=on;blocktrashpub=on;controlattach=;blockspiders=;foswikiversion=2.0;apacheversion=2.4;timeout=;ssl=;sslcert=/etc/ssl/apache2/yourservercert.pem;sslchain=/etc/ssl/apache2/sub.class1.server.ca.pem;sslkey=/etc/ssl/apache2/yourservercertkey.pem
+# For Foswiki version 2.0,  Apache 2.4
+&lt;VirtualHost *&gt;
+    ServerAdmin webmaster@ksomov.ru
+    DocumentRoot &quot;/websrv/twiki.ksomov.ru&quot;
+    ServerName twiki.ksomov.ru
+    ServerAlias www.twiki.ksomov.ru         # Optional. Add to list of redirect hosts in bin/configure
+# The Alias defines a url that points to the root of the Foswiki installation.
+# The first parameter will be part of the URL to your installation e.g.
+# http://my.co.uk/foswiki/bin/view/...
+# The second parameter must point to the physical path on your disc.
+ScriptAlias /bin &quot;/websrv/twiki.ksomov.ru/bin&quot;
+# The following Alias is used to access files in the pub directory (attachments etc)
+# It must come _after_ the ScriptAlias.
+# If short URLs are enabled, and any other local directories or files need to be accessed directly, they
+# must also be specified in an Alias statement, and must not conflict with a web name.
+Alias /pub &quot;/websrv/twiki.ksomov.ru/pub&quot;
+Alias /robots.txt &quot;/websrv/twiki.ksomov.ru/robots.txt&quot;
+#  Rewriting is required for Short URLs, and Attachment redirecting to viewfile
+RewriteEngine    on
+#RewriteLog &quot;/var/log/apache/rewrite.log&quot;
+#RewriteLogLevel 0
+# short urls
+Alias / &quot;/websrv/twiki.ksomov.ru/bin/view/&quot;
+RewriteRule ^/+bin/+view/+(.*) /$1 [L,NE,R]
+RewriteRule ^/+bin/+view$ / [L,NE,R]
+# Block access to typical spam related attachments
+# Except the Foswiki directory which is read only and does have attached html files.
+SetEnvIf Request_URI &quot;/pub/.*\.[hH][tT][mM][lL]?$&quot; blockAccess
+SetEnvIf Request_URI &quot;/pub/System/.*\.[hH][tT][mM][lL]?$&quot; !blockAccess
+# This enables access to the documents in the Foswiki root directory
+&lt;Directory &quot;/websrv/twiki.ksomov.ru&quot;&gt;
+    &lt;RequireAll&gt;
+        Require all granted
+        Require not env blockAccess
+    &lt;/RequireAll&gt;
+&lt;/Directory&gt;
+# This specifies the options on the Foswiki scripts directory. The ExecCGI
+# and SetHandler tell apache that it contains scripts. &quot;Allow from all&quot;
+# lets any IP address access this URL.
+# Note:  If you use SELinux, you also have to &quot;Allow httpd cgi support&quot; in your SELinux policies
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/bin&quot;&gt;
+    AllowOverride None
+    &lt;RequireAll&gt;
+        Require all granted
+        Require not env blockAccess
+    &lt;/RequireAll&gt;
+    Options +ExecCGI  -FollowSymLinks
+    SetHandler cgi-script
+    # Password file for Foswiki users
+    AuthUserFile &quot;/websrv/twiki.ksomov.ru/data/.htpasswd&quot;
+    AuthName &#39;Enter your WikiName: (First name and last name, no space, no dots, capitalized, e.g. JohnSmith). Cancel to register if you do not have one.&#39;
+    AuthType Basic
+    # File to return on access control error (e.g. wrong password)
+    ErrorDocument 401 /System/UserRegistration
+&lt;/Directory&gt;
+# This sets the options on the pub directory, which contains attachments and
+# other files like CSS stylesheets and icons. AllowOverride None stops a
+# user installing a .htaccess file that overrides these options.
+# Note that files in pub are *not* protected by Foswiki Access Controls,
+# so if you want to control access to files attached to topics you need to
+# block access to the specific directories same way as the ApacheConfigGenerator
+# blocks access to the pub directory of the Trash web
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/pub&quot;&gt;
+    Options None
+    Options -FollowSymLinks
+    AllowOverride None
+    &lt;RequireAll&gt;
+        Require all granted
+        Require not env blockAccess
+    &lt;/RequireAll&gt;
+    ErrorDocument 404 /bin/viewfile
+   # If you have PHP installed as Apache module, one of the below directives will ensure
+   # that it is disabled.   The &quot;ifmodule&quot; statements should prevent this from causing
+   # errors if php is not installed.
+    &lt;ifmodule mod_php3.c&gt;
+        php3_engine off
+    &lt;/ifmodule&gt;
+    &lt;ifmodule mod_php4.c&gt;
+        php_admin_flag engine off
+    &lt;/ifmodule&gt;
+    &lt;ifmodule mod_php5.c&gt;
+        php_admin_flag engine off
+    &lt;/ifmodule&gt;
+   # This line will redefine the mime type for the most common types of scripts
+    AddType text/plain .shtml .php .php3 .phtml .phtm .pl .py .cgi
+   #
+   # add an Expires header that is sufficiently in the future that the browser does not even ask if its uptodate
+   # reducing the load on the server significantly
+   # IF you can, you should enable this - it _will_ improve your Foswiki experience, even if you set it to under one day.
+   # you may need to enable expires_module in your main apache config
+   #LoadModule expires_module libexec/httpd/mod_expires.so
+   #AddModule mod_expires.c
+   #&lt;ifmodule mod_expires.c&gt;
+   #  &lt;filesmatch &quot;\.(jpe?g|gif|png|css(\.gz)?|js(\.gz)?|ico)$&quot;&gt;
+   #       ExpiresActive on
+   #       ExpiresDefault &quot;access plus 11 days&quot;
+   #   &lt;/filesmatch&gt;
+   #&lt;/ifmodule&gt;
+   #
+   # Serve pre-compressed versions of .js and .css files, if they exist
+   # Some browsers do not handle this correctly, which is why it is disabled by default
+   # &lt;FilesMatch &quot;\.(js|css)$&quot;&gt;
+   #         RewriteEngine on
+   #         RewriteCond %{HTTP:Accept-encoding} gzip
+   #         RewriteCond %{REQUEST_FILENAME}.gz -f
+   #         RewriteRule ^(.*)$ %{REQUEST_URI}.gz [L,QSA]
+   # &lt;/FilesMatch&gt;
+   # &lt;FilesMatch &quot;\.(js|css)\?.*$&quot;&gt;
+   #         RewriteEngine on
+   #         RewriteCond %{HTTP:Accept-encoding} gzip
+   #         RewriteCond %{REQUEST_FILENAME}.gz -f
+   #         RewriteRule ^([^?]*)\?(.*)$ $1.gz?$2 [L]
+   # &lt;/FilesMatch&gt;
+   # &lt;FilesMatch &quot;\.js\.gz(\?.*)?$&quot;&gt;
+   #         AddEncoding x-gzip .gz
+   #         AddType application/x-javascript .gz
+   # &lt;/FilesMatch&gt;
+   # &lt;FilesMatch &quot;\.css\.gz(\?.*)?$&quot;&gt;
+   #         AddEncoding x-gzip .gz
+   #         AddType text/css .gz
+   # &lt;/FilesMatch&gt;
+&lt;/Directory&gt;
+# Spammers are known to attach their stuff and then move it to trash where it remains unnoticed.
+# We prevent viewing any attachments directly from pub
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/pub/Trash&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+# Security note: All other directories should be set so
+# that they are *not* visible as URLs, so we set them as =deny from all=.
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/data&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/templates&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/lib&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/locale&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/tools&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+&lt;Directory &quot;/websrv/twiki.ksomov.ru/working&quot;&gt;
+    Require all denied
+&lt;/Directory&gt;
+# We set an environment variable called blockAccess.
+#
+# Setting a BrowserMatchNoCase to ^$ is important. It prevents Foswiki from
+# including its own topics as URLs and also prevents other Foswikis from
+# doing the same. This is important to prevent the most obvious
+# Denial of Service attacks.
+#
+# You can expand this by adding more BrowserMatchNoCase statements to
+# block evil browser agents trying to crawl your Foswiki
+#
+# Example:
+# BrowserMatchNoCase ^SiteSucker blockAccess
+# BrowserMatchNoCase ^$ blockAccess
+BrowserMatchNoCase ^$ blockAccess
+&lt;/VirtualHost&gt;
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="sublime-session-file.html" class="btn btn-neutral float-left" title="Синхронизация файла сессий Sublime" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="buy-radiostation.html" class="btn btn-neutral float-right" title="Покупаем радиостанцию официально" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

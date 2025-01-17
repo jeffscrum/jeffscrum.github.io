@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="linux, mail, debug" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Debugging Email Server &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/linux/debug-email-server.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Настройка SOCKS5 прокси сервера" href="linux-3proxy.html" />
+    <link rel="prev" title="Install Oracle JRE on Debian" href="debian-install-jre.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible-get-facts.html">Сбор и вывод ansible_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="confluence-ubuntu-license.html">Установка Confluence + лицензия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-auto-install-preseed.html">Файлы автоматической установки linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-bonding.html">Debian Bonding (active-backup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-install-jre.html">Install Oracle JRE on Debian</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Debugging Email Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-3proxy.html">Настройка SOCKS5 прокси сервера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-aeza-debootstrap-install.html">Установка Linux при помощи debootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-awk.html">Обработка строк при помощи awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos8-yum-error.html">Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos-install-kernel.html">Установка свежего ядра в Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-docker-logs-clean.html">Чистим логи Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-lc-all-unset.html">LC_ALL = (unset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-megacli.html">Установка и работа с MegaCLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-mysql-operations.html">Шпаргалка по MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-nginx-geoip2-block.html">GeoIP2 Block NGINX Debian 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-speedtest-cli.html">Linux SpeedTest via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-strongswan-eap-mschapv2.html">StrongSwan with eap-mschapv2 enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-tar-multithread.html">TAR Multithread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-telegram-login-notify.html">Уведомление о логине в Telegram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-var-log-journal-clean.html">Чистим логи /var/log/journal/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-wireguard-installation.html">Установка Wireguard на Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_outline_vpn.html">Установка Outline VPN на Ubuntu 20.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu18-russian-apt-sources.html">Russian apt-sources in Ubuntu 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu-postfix-gmail-relay.html">Postfix Relay для Gmail в Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant-add-box-manual.html">Add a downloaded .box file to Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Debugging Email Server</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/linux/debug-email-server.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="debugging-email-server">
+<span id="debug-email-server"></span><span id="index-0"></span><h1>Debugging Email Server<a class="headerlink" href="#debugging-email-server" title="Link to this heading"></a></h1>
+<p>Нужно мне было перехватить одно письмо, которое отправлял скрипт. На скорую руку я нашел модуль для python, который слушает 25 порт, а само письмо записывает в txt файл</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>sudo python -m smtpd -n -c DebuggingServer 0.0.0.0:25
+</pre></div>
+</div>
+<p>После чего на клиенте был настроен SMTP сервер-заглушка. Таким образом было получено то что отправлял скрипт</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>---------- MESSAGE FOLLOWS ----------
+From: Sym..proc..gen..tor_@dell.com
+Subject: For Logistics Awareness - Upcoming 5876 Code Upgrade
+To: m***ry@dell.com, j***in@dell.com
+Date: Mon, 9 Nov 2020 10:55:02 +0300
+X-Priority: 3
+X-Library: Indy 9.00.10
+X-Peer: 192.168.0.21
+Customer:
+Serial Number: 2***4
+Service Request: 1****7
+Updrade Scheduled Date: 2020/11/17
+Upgrading to Code Level: 5876.309.196
+Note: This could be a duplicate email as EPG may have been run on more than one occasion while scheduling the upgrade.
+To determine the drive part numers configured in the System and if additional drives need to positioned in local depots.
+*   Go to CLM Reporting https://clm-reporting-prd.cfcp.isus.emc.com/clm-reporting/#/summary
+*   Search for the System Serial Number
+*   Select Disk Info from the drop down on the top left
+o  This provides a high level overview of the drives configured in the System
+*   If the TLA part number is required then the Disk Info Details can be exported to excel, the raw serial number can be copied and pasted into the Drive Nesting Site: https://pld-statuni02.lss.emc.com/   csdriveinfo/index.php or the MFG Genealogy Site: http://mfg/GPOBI/Applications/Genealogy/ to determine the TLA part number
+o  All the serials in the Drive SN column can be copied and pasted into the search at once.
+o  If using the MFG Genealogy Search scroll across to the right to get the TLA part number
+
+DELLEMC
+------------ END MESSAGE ------------
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="debian-install-jre.html" class="btn btn-neutral float-left" title="Install Oracle JRE on Debian" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-3proxy.html" class="btn btn-neutral float-right" title="Настройка SOCKS5 прокси сервера" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Установка Confluence + лицензия &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/linux/confluence-ubuntu-license.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Файлы автоматической установки linux" href="debian-auto-install-preseed.html" />
+    <link rel="prev" title="Сбор и вывод ansible_facts" href="ansible-get-facts.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible-get-facts.html">Сбор и вывод ansible_facts</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка Confluence + лицензия</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">Подготовка</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">Установим СУБД</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Установка Confluence</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Установка лицензии</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id8">Регистрация</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Что дальше</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Полезные ссылки</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="debian-auto-install-preseed.html">Файлы автоматической установки linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-bonding.html">Debian Bonding (active-backup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-install-jre.html">Install Oracle JRE on Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug-email-server.html">Debugging Email Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-3proxy.html">Настройка SOCKS5 прокси сервера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-aeza-debootstrap-install.html">Установка Linux при помощи debootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-awk.html">Обработка строк при помощи awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos8-yum-error.html">Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos-install-kernel.html">Установка свежего ядра в Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-docker-logs-clean.html">Чистим логи Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-lc-all-unset.html">LC_ALL = (unset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-megacli.html">Установка и работа с MegaCLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-mysql-operations.html">Шпаргалка по MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-nginx-geoip2-block.html">GeoIP2 Block NGINX Debian 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-speedtest-cli.html">Linux SpeedTest via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-strongswan-eap-mschapv2.html">StrongSwan with eap-mschapv2 enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-tar-multithread.html">TAR Multithread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-telegram-login-notify.html">Уведомление о логине в Telegram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-var-log-journal-clean.html">Чистим логи /var/log/journal/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-wireguard-installation.html">Установка Wireguard на Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_outline_vpn.html">Установка Outline VPN на Ubuntu 20.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu18-russian-apt-sources.html">Russian apt-sources in Ubuntu 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu-postfix-gmail-relay.html">Postfix Relay для Gmail в Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant-add-box-manual.html">Add a downloaded .box file to Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Установка Confluence + лицензия</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/linux/confluence-ubuntu-license.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="confluence">
+<h1>Установка Confluence + лицензия<a class="headerlink" href="#confluence" title="Link to this heading"></a></h1>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Информация ниже, относительно настройки лицензии только для ознакомления и личного использования! Для коммерческого использования обязательно купите лицензию! Для изучения включите демоверсию. Далее информация только для ознакомления! Автор не несет ответственности за последствия!</p>
+</div>
+<section id="id1">
+<h2>Подготовка<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Установим все последние обновления Ubuntu.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt<span class="w"> </span>update
+apt<span class="w"> </span>upgrade
+</pre></div>
+</div>
+<p>После установим нужный часовой пояс сервера.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>timedatectl<span class="w"> </span>set-timezone<span class="w"> </span>Europe/Moscow
+</pre></div>
+</div>
+<p>Не забываем установить Java:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>install<span class="w"> </span>default-jdk
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>Установим СУБД<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Установка PostgreSQL для работы базы данных Confluence. На момент написания инструкции это 14 версия СУБД.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Создаем файл конфигурации репозитория</span>
+sudo<span class="w"> </span>sh<span class="w"> </span>-c<span class="w"> </span><span class="s1">&#39;echo &quot;deb http://apt.postgresql.org/pub/repos/apt $(lsb_release -cs)-pgdg main&quot; &gt; /etc/apt/sources.list.d/pgdg.list&#39;</span>
+
+<span class="c1"># Импортируем ключ подписи репозитория</span>
+wget<span class="w"> </span>--quiet<span class="w"> </span>-O<span class="w"> </span>-<span class="w"> </span>https://www.postgresql.org/media/keys/ACCC4CF8.asc<span class="w"> </span><span class="p">|</span><span class="w"> </span>sudo<span class="w"> </span>apt-key<span class="w"> </span>add<span class="w"> </span>-
+
+<span class="c1"># Обновляем список доступных пакетов</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>update
+
+<span class="c1"># Устанавливаем последнюю версию PostgreSQL</span>
+sudo<span class="w"> </span>apt-get<span class="w"> </span>-y<span class="w"> </span>install<span class="w"> </span>postgresql
+</pre></div>
+</div>
+<p>После чего нужно выполнить начальные настройки. В самом простом виде
+нужно добавить возможность подключения со всех адресов. В файле
+<strong>postgresql.conf</strong>, в параметр <strong>listen_addresses</strong> нужно поставить значение <cite>*</cite>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">listen_addresses</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;*&#39;</span>
+</pre></div>
+</div>
+<p>Затем, в файле <strong>pg_hba.conf</strong> добавим запись, чтобы пользователи могли подключаться с любого адреса с помощью логина и пароля.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># IPv4 local connections:</span>
+host<span class="w">  </span>all<span class="w">   </span>all<span class="w">   </span><span class="m">0</span>.0.0.0/0<span class="w">   </span>password
+</pre></div>
+</div>
+<p>Перезапускаем PostgreSQL для принятия изменений.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>restart<span class="w"> </span>postgresql
+</pre></div>
+</div>
+<p>Остается добавить пользователя в PostgreSQL для приложения или других целей. Для простоты добавим привилигированного пользователя
+<strong>confluence</strong>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>su<span class="w"> </span>postgres
+
+psql
+</pre></div>
+</div>
+<p>Далее запускаем команду SQL.</p>
+<div class="highlight-sql notranslate"><div class="highlight"><pre><span></span><span class="k">CREATE</span><span class="w"> </span><span class="k">ROLE</span><span class="w"> </span><span class="n">confluence</span><span class="w"> </span><span class="n">LOGIN</span><span class="w"> </span><span class="n">SUPERUSER</span><span class="w"> </span><span class="n">PASSWORD</span><span class="w"> </span><span class="s1">&#39;passwordstring&#39;</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>На рабочем окружении обязательно меняем настройки PostgreSQL для оптимальной работы СУБД. (<a class="reference external" href="https://pgtune.leopard.in.ua/#/">Вот этот инструмент может помочь</a>).</p>
+<p>Теперь можно приступить к установке Confluence.</p>
+</section>
+<section id="id4">
+<h2>Установка Confluence<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>Скачиваем установщик Confluence <a class="reference external" href="https://www.atlassian.com/ru/software/confluence/download-archives">с официального сайта</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://www.atlassian.com/software/confluence/downloads/binary/atlassian-confluence-7.17.1-x64.bin
+</pre></div>
+</div>
+<p>Делаем установщик доступным для запуска.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chmod<span class="w"> </span>a+x<span class="w"> </span>atlassian-confluence-7.17.1-x64.bin
+</pre></div>
+</div>
+<p>И запускаем!</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./atlassian-confluence-7.17.1-x64.bin
+
+<span class="c1"># По итогу каталог приложения будет: /opt/atlassian/confluence</span>
+<span class="c1"># Каталог с данными: /var/atlassian/application-data/confluence</span>
+</pre></div>
+</div>
+<p>По окончанию установки можно перейти по адресу <strong>http://&lt;адрес-сервера&gt;:8090</strong> и проверить доступность приложения. Выполнять шаги мастера установки сейчас не требуется, нужно подготовить лицензию.</p>
+<p>Интерактивно отвечаем на все вопросы. В основном, для большинства случаев, можно оставить параметры по умолчанию.</p>
+</section>
+<section id="id6">
+<h2>Установка лицензии<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Информация ниже, относительно настройки лицензии только для ознакомления и личного использования! Для коммерческого использования обязательно купите лицензию! Для изучения включите демоверсию. Далее информация только для ознакомления! Автор не несет ответственности за последствия!</p>
+</div>
+<p>Для изучения полнофункциональных возможностей Confluence можно воспользоваться <a class="reference external" href="https://github.com/ipwnosx/Atlassian-Agent">atlassian-agent</a> и через него активировать лицензию на Confluence. Для этого идем по ссылке с репозитория <a class="reference external" href="https://gitee.com/pengzhile/atlassian-agent/releases">сюда</a>.</p>
+<p>Скачиваем <a class="reference external" href="https://gitee.com/pengzhile/atlassian-agent/attach_files/832832/download/atlassian-agent-v1.3.1.tar.gz">atlassian-agent-v1.3.1.tar.gz</a>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>wget<span class="w"> </span>https://gitee.com/pengzhile/atlassian-agent/attach_files/832832/download/atlassian-agent-v1.3.1.tar.gz
+</pre></div>
+</div>
+<p>Для хранения агента создадим каталог и скопируем туда файл запуска приложения, предварительно распаковав архив.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>/opt/atlassian/atlassian-agent
+tar<span class="w"> </span>-xf<span class="w"> </span>atlassian-agent-v1.3.1.tar.gz
+cp<span class="w"> </span>atlassian-agent-v1.3.1/atlassian-agent.jar<span class="w"> </span>/opt/atlassian/atlassian-agent/atlassian-agent.jar
+</pre></div>
+</div>
+<p>Согласно инструкции из репозитория, добавим установки переменной окружения <strong>JAVA_OPTS</strong> в файл
+<strong>/opt/atlassian/confluence/bin/setenv.sh</strong>. В самом начале файла нужно добавить такую строку:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">JAVA_OPTS</span><span class="o">=</span><span class="s2">&quot;-javaagent:/opt/atlassian/atlassian-agent/atlassian-agent.jar </span><span class="si">${</span><span class="nv">JAVA_OPTS</span><span class="si">}</span><span class="s2">&quot;</span>
+</pre></div>
+</div>
+<p>А также, добавим права пользователю Confluence на каталоги приложения (необязательно, но лучше удостовериться):</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>chown<span class="w"> </span>-R<span class="w"> </span>confluence:confluence<span class="w"> </span>/opt/atlassian/atlassian-agent
+chown<span class="w"> </span>-R<span class="w"> </span>confluence:confluence<span class="w"> </span>/opt/atlassian/confluence
+chown<span class="w"> </span>-R<span class="w"> </span>confluence:confluence<span class="w"> </span>/var/atlassian/application-data
+</pre></div>
+</div>
+<p>Остается только перезапустить службу и можно приступить к регистрации.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>systemctl<span class="w"> </span>restart<span class="w"> </span>confluence
+</pre></div>
+</div>
+<p>Рекомендую перед этим перезапустить хост и проверить состояние службы.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>reboot
+
+<span class="c1"># Ждем перезапуска...</span>
+
+systemctl<span class="w"> </span>status<span class="w"> </span>confluence
+</pre></div>
+</div>
+<p>Если ошибок нет, то идем дальше.</p>
+</section>
+<section id="id8">
+<h2>Регистрация<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>Итак, заходим на страницу Confluence, выбираем установку продукта (Production Installation). На первой странице нам представят код вида
+<strong>XXXX-XXXX-XXXX-XXXX</strong>. Сохраните его для следующих шагов.</p>
+<p>В консоли выполняем команду.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>java<span class="w"> </span>-jar<span class="w"> </span>/opt/atlassian/atlassian-agent/atlassian-agent.jar<span class="w"> </span>-mail<span class="w"> </span><span class="s1">&#39;my@email.com&#39;</span><span class="w"> </span>-n<span class="w"> </span>userName<span class="w"> </span>-o<span class="w"> </span>CompanyName<span class="w"> </span>-p<span class="w"> </span>conf<span class="w"> </span>-s<span class="w"> </span>XXXX-XXXX-XXXX-XXXX
+</pre></div>
+</div>
+<p>В ответ Вы получите лицензионный ключ, который нужно ввести на веб-странице.</p>
+<p>На следующем шаге выбираем “My own database”, чтобы настроить параметры
+подключения к базе данных самостоятельно. Тут нужно ввести имя сервера
+БД, тип (в нашем случае PostgreSQL), порт (5432), имя базы
+(предварительно нужно создать пустую базу и дать доступ для
+пользователя), пользователя и пароль. Перед переходом на следующий этап,
+мастер создаст необходимые объекты базы данных.</p>
+<p>Следующий шаг - это выбор с чего начать. Если установка происходит с
+нуля, то рекомендую создать пример сайта. Потом его можно удалить и
+вообще сделать с контеному все что необходимо. Также будет предлоежно
+подключиться к Jira в части настройки доступа, но в простых случаях
+можно остаться на системе управления пользователей самого Confluence.</p>
+<p>Если выбрали второе, то настраивайте учетную запись администратора для
+продолжения. После чего создаете первое пространство и начинаете наводить порядок :)</p>
+</section>
+<section id="id9">
+<h2>Что дальше<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>Далее по обстоятельствам настраиваете пространства, восстанавливайте
+данные из бэкапов, настраиваете доступы и так далее.</p>
+</section>
+<section id="id10">
+<h2>Полезные ссылки<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://forum.ru-board.com/topic.cgi?forum=35&amp;topic=19000&amp;start=1880">Atlassian Stack - Jira Confluence Bitbucket и остальное</a></p></li>
+<li><p><a class="reference external" href="https://www.dmosk.ru/miniinstruktions.php?mini=jira-ubuntu">Установка и настройка Jira на Ubuntu</a></p></li>
+<li><p><a class="reference external" href="https://programmer.group/docker-installs-jira-and-confluence-cracked-version.html">Docker installs JIRA and Confluence (cracked version)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/hgqapp/atlassian-agent">atlassian-agent</a></p></li>
+<li><p><a class="reference external" href="https://github.com/ipwnosx/Atlassian-Agent">atlassian-agent by ipwnosx</a></p></li>
+<li><p><a class="reference external" href="https://confluence.atlassian.com/confkb/confluence-installation-fails-with-set-up-step-error-java-sql-sqlsyntaxerrorexception-user-lacks-privilege-or-object-not-found-bandana-390497283.html">Confluence installation fails with set up step error</a></p></li>
+<li><p><a class="reference external" href="https://confluence.atlassian.com/doc/installing-confluence-on-linux-143556824.html">Installing Confluence on Linux</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="ansible-get-facts.html" class="btn btn-neutral float-left" title="Сбор и вывод ansible_facts" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="debian-auto-install-preseed.html" class="btn btn-neutral float-right" title="Файлы автоматической установки linux" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

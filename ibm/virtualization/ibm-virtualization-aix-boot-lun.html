@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ibm, aix, boot, emc, vmax" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Как узнать с какого из VMAX отдан лун &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/ibm/virtualization/ibm-virtualization-aix-boot-lun.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How To Download AIX" href="ibm-virtualization-aix-download.html" />
+    <link rel="prev" title="Storwize V7000 HDD HealthCheck" href="../storages/ibm-storages-hdd-healthcheck.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">IBM</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../index.html#bladecenter">Bladecenter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#storages">Storages</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#virtualization">Virtualization</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Как узнать с какого из VMAX отдан лун</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-download.html">How To Download AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-install-apar.html">Installing a Interim Fix (APAR)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-install-sshd.html">Installing OpenSSH on an AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-no-login-prompt.html">No Login Prompt After AIX Install (Serial)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-portwwn-nodewwn.html">port-wwn &amp; node-wwn</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-remove-missing-path.html">How To Remove Missing Paths In AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-aix-sync-lvm.html">How To Sync LVM-raid In AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-assign-pvid.html">Assign PVID to a new disk</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-boot-cdrom-wosms.html">Загрузка с CD-ROM без SMS</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-check-and-clear-attention-led.html">Check And Clear Attention LED</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-define-boot-disk.html">How to define boot disk in AIX</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-hmc-upgrade-network.html">HMC Update over network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-p750-fw-update.html">Обновление микрокода сервера IBM p750</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-remove-failed-paths-mpio.html">How To Remove The Failed Paths In MPIO</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-virtualization-rmc-connection-issue.html">Fixing the No RMC Connection Error</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hmc-change-vlan-dynamically.html">Сhange VLAN on HMC dynamically (SEA)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-hmc-collect-xxzip.html">Как собрать xx.zip в HMC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="ibm-aix-usefull-cmds.html">Полезные команды для AIX</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">IBM</a></li>
+      <li class="breadcrumb-item active">Как узнать с какого из VMAX отдан лун</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/ibm/virtualization/ibm-virtualization-aix-boot-lun.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="vmax">
+<span id="ibm-virtualization-aix-boot-lun"></span><span id="index-0"></span><h1>Как узнать с какого из VMAX отдан лун<a class="headerlink" href="#vmax" title="Link to this heading"></a></h1>
+<p>Если нужно определить с которого из массивов EMC Symmetrix отдан лун (в случае если массивов несколько, а посмотреть с их стороны нельзя), то определить это можно из AIX.</p>
+<p>Для этого необходимо на хосте, где установлен Symcli посмотреть список доступных массивов “symcfg list”. В этом выводе нас будут интересовать 4 последние цифры серийного номера массива – это SymmID.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@pServer-lp01:~#<span class="w"> </span>symcfg<span class="w"> </span>list
+<span class="w">                                </span>S<span class="w"> </span>Y<span class="w"> </span>M<span class="w"> </span>M<span class="w"> </span>E<span class="w"> </span>T<span class="w"> </span>R<span class="w"> </span>I<span class="w"> </span>X
+<span class="w">                                       </span>Mcode<span class="w">    </span>Cache<span class="w">      </span>Num<span class="w"> </span>Phys<span class="w">  </span>Num<span class="w"> </span>Symm
+<span class="w">    </span>SymmID<span class="w">       </span>Attachment<span class="w">  </span>Model<span class="w">     </span>Version<span class="w">  </span>Size<span class="w"> </span><span class="o">(</span>MB<span class="o">)</span><span class="w">  </span>Devices<span class="w">   </span>Devices
+<span class="w">    </span><span class="m">000292603121</span><span class="w"> </span>Local<span class="w">       </span>VMAX10K<span class="w">   </span><span class="m">5876</span><span class="w">       </span><span class="m">57344</span><span class="w">        </span><span class="m">34</span><span class="w">      </span><span class="m">5748</span>
+<span class="w">    </span><span class="m">000292604212</span><span class="w"> </span>Local<span class="w">       </span>VMAX20K<span class="w">   </span><span class="m">5876</span><span class="w">       </span><span class="m">86016</span><span class="w">        </span><span class="m">33</span><span class="w">      </span><span class="m">3889</span>
+<span class="w">    </span><span class="m">000292601201</span><span class="w"> </span>Local<span class="w">       </span>VMAX40K<span class="w">   </span><span class="m">5876</span><span class="w">      </span><span class="m">172032</span><span class="w">        </span><span class="m">22</span><span class="w">      </span><span class="m">2573</span>
+</pre></div>
+</div>
+<p>Теперь, на AIX’е нам нужно посмотреть вывод команды “lscfg -vsp -l hdisk79”. Найдя нужный нам hdisk смотрим его “EC Level” и соответствующие ей цифры. Последние 4 цифры тоже будут указывать на SymmID.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>root@pServer-lp01:~#<span class="w"> </span>lscfg<span class="w"> </span>-vsp<span class="w"> </span>-l<span class="w"> </span>hdisk79
+<span class="w"> </span>hdisk79<span class="w">          </span>U9119.FHB.00C0CC0-V10-C10-T1-W5000000001112222-L17000000000000
+<span class="w">       </span>EMC<span class="w"> </span>Symmetrix<span class="w"> </span>FCP<span class="w"> </span>MPIO<span class="w"> </span>VRAID
+<span class="w">       </span>Manufacturer................EMC
+<span class="w">       </span>Machine<span class="w"> </span>Type<span class="w"> </span>and<span class="w"> </span>Model......SYMMETRIX
+<span class="w">       </span>ROS<span class="w"> </span>Level<span class="w"> </span>and<span class="w"> </span>ID............5876
+<span class="w">       </span>Serial<span class="w"> </span>Number...............71V0D000
+<span class="w">       </span>Part<span class="w"> </span>Number.................000000000000400D49000292
+<span class="w">       </span>EC<span class="w"> </span>Level....................604212
+<span class="w">       </span>LIC<span class="w"> </span>Node<span class="w"> </span>VPD................0V0D
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z0<span class="o">)</span>........10
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z1<span class="o">)</span>........40
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z2<span class="o">)</span>........000000300D9C09000260019C
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z3<span class="o">)</span>........12000000
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z4<span class="o">)</span>........54130000
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z5<span class="o">)</span>........4F80
+<span class="w">       </span>Device<span class="w"> </span>Specific.<span class="o">(</span>Z6<span class="o">)</span>........45
+</pre></div>
+</div>
+<p>Отсюда видно, что диск hdisk79 был отдан с массива VMAX20K с серийным номером CK292604212</p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../storages/ibm-storages-hdd-healthcheck.html" class="btn btn-neutral float-left" title="Storwize V7000 HDD HealthCheck" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ibm-virtualization-aix-download.html" class="btn btn-neutral float-right" title="How To Download AIX" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

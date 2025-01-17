@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="linux, kernel, centos, rhel" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Установка свежего ядра в Centos &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/linux/linux-centos-install-kernel.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Чистим логи Docker" href="linux-docker-logs-clean.html" />
+    <link rel="prev" title="Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’" href="linux-centos8-yum-error.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible-get-facts.html">Сбор и вывод ansible_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="confluence-ubuntu-license.html">Установка Confluence + лицензия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-auto-install-preseed.html">Файлы автоматической установки linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-bonding.html">Debian Bonding (active-backup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-install-jre.html">Install Oracle JRE on Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug-email-server.html">Debugging Email Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-3proxy.html">Настройка SOCKS5 прокси сервера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-aeza-debootstrap-install.html">Установка Linux при помощи debootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-awk.html">Обработка строк при помощи awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos8-yum-error.html">Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка свежего ядра в Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-docker-logs-clean.html">Чистим логи Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-lc-all-unset.html">LC_ALL = (unset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-megacli.html">Установка и работа с MegaCLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-mysql-operations.html">Шпаргалка по MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-nginx-geoip2-block.html">GeoIP2 Block NGINX Debian 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-speedtest-cli.html">Linux SpeedTest via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-strongswan-eap-mschapv2.html">StrongSwan with eap-mschapv2 enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-tar-multithread.html">TAR Multithread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-telegram-login-notify.html">Уведомление о логине в Telegram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-var-log-journal-clean.html">Чистим логи /var/log/journal/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-wireguard-installation.html">Установка Wireguard на Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu_outline_vpn.html">Установка Outline VPN на Ubuntu 20.04</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu18-russian-apt-sources.html">Russian apt-sources in Ubuntu 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu-postfix-gmail-relay.html">Postfix Relay для Gmail в Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant-add-box-manual.html">Add a downloaded .box file to Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Установка свежего ядра в Centos</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/linux/linux-centos-install-kernel.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="centos">
+<span id="linux-centos-install-kernel"></span><span id="index-0"></span><h1>Установка свежего ядра в Centos<a class="headerlink" href="#centos" title="Link to this heading"></a></h1>
+<p>Для устновки свежего ядра 5.4.0 в Centos нужно подключить репозиторий <a class="reference external" href="http://elrepo.org/tiki/HomePage">ELRepo</a>. После чего можно будет доступно новое ядро.</p>
+<p>Есть 2 варианта:</p>
+<ul class="simple">
+<li><p><strong>kernel-ml</strong> - mainline kernels</p></li>
+<li><p><strong>kernel-lt</strong> - long term kernels</p></li>
+</ul>
+<p>Я буду ставить ядро <cite>lt</cite>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the public key</span>
+rpm<span class="w"> </span>--import<span class="w"> </span>https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
+
+<span class="c1"># To install ELRepo for RHEL-9</span>
+yum<span class="w"> </span>install<span class="w"> </span>https://www.elrepo.org/elrepo-release-9.el9.elrepo.noarch.rpm
+
+<span class="c1"># To install ELRepo for RHEL-8</span>
+yum<span class="w"> </span>install<span class="w"> </span>https://www.elrepo.org/elrepo-release-8.el8.elrepo.noarch.rpm
+
+<span class="c1"># To install ELRepo for RHEL-7</span>
+yum<span class="w"> </span>install<span class="w"> </span>https://www.elrepo.org/elrepo-release-7.el7.elrepo.noarch.rpm
+
+<span class="c1"># Update Metadata</span>
+yum<span class="w"> </span>update
+
+<span class="c1"># List and install available kernels</span>
+yum<span class="w"> </span>--enablerepo<span class="o">=</span><span class="s2">&quot;elrepo-kernel&quot;</span><span class="w"> </span>list<span class="w"> </span>available<span class="w"> </span><span class="p">|</span><span class="w"> </span>grep<span class="w"> </span>kernel
+yum<span class="w"> </span>--enablerepo<span class="o">=</span>”elrepo-kernel”<span class="w"> </span>install<span class="w"> </span>kernel-lt.x86_64
+
+<span class="c1"># Reboot</span>
+shutdown<span class="w"> </span>-r<span class="w"> </span>now
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-centos8-yum-error.html" class="btn btn-neutral float-left" title="Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="linux-docker-logs-clean.html" class="btn btn-neutral float-right" title="Чистим логи Docker" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

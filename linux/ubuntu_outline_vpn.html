@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Установка Outline VPN на Ubuntu 20.04 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/linux/ubuntu_outline_vpn.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Russian apt-sources in Ubuntu 18" href="ubuntu18-russian-apt-sources.html" />
+    <link rel="prev" title="Установка Wireguard на Debian" href="linux-wireguard-installation.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Linux</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="ansible-get-facts.html">Сбор и вывод ansible_facts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="confluence-ubuntu-license.html">Установка Confluence + лицензия</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-auto-install-preseed.html">Файлы автоматической установки linux</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-bonding.html">Debian Bonding (active-backup)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debian-install-jre.html">Install Oracle JRE on Debian</a></li>
+<li class="toctree-l2"><a class="reference internal" href="debug-email-server.html">Debugging Email Server</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-3proxy.html">Настройка SOCKS5 прокси сервера</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-aeza-debootstrap-install.html">Установка Linux при помощи debootstrap</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-awk.html">Обработка строк при помощи awk</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos8-yum-error.html">Ошибка CentOS 8: Failed to download metadata for repo ‘AppStream’</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-centos-install-kernel.html">Установка свежего ядра в Centos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-docker-logs-clean.html">Чистим логи Docker</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-lc-all-unset.html">LC_ALL = (unset)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-megacli.html">Установка и работа с MegaCLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-mysql-operations.html">Шпаргалка по MySQL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-nginx-geoip2-block.html">GeoIP2 Block NGINX Debian 11</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-speedtest-cli.html">Linux SpeedTest via CLI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-strongswan-eap-mschapv2.html">StrongSwan with eap-mschapv2 enabled</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-tar-multithread.html">TAR Multithread</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-telegram-login-notify.html">Уведомление о логине в Telegram</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-var-log-journal-clean.html">Чистим логи /var/log/journal/</a></li>
+<li class="toctree-l2"><a class="reference internal" href="linux-wireguard-installation.html">Установка Wireguard на Debian</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка Outline VPN на Ubuntu 20.04</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id3">Прежде чем начать</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">Начальная настройка сервера</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#outline-server">Установка Outline Server</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">Клиент для управления сервером</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">Добавляем ключ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id7">Клиент для подключения</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id9">Послесловие</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id10">Полезные ссылки</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu18-russian-apt-sources.html">Russian apt-sources in Ubuntu 18</a></li>
+<li class="toctree-l2"><a class="reference internal" href="ubuntu-postfix-gmail-relay.html">Postfix Relay для Gmail в Ubuntu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="vagrant-add-box-manual.html">Add a downloaded .box file to Vagrant</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Linux</a></li>
+      <li class="breadcrumb-item active">Установка Outline VPN на Ubuntu 20.04</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/linux/ubuntu_outline_vpn.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="outline-vpn-ubuntu-20-04">
+<h1>Установка Outline VPN на Ubuntu 20.04<a class="headerlink" href="#outline-vpn-ubuntu-20-04" title="Link to this heading"></a></h1>
+<p>Outline VPN - это бесплатный инструмент с открытым исходным кодом,
+позволяющий развернуть собственную VPN на Вашем собственном сервере или
+на машине облачного провайдера. Подробную информацию Вы можете узнать
+<a class="reference external" href="https://getoutline.org/ru/">здесь</a> и <a class="reference external" href="https://en.wikipedia.org/wiki/Outline_VPN">здесь</a>.</p>
+<p>В своем составе имеет как графические инструменты, так и средства работы
+через командную строку. Позволяет использовать VPN как на настольных
+компьютерах, так и на мобильных устройствах.</p>
+<section id="id3">
+<h2>Прежде чем начать<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>Вам нужен сервер. Да, его нужно арендовать, учитывая его местоположение.
+Например, если Вам нужно получать доступ к ресурсам, которые недоступны
+в текущем местоположении, но доступны, например, в Канаде, то смело
+арендуйте виртуальную машину в AWS, Digital Ocean или любом другом
+месте.</p>
+<p>Для простых задач, например открытие сайтов, обмена текстовыми
+сообщениями в мессенджерах и т.д., подойдет хост с минимальными
+ресурсами:</p>
+<ul class="simple">
+<li><p>1 ядро CPU.</p></li>
+<li><p>1 ГБ RAM (можно и меньше).</p></li>
+<li><p>10 GB HDD для файлов ОС в основном.</p></li>
+</ul>
+<p>Стоимость аренды такого сервера от $3 до $5 в месяц, плюс-минус. По
+необходимости ресурсов можно добавлять поболее. Операционная система -
+Ubuntu 20.04, т.к. инструкция именно для нее :)</p>
+<p>Как арендовать виртуальную машину тут рассматривать не будем, все
+зависит от провайдера.</p>
+</section>
+<section id="id4">
+<h2>Начальная настройка сервера<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>Итак, виртуальная машина арендована, доступ к ней по SSH имеется,
+Ubuntu установлена. Далее устанавливаем последние обновления.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt<span class="w"> </span>update
+sudo<span class="w"> </span>apt<span class="w"> </span>upgrade
+</pre></div>
+</div>
+<p>Сделайте перезагрузку машины после этого, если есть необходимость после
+установки обновлений.</p>
+<p>Сразу настроим брэндмауэр, чтобы защитить машину от несанкционированного
+доступа.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">443</span>/tcp
+sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">8080</span>/tcp
+</pre></div>
+</div>
+<p>Открываем доступ через SSH.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span><span class="m">22</span>/tcp
+</pre></div>
+</div>
+<p>Если у Вас статический IP, то для безопасности доступ по SSH можно
+разрешить только для него.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span>allow<span class="w"> </span>from<span class="w"> </span>&lt;ВашПостоянныйIP&gt;<span class="w"> </span>to<span class="w"> </span>any<span class="w"> </span>port<span class="w"> </span><span class="m">22</span>
+</pre></div>
+</div>
+<p>И включаем брэндмауэр.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>ufw<span class="w"> </span><span class="nb">enable</span>
+</pre></div>
+</div>
+<p>Отлично! Машина защищена. Идем дальше.</p>
+</section>
+<section id="outline-server">
+<h2>Установка Outline Server<a class="headerlink" href="#outline-server" title="Link to this heading"></a></h2>
+<p>Для установки воспользуемся готовыми скриптами из проекта
+<a class="reference external" href="https://github.com/Jigsaw-Code/outline-server">outline-server</a>
+компании Jigsaw.</p>
+<p>Скрипт находится по адресу:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>https://github.com/Jigsaw-Code/outline-server/blob/master/src/server_manager/install_scripts/install_server.sh
+</pre></div>
+</div>
+<p>Для установки достаточно выполнить следующую команду.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>wget<span class="w"> </span>-qO-<span class="w"> </span>https://raw.githubusercontent.com/Jigsaw-Code/outline-server/master/src/server_manager/install_scripts/install_server.sh<span class="w"> </span><span class="p">|</span><span class="w"> </span>bash
+</pre></div>
+</div>
+<p>Будет установлен Docker и службы самого Outline, а также все
+зависимости. При необходимости Вы можете установить Docker
+самостоятельно перед запуском скрипта.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>curl<span class="w"> </span>https://get.docker.com<span class="w"> </span><span class="p">|</span><span class="w"> </span>sh
+</pre></div>
+</div>
+<p>Когда скрипт закончит работу, то выведет примерно такое содержимое.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">{</span>
+<span class="w">  </span><span class="s2">&quot;apiUrl&quot;</span>:<span class="w"> </span><span class="s2">&quot;https://0.0.0.0:0000/XXXXXXXXXXXX&quot;</span>,
+<span class="w">  </span><span class="s2">&quot;certSha256&quot;</span>:<span class="w"> </span><span class="s2">&quot;XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX&quot;</span>
+<span class="o">}</span>
+</pre></div>
+</div>
+<p>Сохраните это себе на будущее. По факту сервер Outline VPN уже
+установлен и нам лишь нужно его настроить для своих нужд.</p>
+</section>
+<section id="id5">
+<h2>Клиент для управления сервером<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>Управление серверном VPN, в т.ч. раздача доступов, осуществляется с
+помощью <a class="reference external" href="https://getoutline.org/ru/get-started/#step-1">Outline Manager</a>,
+доступной для Windows, Max и Linux.</p>
+<p>При запуске нужно добавить сервер и выбрать “Настроить Outline где
+угодно”. Появится инструкция по установке с помощью скрипта, который мы
+ранее запускали. А после поле для ввода ключа и адреса, который Вы до
+этого сохранили.</p>
+<p>После этого у Вас появится доступ к управлению сервером.</p>
+</section>
+<section id="id6">
+<h2>Добавляем ключ<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>В Outline Manager добавляем новый ключ в управлении сервером. Программа
+покажет <a class="reference external" href="https://github.com/Jigsaw-Code/outline-client/blob/master/docs/invitation-instructions.md">ссылку на
+инструкцию</a>
+и сам ключ в виде строки:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ss://XXXXXXXXXXXX@9.9.9.9:0/?outline<span class="o">=</span><span class="m">1</span>
+</pre></div>
+</div>
+<p>Скопируйте этот ключ, он понадобится при запуске клиента Outline.</p>
+</section>
+<section id="id7">
+<h2>Клиент для подключения<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>И последний шаг - установка <a class="reference external" href="https://getoutline.org/ru/get-started/#step-3">клиента для
+подключения</a>.
+Есть приложения для Android, Windows, Chrome, iOS, MacOS, Linux.</p>
+<p>При первом запуске нужно нажать “Добавить сервер” и вставить полученный выше ключ.</p>
+<p>Готово!</p>
+</section>
+<section id="id9">
+<h2>Послесловие<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>Теперь Вы можете использовать Outline VPN. Надеюсь, что Вы будете его
+использовать без злого умысла.</p>
+</section>
+<section id="id10">
+<h2>Полезные ссылки<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://getoutline.org/ru/how-it-works/">Официальный сайт</a></p></li>
+<li><p><a class="reference external" href="https://github.com/outline/outline">Официальный репозиторий на GitHub</a></p></li>
+<li><p><a class="reference external" href="https://app.getoutline.com/share/770a97da-13e5-401e-9f8a-37949c19f97e/doc/hosting-outline-nipGaCRBDu">Официальная документация</a></p></li>
+<li><p><a class="reference external" href="https://habr.com/ru/post/358828/">Outline: Делаем свой личный VPN от Google за 5$ в месяц (и за 1€ для продвинутых)</a></p></li>
+<li><p><a class="reference external" href="https://gist.github.com/okeehou/275bb83601be346921622e05f13cba70">How to setup an Outline VPN Server on Ubuntu 16.04</a></p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="linux-wireguard-installation.html" class="btn btn-neutral float-left" title="Установка Wireguard на Debian" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="ubuntu18-russian-apt-sources.html" class="btn btn-neutral float-right" title="Russian apt-sources in Ubuntu 18" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

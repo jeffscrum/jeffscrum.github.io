@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="brocade, switch, type, san" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>How to determine the model by SwitchType &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/brocade/determine-model-switchtype.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Brocade 48k Port Layout" href="silkworm-48k-portlayout.html" />
+    <link rel="prev" title="Сброс trial-периода для Brocade Network Advisor (BNA)" href="bna-trial-reset.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Brocade</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="bna-trial-reset.html">Сброс trial-периода для Brocade Network Advisor (BNA)</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">How to determine the model by SwitchType</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#determining-the-brocade-switch-type-based-on-the-output-of-the-switchshow-command">Determining the Brocade switch type based on the output of the <code class="docutils literal notranslate"><span class="pre">switchshow</span></code> command</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#determining-the-brocade-switch-type-using-the-serial-number">Determining the Brocade switch type using the serial number</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="silkworm-48k-portlayout.html">Brocade 48k Port Layout</a></li>
+<li class="toctree-l2"><a class="reference internal" href="brocade-fw-update.html">Brocade FW Update</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Brocade</a></li>
+      <li class="breadcrumb-item active">How to determine the model by SwitchType</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/brocade/determine-model-switchtype.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="how-to-determine-the-model-by-switchtype">
+<span id="determine-model-switchtype"></span><span id="index-0"></span><h1>How to determine the model by SwitchType<a class="headerlink" href="#how-to-determine-the-model-by-switchtype" title="Link to this heading"></a></h1>
+<section id="determining-the-brocade-switch-type-based-on-the-output-of-the-switchshow-command">
+<h2>Determining the Brocade switch type based on the output of the <code class="docutils literal notranslate"><span class="pre">switchshow</span></code> command<a class="headerlink" href="#determining-the-brocade-switch-type-based-on-the-output-of-the-switchshow-command" title="Link to this heading"></a></h2>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>&gt; switchshow:
+
+switchName:        fdc371
+switchType:        71.2      &lt;------ Look here
+switchState:       Online
+switchMode:        Native
+switchRole:        Subordinate
+switchDomain:      71
+switchId:          fffc47
+switchWwn:         10:00:00:05:1e:02:10:c6
+zoning:            OFF
+switchBeacon:      OFF
+</pre></div>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sikworm Model Number (Switch Type &lt;SWBD number&gt;)</p></th>
+<th class="head"><p>Switch Type</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>1000</p></td>
+<td><p>1</p></td>
+</tr>
+<tr class="row-odd"><td><p>2800</p></td>
+<td><p>2</p></td>
+</tr>
+<tr class="row-even"><td><p>2400</p></td>
+<td><p>3</p></td>
+</tr>
+<tr class="row-odd"><td><p>20x0</p></td>
+<td><p>4</p></td>
+</tr>
+<tr class="row-even"><td><p>22x0</p></td>
+<td><p>5</p></td>
+</tr>
+<tr class="row-odd"><td><p>2800</p></td>
+<td><p>6</p></td>
+</tr>
+<tr class="row-even"><td><p>2000</p></td>
+<td><p>7</p></td>
+</tr>
+<tr class="row-odd"><td><p>3800</p></td>
+<td><p>9</p></td>
+</tr>
+<tr class="row-even"><td><p>12000 Director</p></td>
+<td><p>10</p></td>
+</tr>
+<tr class="row-odd"><td><p>3900</p></td>
+<td><p>12</p></td>
+</tr>
+<tr class="row-even"><td><p>3200</p></td>
+<td><p>16</p></td>
+</tr>
+<tr class="row-odd"><td><p>3800VL</p></td>
+<td><p>17</p></td>
+</tr>
+<tr class="row-even"><td><p>3000</p></td>
+<td><p>18</p></td>
+</tr>
+<tr class="row-odd"><td><p>24000 Director</p></td>
+<td><p>21</p></td>
+</tr>
+<tr class="row-even"><td><p>3016 Embedded Blade Switch</p></td>
+<td><p>22</p></td>
+</tr>
+<tr class="row-odd"><td><p>8Gb 10-port embedded fabric switch</p></td>
+<td><p>23</p></td>
+</tr>
+<tr class="row-even"><td><p>3850</p></td>
+<td><p>26</p></td>
+</tr>
+<tr class="row-odd"><td><p>3250</p></td>
+<td><p>27</p></td>
+</tr>
+<tr class="row-even"><td><p>4012 Embedded Blade Switch</p></td>
+<td><p>29</p></td>
+</tr>
+<tr class="row-odd"><td><p>4100</p></td>
+<td><p>32</p></td>
+</tr>
+<tr class="row-even"><td><p>3014</p></td>
+<td><p>33</p></td>
+</tr>
+<tr class="row-odd"><td><p>200E</p></td>
+<td><p>34</p></td>
+</tr>
+<tr class="row-even"><td><p>FR4-18i Director Blade</p></td>
+<td><p>36</p></td>
+</tr>
+<tr class="row-odd"><td><p>4020 Embedded Blade Switch</p></td>
+<td><p>37</p></td>
+</tr>
+<tr class="row-even"><td><p>7420 SAN Router</p></td>
+<td><p>38</p></td>
+</tr>
+<tr class="row-odd"><td><p>Fibre Channel Routing (FCR) Front Domain</p></td>
+<td><p>40</p></td>
+</tr>
+<tr class="row-even"><td><p>Fibre Channel Routing (FCR) Xlate Domain</p></td>
+<td><p>41</p></td>
+</tr>
+<tr class="row-odd"><td><p>48000 Director</p></td>
+<td><p>42</p></td>
+</tr>
+<tr class="row-even"><td><p>4024 Embedded Blade for HP</p></td>
+<td><p>43</p></td>
+</tr>
+<tr class="row-odd"><td><p>4900</p></td>
+<td><p>44</p></td>
+</tr>
+<tr class="row-even"><td><p>4016 Embedded Blade Switch</p></td>
+<td><p>45</p></td>
+</tr>
+<tr class="row-odd"><td><p>7500</p></td>
+<td><p>46</p></td>
+</tr>
+<tr class="row-even"><td><p>FC4-16IP Director Blade</p></td>
+<td><p>47</p></td>
+</tr>
+<tr class="row-odd"><td><p>4GB FC Port Blade</p></td>
+<td><p>50</p></td>
+</tr>
+<tr class="row-even"><td><p>4018 Embedded Blade Switch</p></td>
+<td><p>51</p></td>
+</tr>
+<tr class="row-odd"><td><p>FA4-18i Extension Director Blade</p></td>
+<td><p>55</p></td>
+</tr>
+<tr class="row-even"><td><p>7600</p></td>
+<td><p>55.2</p></td>
+</tr>
+<tr class="row-odd"><td><p>5000</p></td>
+<td><p>58</p></td>
+</tr>
+<tr class="row-even"><td><p>DCX Director</p></td>
+<td><p>62</p></td>
+</tr>
+<tr class="row-odd"><td><p>8Gb Backbone Core Fabric Switch</p></td>
+<td><p>63</p></td>
+</tr>
+<tr class="row-even"><td><p>5300</p></td>
+<td><p>64</p></td>
+</tr>
+<tr class="row-odd"><td><p>5100</p></td>
+<td><p>66</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade Encrypted Switch</p></td>
+<td><p>67</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade 8Gb 16 FC 2 GigE ports Director Encryption Blade</p></td>
+<td><p>68</p></td>
+</tr>
+<tr class="row-even"><td><p>5410 Blade</p></td>
+<td><p>69</p></td>
+</tr>
+<tr class="row-odd"><td><p>8Gb 10-Port Embedded Fabric Switch</p></td>
+<td><p>70</p></td>
+</tr>
+<tr class="row-even"><td><p>300</p></td>
+<td><p>71</p></td>
+</tr>
+<tr class="row-odd"><td><p>5480 Embedded Blade Switch</p></td>
+<td><p>72</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade 5470 Embedded Switch</p></td>
+<td><p>73</p></td>
+</tr>
+<tr class="row-odd"><td><p>8000</p></td>
+<td><p>74</p></td>
+</tr>
+<tr class="row-even"><td><p>M5424 Embedded Blade Switch</p></td>
+<td><p>75</p></td>
+</tr>
+<tr class="row-odd"><td><p>8000 FCoE Switch</p></td>
+<td><p>76.6</p></td>
+</tr>
+<tr class="row-even"><td><p>DCX-4S</p></td>
+<td><p>77(.3)</p></td>
+</tr>
+<tr class="row-odd"><td><p>8Gb 24-Port Embedded Blade Switch</p></td>
+<td><p>82</p></td>
+</tr>
+<tr class="row-even"><td><p>16-FC Port, 6-GE Port, 8Gb Switch</p></td>
+<td><p>83</p></td>
+</tr>
+<tr class="row-odd"><td><p>8Gb 26-Port Embedded Switch</p></td>
+<td><p>86</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade 5460 Embedded Switch</p></td>
+<td><p>87</p></td>
+</tr>
+<tr class="row-odd"><td><p>10Gb 24 GigE Ports DCE Blade</p></td>
+<td><p>88</p></td>
+</tr>
+<tr class="row-even"><td><p>8Gb 12 FC, 1Gb 10 GigE FCIP Blade, 10Gb 2 GigE Port FCR</p></td>
+<td><p>89</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade 8470 Embedded Switch</p></td>
+<td><p>90</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade VA-40FC Switch</p></td>
+<td><p>92</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade VDX 6720-24 Data Center Switch</p></td>
+<td><p>95</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade VDX 6730-32 Data Center Switch</p></td>
+<td><p>96</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade VDX 6720-60 Data Center Switch</p></td>
+<td><p>97</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade VDX 6730-76 Data Center Switch</p></td>
+<td><p>98</p></td>
+</tr>
+<tr class="row-odd"><td><p>Dell M8428-k FCoE Embedded Switch</p></td>
+<td><p>108</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade 6510 Switch</p></td>
+<td><p>109</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade VDX 6710 Data Center Switch</p></td>
+<td><p>116</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade 6547 Embedded Switch</p></td>
+<td><p>117</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade 6505 Switch</p></td>
+<td><p>118</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade DCX 8510-8 Backbone</p></td>
+<td><p>120</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade DCX 8510-4 Backbone</p></td>
+<td><p>121</p></td>
+</tr>
+<tr class="row-even"><td><p>Brocade G620</p></td>
+<td><p>162.1</p></td>
+</tr>
+<tr class="row-odd"><td><p>Brocade G610</p></td>
+<td><p>170</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="determining-the-brocade-switch-type-using-the-serial-number">
+<h2>Determining the Brocade switch type using the serial number<a class="headerlink" href="#determining-the-brocade-switch-type-using-the-serial-number" title="Link to this heading"></a></h2>
+<p>Brocade switch models can be identified by running the switchshow command, or through the use of the Brocade serial number.</p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Product Line</p></th>
+<th class="head"><p>Serial Number Prefix</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>200</p></td>
+<td><p>RD</p></td>
+</tr>
+<tr class="row-odd"><td><p>300</p></td>
+<td><p>AJ</p></td>
+</tr>
+<tr class="row-even"><td><p>3200</p></td>
+<td><p>GA</p></td>
+</tr>
+<tr class="row-odd"><td><p>3250</p></td>
+<td><p>NJ</p></td>
+</tr>
+<tr class="row-even"><td><p>3800</p></td>
+<td><p>EV</p></td>
+</tr>
+<tr class="row-odd"><td><p>3850</p></td>
+<td><p>NH</p></td>
+</tr>
+<tr class="row-even"><td><p>3900</p></td>
+<td><p>FB</p></td>
+</tr>
+<tr class="row-odd"><td><p>4100</p></td>
+<td><p>LX</p></td>
+</tr>
+<tr class="row-even"><td><p>4900</p></td>
+<td><p>UC</p></td>
+</tr>
+<tr class="row-odd"><td><p>5000</p></td>
+<td><p>AG</p></td>
+</tr>
+<tr class="row-even"><td><p>7500</p></td>
+<td><p>UF</p></td>
+</tr>
+<tr class="row-odd"><td><p>4800</p></td>
+<td><p>QV</p></td>
+</tr>
+</tbody>
+</table>
+<hr class="docutils" />
+<p>Last Updated: 27-05-2021 Links: <a class="reference external" href="https://kb.netapp.com/Advice_and_Troubleshooting/Data_Storage_Systems/Fabric%2C_Interconnect_and_Management_Switches/What_is_the_basis_on_which_Brocade_switch_models_are_determined">NetApp Knowledge Base</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="bna-trial-reset.html" class="btn btn-neutral float-left" title="Сброс trial-периода для Brocade Network Advisor (BNA)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="silkworm-48k-portlayout.html" class="btn btn-neutral float-right" title="Brocade 48k Port Layout" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

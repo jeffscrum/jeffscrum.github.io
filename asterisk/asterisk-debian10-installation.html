@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="asterisk, dongle, linux" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Установка Asterisk 18 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/asterisk/asterisk-debian10-installation.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Brocade" href="../brocade/index.html" />
+    <link rel="prev" title="Asterisk" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Asterisk</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Установка Asterisk 18</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Asterisk</a></li>
+      <li class="breadcrumb-item active">Установка Asterisk 18</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/asterisk/asterisk-debian10-installation.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="asterisk-18">
+<span id="asterisk-debian10-installation"></span><span id="index-0"></span><h1>Установка Asterisk 18<a class="headerlink" href="#asterisk-18" title="Link to this heading"></a></h1>
+<p>Процесс сборки и инсталляции Asterisk 18 из исходников на OS Debian 10</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>apt-get<span class="w"> </span>update
+apt-get<span class="w"> </span>upgrade
+apt-get<span class="w"> </span>install<span class="w"> </span>unzip<span class="w"> </span>git<span class="w"> </span>gnupg2<span class="w"> </span>curl<span class="w"> </span>libnewt-dev<span class="w"> </span>libssl-dev<span class="w"> </span>libncurses5-dev<span class="w"> </span>libsqlite3-dev<span class="w"> </span>build-essential<span class="w"> </span>libjansson-dev<span class="w"> </span>libxml2-dev<span class="w"> </span>uuid-dev<span class="w"> </span>subversion<span class="w"> </span>iptables-persistent<span class="w"> </span>fail2ban
+wget<span class="w"> </span>http://downloads.asterisk.org/pub/telephony/asterisk/asterisk-18-current.tar.gz
+tar<span class="w"> </span>zxf<span class="w"> </span>asterisk-18-current.tar.gz
+<span class="nb">cd</span><span class="w"> </span>asterisk-18.*/
+contrib/scripts/get_mp3_source.sh
+contrib/scripts/install_prereq<span class="w"> </span>install
+./configure
+make<span class="w"> </span>menuselect
+make<span class="w"> </span>-j2
+make<span class="w"> </span>install
+make<span class="w"> </span>samples
+make<span class="w"> </span>config
+ldconfig
+groupadd<span class="w"> </span>asterisk
+useradd<span class="w"> </span>-r<span class="w"> </span>-d<span class="w"> </span>/var/lib/asterisk<span class="w"> </span>-g<span class="w"> </span>asterisk<span class="w"> </span>asterisk
+usermod<span class="w"> </span>-aG<span class="w"> </span>audio,dialout<span class="w"> </span>asterisk
+chown<span class="w"> </span>-R<span class="w"> </span>asterisk.asterisk<span class="w"> </span>/etc/asterisk
+chown<span class="w"> </span>-R<span class="w"> </span>asterisk.asterisk<span class="w"> </span>/var/<span class="o">{</span>lib,log,spool<span class="o">}</span>/asterisk
+chown<span class="w"> </span>-R<span class="w"> </span>asterisk.asterisk<span class="w"> </span>/usr/lib/asterisk
+vi<span class="w"> </span>/etc/default/asterisk
+---
+<span class="nv">AST_USER</span><span class="o">=</span><span class="s2">&quot;asterisk&quot;</span>
+<span class="nv">AST_GROUP</span><span class="o">=</span><span class="s2">&quot;asterisk&quot;</span>
+---
+vi<span class="w"> </span>/etc/asterisk/asterisk.conf
+---
+<span class="nv">runuser</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>asterisk<span class="w">              </span><span class="p">;</span><span class="w"> </span>The<span class="w"> </span>user<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>as.
+<span class="nv">rungroup</span><span class="w"> </span><span class="o">=</span><span class="w"> </span>asterisk<span class="w">             </span><span class="p">;</span><span class="w"> </span>The<span class="w"> </span>group<span class="w"> </span>to<span class="w"> </span>run<span class="w"> </span>as.
+---
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s&quot;;\[radius\]&quot;\[radius\]&quot;g&#39;</span><span class="w"> </span>/etc/asterisk/cdr.conf
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s&quot;;radiuscfg =&gt; /usr/local/etc/radiusclient-ng/radiusclient.conf&quot;radiuscfg =&gt; /etc/radcli/radiusclient.conf&quot;g&#39;</span><span class="w"> </span>/etc/asterisk/cdr.conf
+sed<span class="w"> </span>-i<span class="w"> </span><span class="s1">&#39;s&quot;;radiuscfg =&gt; /usr/local/etc/radiusclient-ng/radiusclient.conf&quot;radiuscfg =&gt; /etc/radcli/radiusclient.conf&quot;g&#39;</span><span class="w"> </span>/etc/asterisk/cel.conf
+systemctl<span class="w"> </span>restart<span class="w"> </span>asterisk
+systemctl<span class="w"> </span><span class="nb">enable</span><span class="w"> </span>asterisk
+systemctl<span class="w"> </span>status<span class="w"> </span>asterisk
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Asterisk" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../brocade/index.html" class="btn btn-neutral float-right" title="Brocade" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

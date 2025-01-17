@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="oracle, solaris, ldom, migrate" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>fjs1500-3-a –&gt; t5-8-1-ld4-zone &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/fjs1500-3-a-t5-8-1-ld4-zone.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="fjs1500-3-a –&gt; t5-8-1-ld5-zone" href="fjs1500-3-a-t5-8-1-ld5-zone.html" />
+    <link rel="prev" title="fjs1500-3-a –&gt; t5-8-1-ld3-zone" href="fjs1500-3-a-t5-8-1-ld3-zone.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#id2">Миграция данных</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="fjs1500-3-a-t5-8-1-ld3-zone.html">fjs1500-3-a –&gt; t5-8-1-ld3-zone</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">fjs1500-3-a –&gt; t5-8-1-ld4-zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="fjs1500-3-a-t5-8-1-ld5-zone.html">fjs1500-3-a –&gt; t5-8-1-ld5-zone</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-to-g600.html">Миграция томов с VMAX на G600</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Работа с ОС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">fjs1500-3-a –&gt; t5-8-1-ld4-zone</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/fjs1500-3-a-t5-8-1-ld4-zone.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="fjs1500-3-a-t5-8-1-ld4-zone"><span id="index-0"></span></span><section id="id1">
+<h1>fjs1500-3-a –&gt; t5-8-1-ld4-zone<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<p>Миграция домена fjs1500-3-a в зону t5-8-1-ld4-zone</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>=========================
+= Подготовка к миграции =
+=========================
+
+T5-8-1-Primary:
+ldm add-vnet vid=135 vnet3 pr-vsw-prod3 ld4
+ldm add-vnet vid=135 vnet4 pr-vsw-prod4 ld4
+ldm add-vnet vid=135 vnet5 sec-vsw-prod3 ld4
+ldm add-vnet vid=135 vnet6 sec-vsw-prod4 ld4
+ld4:
+dladm create-vlan -l net2 -v135
+dladm create-vlan -l net3 -v135
+dladm create-vlan -l net4 -v135
+dladm create-vlan -l net5 -v135
+ipadm create-ipmp ipmp135
+ipadm create-ip net135002
+ipadm create-ip net135003
+ipadm create-ip net135004
+ipadm create-ip net135005
+ipadm add-ipmp -i net135002 -i net135003 -i net135004 -i net135005 ipmp135
+ipadm create-addr -T static -a 10.4.28.202/24 ipmp135/prod
+ipadm set-ifprop -p standby=on -m ip net135003
+ipadm set-ifprop -p standby=on -m ip net135004
+ipadm set-ifprop -p standby=on -m ip net135005
+svccfg -s svc:/network/ipmp setprop config/transitive-probing=true
+route -p add default 10.4.28.1 -ifp ipmp135
+route -p add default 192.168.132.1 -ifp ipmp0
+svccfg -s svc:/network/dns/client setprop config/nameserver=net_address: &quot;(10.30.33.154 10.30.33.152 10.4.27.7 10.4.27.6 10.30.33.100 10.30.33.156)&quot;
+svccfg -s svc:/system/name-service/switch setprop config/host = &#39;(&quot;files dns&quot;)&#39;
+svcadm refresh svc:/system/name-service/switch
+zfs create -o mountpoint=/zones rpool/zones
+zonecfg -z T5-8-1-ld4-zone
+create -t SYSsolaris10
+set zonepath=/zones/T5-8-1-ld4-zone
+set autoboot=true
+remove anet
+set ip-type=shared
+add net
+set physical=ipmp135
+set address=10.4.28.203/24
+end
+verify
+commit
+exit
+zoneadm list -cv
+zoneadm -z T5-8-1-ld4-zone install -a /root/flarsol10p2v.flar -u
+zoneadm -z T5-8-1-ld4-zone attach
+zoneadm -z T5-8-1-ld4-zone boot; zlogin -C T5-8-1-ld4-zone
+T5-8-1-ld4-zone:
+scp root@10.4.28.200:/root/SF_zone.tar .
+pkgadd -d VRTSvxfs.pkg all
+pkgadd -d VRTSvlic.pkg all
+pkgadd -d VRTSodm.pkg all
+zoneadm -z T5-8-1-ld4-zone halt
+zonecfg -z T5-8-1-ld4-zone
+add device
+set match=/dev/vxportal
+end
+add device
+set match=/dev/fdd
+end
+add device
+set match=/dev/odm
+end
+add fs
+set dir=/etc/vx/licenses/lic
+set special=/etc/vx/licenses/lic
+set type=lofs
+end
+set fs-allowed=vxfs,odm
+verify
+commit
+exit
+zoneadm -z T5-8-1-ld4-zone boot
+scp root@10.4.28.200:/root/sol11_sparc.tar .
+tar -xvf sol11_sparc.tar
+cd /root/sol11_sparc/storage_foundation
+./installsf -configure
+scp root@10.4.28.200:/root/VRTSaslapm_Solaris_6.1.1.400.tar .
+tar -xvf VRTSaslapm_Solaris_6.1.1.400.tar
+pkg set-publisher -p /root/SPARC/Solaris_11/VRTSaslapm.p5p Symantec
+pkg update
+
+==============================
+= Миграционная часть для ld4 =
+==============================
+
+T5-8-1-ld4:
+ifconfig ipmp135 addif 10.4.28.104 netmask 255.255.255.0 zone T5-8-1-ld4-zone up
+ifconfig ipmp135 addif 10.4.28.103 netmask 255.255.255.0 zone T5-8-1-ld4-zone up
+ifconfig ipmp135 addif 10.4.28.107 netmask 255.255.255.0 zone T5-8-1-ld4-zone up
+T5-8-1-Primary:
+ldm add-vds primary-data-ld4 primary
+ldm add-vds secondary-data-ld4 IO-domain
+vxdisk scandisks new
+vxdisk list
+* KS-Iridium_98-1 *
+ldm add-vdsdev /dev/vx/dmp/hitachi_vsp0_0459s2 volvsp0_0459@primary-data-ld4
+ldm add-vdsdev /dev/vx/dmp/hitachi_vsp0_0459s2 volvsp0_0459@secondary-data-ld4
+ldm add-vdisk timeout=30 id=10 volvsp0_0459-p volvsp0_0459@primary-data-ld4 ld4
+ldm add-vdisk timeout=30 id=11 volvsp0_0459-s volvsp0_0459@secondary-data-ld4 ld4
+* KS-Iridium_98-2 *
+ldm add-vdsdev /dev/vx/dmp/hitachi_vsp0_0457s2 volvsp0_0457@primary-data-ld4
+ldm add-vdsdev /dev/vx/dmp/hitachi_vsp0_0458s2 volvsp0_0458@primary-data-ld4
+ldm add-vdsdev /dev/vx/dmp/hitachi_vsp0_0457s2 volvsp0_0457@secondary-data-ld4
+ldm add-vdsdev /dev/vx/dmp/hitachi_vsp0_0458s2 volvsp0_0458@secondary-data-ld4
+ldm add-vdisk timeout=30 id=12 volvsp0_0457-p volvsp0_0457@primary-data-ld4 ld4
+ldm add-vdisk timeout=30 id=13 volvsp0_0458-p volvsp0_0458@primary-data-ld4 ld4
+ldm add-vdisk timeout=30 id=14 volvsp0_0457-s volvsp0_0457@secondary-data-ld4 ld4
+ldm add-vdisk timeout=30 id=15 volvsp0_0458-s volvsp0_0458@secondary-data-ld4 ld4
+ld4:
+vxdisk scandisks new
+vxdisk list
+vxdisk -o alldgs list
+vxdg import KS-Iridium_98-1
+vxdg import KS-Iridium_98-2
+* KS-Iridium_98-2 *
+echo &quot;/dev/vx/dsk/KS-Iridium_98-2/bin         /dev/vx/rdsk/KS-Iridium_98-2/bin        /iridium        vxfs    2       yes     -&quot; &gt;&gt; /etc/vfstab
+* KS-Iridium_98-1 *
+echo &quot;/dev/vx/dsk/KS-Iridium_98-2/kbdb        /dev/vx/rdsk/KS-Iridium_98-2/kbdb       /iridium/kbdb   vxfs    2       yes     -&quot; &gt;&gt; /etc/vfstab
+echo &quot;/dev/vx/dsk/KS-Iridium_98-1/save        /dev/vx/rdsk/KS-Iridium_98-1/save       /iridium/save   vxfs    2       yes     -&quot; &gt;&gt; /etc/vfstab
+
+mkdir /zones/T5-8-1-ld4-zone/root/iridium
+mount /zones/T5-8-1-ld4-zone/root/iridium
+mount /zones/T5-8-1-ld4-zone/root/iridium/save
+mount /zones/T5-8-1-ld4-zone/root/iridium/kbdb
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="fjs1500-3-a-t5-8-1-ld3-zone.html" class="btn btn-neutral float-left" title="fjs1500-3-a –&gt; t5-8-1-ld3-zone" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="fjs1500-3-a-t5-8-1-ld5-zone.html" class="btn btn-neutral float-right" title="fjs1500-3-a –&gt; t5-8-1-ld5-zone" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

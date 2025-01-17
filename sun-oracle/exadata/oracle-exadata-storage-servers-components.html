@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="exadata, intel, amd, configuration, components, servers, storage, cell, compute, pmem" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Oracle Exadata Storage Server Hardware Components &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/sun-oracle/exadata/oracle-exadata-storage-servers-components.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="How to extend filesystem on Exadata &amp; ZDLRA" href="oracle-exadata-zdlra-extend-fs.html" />
+    <link rel="prev" title="Oracle Exadata Database Server Hardware Components" href="oracle-exadata-compute-servers-components.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">Sun &amp; Oracle</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#exadata">Exadata</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-cabling-table.html">Cabling Tables for Oracle Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-fmod-position.html">FMod positions (Flash-card)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-get-serial.html">Как найти серийный номер Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-host_access_control.html">Настройки безопасности на Exadata при помощи host_access_control</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-lacp.html">Exadata LACP Configure</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-nfs-reimage.html">Exadata NFS ReImage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-optane-pmem.html">Intel Optane Persistent Memory Module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-pxe-reimage.html">Exadata PXE ReImage</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-root-unlock.html">Temporary User Lockout On Exadata</a></li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-compute-servers-components.html">Oracle Exadata Database Server Hardware Components</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Oracle Exadata Storage Server Hardware Components</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x10m-extreme-flash">Exadata Storage Server X10M Extreme Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x10m-high-capacity">Exadata Storage Server X10M High Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x10m-extended">Exadata Storage Server X10M Extended</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x9m-2-extreme-flash">Exadata Storage Server X9M-2 Extreme Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x9m-2-high-capacity">Exadata Storage Server X9M-2 High Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x9m-2-extended">Exadata Storage Server X9M-2 Extended</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x8m-2-and-x8-2-extreme-flash">Exadata Storage Server X8M-2 and X8-2 Extreme Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x8m-2-and-x8-2-high-capacity">Exadata Storage Server X8M-2 and X8-2 High Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x8m-2-and-x8-2-extended">Exadata Storage Server X8M-2 and X8-2 Extended</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x7-2-extreme-flash">Exadata Storage Server X7-2 Extreme Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x7-2-high-capacity">Exadata Storage Server X7-2 High Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x6-2-extreme-flash">Exadata Storage Server X6-2 Extreme Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x6-2-high-capacity">Exadata Storage Server X6-2 High Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x5-2-extreme-flash">Exadata Storage Server X5-2 Extreme Flash</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x5-2-high-capacity">Exadata Storage Server X5-2 High Capacity</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x4-2">Exadata Storage Server X4-2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-x3-2">Exadata Storage Server X3-2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-sun-fire-x4270-m2">Exadata Storage Server Sun Fire X4270 M2</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#exadata-storage-server-sun-fire-x4275">Exadata Storage Server Sun Fire X4275</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="oracle-exadata-zdlra-extend-fs.html">How to extend filesystem on Exadata &amp; ZDLRA</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#hardware">Hardware</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#software">Software</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../index.html#solaris">Solaris</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">Sun &amp; Oracle</a></li>
+      <li class="breadcrumb-item active">Oracle Exadata Storage Server Hardware Components</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/sun-oracle/exadata/oracle-exadata-storage-servers-components.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="oracle-exadata-storage-server-hardware-components">
+<span id="oracle-exadata-cell-servers-components"></span><span id="index-0"></span><h1>Oracle Exadata Storage Server Hardware Components<a class="headerlink" href="#oracle-exadata-storage-server-hardware-components" title="Link to this heading"></a></h1>
+<section id="exadata-storage-server-x10m-extreme-flash">
+<h2>Exadata Storage Server X10M Extreme Flash<a class="headerlink" href="#exadata-storage-server-x10m-extreme-flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 32-core AMD EPYC 9334 processors &#64; 2.7 GHz (up to 3.9 GHz)</p></li>
+<li><p>RAM: 1.5 TB (24 x 64 GB DIMMs) including XRMEM cache</p></li>
+<li><p>Flash storage:</p>
+<ul>
+<li><p>4 x 30.72 TB capacity-optimized flash devices (for primary data storage)</p></li>
+<li><p>4 x 6.8 TB performance-optimized flash devices (primarily for high-performance low-latency caching using Exadata Smart Flash Cache and Exadata Smart Flash Log)</p></li>
+</ul>
+</li>
+<li><p>System storage: 2 x 480 GB NVMe devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX7 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x10m-high-capacity">
+<h2>Exadata Storage Server X10M High Capacity<a class="headerlink" href="#exadata-storage-server-x10m-high-capacity" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 32-core AMD EPYC 9334 processors &#64; 2.7 GHz (up to 3.9 GHz)</p></li>
+<li><p>RAM: 1.5 TB (24 x 64 GB DIMMs) including XRMEM cache</p></li>
+<li><p>Disk storage: 12 x 22 TB hard disk drives (HDD)</p></li>
+<li><p>Flash storage: 4 x 6.8 TB performance-optimized flash devices</p></li>
+<li><p>System storage: 2 x 480 GB NVMe devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX7 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x10m-extended">
+<h2>Exadata Storage Server X10M Extended<a class="headerlink" href="#exadata-storage-server-x10m-extended" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 1 x 32-core AMD EPYC 9334 processor &#64; 2.7 GHz (up to 3.9 GHz)</p></li>
+<li><p>RAM: 128 GB (4 x 32 GB DIMMs)</p></li>
+<li><p>Disk storage: 12 x 22 TB hard disk drives (HDD)</p></li>
+<li><p>System storage: 2 x 480 GB NVMe devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX7 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x9m-2-extreme-flash">
+<h2>Exadata Storage Server X9M-2 Extreme Flash<a class="headerlink" href="#exadata-storage-server-x9m-2-extreme-flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 32-core Intel Xeon 8352Y processors &#64; 2.2 GHz</p></li>
+<li><p>RAM: 256 GB (16 x 16 GB DDR4 3200 MT/s DIMMs)</p></li>
+<li><p>Flash storage: 8 x 6.4 TB NVMe flash devices (PCIe 4.0)</p></li>
+<li><p>Persistent memory: 12 x 128 GB modules (Intel Optane Persistent Memory 200 Series, NMB1XXD128GPS)</p></li>
+<li><p>System storage: 2 x 240 GB M.2 devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX5 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x9m-2-high-capacity">
+<h2>Exadata Storage Server X9M-2 High Capacity<a class="headerlink" href="#exadata-storage-server-x9m-2-high-capacity" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 32-core Intel Xeon 8352Y processors &#64; 2.2 GHz, but only half of the CPU cores are enabled on Eighth Rack configurations</p></li>
+<li><p>RAM: 256 GB (16 x 16 GB DDR4 3200 MT/s DIMMs)</p></li>
+<li><p>Disk storage: 12 x 18 TB hard disk drives (HDD), but only 6 HDD on Eighth Rack configurations</p></li>
+<li><p>Disk controller Host Bus Adapter (HBA) with 2 GB cache</p></li>
+<li><p>Flash storage: 4 x 6.4 TB NVMe flash devices (PCIe 4.0), but only 2 flash devices on Eighth Rack configurations</p></li>
+<li><p>Persistent memory: 12 x 128 GB modules (Intel Optane Persistent Memory 200 Series, NMB1XXD128GPS), but only 6 modules on Eighth Rack configurations</p></li>
+<li><p>System storage: 2 x 240 GB M.2 devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX5 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x9m-2-extended">
+<h2>Exadata Storage Server X9M-2 Extended<a class="headerlink" href="#exadata-storage-server-x9m-2-extended" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 1 x 32-core Intel Xeon 8352Y processor &#64; 2.2 GHz</p></li>
+<li><p>RAM: 96 GB (6 x 16 GB DDR4 3200 MT/s DIMMs)</p></li>
+<li><p>Disk storage: 12 x 18 TB hard disk drives (HDD)</p></li>
+<li><p>Disk controller Host Bus Adapter (HBA) with 2 GB cache</p></li>
+<li><p>System storage: 2 x 240 GB M.2 devices</p></li>
+<li><p>RDMA Network Fabric: 1 x dual-port CX5 RDMA Network Fabric card; PCIe 4.0, 2 x 100 Gb/s ports active-active (200 Gb/s combined throughput)</p></li>
+<li><p>Administration network: 1 x 1 GbE Base-T Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x8m-2-and-x8-2-extreme-flash">
+<h2>Exadata Storage Server X8M-2 and X8-2 Extreme Flash<a class="headerlink" href="#exadata-storage-server-x8m-2-and-x8-2-extreme-flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 16-core Intel Xeon 5218 Processors &#64; 2.3GHz</p></li>
+<li><p>RAM: 192 GB RAM (12 x 16 GB DIMMs)(full 6 channels)</p></li>
+<li><p><strong>X8M-2 only</strong>: 12 x 128 GB Intel Optane DC Persistent Memory modules (NMA1XXD128GPS)</p></li>
+<li><p>Flash storage: 8 x 6.4 TB flash accelerator PCIe cards</p></li>
+<li><p>System storage: 2 x 240 GB M.2 devices for system partitions (partitioned as 150 GB devices)</p></li>
+<li><p><strong>X8M-2 only</strong>: 1 dual-port (PCIe 3.0), both ports active, 100Gb/s RDMA Network Fabric Card</p></li>
+<li><p><strong>X8-2 only</strong>: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x8m-2-and-x8-2-high-capacity">
+<h2>Exadata Storage Server X8M-2 and X8-2 High Capacity<a class="headerlink" href="#exadata-storage-server-x8m-2-and-x8-2-high-capacity" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 16-core Intel Xeon 5218 Processors &#64; 2.3GHz</p></li>
+<li><p>RAM: 192 GB RAM (12 x 16 GB DIMMs)(full 6 channels)</p></li>
+<li><p><strong>X8M-2 only</strong>: 12 x 128 GB Intel Optane™ DC Persistent Memory modules (NMA1XXD128GPS)</p></li>
+<li><p>Disk storage: 12 x 14 TB High Capacity SAS disks, but only 6 drives on Eighth Rack configurations</p></li>
+<li><p>System storage: 2 x 240 GB M.2 devices for system partitions (partitioned to appear as 150 GB devices)</p></li>
+<li><p>Flash storage: 4 x 6.4 TB flash accelerator PCIe cards</p></li>
+<li><p>Disk controller HBA with 2 GB cache</p></li>
+<li><p><strong>X8M-2 only</strong>: 1 dual-port (PCIe 3.0), both ports active, 100Gb/s RDMA Network Fabric Card</p></li>
+<li><p><strong>X8-2 only</strong>: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x8m-2-and-x8-2-extended">
+<h2>Exadata Storage Server X8M-2 and X8-2 Extended<a class="headerlink" href="#exadata-storage-server-x8m-2-and-x8-2-extended" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 1 x 16-core Intel Xeon 5218 Processor &#64; 2.3GHz</p></li>
+<li><p>RAM: 96 GB RAM (6 x 16 GB DIMMs)(full 6 channels)</p></li>
+<li><p>Disk storage: 12 x 14 TB High Capacity SAS disks</p></li>
+<li><p>System storage: 2 x 240 GB M.2 devices for system partitions</p></li>
+<li><p>Disk controller HBA with 2 GB cache</p></li>
+<li><p><strong>X8M-2 only</strong>: 1 dual-port (PCIe 3.0), both ports active, 100Gb/s RDMA Network Fabric Card</p></li>
+<li><p><strong>X8-2 only</strong>: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x7-2-extreme-flash">
+<h2>Exadata Storage Server X7-2 Extreme Flash<a class="headerlink" href="#exadata-storage-server-x7-2-extreme-flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x Intel Xeon Silver 4114 Processors &#64; 2.20GHz</p></li>
+<li><p>RAM: 192 GB RAM (12 x 16 GB)(full 6 channels)</p></li>
+<li><p>Flash storage: 8 x 6.4 TB flash accelerator PCIe cards</p></li>
+<li><p>System storage: 2 x 150 GB M.2 devices for system partitions</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x7-2-high-capacity">
+<h2>Exadata Storage Server X7-2 High Capacity<a class="headerlink" href="#exadata-storage-server-x7-2-high-capacity" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x Intel Xeon Silver 4114 Processors &#64; 2.20GHz</p></li>
+<li><p>RAM: 192 GB RAM (12 x 16 GB) – full 6 channels</p></li>
+<li><p>Disk storage: 12 x 10 TB High Capacity SAS disks</p></li>
+<li><p>System storage: 2 x 150 GB M.2 devices for system partitions</p></li>
+<li><p>Flash storage: 4 x 6.4 TB flash accelerator PCIe cards</p></li>
+<li><p>Disk controller HBA with 2 GB cache</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x6-2-extreme-flash">
+<h2>Exadata Storage Server X6-2 Extreme Flash<a class="headerlink" href="#exadata-storage-server-x6-2-extreme-flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 10-Core Intel Xeon CPU E5-2630 v4 &#64; 2.2 GHz</p></li>
+<li><p>RAM: 128 GB RAM (8 x 16 GB)</p></li>
+<li><p>Flash storage: 8 x 3.2 TB 2.5-inch flash accelerator F320 PCIe drives</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x6-2-high-capacity">
+<h2>Exadata Storage Server X6-2 High Capacity<a class="headerlink" href="#exadata-storage-server-x6-2-high-capacity" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 10-Core Intel Xeon CPU E5-2630 v4 &#64; 2.2 GHz</p></li>
+<li><p>RAM: 128 GB RAM (8 x 16 GB)</p></li>
+<li><p>Disk storage: 12 x 8 TB 7.2 K RPM High Capacity SAS disks (in earlier releases, the high capacity disks were 4 TB)</p></li>
+<li><p>Flash storage: 4 x 3.2 TB flash accelerator F320 PCIe card</p></li>
+<li><p>Disk controller HBA with 1 GB cache</p></li>
+<li><p>RDMA Network Fabric: 2 x InfiniBand 4X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA)), all ports active</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x5-2-extreme-flash">
+<h2>Exadata Storage Server X5-2 Extreme Flash<a class="headerlink" href="#exadata-storage-server-x5-2-extreme-flash" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 8-Core Intel Xeon CPU E5-2630 v3 &#64; 2.40GHz</p></li>
+<li><p>RAM: 64 GB RAM (8x 8 GB)</p></li>
+<li><p>Flash storage: 8 x 1.6 TB NVMe PCIe 3.0 SSD Extreme Flash disks</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4 X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x5-2-high-capacity">
+<h2>Exadata Storage Server X5-2 High Capacity<a class="headerlink" href="#exadata-storage-server-x5-2-high-capacity" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 8-Core Intel Xeon CPU E5-2630 v3 (2.40GHz)</p></li>
+<li><p>RAM: 96 GB RAM (4x 8 GB and 4x 16 GB)</p></li>
+<li><p>Disk storage: 12 x 8 TB 7.2 K RPM High Capacity SAS disks (in earlier releases, the high capacity disks were 4 TB)</p></li>
+<li><p>Flash storage: 4 x 1.6 TB flash accelerator F160 PCIe cards</p></li>
+<li><p>Disk controller HBA with 1 GB supercap-backed write cache</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4 X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 1 GbE Base-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x4-2">
+<h2>Exadata Storage Server X4-2<a class="headerlink" href="#exadata-storage-server-x4-2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 6-Core Intel Xeon E5-2630 v2 processors (2.6 GHz)</p></li>
+<li><p>RAM: 96 GB RAM (4 x 8 GB, and 4 x 16 GB))</p></li>
+<li><p>Disk storage: 12 x 1.2 TB 10 K RPM High Performance SAS disks or 12 x 4 TB 7.2 K RPM High Capacity SAS disks</p></li>
+<li><p>Flash storage: 4 x 800 GB Sun Flash Accelerator F80 PCIe Cards</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache, and swappable BBU</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4 X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 3.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-x3-2">
+<h2>Exadata Storage Server X3-2<a class="headerlink" href="#exadata-storage-server-x3-2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 6-Core Intel Xeon E5-2630L processors (2 GHz)</p></li>
+<li><p>RAM: 64 GB RAM (8 x 8 GB)</p></li>
+<li><p>Disk storage: 12 x 600 GB 15 K RPM High Performance SAS disks or 12 x 3 TB 7.2 K RPM High Capacity SAS disks</p></li>
+<li><p>Flash storage: 4 x 400 GB Sun Flash Accelerator F40 PCIe Cards</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache</p></li>
+<li><p>RDMA Network Fabric: 2 InfiniBand 4 X QDR (40 Gb/s) InfiniBand ports (1 dual-port PCIe 2.0 Host Channel Adapter (HCA))</p></li>
+<li><p>4 embedded Gigabit Ethernet ports</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-sun-fire-x4270-m2">
+<h2>Exadata Storage Server Sun Fire X4270 M2<a class="headerlink" href="#exadata-storage-server-sun-fire-x4270-m2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 6-Core Intel Xeon L5640 processors (2.26 GHz)</p></li>
+<li><p>RAM: 24 GB RAM</p></li>
+<li><p>Disk storage: 12 x 600 GB 15 K RPM High Performance SAS disks or 12 x 3 TB 7.2 K RPM High Capacity SAS disks (in earlier releases, the high capacity disks were 2 TB)</p></li>
+<li><p>Flash storage: 4 x 96 GB Sun Flash Accelerator F20 PCIe Cards</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache</p></li>
+<li><p>Dual-port 4X QDR (40 Gb/s) InfiniBand Host Channel Adapter (HCA)</p></li>
+<li><p>1 embedded Gigabit Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+</section>
+<section id="exadata-storage-server-sun-fire-x4275">
+<h2>Exadata Storage Server Sun Fire X4275<a class="headerlink" href="#exadata-storage-server-sun-fire-x4275" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>CPU: 2 x 4-Core Intel Xeon E5540 processors (2.53 GHz)</p></li>
+<li><p>RAM: 24 GB RAM</p></li>
+<li><p>Disk storage: 12 x 600 GB 15 K RPM High Performance SAS disks or 12 x 2 TB 7.2 K RPM SATA disks</p></li>
+<li><p>Flash storage: 4 x 96 GB Sun Flash Accelerator F20 PCIe Cards</p></li>
+<li><p>Disk controller HBA with 512 MB battery-backed write cache</p></li>
+<li><p>Dual-port 4X QDR (40 Gb/s) InfiniBand Host Channel Adapter (HCA)</p></li>
+<li><p>1 embedded Gigabit Ethernet port</p></li>
+<li><p>Integrated Lights Out Manager (ILOM) port for remote management: 1 x 10/100 BASE-T Ethernet port</p></li>
+</ul>
+<hr class="docutils" />
+<p>Parent topic: <a class="reference external" href="https://docs.oracle.com/en/engineered-systems/exadata-database-machine/dbmso/hardware-components-exadata-db-machine.html">Hardware Components of Oracle Exadata</a></p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="oracle-exadata-compute-servers-components.html" class="btn btn-neutral float-left" title="Oracle Exadata Database Server Hardware Components" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="oracle-exadata-zdlra-extend-fs.html" class="btn btn-neutral float-right" title="How to extend filesystem on Exadata &amp; ZDLRA" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

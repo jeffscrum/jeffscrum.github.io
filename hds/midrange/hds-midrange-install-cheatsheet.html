@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="hds, vsp, gx00" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Памятка по инсталляции массивов HDS VSP Gx00 &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/hds/midrange/hds-midrange-install-cheatsheet.html" />
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Smart Home" href="../../homeassistant/index.html" />
+    <link rel="prev" title="HDS SNM2 Maintenance Mode" href="hds-midrange-snm2-maintenance-mode.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">HDS</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../hds-midrange-rga-firmware.html">HDS Microcode Availability Status</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hds-license-recovery.html">HDS Licenses Recovery Procedure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hds-raidcom.html">HDS Конфигурирование через RAIDcom</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../hds-emergency-license-key.html">HDS Emergency License Key</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html#midrange">Midrange</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-maintenance-ip.html">HDS Midrange Maintenance IP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-autodump.html">HDS Midrange AutoDump</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-replace-svp.html">HDS Midrange Replace SVP</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-backend-cable-wiring-diagram.html">HDS Storage System Cable Diagram</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-svp-to-mpc.html">HDS Midrange SVP to MPC</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-aix-odm.html">HDS AIX ODM Install</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-snm-maintenance-mode.html">HDS SNM Maintenance Mode</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-snm2-default-password.html">HDS SNM2 Default Password</a></li>
+<li class="toctree-l3"><a class="reference internal" href="hds-midrange-snm2-maintenance-mode.html">HDS SNM2 Maintenance Mode</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">Памятка по инсталляции массивов HDS VSP Gx00</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">Выбор версии микрокода для инсталляции</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">Инсталляция массива</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">Проверка и сбор информации</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../tasks/index.html">Планы работ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">HDS</a></li>
+      <li class="breadcrumb-item active">Памятка по инсталляции массивов HDS VSP Gx00</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/hds/midrange/hds-midrange-install-cheatsheet.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="hds-vsp-gx00">
+<span id="hds-midrange-install-cheatsheet"></span><span id="index-0"></span><h1>Памятка по инсталляции массивов HDS VSP Gx00<a class="headerlink" href="#hds-vsp-gx00" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>Выбор версии микрокода для инсталляции<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>Перед работами необходимо определиться с версией микрокода, которая будет использована для проведения. Всегда необходимо использовать версию микрокода со статусом RGA, и никакой другой. В день инсталляции или за день до инсталляции необходимо проверить статус прошивки планируемой к инсталляции. Статус прошивки должен быть <strong>RGA</strong>.</p>
+<p>Определить статус прошивки можно зайдя на портал support.hds.com, авторизоваться и далее в разделе <strong>Technical Bulletins</strong> найти соответствующий документа о статусе прошивок.</p>
+<p>Скачать прошивку можно на портале support.hds.com в разделе <strong>Product Downloads</strong>.</p>
+</section>
+<section id="id2">
+<h2>Инсталляция массива<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>Инсталляцию массива необходимо проводить строго в соответствии с <em>Maintenance Manual</em>, раздел <strong>“INSTALLATION SECTION”</strong>, секция “6. New Installation (Auto Define Configuration, All Firmwares)” и “6.1 Flow of New Installation”, в случае <strong>Initial Install</strong>.</p>
+<section id="maintenance-pc">
+<h3>Инсталляция Maintenance PC<a class="headerlink" href="#maintenance-pc" title="Link to this heading"></a></h3>
+<p>При инсталляции Maintenance PC необходимо использовать версию ПО MPC из устанавливаемой версии микрокода. В разделе <strong>1.6.2.1 Register the Storage System</strong> в качестве <strong>Software Version</strong> выбираем то значение, которое соответствует <strong>Model name - DW800</strong>, т.е. версия микрокода всегда должна заканчиваться на <strong>00</strong>, а не <strong>60</strong>, как например <em>83-03-22-20/00</em>, а не <em>83-03-22-20/60</em>.</p>
+</section>
+<section id="id3">
+<h3>Завершение инсталляции<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<p>После завершение инсталляции обязательно сравнить версии всех прошивок на массиве с версиями приведёнными в <strong>Engineering Change Notice (ECN)</strong>. Они должны полностью совпадать, до каждой цифры и буквы.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Необходимо помнить, что во время <strong>Initial Install</strong> не обновляются HDD, ENC (Expander) и CNF.</p>
+</div>
+</section>
+<section id="svp">
+<h3>Обновление SVP<a class="headerlink" href="#svp" title="Link to this heading"></a></h3>
+<p>Обновление SVP проводится в соответствии с Maintenance Manual, также как и обновление MPC, в соответствии с документом по Separated Update микрокода для MPC. Для версии 83-03-23 процедура выглядит так:</p>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>(1) Update the SVP Storage Device List by reference to MAINTENANCE PC SECTION &quot;1.5.4 Storage Device List Update&quot;
+(2) Update the SVP software by reference to MAINTENANCE PC SECTION &quot;1.6.5 Changing Storage System Information and Updating Software of Web Console&quot;.
+(3) Start the SVP service by reference to MAINTENANCE PC SECTION &quot;1.6.4.2 Starting the Service&quot;.
+</pre></div>
+</div>
+<p>Но необходимо помнить об отличие от MPC:
+- перед обновлением ПО SVP полностью <strong>остановить сервисы Hi-Track Monitor</strong>, в противном случае обновление ПО SVP будет завершаться с ошибками и придётся полностью переинсталлировать ПО SVP.
+- в меню выбора компонентов для обновления, нужно <strong>выбрать только Software</strong>, и убрать галочку с Hardware.</p>
+</section>
+</section>
+<section id="id4">
+<h2>Проверка и сбор информации<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>После завершения инсталляции необходимо:</p>
+<ul class="simple">
+<li><p>проверить соответствие ECN-у прошивок всех программных и аппаратных компонент;</p></li>
+<li><p>проверить работу WEB интерфейса контроллеров (GUM) из сети клиента, если уже подключено в сеть. В противном случае указать в отчет по инсталляции, что массив не подключен в сеть, служба безопасности не включила порты а коммутаторах, или что-то еще;</p></li>
+<li><p>проверить, что массив добавлен в HCS и все пункты меню/визарды, а также и секция Maintenance Utility работают. В противном случае указать в отчете по инсталляции, что массив не подключен в сеть, служба безопасности не включила порты а коммутаторах, или что-то еще;</p></li>
+<li><p>если что-то не работает, то попытаться решить на месте или открыть заявку, на исправление;</p></li>
+<li><p>собрать Configuration Report для проверки;</p></li>
+<li><p>сделать скиншоты всех версий прошивок компонент окна MPC Programm -&gt; Maintenance -&gt; Version -&gt; …;</p></li>
+<li><p>прикрепить собранные данные к заявке.</p></li>
+</ul>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="hds-midrange-snm2-maintenance-mode.html" class="btn btn-neutral float-left" title="HDS SNM2 Maintenance Mode" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../homeassistant/index.html" class="btn btn-neutral float-right" title="Smart Home" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

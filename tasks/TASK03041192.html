@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="vmax, tasks" name="keywords" />
+    <link rel="icon" type="image/x-icon" href="../_static/favicon/favicon.ico">
+    <link rel="icon" sizes="16x16" type="image/png" href="../_static/favicon/favicon-16x16.png">
+    <link rel="icon" sizes="32x32" type="image/png" href="../_static/favicon/favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../_static/favicon/apple-touch-icon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VMAX. Расширения ФС /warehouse/oradata до 60Тб &mdash; Ёжъ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=15bf8b30" />
+      <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
+
+  
+    <link rel="canonical" href="https://kb.ksomov.ru/tasks/TASK03041192.html" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../_static/documentation_options.js?v=7f41d439"></script>
+        <script src="../_static/doctools.js?v=9a2dae69"></script>
+        <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
+        <script src="../_static/copybutton.js?v=f281be69"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="VMAX. Разобрать пулы и создать новые луны" href="TASK03049093.html" />
+    <link rel="prev" title="VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911" href="TASK01365461.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../index.html" class="icon icon-home">
+            Ёжъ
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">IT</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../asterisk/index.html">Asterisk</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../brocade/index.html">Brocade</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../emc/index.html">EMC</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../bsd/index.html">FreeBSD &amp; OpenBSD</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../hds/index.html">HDS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../homeassistant/index.html">Smart Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../ibm/index.html">IBM</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../linux/index.html">Linux</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mac/index.html">Mac OS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../matrix/index.html">Matrix</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mikrotik/index.html">Mikrotik</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../sun-oracle/index.html">Sun &amp; Oracle</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../uncategorized/index.html">Uncategorized</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vyos/index.html">VyOS</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">Планы работ</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="index.html#id2">Миграция данных</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id3">Обновление ПО и микрокодов</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id4">Работы на железе</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#id5">Работа с ОС</a></li>
+<li class="toctree-l2"><a class="reference internal" href="index.html#lpar">Работы с доменами / зонами / lpar’ами</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html#vmax">Работа с массивами VMAX</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="hds-standard-work-plans.html">HDS. Стандартный план работ</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK01365461.html">VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">VMAX. Расширения ФС /warehouse/oradata до 60Тб</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03049093.html">VMAX. Разобрать пулы и создать новые луны</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03334903.html">VMAX. Переразбить пул с другим RAID</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03354440.html">VMAX. Переразбивка пулов</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03562213.html">VMAX. Удалить диски с нод кластера (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03563742.html">VMAX. Удалить диски с серверов (AIX)</a></li>
+<li class="toctree-l3"><a class="reference internal" href="TASK03598846.html">VMAX. Подключение SSD Tier к HDD Pool</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-map-disks.html">VMAX. Отмапливание дисков</a></li>
+<li class="toctree-l3"><a class="reference internal" href="vmax-svalka.html">VMAX. Свалка планов</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Tourism</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tourism/index.html">Обо всем на свете</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Recipes</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../recipes/index.html">Рецепты</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Ёжъ</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">Планы работ</a></li>
+      <li class="breadcrumb-item active">VMAX. Расширения ФС /warehouse/oradata до 60Тб</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/jeffscrum/itdrafts/blob/master/source/tasks/TASK03041192.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <span class="target" id="task03041192"><span id="index-0"></span></span><section id="vmax-warehouse-oradata-60">
+<h1>VMAX. Расширения ФС /warehouse/oradata до 60Тб<a class="headerlink" href="#vmax-warehouse-oradata-60" title="Link to this heading"></a></h1>
+<p>Просьба подготовить план расширения ФС /warehouse/oradata до 60Тб на кластере p795-1-lp01/p795-2-lp11.</p>
+<ol class="arabic simple">
+<li><p>На VMAX-3 из группы DISK_GROUP_004_Reserve удалить неиспользуемый пул RMOD_STB_FC.</p></li>
+<li><p>За счёт освободившегося пространства расширить пул DWH_FC до 60+ Тб.</p></li>
+<li><p>Увеличить размер 20 лунов в пуле DWH_FC.</p></li>
+<li><p>Расширить ФС /warehouse/oradata до 60 Тб.</p></li>
+</ol>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Смотрим текущий статус пула:
+symcfg -sid 307 show -pool RMOD_STB_FC -thin -detail
+
+Отключаем TDAT-девайсы:
+symconfigure -sid 307 -cmd &quot;disable dev 0FAA:1391 in pool RMOD_STB_FC, type=thin;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;disable dev 0FAA:1391 in pool RMOD_STB_FC, type=thin;&quot; -v commit
+
+Выводим из пула RMOD_STB_FC все дата девайсы(1000 устройств):
+создаем файл deactivate.txt со следующим содержимым:
+deactivate dev 0FAA in pool RMOD_STB_FC, type=thin;
+...
+deactivate dev 1391 in pool RMOD_STB_FC, type=thin;
+symconfigure -sid 307 -file deactivate.txt -v -nop prepare
+symconfigure -sid 307 -file deactivate.txt -v -nop commit
+
+Создаем файл &quot;draining.txt&quot; с содержанием:
+start drain on dev dev 0FAA in pool RMOD_STB_FC, type=thin;
+...
+start drain on dev dev 1391 in pool RMOD_STB_FC, type=thin;
+symconfigure -sid 307 -file draining.txt -v -nop prepare
+symconfigure -sid 307 -file draining.txt -v commit
+
+После данных действий необходимо ждать неопределенное количество времени, чтобы массив перенес данные с перечисленных DATAdev&#39;ов.
+Перенос может занять достаточно большое количество времени.
+После того, как количество используемых трэков на них будет равно нулю можно продолжить.
+
+Удаление DATAdev&#39;ов из пула:
+Создаем файл &quot;removeDATAdev.txt&quot; c содержанием:
+remove dev 0FAA from pool RMOD_STB_FC type=thin;
+...
+remove dev 1391 from pool RMOD_STB_FC type=thin;
+symconfigure -sid 307 -file removeDATAdev.txt -v -nop prepare
+symconfigure -sid 307 -file removeDATAdev.txt -v commit
+
+Удаляем сам пул:
+symconfigure -sid 307 -cmd &quot;delete pool RMOD_STB_FC, type=thin;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;delete pool RMOD_STB_FC, type=thin;&quot; -v commit
+
+Проверяем что пул удален
+symcfg -sid 307 list -pool -thin -gb -detail
+
+Проверяем текущее количество девайсов в пуле:
+symcfg -sid 307 show -pool DWH_FC -thin -detail | grep &quot;in Pool&quot;
+
+Создаем файл &quot;addDATAdev.txt&quot; c содержанием:
+add dev 0FAA to pool DWH_FC, type=thin, member_state=ENABLE;
+...
+add dev 1391 to pool DWH_FC, type=thin, member_state=ENABLE;
+symconfigure -sid 307 -file addDATAdev.txt -v -nop prepare
+symconfigure -sid 307 -file addDATAdev.txt -v commit
+
+Проверяем что девайсы добавились:
+symcfg -sid 307 show -pool DWH_FC -thin -detail | grep &quot;in Pool&quot;
+
+Создаем файл &quot;balancing.txt&quot; с содержанием:
+start balancing on pool DWH_FC type=thin;
+symconfigure -sid 307 -cmd &quot;start balancing on pool DWH_FC type=thin;&quot; -v -nop prepare
+symconfigure -sid 307 -cmd &quot;start balancing on pool DWH_FC type=thin;&quot; -v commit
+
+Проверяем что пул начал ре-балансировку. После завершения переходим к следующему шагу:
+symcfg -sid 307 show -pool DWH_FC -thin |grep &quot;Pool State&quot;
+
+Создаем новые девайсы аналогичные существующим (20 metaDEV, собранных из 16 tdev объемом 100000 cyl каждый)
+symconfigure -sid 307 -cmd &quot;create dev count=20, emulation=FBA, config=TDEV, size=1600000, meta_member_size=100000, meta_config=striped ;&quot; -v prepare
+symconfigure -sid 307 -cmd &quot;create dev count=20, emulation=FBA, config=TDEV, size=1600000, meta_member_size=100000, meta_config=striped ;&quot; -v commit
+
+Создаем файл &quot;bind.txt&quot; с содержанием:
+bind tdev thindev1 to pool DWH_FC, preallocate size=ALL;
+...
+bind tdev thindev20 to pool DWH_FC, preallocate size=ALL;
+symconfigure -sid 307 -file bind.txt -v prepare
+symconfigure -sid 307 -file bind.txt -v commit
+
+Проверяем, что у пула не появилась переподписка.
+symcfg -sid 307 list -pool -thin -detail -gb
+
+Добавляем созданные устройства в группу для сервера SG_DWH.
+symaccess -sid 307  -name SG_DWH -type storage add devs 1500,1510,1520,1530,1540,1550,1560,1570,1580,1590,15A0,15B0,15C0,15D0,15E0,15F0,1600,1610,1620,1630
+
+Распознаем диски на сервере:
+cfgmgr
+lspv
+
+Расширяем дисковую группу:
+extendvg vmax3_db_vg &lt;hdisk1....hdisk20&gt;
+
+Расширяем том DWH_db_lv:
+chlv -u 40 -x 55920 DWH_db_lv (Изменяем характеристики тома, указывая что будет использоваться 40 дисков и максимально 55920 PP)
+lsvg vmax3_db_vg
+lsvg -p vmax3_db_vg
+extendlv DWH_db_lv &lt;numbers_of_PP&gt; (складываем значения свободных PP из шага выше)
+
+Расширяем ФС /warehouse/oradata:
+lsfs -q /dev/DWH_db_lv (расширяем ФС на весь том [lv size: 117272739840, fs size: 55868129280])
+chfs -a size=68719476736 /dev/DWH_db_lv (максимальный размер ФС c block-size 4k)
+
+Риски: неизвестные ошибки ПО, некорректное отрабатывание команд, человеческий фактор, потеря данных.
+В случае если нужно, анбиндим девайсы через web
+Разбираем мета девайсы &quot;symconfigure -sid xxx -cmd &quot;dissolve meta dev 0234;&quot; PREVIEW&quot;
+Удаляем девайсы &quot;symconfigure -sid xxx -cmd &quot;delete dev 0234:0235;&quot; COMMIT&quot;
+</pre></div>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="TASK01365461.html" class="btn btn-neutral float-left" title="VMAX. Расширение пула Task1bin_DB счёт дисков пула Task911" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="TASK03049093.html" class="btn btn-neutral float-right" title="VMAX. Разобрать пулы и создать новые луны" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2024, Jeff Scrum.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
